@@ -15,8 +15,10 @@ $uncode=$_SESSION['UnivCode'];
 <script language="JavaScript">
 <!--
 function FP_preloadImgs() {//v1.0
- var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
- for(var i=0; i<a.length; i++) { d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; }
+	var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
+	for(var i=0; i<a.length; i++){ 
+		d.FP_imgs[i]=new Image; d.FP_imgs[i].src=a[i]; 
+	}
 }
 
 function FP_swapImg() {//v1.0
@@ -267,80 +269,80 @@ function DisplayLoginForm()
 <div align="center">
 <form method="POST" action="welcomeCollege.php">
 
-<table border="0" width="51%" id="table5" dir="rtl" height="120">
+	<table border="0" width="51%" id="table5" dir="rtl" height="120">
 
-<tr>
-	<td width="35%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
+	<tr>
+		<td width="35%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
+			<p align="center">
+			<img border="0" id="img4" src="header_files/userName.jpg" height="24" width="120" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;"></td>
+
+		<p align="right">
+		<td width="62%" dir="ltr" height="30">
+
+			<input name="T1" id="T1" size="14" tabindex="1" style="font-family: Times New Roman; color: #003366; font-size: 14pt; font-weight: bold; float:right" dir="rtl"></td>
+	</tr>
+
+	<tr>
+		<td width="35%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr" align="center">
 		<p align="center">
-		<img border="0" id="img4" src="header_files/userName.jpg" height="24" width="120" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;"></td>
-
-	<p align="right">
-	<td width="62%" dir="ltr" height="30">
-
-		<input name="T1" id="T1" size="14" tabindex="1" style="font-family: Times New Roman; color: #003366; font-size: 14pt; font-weight: bold; float:right" dir="rtl"></td>
-</tr>
-
-<tr>
-	<td width="35%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr" align="center">
-	<p align="center">
-	<img border="0" id="img81" src="header_files/PasswdBut.jpg" height="24" width="120" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"></td>
-
-	<p align="right">
-
-	<td width="62%" height="25" dir="ltr">
+		<img border="0" id="img81" src="header_files/PasswdBut.jpg" height="24" width="120" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"></td>
 
 		<p align="right">
-		<input name="T2" id="T2" size="14" tabindex="2" style="font-family: Times New Roman; 
-		color: #003366; font-size: 14pt; font-weight: bold; float:right" dir="rtl" type="password">
-	</td>
 
-</tr>
+		<td width="62%" height="25" dir="ltr">
 
-<tr>
-	<td width="35%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr" align="center">
-		<img border="0" id="img82" src="header_files/AcadYearBut.jpg" height="24" width="120" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;">
-	</td>
+			<p align="right">
+			<input name="T2" id="T2" size="14" tabindex="2" style="font-family: Times New Roman; 
+			color: #003366; font-size: 14pt; font-weight: bold; float:right" dir="rtl" type="password">
+		</td>
 
-	<td width="62%" height="25" dir="ltr">
+	</tr>
 
-		<p align="right">
-				<select size="1" name="D3" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3">
-				<!--
-				<option value="" selected>
-					&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
-				</option>-->
-				<?php
-				$conn = db_connect();
-				$sql_query3="select AcadYNo from AcadYear order by AcadYNo DESC";
-				$result3=mysqli_query($sql_query3);
-				if (mysqli_num_rows($result3))
-				{
-				while($row3=mysql_fetch_row($result3))
-				{?>
-					<option value="<?php echo($row3[0]);?>"
-						<?php
-						if(strcmp($year,$row3[0])==0)
-						{ ?> selected <?php }
-						?> selected>
-						<?php
-						echo($row3[0]);
-						?></option>
+	<tr>
+		<td width="35%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr" align="center">
+			<img border="0" id="img82" src="header_files/AcadYearBut.jpg" height="24" width="120" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;">
+		</td>
+
+		<td width="62%" height="25" dir="ltr">
+
+			<p align="right">
+					<select size="1" name="D3" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3">
+					<!--
+					<option value="" selected>
+						&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
+					</option>-->
 					<?php
-					}//end of while
-					?>
-					</select>
-				<?php
-				}//end of if
-			?>
-	</td>
+					$conn = db_connect();
+					$sql_query3="select AcadYNo from AcadYear order by AcadYNo DESC";
+					$result3=mysqli_query($sql_query3);
+					if (mysqli_num_rows($result3))
+					{
+					while($row3=mysql_fetch_row($result3))
+					{?>
+						<option value="<?php echo($row3[0]);?>"
+							<?php
+							if(strcmp($year,$row3[0])==0)
+							{ ?> selected <?php }
+							?> selected>
+							<?php
+							echo($row3[0]);
+							?></option>
+						<?php
+						}//end of while
+						?>
+						</select>
+					<?php
+					}//end of if
+				?>
+		</td>
 
-</tr>
+	</tr>
 
-<tr>
-<td width="83%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="47" dir="ltr" align="center" colspan="2">
-	<input name="Submit" type="submit" value=" &#1583;&#1582;&#1608;&#1604;  "  tabindex="4" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
-</tr>
-</table>
+	<tr>
+	<td width="83%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="47" dir="ltr" align="center" colspan="2">
+		<input name="Submit" type="submit" value=" &#1583;&#1582;&#1608;&#1604;  "  tabindex="4" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
+	</tr>
+	</table>
 </form>
 </div>
 
