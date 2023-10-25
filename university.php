@@ -41,9 +41,9 @@ if (strcmp($_SESSION['username'],"")!=0)
 	  <tr>
 
 	  <?php
-	 	$sql = "select UniversityName,UniversityCode,Logo from Universities order by UniversityCode";
-		$result = mysql_query($sql);
-		if (mysql_num_rows($result)>0 )
+	 	$sql = "SELECT UniversityName,UniversityCode,Logo FROM Universities order by UniversityCode";
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result)>0 )
 		{
 		 ?>
 		  <td align="center" height="25" width="28%" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
@@ -62,7 +62,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 		  <tr>
 
 	   <?php
-	   	 while($row=mysql_fetch_row($result))
+	   	 while($row = mysqli_fetch_row($result))
 	   	  {
 	    ?>
 	      <td bordercolor="#003366" align="center" width="28%" bgcolor="#5A74A0">
