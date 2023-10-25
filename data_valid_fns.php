@@ -13,9 +13,9 @@ function Checkuser($username,$Passwd)
  $conn = db_connect();
 
 $sql = "select * from LoginAdmin where UserName='$username' and Passwd='$Passwd'";
-$result = mysql_query($sql);
+$result = mysqli_query($conn, $sql);
 
-if (mysql_num_rows($result)>0 )
+if (mysqli_num_rows($result)>0 )
 
    	return true;
 
