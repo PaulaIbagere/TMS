@@ -312,21 +312,16 @@ function DisplayLoginForm()
 						&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
 					</option>-->
 					<?php
-					$conn = db_connect();
-					$sql_query3="select AcadYNo from AcadYear order by AcadYNo DESC";
-					$result3=mysqli_query($sql_query3);
-					if (mysqli_num_rows($result3))
-					{
-					while($row3=mysql_fetch_row($result3))
-					{?>
-						<option value="<?php echo($row3[0]);?>"
-							<?php
-							if(strcmp($year,$row3[0])==0)
-							{ ?> selected <?php }
-							?> selected>
-							<?php
-							echo($row3[0]);
-							?></option>
+						$conn = db_connect();
+						$sql_query3="select AcadYNo from AcadYear order by AcadYNo DESC";
+						$result3=mysqli_query($conn, $sql_query3);
+						if (mysqli_num_rows($result3))
+						{
+						while($row3=mysqli_fetch_row($result3)){
+					?>
+						<option value="<?php echo $row3[0];?>">
+						<?php echo $row3[0] ?>
+						</option>
 						<?php
 						}//end of while
 						?>
@@ -339,8 +334,12 @@ function DisplayLoginForm()
 	</tr>
 
 	<tr>
-	<td width="83%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="47" dir="ltr" align="center" colspan="2">
-		<input name="Submit" type="submit" value=" &#1583;&#1582;&#1608;&#1604;  "  tabindex="4" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
+		<td width="83%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="47" dir="ltr" align="center" colspan="2">
+			<input name="Submit" type="submit" value=" &#1583;&#1582;&#1608;&#1604;  "  tabindex="4" 
+			style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; 
+			vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" 
+			dir="rtl">
+		</td>
 	</tr>
 	</table>
 </form>
@@ -436,9 +435,9 @@ function CheckCollege($username,$Passwd)
 //$sql = "select * from LoginAdmin where UserName='$username' and Passwd='$Passwd'";
 //windows
 $sql = "select * from Colleges where UserName='$username' and Passwd ='$Passwd'";
-$result = mysql_query($sql);
+$result = mysqli_query($conn, $sql);
 
-if (mysql_num_rows($result)>0 )
+if (mysqli_num_rows($result)>0 )
 {
    	return true;
 }

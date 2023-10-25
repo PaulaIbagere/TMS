@@ -41,7 +41,7 @@ if($username)
 		
 		//Href2($href,$display);
 		
-		//ÊÓÌíá ÇáÇŞÓÇã
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		$header=$header." - "."&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;"; 
 
 		Href2($href,$header);
@@ -50,8 +50,8 @@ if($username)
 		
 		//(2)Get Depts
 
-			$sql2 = "select distinct(DeptName),DeptNo from Departments where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' group by DeptName order by DeptNo";
-		$result2 = mysql_query($sql2);
+			$sql2 = "SELECT distinct(DeptName),DeptNo FROM Departments WHERE UniversityCode='$uncode1' AND CollegeCode='$CollegeCode1' group by DeptName order by DeptNo";
+		$result2 = mysqli_query($conn, $sql2);
 		?>
 		 <div align="center">
 			<table border="0" width="100%" id="table1" height="219">
@@ -67,7 +67,7 @@ if($username)
 
 				<?php
 
-				if (mysql_num_rows($result2)>0 )
+				if (mysqli_num_rows($result2)>0 )
 				 {
 				?>
 				  

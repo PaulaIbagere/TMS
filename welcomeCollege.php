@@ -43,9 +43,9 @@ if($flag!=1)
 			include("header2.php");
 
 			$sql = "select CollegeName,CollegeCode,UniversityCode from Colleges where UserName='$username' and Passwd='$Passwd'";
-			$result = mysql_query($sql);
+			$result = mysqli_query($conn, $sql);
 
-			$row=mysql_fetch_row($result);
+			$row=mysqli_fetch_row($result);
 
 			//create sessin for College Name
 
