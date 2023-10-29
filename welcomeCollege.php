@@ -3,6 +3,7 @@
 session_start();
 
 require_once('main.php');
+include('header.php');	
 
 //Page Title & Background
 
