@@ -38,7 +38,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 		//(2)Get Depts
 
 		$sql2 = "select distinct(DeptName),DeptNo from Departments where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' group by DeptName order by DeptNo";
-		$result2 = mysql_query($sql2);
+		$result2 = mysqli_query($conn, $sql2);
 		?>
 		 <div align="center">
 			<table border="0" width="100%" id="table1" height="219">
@@ -54,7 +54,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 
 				<?php
 
-				if (mysql_num_rows($result2)>0 )
+				if (mysqli_num_rows($result2)>0 )
 				 {
 				?>
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="26%" bordercolorlight="#003366" bordercolordark="#003366">
@@ -67,7 +67,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 				  </td>
 
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="46%" bordercolorlight="#003366" bordercolordark="#003366">
-					  <img border="0" id="img45" src="Depart_Files/button34.jpg" height="27" width="135" alt="ÇáÞÓã/ÇáßáíÉ" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="ÇáÞÓã/ÇáßáíÉ">
+					  <img border="0" id="img45" src="Depart_Files/button34.jpg" height="27" width="135" alt="ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="ï¿½ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">
 				  </td>
 				  <td width="24%" bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" bordercolorlight="#003366" bordercolordark="#003366">
 					  <p align="center" dir="rtl">

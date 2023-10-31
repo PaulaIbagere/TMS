@@ -75,9 +75,9 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 							3 ->  Deploma
 						-->
 							<select size="1" name="DProgType" dir="rtl" tabindex="3" style="color: #000066; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold">
-								<option value="1" <?php if (($ProgType==1)||($do==0)){?> selected <?php }?> >&#1576;&#1603;&#1575;&#1604;&#1608;&#1585;&#1610;&#1608;&#1587;</option>
-								<option value="2" <?php if ($ProgType==2){?> selected <?php }?> >&#1605;&#1575;&#1580;&#1587;&#1578;&#1610;&#1585;</option>
-								<option value="3" <?php if ($ProgType==3){?> selected <?php }?> >&#1583;&#1576;&#1604;&#1608;&#1605; &#1593;&#1575;&#1604;&#1609;</option>
+								<option value="1" <?php if (($ProgType==1)||($do==0)){?> selected <?php }?> >Bachelor's</option>
+								<option value="2" <?php if ($ProgType==2){?> selected <?php }?> >Masters</option>
+								<option value="3" <?php if ($ProgType==3){?> selected <?php }?> >Higher Diploma</option>
 								
 						</select>
 					</td>

@@ -28,16 +28,16 @@ if (strcmp($_SESSION['username'],"")!=0)
 		//display all universities with their Colleges
 		$conn = db_connect();
 		$sql1 = "select UniversityCode,UniversityName from Universities";
-		$result=mysql_query($sql1);
-		if (mysql_num_rows($result))
+		$result=mysqli_query($conn, $sql1);
+		if (mysqli_num_rows($result))
 		{
 			while($row=mysql_fetch_row($result))
 			{
 				$collegename="";
 				$sql2 = "select CollegeCode,CollegeName,UserName,Passwd from Colleges where
 						UniversityCode='$row[0]' ";
-				$result2=mysql_query($sql2);
-				if (mysql_num_rows($result2))
+				$result2=mysqli_query($conn, $sql2);
+				if (mysqli_num_rows($result2))
 				{
 				?>
 					<tr>
