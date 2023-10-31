@@ -1,6 +1,6 @@
 <?php
 //echo(" This Page Display Reports for : Teacher and Student on each College");
-
+session_start();
 require_once('main.php');
 
 $conn = db_connect();

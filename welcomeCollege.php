@@ -14,6 +14,7 @@ Background_Page();
 
 $flag = $_GET['flag'];
 $flag=intval($flag);
+echo $flag;
 
 $conn = db_connect();
 
@@ -84,9 +85,9 @@ else
 		$year=$_SESSION['year'];
 
 		$sql = "select CollegeCode,UniversityCode from Colleges where UserName='$username' and Passwd='$Passwd'";
-		$result = mysql_query($sql);
+		$result = mysqli_query($conn, $sql);
 
-		$row=mysql_fetch_row($result);
+		$row=mysqli_fetch_row($result);
 
 		//create sessin for College Name
 

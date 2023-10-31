@@ -36,7 +36,7 @@ if($username)
 		//(2)Get Depts
 
 			$sql2 = "select distinct(DeptName),DeptNo from Departments where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' group by DeptName order by DeptNo";
-		$result2 = mysql_query($sql2);
+		$result2 = mysqli_query($conn, $sql2);
 		?>
 		 <div align="center">
 			<table border="0" width="100%" id="table1" height="219">
@@ -52,7 +52,7 @@ if($username)
 
 				<?php
 
-				if (mysql_num_rows($result2)>0 )
+				if (mysqli_num_rows($result2)>0 )
 				 {
 				?>
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="18%" bordercolorlight="#003366" bordercolordark="#003366">

@@ -67,6 +67,8 @@ o\:*         { behavior: url(#default#VML) }
         <td bgcolor="#B0CCFF" align="center">&nbsp;</td>
         </tr>
 	</table>
+  <!-- links to navigate through the pages-->
+  <a href="index.php">Home Page</a>
   <a href="TMS-College.php">College Login</a>
   <a href="TMS-Manager.php">Admin login</a>
 </div>

@@ -205,9 +205,9 @@ echo($note2);
 //(1)
 function ValidCollCode($colCode,$uncode,$colLoc)
 {
-	db_connect();
+	$conn = db_connect();
 	$sql_query="select CollegeCode from Colleges where UniversityCode='$uncode' and UnLoc='$colLoc'";
-	$result=mysql_query($sql_query);
+	$result=mysqli_query($conn, $sql_query);
 
 	$flag=true;
 	while ($row=mysql_fetch_row($result))
@@ -224,9 +224,9 @@ function ValidCollCode($colCode,$uncode,$colLoc)
 //(2)
 function ValidCollName($colName,$uncode,$colLoc)
 {
-	db_connect();
+	$conn = db_connect();
 	$sql_query="select CollegeName from Colleges where UniversityCode='$uncode' and UnLoc='$colLoc'";
-	$result=mysql_query($sql_query);
+	$result=mysqli_query($conn, $sql_query);
 	$flag=true;
 	while ($row=mysql_fetch_row($result))
 	{

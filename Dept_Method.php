@@ -244,8 +244,8 @@ function GetCollegeName($uncode1,$CollegeCode1)
 	UniversityCode='$uncode1' and
 	CollegeCode='$CollegeCode1'";
 
-	$results = mysql_query($sqls);
-	$rows=mysql_fetch_row($results);
+	$results = mysqli_query($conn, $sqls);
+	$rows=mysqli_fetch_row($results);
 
 	$CollName=$rows[0];
 
