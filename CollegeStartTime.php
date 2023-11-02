@@ -1,7 +1,7 @@
 <?php
-session_start();
+// session_start();
 require_once('main.php');
-
+require_once('University_Method.php');
 //Page Title
 Display_Title();
 

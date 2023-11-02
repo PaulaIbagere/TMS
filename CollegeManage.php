@@ -31,11 +31,12 @@ if($username)
 		$href="welcomeCollege.php?flag=1";
 
 		$header=$_SESSION['collegename'];
+		// header('location:welcomeColege.php?flag=1');
 
 		Href2($href,$header."&nbsp;&nbsp;>>&nbsp;&#1575;&#1604;&#1580;&#1583;&#1608;&#1604;&#1577;");
 		//(2)Get Depts
 
-			$sql2 = "select distinct(DeptName),DeptNo from Departments where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' group by DeptName order by DeptNo";
+			$sql2 = "SELECT distinct(DeptName),DeptNo FROM Departments where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' group by DeptName order by DeptNo";
 		$result2 = mysqli_query($conn, $sql2);
 		?>
 		 <div align="center">
@@ -74,18 +75,18 @@ if($username)
 				  </tr>
 				  <tr>
 				 <?php
-				  	while($row2=mysql_fetch_row($result2))
+				  	while($row2=mysqli_fetch_row($result2))
 				  	{
 					  	$sql33 = "select NoOfSemester from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
 
-					  $result33 = mysql_query($sql33);
+					  $result33 = mysqli_query($conn, $sql33);
 
-					  if (mysql_num_rows($result33)>0 )
+					  if (mysqli_num_rows($result33)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="18%" height="35">
 					  <?php
-					  	while($row33=mysql_fetch_row($result33))
+					  	while($row33=mysqli_fetch_row($result33))
 					  	{
 					  	?>
 							<font face="Traditional Arabic" color="#FFFFFF" size="3">
@@ -104,15 +105,15 @@ if($username)
 					  </td>
 
 					  <?php
-					  $sql3 = "select AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
-					  $result3 = mysql_query($sql3);
+					  $sql3 = "SELECT AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  FROM Departments,AcadDegree WHERE UniversityCode='$uncode1' AND CollegeCode='$CollegeCode1' AND Departments.DeptName='$row2[0]' AND Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
+					  $result3 = mysqli_query($conn, $sql3);
 
-					  if (mysql_num_rows($result3)>0 )
+					  if (mysqli_num_rows($result3)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="27%" height="35">
 					  <?php
-					  	while($row3=mysql_fetch_row($result3))
+					  	while($row3=mysqli_fetch_row($result3))
 					  	{
 					  	?>
 			 					<font face="Traditional Arabic" color="#B0CCFF" size="3">

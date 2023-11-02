@@ -33,7 +33,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	
 	$StartSlot=4;
 
-	if($_POST['BS'])
+	if(isset($_POST['BS']))
 	{
 		$univCode=$_POST['UnivCode'];
 		$univCode=intval($univCode);

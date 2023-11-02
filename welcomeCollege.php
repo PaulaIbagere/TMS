@@ -14,7 +14,7 @@ Background_Page();
 
 $flag = $_GET['flag'];
 $flag=intval($flag);
-echo $flag;
+
 
 $conn = db_connect();
 

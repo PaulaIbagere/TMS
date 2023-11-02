@@ -2,6 +2,7 @@
 session_start();
 require_once('main.php');
 
+
 //Page Title
 Display_Title();
 
@@ -90,13 +91,13 @@ if($username)
 				  </tr>
 				  <tr>
 				 <?php
-				  	while($row2=mysql_fetch_row($result2))
+				  	while($row2=mysqli_fetch_row($result2))
 				  	{
 					  	$sql33 = "select AcadDegree.NoOfSemester,AcadDegree.AcadDegreeId from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
 
-					  $result33 = mysql_query($sql33);
+					  $result33 = mysqli_query($conn, $sql33);
 
-					  if (mysql_num_rows($result33)>0 )
+					  if (mysqli_num_rows($result33)>0 )
 					  {
 					  	
 					  ?>
@@ -104,7 +105,7 @@ if($username)
 					  <td bordercolor="#003366" align="center" width="10%">
 					  <?php
 					  	$SemNum="";
-					  	while($row33=mysql_fetch_row($result33))
+					  	while($row33=mysqli_fetch_row($result33))
 					  	{
 					  		$SemNum=$SemNum.'<font face="Times New Roman" color="#FFFFFF" size="3">'.$row33[0].'</font>'."</br>"	
 					  	?>
@@ -127,9 +128,9 @@ if($username)
 
 					  <?php
 					  	$sql3 = "select AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
-					  $result3 = mysql_query($sql3);
+					  $result3 = mysqli_query($conn, $sql3);
 
-					  if (mysql_num_rows($result3)>0 )
+					  if (mysqli_num_rows($result3)>0 )
 					  {
 					  ?>
 					  

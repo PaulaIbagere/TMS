@@ -98,10 +98,10 @@ if($username)
 
 		$sql="select TeacherNo,TeacherName,Qualif,Status from Teachers where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1'
 			and AcadYNo='$year' order by Qualif";
-		$result = mysql_query($sql);
-		if (mysql_num_rows($result)>0 )
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result)>0 )
 		{
-		 while($row=mysql_fetch_row($result))
+		 while($row=mysqli_fetch_row($result))
 	   	  {
 			?>
 			<td bordercolor="#003366" align="center" width="2%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" style="border-color: #003366" bgcolor="#003366" height="30">

@@ -48,7 +48,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 				  <table border="2" width="96%" bordercolorlight="#003366" bordercolordark="#003366" id="table2" bordercolor="#003366" cellpadding="5" cellspacing="5">
 					<tr>
 						<td bordercolor="#003366" align="right" bgcolor="#5A74A0" height="31" colspan="4" bordercolorlight="#003366" bordercolordark="#003366">
-					    <img border="0" id="img44" src="Depart_Files/button30.jpg" height="27" width="135" alt="&#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;" onmouseover="FP_swapImg(1,0,/*id*/'img44',/*url*/'Depart_Files/button31.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img44',/*url*/'Depart_Files/button30.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img44',/*url*/'Depart_Files/button32.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img44',/*url*/'Depart_Files/button31.jpg')"></td>
+					    Sections<img border="0" id="img44" src="Depart_Files/button30.jpg" height="27" width="135" alt="&#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;" onmouseover="FP_swapImg(1,0,/*id*/'img44',/*url*/'Depart_Files/button31.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img44',/*url*/'Depart_Files/button30.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img44',/*url*/'Depart_Files/button32.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img44',/*url*/'Depart_Files/button31.jpg')"></td>
 					</tr>
 				<tr>
 
@@ -76,18 +76,18 @@ if(($uncode1>0)&&($CollegeCode1>0))
 				  </tr>
 				  <tr>
 				 <?php
-				  	while($row2=mysql_fetch_row($result2))
+				  	while($row2=mysqli_fetch_row($result2))
 				  	{
 					  	$sql33 = "select NoOfSemester from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
 
-					  $result33 = mysql_query($sql33);
+					  $result33 = mysqli_query($conn, $sql33);
 
-					  if (mysql_num_rows($result33)>0 )
+					  if (mysqli_num_rows($result33)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="26%" height="35">
 					  <?php
-					  	while($row33=mysql_fetch_row($result33))
+					  	while($row33=mysqli_fetch_row($result33))
 					  	{
 					  	?>
 							<font face="Traditional Arabic" color="#FFFFFF" size="3">
@@ -106,10 +106,10 @@ if(($uncode1>0)&&($CollegeCode1>0))
 					  </td>
 
 					  <?php
-					  	$sql3 = "select AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
-					  $result3 = mysql_query($sql3);
+					  	$sql3 = "SELECT AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
+					  $result3 = mysqli_query($conn, $sql3);
 
-					  if (mysql_num_rows($result3)>0 )
+					  if (mysqli_num_rows($result3)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="26%" height="35">
@@ -157,7 +157,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 				 	{
 					?>
 					<td bordercolor="#003366" align="center" width="73%" bgcolor="#5A74A0" colspan="4">
-					<img border="0" id="img42" src="Depart_Files/button36.jpg" height="40" width="200" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1602;&#1587;&#1605;"></td>
+					No Section has been selected<img border="0" id="img42" src="Depart_Files/button36.jpg" height="40" width="200" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1602;&#1587;&#1605;"></td>
 					</tr>
 					<?php
 					}

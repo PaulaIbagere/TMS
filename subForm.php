@@ -134,7 +134,7 @@ if($username)
 			{	
 					$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 					('$year','$mday','$Timeslot[0]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				
 				if (($results)&&($numbox>0))
 		  		{
@@ -153,7 +153,7 @@ if($username)
 			{
 					$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 					('$year','$mday','$Timeslot[1]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				
 				if (($results)&&($numbox>0))
 				{
@@ -209,7 +209,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[4]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -227,7 +227,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[5]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -245,7 +245,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[6]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				
 				if (($results)&&($numbox>0))
 		  		{
@@ -264,7 +264,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[7]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				
 				if (($results)&&($numbox>0))
 		  		{
@@ -283,7 +283,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[8]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -301,7 +301,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[9]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -319,7 +319,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[10]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -337,7 +337,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[11]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -357,7 +357,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[12]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -375,7 +375,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[13]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -393,7 +393,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[14]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -411,7 +411,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[15]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -429,7 +429,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[16]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -466,7 +466,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[18]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -483,9 +483,9 @@ if($username)
 
 			if($_POST['C20'])
 			{
-				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
+				$ssql = "INSERT INTO ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[19]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -504,7 +504,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[20]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -541,7 +541,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[22]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -559,7 +559,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[23]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($conn, $ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");

@@ -35,8 +35,8 @@ if($username)
 	   	//(1)get NO of Semester
 	   	$sql3 = "select NoOfSemester,AcadDegreeName from AcadDegree where
 	   	AcadDegreeId='$AcadDeg'";
-	 	$result3 = mysql_query($sql3);
-	  	$row3=mysql_fetch_row($result3);
+	 	$result3 = mysqli_query($conn, $sql3);
+	  	$row3=mysqli_fetch_row($result3);
 
 
 	   	//(2) Get No of Yearsin the Depart
@@ -44,8 +44,8 @@ if($username)
 
 		
 	   		$sql11 = "select ClassName,ClassNo from ClassYear where ClassNo<='$NoOFYear'";
-	   		$result11 = mysql_query($sql11);
-			if (mysql_num_rows($result11)>0 )
+	   		$result11 = mysqli_query($conn, $sql11);
+			if (mysqli_num_rows($result11)>0 )
 			{
 			?>
 			<div align="center">

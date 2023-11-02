@@ -223,11 +223,11 @@ function Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubN
 function GetUniversityName($uncode1)
 {
 	$conn = db_connect();
-	$sqls = "select UniversityName from Universities  where
+	$sqls = "SELECT UniversityName from Universities  where
 	UniversityCode='$uncode1'";
 
-	$results = mysql_query($sqls);
-	$rows=mysql_fetch_row($results);
+	$results = mysqli_query($conn, $sqls);
+	$rows=mysqli_fetch_row($results);
 
 	$UnivName=$rows[0];
 
@@ -1593,7 +1593,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 	$mteach=$_POST['D5'];
 	
-	if($_POST['DSec'])
+	if(isset($_POST['DSec']))
 	{
 		$SecID=$_POST['DSec'];
 	}

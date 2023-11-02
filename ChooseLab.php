@@ -48,7 +48,7 @@ if($username)
     	{
     		//valid data
 			$sql3 = "insert into usedBy (AcadYNo,UniversityCode,CollegeCode,BId,SubBId) values ('$Year','$univCode','$CollegeCode','2','$LabName')";
-			$result3 = mysql_query($sql3);
+			$result3 = mysqli_query($conn, $sql3);
 			if ($result3)
 		  		{
 		  			$msg="&#1578;&#1605; &#1578;&#1582;&#1589;&#1610;&#1589; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1576;&#1606;&#1580;&#1575;&#1581;";

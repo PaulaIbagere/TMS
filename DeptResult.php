@@ -69,7 +69,7 @@ if($username)
   	//Get DeptNo
    	$DeptNo=GetDeptNo($uncode,$CollegeCode,$AcadProgId);
 
-  	if($_POST['B1'])
+  	if(isset($_POST['B1']))
   	{
   	
   		$DeptName = $_POST['T2'];
@@ -292,7 +292,7 @@ if($username)
 	else
     if(!ctype_digit($noOfSem))
     {
-		//ÊÓÌíá ÇáÈÑÇãÌ ÇáÇßÇÏíãíÉ    		
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½    		
 		//$msg="&#1575;&#1604;&#1576;&#1585;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1610;&#1577;";
 		//DisplayHeader($msg);
 				

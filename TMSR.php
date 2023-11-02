@@ -46,7 +46,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 
 		$header=GetCollegeName($uncode1,$CollegeCode1);
 
-		Href2($href,$header."&nbsp;&nbsp;>>&nbsp;&#1575;&#1587;&#1578;&#1582;&#1585;&#1575;&#1580; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;");
+		Href2($href,$header."&nbsp;&nbsp;>>Extracting Reports");
 	}
 	//
 	else
