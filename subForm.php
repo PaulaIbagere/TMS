@@ -172,7 +172,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[2]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($ssql);
 				
 				if (($results)&&($numbox>0))
 		  		{
@@ -191,7 +191,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[3]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -448,7 +448,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[17]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");
@@ -523,7 +523,7 @@ if($username)
 			{
 				$ssql = "insert into ManagingLec (AcadYNo,MDays,MTimes,BId,SubBId,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,SubCode,SubType,GId,TeacherId) values
 				('$year','$mday','$Timeslot[21]','$op','$LecNo','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$msub','$op','$GId','$mteach')";
-				$results = mysql_query($ssql);
+				$results = mysqli_query($ssql);
 				if (($results)&&($numbox>0))
 		  		{
 					//echo("Sucess");

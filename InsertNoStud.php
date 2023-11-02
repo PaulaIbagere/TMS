@@ -77,8 +77,8 @@ if($username)
 			AcadDegreeId='$AcadDeg' and
 			ClassNo='$Classno' and SecID='$SecID' and 			
 			SemNo='$Sem'";
-	$result = mysql_query($sql);
-	$row=mysql_fetch_row($result);
+	$result = mysqli_query($sql);
+	$row=mysqli_fetch_row($result);
 	if($row>0)
 	{
 		//echo("data had been inserted..");

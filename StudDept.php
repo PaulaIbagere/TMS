@@ -114,7 +114,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 					  ?>
 					  <td bordercolor="#003366" align="center" width="26%" height="35">
 					  <?php
-					  	while($row3=mysql_fetch_row($result3))
+					  	while($row3=mysqli_fetch_row($result3))
 					  	{
 					  	?>
 			 					<font face="Traditional Arabic" color="#B0CCFF" size="3">

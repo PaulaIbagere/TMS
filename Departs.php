@@ -30,12 +30,12 @@ if (strcmp($_SESSION['username'],"")!=0)
 			$conn = db_connect();
 
 			 $sql1 = "select CollegeName from Colleges where UniversityCode='$uncode11' and CollegeCode='$CollegeCode11'";
-			 $result1 = mysql_query($sql1);
+			 $result1 = mysqli_query($sql1);
 
 
 			 //
 		   $sql2 = "select distinct(DeptName),DeptNo from Departments,AcadDegree where UniversityCode='$uncode11' and CollegeCode='$CollegeCode11' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId group by DeptName order by DeptNo";
-		   $result2 = mysql_query($sql2);
+		   $result2 = mysqli_query($sql2);
 
 		 ?>
 		 <div align="center">
@@ -51,7 +51,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 						<?php
 						if (mysql_num_rows($result1)>0 )
 						 {
-						   $row1=mysql_fetch_row($result1);
+						   $row1=mysqli_fetch_row($result1);
 						   DisplaySuccHeader($row1[0]);
 
 						 }
@@ -84,7 +84,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				  </tr>
 				  <tr>
 				  <?php
-				  	while($row2=mysql_fetch_row($result2))
+				  	while($row2=mysqli_fetch_row($result2))
 				  	{
 				  	?>
 
@@ -95,11 +95,11 @@ if (strcmp($_SESSION['username'],"")!=0)
 						<?php
 						//echo($row2[0]);
 						$sql3 = "select AcadDegreeName from Departments,AcadDegree where UniversityCode='$uncode11' and CollegeCode='$CollegeCode11' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
-			 			$result3 = mysql_query($sql3);
+			 			$result3 = mysqli_query($sql3);
 			 			$c=mysql_num_rows($result3);
 			 			if (mysql_num_rows($result3)>0 )
 			 			{
-			 				while($row3=mysql_fetch_row($result3))
+			 				while($row3=mysqli_fetch_row($result3))
 			 				{
 			 				?>
 

@@ -41,22 +41,22 @@ if($username)
 						UniversityCode='$uncode1' and
 						CollegeCode='$CollegeCode1' and
 						DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg'";
-				$result2 = mysql_query($sql2);
-				$row2=mysql_fetch_row($result2);
+				$result2 = mysqli_query($sql2);
+				$row2=mysqli_fetch_row($result2);
 
 			//Get Acadmic Name
 				$sql3 = "select AcadDegreeName from AcadDegree where
 				   	AcadDegreeId='$AcadDeg'";
-				$result3 = mysql_query($sql3);
-				$row3=mysql_fetch_row($result3);
+				$result3 = mysqli_query($sql3);
+				$row3=mysqli_fetch_row($result3);
 
 			//Display ClassName & SemName
 				$sql4 = "select ClassName,SemName from Semester,ClassYear
 				where Semester.ClassNo='$Classno' and
 				ClassYear.ClassNo=Semester.ClassNo and
 				Semester.SemNo='$Sem'";
-				$result4 = mysql_query($sql4);
-				$row4=mysql_fetch_row($result4);
+				$result4 = mysqli_query($sql4);
+				$row4=mysqli_fetch_row($result4);
 
 		 ?>
 		 <div align="center">
@@ -98,7 +98,7 @@ if($username)
 								DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 								ClassNo='$Classno' and
 								SemNo='$Sem' and SubType='1'";
-			$result = mysql_query($sql);
+			$result = mysqli_query($sql);
 			if (mysql_num_rows($result)>0 )
 			{
 			?>
@@ -123,7 +123,7 @@ if($username)
 				</tr>
 				<tr>
 			<?php
-				while($row=mysql_fetch_row($result))
+				while($row=mysqli_fetch_row($result))
 	   	  		 {
 				?>
 					<td bordercolor="#5A74A0" align="center" height="31" width="18%" bordercolorlight="#000000" bordercolordark="#000000">
@@ -139,8 +139,8 @@ if($username)
 								ClassNo='$Classno' and
 								SemNo='$Sem' and SubType='2' and
 								SubName='$SubName'";
-						$results = mysql_query($sqls);
-						$rows=mysql_fetch_row($results);
+						$results = mysqli_query($sqls);
+						$rows=mysqli_fetch_row($results);
 						if($rows)
 							echo($rows[0]);
 						else

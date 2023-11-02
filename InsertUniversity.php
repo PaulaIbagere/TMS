@@ -110,9 +110,9 @@ if($username)
       else{
          	db_connect();
 			$sql_query="select * from Universities ";
-			$result=mysql_query($sql_query);
+			$result=mysqli_query($sql_query);
 
-			while($row=mysql_fetch_row($result))
+			while($row=mysqli_fetch_row($result))
 			{
 			// Check Duplicated Code
 			if( $univCode==$row[0])
@@ -145,7 +145,7 @@ if($username)
 				    //Display_error_msg($msg,$path);
 					//Display_msg($msg,$path);
 					$sql_query1="insert into Universities values('$univCode','$univName','$newfile') ";
-	         		$result1=mysql_query($sql_query1);
+	         		$result1=mysqli_query($sql_query1);
 					if($result1)
 					{
 				    // after insert University data you must

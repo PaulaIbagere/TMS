@@ -121,8 +121,8 @@ if($username)
 			BId='$BId' and
 			SubBId='$SubBId'";
 
-		$Mresult1=mysql_query($Mang_query1);
-		$mrow1=mysql_fetch_row($Mresult1);
+		$Mresult1=mysqli_query($Mang_query1);
+		$mrow1=mysqli_fetch_row($Mresult1);
 
     	if($mrow1[0]==0)
     	{
@@ -133,7 +133,7 @@ if($username)
 					CollegeCode='$CollegeCode1' and
 					BId='$BId' and
 					SubBId='$SubBId'";
-			$resultd=mysql_query($sqld);
+			$resultd=mysqli_query($sqld);
 			if($resultd)
 			{
 

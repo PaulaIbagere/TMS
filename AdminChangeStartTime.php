@@ -50,7 +50,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 		$sql2 = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' order by CollegeCode";
 		$result2 = mysqli_query($conn, $sql2);
 
-		while($rowc = mysql_fetch_row($result2))
+		while($rowc = mysqli_fetch_row($result2))
 		{
 			$CollegeCode=$rowc[0];
 			
@@ -58,12 +58,12 @@ if (strcmp($_SESSION['username'],"")!=0)
 			
 			//if already inserted 
 			
-			$res=mysql_query("select TSID from CollegeStartTime where AcadYNo='$year' and 
+			$res=mysqli_query($conn, "select TSID from CollegeStartTime where AcadYNo='$year' and 
 									CollegeCode='$CollegeCode' and 
 									UniversityCode='$univCode' and 
 									SemNo='$SemNo'");
 			
-			$slot=mysql_fetch_row($res);
+			$slot=mysqli_fetch_row($res);
 			
 			if($slot[0]!= $StartSlot)
 			{

@@ -155,7 +155,7 @@ if((($uncode1>0)&&($CollegeCode1))&&(($AcadDeg>0)&&($DeptNo>0)))
 			SubType='$BId' and
 			GId='$GId' and
 			TeacherId='$TeacherId'";
-		$result=mysql_query($sql11);
+		$result=mysqli_query($sql11);
 		if($result)
 		{
 			//echo("data Successfully deleted..");

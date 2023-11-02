@@ -107,8 +107,8 @@ if($username)
  				//before insert you must Get the Max TeacherID
 
  				$sql = "select max(TeacherNo) from Teachers";
- 				$results=mysql_query($sql);
- 				$rows=mysql_fetch_row($results);
+ 				$results=mysqli_query($sql);
+ 				$rows=mysqli_fetch_row($results);
  				if($rows[0]==0)
  				 	$max=1;
  				else
@@ -117,7 +117,7 @@ if($username)
 				$TName=$pre.$TName;
 				// Now you can insert New Teacher
  					$sql2 = "insert into Teachers (AcadYNo,TeacherNo,UniversityCode,CollegeCode,TeacherName,Qualif,Status) values ('$year','$max','$uncode1','$CollegeCode1','$TName','$TQ','$status')";
-				$result2 = mysql_query($sql2);
+				$result2 = mysqli_query($sql2);
 				if ($result2)
 				{
 						$msg="&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1576;&#1606;&#1580;&#1575;&#1581;";
@@ -184,8 +184,8 @@ if($username)
 					$year=$_SESSION['year'];
 
 					$sql = "select TeacherName,Qualif,Status from Teachers where TeacherNo='$TName' group by TeacherNo";
-					$results=mysql_query($sql);
- 					$rows=mysql_fetch_row($results);
+					$results=mysqli_query($sql);
+ 					$rows=mysqli_fetch_row($results);
  					$TeacherName=$rows[0];
  					$Qualif=$rows[1];
  					
@@ -198,7 +198,7 @@ if($username)
 					//(2)Then insert Data
 
 						$sql2 = "insert into Teachers (AcadYNo,TeacherNo,UniversityCode,CollegeCode,TeacherName,Qualif,Status) values ('$year','$TName','$uncode1','$CollegeCode1','$TeacherName','$Qualif','$status')";
-					$result2 = mysql_query($sql2);
+					$result2 = mysqli_query($sql2);
 					if ($result2)
 					{
 							$msg="&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1576;&#1606;&#1580;&#1575;&#1581;";
@@ -278,7 +278,7 @@ if($username)
  				$year=$_SESSION['year'];
 				 
 				//update Teacher Based on CollegeCode 
-					$results=mysql_query("update Teachers set TeacherName='$TName',Qualif='$TQ',Status='$status' where TeacherNo='$TNo' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and  AcadYNo='$year'");
+					$results=mysqli_query("update Teachers set TeacherName='$TName',Qualif='$TQ',Status='$status' where TeacherNo='$TNo' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and  AcadYNo='$year'");
 							
 				if($results)
 				{

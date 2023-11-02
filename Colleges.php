@@ -42,7 +42,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				   <?php
 					if (mysql_num_rows($result2)>0 )
 					{
-					$row2=mysql_fetch_row($result2);
+					$row2=mysqli_fetch_row($result2);
 					DisplaySuccHeader($row2[0]);
 					//echo($row2[0]);
 					}
@@ -57,7 +57,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	 		    <tr>
 			<?php
 				$sql = "select CollegeName,CollegeCode from Colleges where UniversityCode='$uncode11'order by CollegeCode";
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 				if (mysql_num_rows($result)>0 )
 		          {
 			      ?>
@@ -70,7 +70,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				  </tr>
 				  <tr>
 				  <?php
-				  	 while($row=mysql_fetch_row($result))
+				  	 while($row=mysqli_fetch_row($result))
 				  	 {
 				  	 ?>
 

@@ -57,8 +57,8 @@ if($username)
 				CollegeCode='$CollegeCode' and
 				TeacherId='$TNo'";
 
-		$result1 = mysql_query($sql1);
-		$row1=mysql_fetch_row($result1);
+		$result1 = mysqli_query($sql1);
+		$row1=mysqli_fetch_row($result1);
 		if($row1[0]==0)
 		{
 			$TName=GetTeacherName($CollegeCode,$uncode,$TNo);
@@ -68,7 +68,7 @@ if($username)
 							TeacherNo='$TNo' and
 							UniversityCode='$uncode' and
 							CollegeCode='$CollegeCode'";
-			$result = mysql_query($sql);
+			$result = mysqli_query($sql);
 			if($result)
 			{
 				//echo("subject deleted..");
@@ -155,7 +155,7 @@ if($username)
 				TeacherId='$TNo' and
 				UniversityCode='$uncode' and
 				CollegeCode='$CollegeCode'";
-		$result = mysql_query($sql);
+		$result = mysqli_query($sql);
 		if($result)
 		{
 			$f=1;
@@ -172,7 +172,7 @@ if($username)
 					TeacherNo='$TNo' and
 					UniversityCode='$uncode' and
 					CollegeCode='$CollegeCode'";
-			$result2 = mysql_query($sql2);
+			$result2 = mysqli_query($sql2);
 			if($result2)
 			{
 					$header=$TName." &nbsp;>> &nbsp;"."&#1578;&#1605;&#1578; &#1593;&#1605;&#1604;&#1610;&#1577; &#1575;&#1604;&#1581;&#1584;&#1601; &#1576;&#1606;&#1580;&#1575;&#1581;";

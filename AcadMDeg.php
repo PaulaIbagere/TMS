@@ -35,8 +35,8 @@ if($username)
 
 	   	$sql3 = "select NoOfSemester,AcadDegreeName from AcadDegree where
 	   	AcadDegreeId='$AcadDeg'";
-	 	$result3 = mysql_query($sql3);
-	  	$row3=mysql_fetch_row($result3);
+	 	$result3 = mysqli_query($conn, $sql3);
+	  	$row3=mysqli_fetch_row($result3);
 		//echo($row3[0]);
 
 	   	//(2) Get No of Yearsin the Depart
@@ -50,8 +50,8 @@ if($username)
 
 		
 	   		$sql11 = "select ClassName,ClassNo from ClassYear where ClassNo<='$NoOFYear'";
-	   		$result11 = mysql_query($sql11);
-			if (mysql_num_rows($result11)>0 )
+	   		$result11 = mysqli_query($conn, $sql11);
+			if (mysqli_num_rows($result11)>0 )
 			{
 			?>
 			</br>
@@ -86,12 +86,12 @@ if($username)
 					<tr>
 
 				  <?php
-				  while($row11=mysql_fetch_row($result11))
+				  while($row11=mysqli_fetch_row($result11))
 				  {
 					$SemName="";
 				  	$sql22 = "select SemName,SemNo from Semester where ClassNo='$row11[1]'";
-				  	$result22 = mysql_query($sql22);
-				  	while($row22=mysql_fetch_row($result22))
+				  	$result22 = mysqli_query($conn, $sql22);
+				  	while($row22=mysqli_fetch_row($result22))
 				  	{
 				  		//here
 				  		//$SemName=$SemName."<font color='#FFFFFF'>".$row22[0]."</font>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<font color='#FFFF00'><a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=2'>"."&#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"."</a>"."&nbsp;&nbsp;&nbsp;&nbsp;"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=1'>"."&#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;"."</a></font>"."</br>"."</br>";

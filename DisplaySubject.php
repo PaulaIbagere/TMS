@@ -69,10 +69,10 @@ if($username)
 					DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 					ClassNo='$Classno' and SecID='$SecID' and
 					SemNo='$Sem' and SubType='1'";
-		$result = mysql_query($sql);
-		if (mysql_num_rows($result)>0 )
+		$result = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($result)>0 )
 		{
-		 while($row=mysql_fetch_row($result))
+		 while($row=mysqli_fetch_row($result))
 	   	  {
 	   	  	//note: op refer to SubCode
 	   	  	$SubName=$row[0];

@@ -83,7 +83,7 @@ if((($uncode1>0)&&($CollegeCode1))&&(($AcadDeg>0)&&($DeptNo>0)))
 					AcadDegreeId='$AcadDeg' and
 					SemNo='$Sem' and
 					ClassNo='$Classno' and SecID='$SecID'";
-		$result=mysql_query($sql11);
+		$result=mysqli_query($sql11);
 		if($result)
 		{
 		}

@@ -71,18 +71,18 @@ if($username)
 				  </tr>
 				  <tr>
 				 <?php
-				  	while($row2=mysql_fetch_row($result2))
+				  	while($row2=mysqli_fetch_row($result2))
 				  	{
 					  $sql33 = "select NoOfSemester from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
 
-					  $result33 = mysql_query($sql33);
+					  $result33 = mysqli_query($sql33);
 
 					  if (mysql_num_rows($result33)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="19%" height="35">
 					  <?php
-					  	while($row33=mysql_fetch_row($result33))
+					  	while($row33=mysqli_fetch_row($result33))
 					  	{
 					  	?>
 							<font face="Traditional Arabic" color="#FFFFFF" size="3">
@@ -102,14 +102,14 @@ if($username)
 
 					  <?php
 					  	$sql3 = "select AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
-					  $result3 = mysql_query($sql3);
+					  $result3 = mysqli_query($sql3);
 
 					  if (mysql_num_rows($result3)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="30%" height="35">
 					  <?php
-					  	while($row3=mysql_fetch_row($result3))
+					  	while($row3=mysqli_fetch_row($result3))
 					  	{
 					  	?>
 			 					<font face="Traditional Arabic" color="#B0CCFF" size="3">

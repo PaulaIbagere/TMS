@@ -142,7 +142,7 @@ if($username)
 					DisplayHeader($msg);
 
 					$sql_query1="insert into Colleges values('$colCode','$uncode','$colName','$colUName','$colPass','$colLoc') ";
-					$result1=mysql_query($sql_query1);
+					$result1=mysqli_query($sql_query1);
 					if($result1)
 						 {
 							//echo("Successful...");

@@ -119,7 +119,7 @@ if(($username)&&($year))
 				
 						//get subject details [lecture]
 				
-						$res = mysql_query("select SubHour,SubTHour from CollegeSubject where
+						$res = mysqli_query("select SubHour,SubTHour from CollegeSubject where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and
@@ -127,7 +127,7 @@ if(($username)&&($year))
 									ClassNo='$Classno' and SecID='$SecID' and
 									SemNo='$Sem' and SubCode='$SubCode'");
 				
-						$rows=mysql_fetch_row($res);
+						$rows=mysqli_fetch_row($res);
 				
 						$SubHour=$rows[0];
 						$SubTHour=$rows[1];
@@ -135,7 +135,7 @@ if(($username)&&($year))
 						//get subject details [lab]
 				
 						$SubLCode=$SubCode."L";
-						$res = mysql_query("select SubHour from CollegeSubject where
+						$res = mysqli_query("select SubHour from CollegeSubject where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and
@@ -147,7 +147,7 @@ if(($username)&&($year))
 							$SubLHour=0;
 						else
 						{
-							$rows=mysql_fetch_row($res);
+							$rows=mysqli_fetch_row($res);
 
 							$SubLHour=$rows[0];
 						}

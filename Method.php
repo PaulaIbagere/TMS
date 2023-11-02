@@ -57,7 +57,7 @@ function change_password($username,$old_password,$new_password)
  		$sql_query= "update Loginadmin
                             set Passwd = '$new_password'
                             where UserName = '$username'";
-		$result=mysql_query($sql_query);
+		$result=mysqli_query($sql_query);
 	 	if (!$result)
    				die('Password could not be changed.');
  		else

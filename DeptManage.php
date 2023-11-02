@@ -112,7 +112,7 @@ if($username)
 			if((($op==1)&&($s==1)) ||($op==2))
 			{
 					$sql = "select * from CollegeSubject where AcadYNo='$year' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SemNo='$Sem' and SubType=1 and SubHour!=0";
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 				
 				if(mysql_num_rows($result))
 				{
@@ -130,7 +130,7 @@ if($username)
  			 if(($op==1)&&($s==2))
 			 {
 			 	$sql = "select * from CollegeSubject where AcadYNo='$year' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SemNo='$Sem' and SubType=1 and SubTHour!=0";
-			 	$result = mysql_query($sql);
+			 	$result = mysqli_query($sql);
 			 	if(mysql_num_rows($result))
 			 	{
 			 		DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$year,$LectureName,$mday,$mtime,$msub,$mteach,$StudGroup,$SecID);

@@ -17,13 +17,13 @@ function GetAllDeparts($uncode,$CollegeCode)
 {
 	//return DeptNo -> $Depts[0]
 	
-	$result = mysql_query("select DeptNo from Departments where 
+	$result = mysqli_query("select DeptNo from Departments where 
 							
 							UniversityCode='$uncode' and CollegeCode='$CollegeCode'");
 
 	if(mysql_num_rows($result)>0)
 	{
-		while($row=mysql_fetch_row($result))
+		while($row=mysqli_fetch_row($result))
 		{	
 			$Depts[$row[0]]=$row[0];
 		}
@@ -40,14 +40,14 @@ function GetAllDeparts($uncode,$CollegeCode)
 function GetAllColleges($year,$univCode,$LecRoom)
 {
 	
-	$result = mysql_query("select distinct(CollegeCode) from usedby where 
+	$result = mysqli_query("select distinct(CollegeCode) from usedby where 
 							
 							AcadYNo='$year' and UniversityCode='$univCode' and BId='1' and SubBId='$LecRoom'");
 
 	if(mysql_num_rows($result)>0)
 	{
 		$i=1;
-		while($row=mysql_fetch_row($result))
+		while($row=mysqli_fetch_row($result))
 		{	
 			$Colleges[$i]=$row[0];
 			$i++;
@@ -106,14 +106,14 @@ function GetDeptSection($univCode,$CollegeCode,$DeptNo,$AcadProgId,$ClassNo)
 {	
 	//get all SecId on specific Depart 
 	
-	$result=mysql_query("select SecID from DeptSection where 
+	$result=mysqli_query("select SecID from DeptSection where 
     		 	UniversityCode='$univCode' and CollegeCode='$CollegeCode' and 
     		 	DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ");
     		 	
     
     if(mysql_num_rows($result)>0)
     {
-    	while( $row= mysql_fetch_row($result))
+    	while( $row= mysqli_fetch_row($result))
     	{
     		$SecID[$row[0]] = $row[0];
     	}
@@ -145,9 +145,9 @@ function GetSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$Se
 			SemNo='$SemNo' and
 			SubType='1'";
 	
-	$results = mysql_query($sqls);
+	$results = mysqli_query($sqls);
 
-	while($rows=mysql_fetch_row($results))
+	while($rows=mysqli_fetch_row($results))
 	{
 		$LecHours=$LecHours+$rows[0]+ $rows[1];
 		
@@ -190,9 +190,9 @@ function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 			SubType='2'";
 	
 		
-		$results = mysql_query($sqls);
+		$results = mysqli_query($sqls);
 
-		while($rows=mysql_fetch_row($results))
+		while($rows=mysqli_fetch_row($results))
 		{
 			$LabHours=$LabHours+$rows[0];
 		
@@ -227,9 +227,9 @@ function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 			SemNo='$SemNo' and
 			SubType='2'";
 	
-			$results = mysql_query($sqls);
+			$results = mysqli_query($sqls);
 
-			while($rows=mysql_fetch_row($results))
+			while($rows=mysqli_fetch_row($results))
 			{
 				$LabHours=$LabHours+$rows[0];
 		
@@ -276,9 +276,9 @@ function GetManagSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classn
 			SubType='1'";
 	
 	
-	$results = mysql_query($sqls);
+	$results = mysqli_query($sqls);
 
-	while($rows=mysql_fetch_row($results))
+	while($rows=mysqli_fetch_row($results))
 	{
 		$LecHours=$LecHours+($rows[0] * 0.5);
 		
@@ -320,9 +320,9 @@ function GetManagLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$S
 			SubType='2'";
 	
 		
-		$results = mysql_query($sqls);
+		$results = mysqli_query($sqls);
 
-		while($rows=mysql_fetch_row($results))
+		while($rows=mysqli_fetch_row($results))
 		{
 			
 			$LabHours=$LabHours+ ($rows[0] * 0.5);
@@ -360,9 +360,9 @@ function GetManagLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$S
 			SemNo='$SemNo' and
 			SubType='2'";
 	
-			$results = mysql_query($sqls);
+			$results = mysqli_query($sqls);
 
-			while($rows=mysql_fetch_row($results))
+			while($rows=mysqli_fetch_row($results))
 			{
 				
 				$LabHours=$LabHours + ($rows[0] * 0.5 );
@@ -632,12 +632,12 @@ function DisplayReportHeader($AcadProgType,$Classno,$SemNo,$DeptName,$AcadProgNa
 		if($option == 2)
 		{
 			//Display Table Data
-			//ÇÌãÇáì ÓÇÚÇÊ ÇáäÙÑí 
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 			$tot="&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1606;&#1592;&#1585;&#1610; ";
 			
 			$ltot="&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1593;&#1605;&#1604;&#1609; ";
 			
-			//<!--- ãÌãæÚ ÇáÓÇÚÇÊ ÇáãÏÎáÉ--->			
+			//<!--- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--->			
 				$manag="&#1605;&#1580;&#1605;&#1608;&#1593; &#1575;&#1604;&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1583;&#1582;&#1604;&#1577; &#1576;&#1575;&#1604;&#1580;&#1583;&#1608;&#1604;";
 		?>
 		<tr>
@@ -817,12 +817,12 @@ function DisplayReportHeader($AcadProgType,$Classno,$SemNo,$DeptName,$AcadProgNa
 		else
 		if($option==2)
 		{
-			//ÇÌãÇáì ÓÇÚÇÊ ÇáäÙÑí 
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 			$tot="&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1606;&#1592;&#1585;&#1610; ";
 			
 			$ltot="&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1593;&#1605;&#1604;&#1609; ";
 			
-			//<!--- ãÌãæÚ ÇáÓÇÚÇÊ ÇáãÏÎáÉ--->			
+			//<!--- ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--->			
 				$manag="&#1605;&#1580;&#1605;&#1608;&#1593; &#1575;&#1604;&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1583;&#1582;&#1604;&#1577; &#1576;&#1575;&#1604;&#1580;&#1583;&#1608;&#1604;";
 		?>
 		<tr>
@@ -892,10 +892,10 @@ function DisplayReportHeader2($AcadProgType,$Classno,$SemNo,$DeptName,$AcadProgN
 	switch($report)
 	{
 		case 2:{
-				// ÚÏÏ ÇáØáÇÈ
+				// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				$CellHeader1="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;";
 				
-				//ÚÏÏ ÇáãÌãæÚÇÊ
+				//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				$CellHeader2="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1575;&#1578;";
 				break;
 				}
@@ -1289,13 +1289,13 @@ function GetAllTeachers($univCode,$CollegeCode,$SemNo,$year,$Qualif,$status)
 			Status = '$status'
 			ORDER BY `TeacherId` ASC ";
 
-	$results = mysql_query($sqls);
+	$results = mysqli_query($sqls);
 	
 	$count=1;
 	
 	if(mysql_num_rows($results)>0)
 	{
-		while($row=mysql_fetch_row($results))
+		while($row=mysqli_fetch_row($results))
 		{	
 			$teachers[$count]=$row[0];
 			$count++;

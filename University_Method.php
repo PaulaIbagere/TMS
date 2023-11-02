@@ -225,9 +225,9 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 					//select * Universities Registered on the System
 					
 					$sql = "select UniversityCode,UniversityName from Universities";
-					$result = mysql_query($sql);
+					$result = mysqli_query($sql);
 					
-					while($row = mysql_fetch_row($result))
+					while($row = mysqli_fetch_row($result))
 					{
 					?>
 						<option value="<?php echo($row[0]);?>" <?php if($univCode==$row[0]){?> selected <?php }?> > 
@@ -301,10 +301,10 @@ function display_Building_form()
 				<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;</option>
 				<?php
 				$sql_query="select * from Universities order by UniversityCode";
-				$result=mysql_query($sql_query);
+				$result=mysqli_query($sql_query);
 				if (mysql_num_rows($result))
 				 {
-				    while($row=mysql_fetch_row($result))
+				    while($row=mysqli_fetch_row($result))
 					{?>
 
 					<option value="<?php
@@ -395,10 +395,10 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 		<?php
 		$conn = db_connect();
 		$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
-		$result22=mysql_query($sql_query22);
+		$result22=mysqli_query($sql_query22);
 		if (mysql_num_rows($result22))
 		{
-			while($row22=mysql_fetch_row($result22))
+			while($row22=mysqli_fetch_row($result22))
 			{?>
 			<option value="<?php
 			echo($row22[1]);
@@ -499,11 +499,11 @@ function Display_Lecture($univCode,$r)
 
 	<?php
 		$sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
-		$result11 = mysql_query($sqll);
+		$result11 = mysqli_query($sqll);
 		if (mysql_num_rows($result11)>0 )
 		{
   			//display
-			while($row11=mysql_fetch_row($result11))
+			while($row11=mysqli_fetch_row($result11))
 			{
 			?>
 			<tr>
@@ -523,7 +523,7 @@ function Display_Lecture($univCode,$r)
 			<?php
 					$sql2 = "select SubBName,Capacity,SubBId from SubBuildingSeminar where UnLoc='$row11[0]' and UniversityCode='$univCode' and BId='$r'";
 
-					$result2 = mysql_query($sql2);
+					$result2 = mysqli_query($sql2);
 
 					if (mysql_num_rows($result2)>0 )
 					{
@@ -540,7 +540,7 @@ function Display_Lecture($univCode,$r)
 
 			<tr>
         	<?php
-	   	 			while($row2=mysql_fetch_row($result2))
+	   	 			while($row2=mysqli_fetch_row($result2))
 	   	 			 {
 	   	 	?>
 	 			<td bordercolor="#003366" align="center" width="20%" height="35" bgcolor="#5A74A0">
@@ -625,10 +625,10 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 			<?php
 				$conn = db_connect();
 				$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
-				$result22=mysql_query($sql_query22);
+				$result22=mysqli_query($sql_query22);
 				if (mysql_num_rows($result22))
 				{
-					while($row22=mysql_fetch_row($result22))
+					while($row22=mysqli_fetch_row($result22))
 					{?>
 					     <option value="<?php
 							echo($row22[1]);
@@ -728,11 +728,11 @@ function Display_Lab($univCode,$r)
 
 <?php
 $sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
-$result11 = mysql_query($sqll);
+$result11 = mysqli_query($sqll);
 if (mysql_num_rows($result11)>0 )
 {
   //display
-while($row11=mysql_fetch_row($result11))
+while($row11=mysqli_fetch_row($result11))
 {
 ?>
 <tr>
@@ -754,7 +754,7 @@ while($row11=mysql_fetch_row($result11))
 <?php
 	$sql = "select SubBName,Capacity,SubBId from SubBuildingSeminar where UnLoc='$row11[0]'and UniversityCode='$univCode' and BId=2";
 
-	$result = mysql_query($sql);
+	$result = mysqli_query($sql);
 
 	if (mysql_num_rows($result)>0 )
 	{
@@ -772,7 +772,7 @@ while($row11=mysql_fetch_row($result11))
 
 			<tr>
 	        <?php
-		   	 while($row=mysql_fetch_row($result))
+		   	 while($row=mysqli_fetch_row($result))
 		   	  {
 		    ?>
 		 <td bordercolor="#003366" align="center" width="20%" height="35" bgcolor="#5A74A0">
@@ -905,9 +905,9 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 					//select * Universities Registered on the System
 					
 					$sql = "select UniversityCode,UniversityName from Universities";
-					$result = mysql_query($sql);
+					$result = mysqli_query($sql);
 					
-					while($row = mysql_fetch_row($result))
+					while($row = mysqli_fetch_row($result))
 					{
 					?>
 						<option value="<?php echo($row[0]);?>" <?php if($univCode==$row[0]){?> selected <?php }?> > 
@@ -931,7 +931,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 			if($_POST['UnivCode']> 0)
 			{
 				$sql = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' ";
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 				
 				if( mysql_num_rows($result)>0 )
 				{
@@ -950,7 +950,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 							</option> 
 						
 						<?php
-							while($rowc = mysql_fetch_row($result))
+							while($rowc = mysqli_fetch_row($result))
 							{
 						?>
 					 				<option value="<?php echo($rowc[0]);?>" <?php if($CollegeCode==$rowc[0]){ ?> selected <?php }?> >
@@ -1126,9 +1126,9 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 					//select * Universities Registered on the System
 					
 					$sql = "select UniversityCode,UniversityName from Universities";
-					$result = mysql_query($sql);
+					$result = mysqli_query($sql);
 					
-					while($row = mysql_fetch_row($result))
+					while($row = mysqli_fetch_row($result))
 					{
 					?>
 						<option value="<?php echo($row[0]);?>" <?php if($univCode==$row[0]){?> selected <?php }?> > 
@@ -1153,7 +1153,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 			if($_POST['UnivCode']> 0)
 			{
 				$sql = "select UnLoc from univloc where UniversityCode='$univCode' ";
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 				
 				if( mysql_num_rows($result)>0 )
 				{
@@ -1173,7 +1173,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 							</option> 
 						
 						<?php
-							while($rowc = mysql_fetch_row($result))
+							while($rowc = mysqli_fetch_row($result))
 							{
 						?>
 					 				<option value="<?php echo($rowc[0]);?>" <?php if(strcmp($UnivLoc,$rowc[0])==0){ ?> selected <?php }?> >
@@ -1199,7 +1199,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 				//Display Semster [one] and [two] as a default
 				
 					$sql = "select distinct(SubBId),SubBName from subbuildingseminar where UniversityCode='$univCode' and BId='1' and UnLoc='$_POST[UnivLoc]' order by SubBName";
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 
 			?>
 			<!-- LectureRooms-->
@@ -1219,7 +1219,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 							</option> 
 						
 						<?php
-							while($rowc = mysql_fetch_row($result))
+							while($rowc = mysqli_fetch_row($result))
 							{
 						?>
 					 				<option value="<?php echo($rowc[0]);?>" <?php if($LecRoom==$rowc[0]){ ?> selected <?php }?> >

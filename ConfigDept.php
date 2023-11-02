@@ -140,11 +140,12 @@ if($username)
 
 					  <td bordercolor="#003366" align="center" width="25%" height="35">
 					  <?php
-					  	while($row3=mysql_fetch_row($result3))
+					  	while($row3=mysqli_fetch_row($result3))
 					  	{
 					  	?>
 			 					<font face="Traditional Arabic" color="#B0CCFF" size="3">
-								<a href="ConfigDept.php?AcadDeg=<?php echo($row3[1]); ?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($row3[2]); ?>#AcadDegree">
+								<a href="ConfigDept.php?AcadDeg=<?php echo($row3[1]); ?>&uncode=<?php echo($uncode1);?>
+								&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($row3[2]); ?>#AcadDegree">
 								<?php
 									echo($row3[0]."</br>");
 								?>

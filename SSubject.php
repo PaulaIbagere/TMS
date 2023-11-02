@@ -194,7 +194,7 @@ if($value==1)
 				 {
 						//insert Subject as Lecture
 							$sql3 = "insert into CollegeSubject (AcadYNo,DeptNo,CollegeCode,UniversityCode,AcadDegreeId,ClassNo,SecID,SemNo,SubCode,SubName,SubHour,SubTHour,SubType) values ('$year','$DeptNo','$CollegeCode1','$uncode1','$AcadDeg','$Classno','$SecID','$Sem',UCASE('$SubCode'),'$SubName','$SubHour','$SubTHour','1')";
-						$result3 = mysql_query($sql3);
+						$result3 = mysqli_query($sql3);
 						if ($result3)
 		  				{
 						  //Check LabHour
@@ -211,7 +211,7 @@ if($value==1)
 							//echo("Lab = code=".$SubCode."</br>hour=".$SubHour."</br>thour=".$SubTHour);
 
 								$sql33 = "insert into CollegeSubject (AcadYNo,DeptNo,CollegeCode,UniversityCode,AcadDegreeId,ClassNo,SecID,SemNo,SubCode,SubName,SubHour,SubTHour,SubType) values ('$year','$DeptNo','$CollegeCode1','$uncode1','$AcadDeg','$Classno','$SecID','$Sem',UCASE('$SubCode'),'$SubName','$SubHour','$SubTHour','2')";
-							$result33 = mysql_query($sql33);
+							$result33 = mysqli_query($sql33);
 							if ($result33)
 		  					{
 									$msg="&#1578;&#1605; &#1578;&#1587;&#1580;&#1610;&#1604; &#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577; &#1576;&#1606;&#1580;&#1575;&#1581;";
@@ -331,14 +331,14 @@ if($value==2)
 					ClassNo='$Classno' and SecID='$SecID' and 
 					SubName='$SubName' and AcadYNo='$oldYear'";
 
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 
 				$count=mysql_num_rows($result);
 
 
 			  if($count>0)
 			  {
-				while($row=mysql_fetch_row($result))
+				while($row=mysqli_fetch_row($result))
 				{
 					//Now you insert the subject with all
 					$SubCode=$row[0];
@@ -347,7 +347,7 @@ if($value==2)
 					$stype=$row[3];
 					//echo("</br>subcode=".$SubCode."subh=".$SubHour."th=".$SubTHour."st=".$stype);
 						$sql2 = "insert into CollegeSubject (AcadYNo,DeptNo,CollegeCode,UniversityCode,AcadDegreeId,ClassNo,SecID,SemNo,SubCode,SubName,SubHour,SubTHour,SubType) values ('$year','$DeptNo','$CollegeCode1','$uncode1','$AcadDeg','$Classno','$SecID','$Sem',UCASE('$SubCode'),'$SubName','$SubHour','$SubTHour','$stype')";
-					$result2 = mysql_query($sql2);
+					$result2 = mysqli_query($sql2);
 					$counter=$counter+1;
 
 				}
@@ -394,7 +394,7 @@ if($value==2)
 		//echo("subcode=".$SubCode."</br>Name:".$SubName."</br>hour=".$SubHour."</br>thour=".$SubTHour."</br>Lhour=".$SubLHour);
 		
 		
-		$res = mysql_query("update CollegeSubject set SubName='$SubName',SubHour='$SubHour',SubTHour='$SubTHour',SubCode='$SubCode' where
+		$res = mysqli_query("update CollegeSubject set SubName='$SubName',SubHour='$SubHour',SubTHour='$SubTHour',SubCode='$SubCode' where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and
@@ -413,7 +413,7 @@ if($value==2)
 				
 				if(!Check_SubCode($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubLCode,$year,$SecID))
 				{
-					$res2 = mysql_query("update CollegeSubject set SubName='$SubName',SubHour='$SubLHour' where
+					$res2 = mysqli_query("update CollegeSubject set SubName='$SubName',SubHour='$SubLHour' where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and
@@ -424,7 +424,7 @@ if($value==2)
 				else
 				{
 						$sql2 = "insert into CollegeSubject (AcadYNo,DeptNo,CollegeCode,UniversityCode,AcadDegreeId,ClassNo,SecID,SemNo,SubCode,SubName,SubHour,SubTHour,SubType) values ('$year','$DeptNo','$CollegeCode1','$uncode1','$AcadDeg','$Classno','$SecID','$Sem',UCASE('$SubLCode'),'$SubName','$SubLHour','0','2')";
-					$res2 = mysql_query($sql2);
+					$res2 = mysqli_query($sql2);
 				}	
 				
 				
@@ -434,7 +434,7 @@ if($value==2)
 				//delete subject
 				$SubLCode=$oldSubCode."L";
 
-				$res2 = mysql_query("delete from CollegeSubject where
+				$res2 = mysqli_query("delete from CollegeSubject where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and

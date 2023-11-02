@@ -34,7 +34,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 
 						//Teacher on Specific College
 						
-						$result = mysql_query("select distinct(CollegeCode),CollegeName from Colleges where 
+						$result = mysqli_query("select distinct(CollegeCode),CollegeName from Colleges where 
 							
 								UniversityCode='$uncode1' order by CollegeName");
 						
@@ -64,7 +64,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 										<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</option>
 
 								<?php
-									while($row=mysql_fetch_row($result))
+									while($row=mysqli_fetch_row($result))
 									{	
 								?>
 										<option value="<?php echo($row[0]);?>" <?php if($SelectedCollege == $row[0]){?> selected <?php }?> >
@@ -111,12 +111,12 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 						<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;</option>
 						<?php
 								
-						//ÇÓÊÇÐ ÈÇáßáíÉ	
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 						$sqls_query8 = "select TeacherNo,TeacherName from Teachers where UniversityCode='$uncode1' and CollegeCode='$SelectedCollege' and Status='0' order by TeacherName ";						
-						$results8=mysql_query($sqls_query8);
+						$results8=mysqli_query($sqls_query8);
 						if (mysql_num_rows($results8))
 						{
-							while($rows8=mysql_fetch_row($results8))
+							while($rows8=mysqli_fetch_row($results8))
 							{?>
 								<option value="<?php echo($rows8[0]);?>" <?php if(strcmp($CollTeacherName,$rows8[0])==0){ ?> selected <?php }?> >
 								<?php
@@ -153,11 +153,11 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 								<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</option>
 
 								<?php
-									$result = mysql_query("select distinct(CollegeCode),CollegeName from Colleges where 
+									$result = mysqli_query("select distinct(CollegeCode),CollegeName from Colleges where 
 							
 									UniversityCode='$uncode1' order by CollegeName");
 
-									while($row=mysql_fetch_row($result))
+									while($row=mysqli_fetch_row($result))
 									{	
 								?>
 										<option value="<?php echo($row[0]);?>" <?php if($AssistCollege== $row[0]){?> selected <?php }?> >
@@ -201,12 +201,12 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 						<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;</option>
 						<?php
 								
-						//ÇÓÊÇÐ ÈÇáßáíÉ	
+						//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 						$sqls_query8 = "select TeacherNo,TeacherName from Teachers where UniversityCode='$uncode1' and CollegeCode='$_POST[AssistCollege]' and Status='1' order by TeacherName ";						
-						$results8=mysql_query($sqls_query8);
+						$results8=mysqli_query($sqls_query8);
 						if (mysql_num_rows($results8))
 						{
-							while($rows8=mysql_fetch_row($results8))
+							while($rows8=mysqli_fetch_row($results8))
 							{?>
 								<option value="<?php echo($rows8[0]);?>" <?php if(strcmp($AssistTeacher,$rows8[0])==0){ ?> selected <?php }?> >
 								<?php

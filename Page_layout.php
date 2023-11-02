@@ -454,7 +454,7 @@ function MainDisplay($uncode1,$CollegeCode1,$f,$year)
 		$result=mysqli_query($conn, $sql1);
 		if (mysqli_num_rows($result))
 		{
-			while($row=mysql_fetch_row($result))
+			while($row=mysqli_fetch_row($result))
 			{
 				$collegename="";
 				$sql2 = "select CollegeCode,CollegeName from Colleges where
@@ -464,7 +464,7 @@ function MainDisplay($uncode1,$CollegeCode1,$f,$year)
 				{
 					$collegename="<ul>";
 					//Display Regiseted Colleges
-					while($row2=mysql_fetch_row($result2))
+					while($row2=mysqli_fetch_row($result2))
 					{
 					?>
 					<tr>

@@ -38,21 +38,21 @@ if($username)
 		db_connect();
 		//(1)
 			$sql_query2="select UnLoc from UnivLoc where LocId='$LId' and UniversityCode='$univCode'";
-			$result2=mysql_query($sql_query2);
-			$row2=mysql_fetch_row($result2);
+			$result2=mysqli_query($sql_query2);
+			$row2=mysqli_fetch_row($result2);
 
 			$sql_query3="delete from SubBuildingSeminar where UnLoc='$row2[0]' and UniversityCode='$univCode'";
-			$result3=mysql_query($sql_query3);
+			$result3=mysqli_query($sql_query3);
 		//(2)
 
 		//(3)
 			$sql_query2="delete from UnivLoc where LocId='$LId' and UniversityCode='$univCode'";
-			$result2=mysql_query($sql_query2);
+			$result2=mysqli_query($sql_query2);
 
 	}
 
 	$sql = "select UnLoc,LocId from UnivLoc where UniversityCode='$univCode'";
-	$result = mysql_query($sql);
+	$result = mysqli_query($sql);
 	?>
 	<div align="center">
 
@@ -71,7 +71,7 @@ if($username)
 		</tr>
 
 		<?php
-		while($row=mysql_fetch_row($result))
+		while($row=mysqli_fetch_row($result))
 	   	  {
 			$UnName=$row[0];
 			?>

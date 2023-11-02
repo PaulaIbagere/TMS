@@ -82,13 +82,13 @@ else
 		
 		//get start slot
 		
-		$slotres=mysql_query("select Slot1 from TimeSlots where TSID='$StartSlot'");
-		$slotrow=mysql_fetch_row($slotres);
+		$slotres=mysqli_query("select Slot1 from TimeSlots where TSID='$StartSlot'");
+		$slotrow=mysqli_fetch_row($slotres);
 
 		//insert into
 		 
 			$sql3 = "insert into collegestarttime (AcadYNo,CollegeCode,UniversityCode,SemNo,TSID) values ('$year','$CollegeCode','$univCode','$SemNo','$StartSlot')";
-		$result3 = mysql_query($sql3);
+		$result3 = mysqli_query($sql3);
 		if ($result3)
 		{
 			if($SemNo==1)
@@ -111,18 +111,18 @@ else
 		{
 			//if already inserted 
 			
-			$res=mysql_query("select TSID from CollegeStartTime where AcadYNo='$year' and 
+			$res=mysqli_query("select TSID from CollegeStartTime where AcadYNo='$year' and 
 									CollegeCode='$CollegeCode' and 
 									UniversityCode='$univCode' and 
 									SemNo='$SemNo'");
 			
 		  
-			$slot=mysql_fetch_row($res);
+			$slot=mysqli_fetch_row($res);
 			if($slot!= $StartSlot)
 			{
 				$PrevTimeslot=GetCollegeTimeSlot($univCode,$CollegeCode,$SemNo,$year);
 					$sql3 = "update CollegeStartTime set TSID='$StartSlot' where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo'";
-		   		$result3 = mysql_query($sql3);
+		   		$result3 = mysqli_query($sql3);
 			}
 			
 			//update data
@@ -139,7 +139,7 @@ else
 					//echo("prev=".$PrevTimeslot[$i]."</br>");	
 					
 						$sql33 = "update managinglec set MTimes='$CurrTimeslot[$i]'  where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo' and MTimes='$PrevTimeslot[$i]'";
-					$result33 = mysql_query($sql33);
+					$result33 = mysqli_query($sql33);
 					if($result33)
 					{
 						//echo("ok");
@@ -258,12 +258,12 @@ else
 		
 		//get start slot
 		
-		$slotres=mysql_query("select Slot1 from TimeSlots where TSID='$StartSlot'");
-		$slotrow=mysql_fetch_row($slotres);
+		$slotres=mysqli_query("select Slot1 from TimeSlots where TSID='$StartSlot'");
+		$slotrow=mysqli_fetch_row($slotres);
 
 		//insert into 
 			$sql3 = "insert into collegestarttime (AcadYNo,CollegeCode,UniversityCode,SemNo,TSID) values ('$year','$CollegeCode','$univCode','$SemNo','$StartSlot')";
-		$result3 = mysql_query($sql3);
+		$result3 = mysqli_query($sql3);
 		if ($result3)
 		{
 			if($SemNo==1)
@@ -286,19 +286,19 @@ else
 		{
 			//if already inserted 
 			
-			$res=mysql_query("select TSID from CollegeStartTime where AcadYNo='$year' and 
+			$res=mysqli_query("select TSID from CollegeStartTime where AcadYNo='$year' and 
 									CollegeCode='$CollegeCode' and 
 									UniversityCode='$univCode' and 
 									SemNo='$SemNo'");
 			
 		  
-			$slot=mysql_fetch_row($res);
+			$slot=mysqli_fetch_row($res);
 			
 			if($slot[0]!= $StartSlot)
 			{
 				$PrevTimeslot=GetCollegeTimeSlot($univCode,$CollegeCode,$SemNo,$year);
 					$sql3 = "update CollegeStartTime set TSID='$StartSlot' where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo'";
-		   		$result3 = mysql_query($sql3);
+		   		$result3 = mysqli_query($sql3);
 			}
 			
 			//update data
@@ -334,14 +334,14 @@ else
 					echo("Prev=".$PrevTimeslot[$j]."</br>cslot1=".$currslot."<br/>cslot2=".$currslot2."<br/>");
 					
 					//get lecture detail on previous slot					
-						$result=mysql_query("select * from managinglec where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo' and MTimes='$PrevTimeslot[$j]'")or die(mysql_error());
+						$result=mysqli_query("select * from managinglec where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo' and MTimes='$PrevTimeslot[$j]'")or die(mysql_error());
 					
-					while($mrow=mysql_fetch_row($result))
+					while($mrow=mysqli_fetch_row($result))
 					{
 						//update PreviousSlot with the CurrSlot 
 						
 							$sql33 = "delete from managinglec where MTimes='$PrevTimeslot[$j]' and AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo'";
-						$result33 = mysql_query($sql33);
+						$result33 = mysqli_query($sql33);
 						
 						//echo($sql33."<br/>");
 						
@@ -350,12 +350,12 @@ else
 							//insert next slot
 						
 								$sql333 = "insert into managinglec values ('$mrow[0]',$mrow[1],'$currslot',$mrow[3],$mrow[4],$mrow[5],$mrow[6],$mrow[7],$mrow[8],$mrow[9],$mrow[10],$mrow[11],'$mrow[12]',$mrow[13],$mrow[14],$mrow[15])";
-							$result333 = mysql_query($sql333)or die(mysql_error());
+							$result333 = mysqli_query($sql333)or die(mysql_error());
 							
 							echo($sql333."</br>");
 														
 								$sql333 = "insert into managinglec values ('$mrow[0]',$mrow[1],'$currslot2',$mrow[3],$mrow[4],$mrow[5],$mrow[6],$mrow[7],$mrow[8],$mrow[9],$mrow[10],$mrow[11],'$mrow[12]',$mrow[13],$mrow[14],$mrow[15])";
-							$result333 = mysql_query($sql333)or die(mysql_error());
+							$result333 = mysqli_query($sql333)or die(mysql_error());
 
 								
 							echo($sql333."</br>");

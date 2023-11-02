@@ -45,7 +45,7 @@
 				
 		//[1] update Managing Lecture according to selected Teacher
 		
-		$result = mysql_query("update managinglec set TeacherId='$CollTeacherName' where  TeacherId='$AssistTeacher' and 
+		$result = mysqli_query("update managinglec set TeacherId='$CollTeacherName' where  TeacherId='$AssistTeacher' and 
 							   CollegeCode='$AssistCollege' and UniversityCode='$uncode1'");
 		
 			
@@ -56,7 +56,7 @@
 
 			$TName=GetTeacherName($SelectedCollege,$uncode1,$CollTeacherName);
 
-			$result2 = mysql_query("update Teachers set TeacherNo='$CollTeacherName',TeacherName='$TName' where TeacherNo='$AssistTeacher' and 
+			$result2 = mysqli_query("update Teachers set TeacherNo='$CollTeacherName',TeacherName='$TName' where TeacherNo='$AssistTeacher' and 
 									CollegeCode='$AssistCollege' and UniversityCode='$uncode1'");
 			
 			if($result2)

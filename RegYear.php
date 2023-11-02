@@ -24,12 +24,12 @@ else
 	//valid data
 	// check if it inserted before
 	$sql = "select AcadYNo from AcadYear where AcadYNo='$year' ";
-	$result = mysql_query($sql);
+	$result = mysqli_query($sql);
 	if (mysql_num_rows($result)==0)
 	{
 		//not inserted
 		$sql3 = "insert into AcadYear (AcadYNo) values ('$year')";
-		$result3 = mysql_query($sql3);
+		$result3 = mysqli_query($sql3);
 		if ($result3)
 		{
 			$msg='&#1578;&#1605; &#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;';

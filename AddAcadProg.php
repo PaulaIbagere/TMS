@@ -69,9 +69,9 @@
     			
     			//[1] Get max AcadDegreeId 
     			
-    			$res=mysql_query("select max(AcadDegreeId) from acaddegree");
+    			$res=mysqli_query($conn,"select max(AcadDegreeId) from acaddegree");
     			
-    			$rows=mysql_fetch_row($res);
+    			$rows=mysql_ifetch_row($res);
     			
     			if(intval($rows[0]==0))
     			{
@@ -86,7 +86,7 @@
     			
 				//[2] insert into table acaddegree
 				
-					$res2=mysql_query("insert into acaddegree( `AcadDegreeId` , `AcadDegreeName` , `NoOfSemester` ) VALUES ('$AcadId','$AcadProgName','$NoofSem')");
+					$res2=mysqli_query($conn, "insert into acaddegree( `AcadDegreeId` , `AcadDegreeName` , `NoOfSemester` ) VALUES ('$AcadId','$AcadProgName','$NoofSem')");
 				
 				if(	$res2)
 				{

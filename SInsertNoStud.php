@@ -110,7 +110,7 @@ if($username)
 				//First: insert into table StudyPerSem
 				$conn = db_connect();
 					$sql = "insert into StudyPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,NoOfStud,NoOfGroup) values ('$year','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$NoOfStud','$NoOfGroup')";
-				$result = mysql_query($sql);
+				$result = mysqli_query($sql);
 				if ($result)
 		  		{
 		  			// Second: Insert  Groups on table GroupPerSem
@@ -121,7 +121,7 @@ if($username)
 		  		   {
 		  		   		$GName="&#1605;&#1580;&nbsp;".$count;
 		  					$sql2 = "insert into GroupPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,GId,GName) values ('$year','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$count','$GName')";
-						$result2 = mysql_query($sql2);
+						$result2 = mysqli_query($sql2);
 						if ($result2)
 		  				{
 							//echo("insert ".$GName);

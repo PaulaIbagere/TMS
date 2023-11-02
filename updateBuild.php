@@ -40,8 +40,8 @@ if($username)
 			$conn = db_connect();
 	  		$sql = "select SubBName,Capacity  from SubBuildingSeminar where SubBId='$Bid' and BId='$value' and
 			UniversityCode='$uncode'";
-			$result = mysql_query($sql);
-			$row=mysql_fetch_row($result);
+			$result = mysqli_query($sql);
+			$row=mysqli_fetch_row($result);
 	  		Lecture_UpadteForm($value,$uncode,$row[0],$row[1],$Bid);
 
       	}//end of if
@@ -54,8 +54,8 @@ if($username)
 			$conn = db_connect();
 	  		$sql = "select SubBName,Capacity from SubBuildingSeminar where SubBuildingSeminar.SubBId='$Bid' and SubBuildingSeminar.BId='$value' and
 			SubBuildingSeminar.UniversityCode='$uncode'";
-			$result = mysql_query($sql);
-			$row=mysql_fetch_row($result);
+			$result = mysqli_query($sql);
+			$row=mysqli_fetch_row($result);
 	  		Lab_UpadteForm($value,$uncode,$row[0],$row[1],$Bid);
 		}
   }//end of OPV if
@@ -76,13 +76,13 @@ if($username)
 	$conn = db_connect();
 	$sql = "select SubBName,UnLoc from SubBuildingSeminar where SubBId='$Bid' and BId='$value' and
 	UniversityCode='$uncode'";
-	$result = mysql_query($sql);
-	$row=mysql_fetch_row($result);
+	$result = mysqli_query($sql);
+	$row=mysqli_fetch_row($result);
 
 	//(2)delete SubBuilding Seminar
 	$conn = db_connect();
 	$sql2 = "delete from SubBuildingSeminar where UniversityCode='$uncode' and SubBId='$Bid' and BId='$value' and UnLoc='$row[1]'";
-	$result2 = mysql_query($sql2);
+	$result2 = mysqli_query($sql2);
 	if($result2)
 	 {
 

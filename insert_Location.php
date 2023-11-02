@@ -48,10 +48,10 @@ if($univCode>0)
 				db_connect();
 
 				$sql_get="select count(LocId) from UnivLoc where UniversityCode='$univCode'";
-				$result_get = mysql_query($sql_get);
+				$result_get = mysqli_query($sql_get);
 				if (mysql_num_rows($result_get)>0 )
 				  {
-					$row_get=mysql_fetch_row($result_get);
+					$row_get=mysqli_fetch_row($result_get);
 					$id=$row_get[0]+1;
 				  }
 				else
@@ -64,7 +64,7 @@ if($univCode>0)
 				//echo("datavalid="."id=".$id.$location."univcode=".$univCode);
 				//echo("datavalid="."id=".$id);
 				$sql_query1="insert into UnivLoc values('$id','$univCode','$location') ";
-				$result1=mysql_query($sql_query1);
+				$result1=mysqli_query($sql_query1);
 				$location="";
 			 }//end of if
 		   }// end of else

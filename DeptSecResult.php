@@ -131,11 +131,11 @@ if($username)
     		 {
     		 	//there is a section
     		 	
-    		 	$result=mysql_query("select max(SecID) from DeptSection where 
+    		 	$result=mysqli_query("select max(SecID) from DeptSection where 
     		 	UniversityCode='$uncode' and CollegeCode='$CollegeCode' and 
     		 	DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ");
     		 	
-    		 	$row=mysql_fetch_row($result);
+    		 	$row=mysqli_fetch_row($result);
     		 	if($row[0]==0)
     		 	{
     		 		$SecID=1;
@@ -146,7 +146,7 @@ if($username)
     		 	}
 					
 					$sql_query3="insert into DeptSection (UniversityCode,CollegeCode,DeptNo,AcadDegreeId,ClassNo,SecID,SecName) values('$uncode','$CollegeCode','$DeptNo','$AcadProgId','$ClassNo','$SecID','$SecName')";
-	        	$result3=mysql_query($sql_query3);
+	        	$result3=mysqli_query($sql_query3);
 	        	
 	        	if($result3)
 	        	{
@@ -157,7 +157,7 @@ if($username)
 					$sql_query="update DeptandSem set SecID='$SecID' where
 								UniversityCode='$uncode' and CollegeCode='$CollegeCode' and 
     		 					DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ";
-					$resultsec=mysql_query($sql_query);
+					$resultsec=mysqli_query($sql_query);
 
 	        		if($resultsec)
 	        		{
@@ -200,20 +200,20 @@ if($username)
 				 $sql_query="delete from DeptandSem where
 								UniversityCode='$uncode' and CollegeCode='$CollegeCode' and 
     		 					DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ";
-				 $resultsec=mysql_query($sql_query);
+				 $resultsec=mysqli_query($sql_query);
 				if($resultsec)
 				{
 	        		$sql_query="delete from DeptSection where 
 								UniversityCode='$uncode' and CollegeCode='$CollegeCode' and 
     		 					DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ";
-    		 		$resultsec=mysql_query($sql_query);
+    		 		$resultsec=mysqli_query($sql_query);
     		 	
 	        		if($resultsec)
 	        		{
 	        				$sql_query3="insert into DeptandSem (UniversityCode,CollegeCode,DeptNo,AcadDegreeId,ClassNo,SecID,SemNo) values
 	        				('$uncode','$CollegeCode','$DeptNo','$AcadProgId','$ClassNo','0','1'),
 	        				('$uncode','$CollegeCode','$DeptNo','$AcadProgId','$ClassNo','0','2')";
-	        			$result3=mysql_query($sql_query3);
+	        			$result3=mysqli_query($sql_query3);
 	        			if($result3)
 	        			{
 	        				//cancle all Dept Sections	

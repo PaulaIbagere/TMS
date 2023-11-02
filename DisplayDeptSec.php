@@ -53,7 +53,7 @@ if($username)
 		
 		//echo("secid=".$SecID);
 		
-		$result=mysql_query("select SecID,SecName from DeptSection  where 
+		$result=mysqli_query("select SecID,SecName from DeptSection  where 
 							UniversityCode='$uncode1' and 
 							CollegeCode='$CollegeCode1' and 
     		 				DeptNo='$DeptNo' and 
@@ -73,11 +73,11 @@ if($username)
 				$id=0;
 				$notfound=0;
 		
-    			while($row=mysql_fetch_row($result))
+    			while($row=mysqli_fetch_row($result))
     			{
     				//Note: Check if this SubjectCode($subcode) on the other depart
 	
-					$resultd=mysql_query("select SubCode from collegesubject where 
+					$resultd=mysqli_query("select SubCode from collegesubject where 
     		 							AcadYNo='$year' and 
     		 							UniversityCode='$uncode1' and 
     		 							CollegeCode='$CollegeCode1' and 
@@ -132,7 +132,7 @@ if($username)
 		{	
 		
 			//[2] check the other Departs	
-			$result=mysql_query("select DeptNo,DeptName,AcadDegreeId from departments  where 
+			$result=mysqli_query("select DeptNo,DeptName,AcadDegreeId from departments  where 
     		 	UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 	DeptNo!='$DeptNo'");
     		
@@ -150,11 +150,11 @@ if($username)
 				$id=0;
 				$notfound=0;
 		
-    			while($row=mysql_fetch_row($result))
+    			while($row=mysqli_fetch_row($result))
     			{
     				//Note: Check if this SubjectCode($subcode) on the other depart
 	
-					$resultd=mysql_query("select SubCode from collegesubject where 
+					$resultd=mysqli_query("select SubCode from collegesubject where 
     		 							AcadYNo='$year' and 
     		 							UniversityCode='$uncode1' and 
     		 							CollegeCode='$CollegeCode1' and 
@@ -223,15 +223,15 @@ if($username)
 		$id=0;
 		$notfound=0;
 		
-		$result=mysql_query("select DeptNo,DeptName,AcadDegreeId from departments  where 
+		$result=mysqli_query("select DeptNo,DeptName,AcadDegreeId from departments  where 
     		 	UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 	DeptNo!='$DeptNo'");
     		
-    	while($row=mysql_fetch_row($result))
+    	while($row=mysqli_fetch_row($result))
     	{
     		//Note: Check if this SubjectCode($subcode) on the other depart
 	
-			$resultd=mysql_query("select SubCode from collegesubject where 
+			$resultd=mysqli_query("select SubCode from collegesubject where 
     		 	AcadYNo='$year' and 
     		 	UniversityCode='$uncode1' and 
     		 	CollegeCode='$CollegeCode1' and 

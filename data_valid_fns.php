@@ -46,13 +46,13 @@ function checkLName($LName,$univcode,$value,$Loc)
 	
 	$sql3="select SubBName from SubBuildingSeminar where UniversityCode='$univcode' and  BId='$value' and UnLoc='$Loc'";
 	
-	$result3 = mysql_query($sql3);
+	$result3 = mysqli_query($sql3);
 	
 	//echo("no of row=".mysql_num_rows($result3) );
 	
 	if (mysql_num_rows($result3)>0 )
 	  {
-		 while($row3=mysql_fetch_row($result3))
+		 while($row3=mysqli_fetch_row($result3))
 		  {
 		    if(eregi($LName,$row3[0])) //match 
 		    { 	
@@ -77,8 +77,8 @@ function GetLocName($LectureName,$univcode,$value,$Bid)
 
 	$conn = db_connect();
 	$sql2="select UnLoc from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value' and SubBId='$Bid'";
-	$result2 = mysql_query($sql2);
-	$LocName=mysql_fetch_row($result2);
+	$result2 = mysqli_query($sql2);
+	$LocName=mysqli_fetch_row($result2);
 	return $LocName[0];
 
 }
@@ -92,7 +92,7 @@ function checkUniversityCode($univCode)
 
 	db_connect();
 	$sql_query="select UniversityCode from Universities where UniversityCode='$univCode'";//
-	$result2=mysql_query($sql_query);
+	$result2=mysqli_query($sql_query);
 	if(mysql_num_rows($result2)==1)
 	{
 		$flag=true;
@@ -109,7 +109,7 @@ function checkUniversityName($univName)
 
 	db_connect();
 	$sql_query="select UniversityName from Universities where UniversityName='$univName'";//
-	$result2=mysql_query($sql_query);
+	$result2=mysqli_query($sql_query);
 	if(mysql_num_rows($result2)==1)
 	{
 		$flag=true;
@@ -126,10 +126,10 @@ function DoUpdate()
 {
 $conn = db_connect();
 $sql1="select count(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
-$result1 = mysql_query($sql1);
+$result1 = mysqli_query($sql1);
 if (mysql_num_rows($result1)>0 )
 	{
-		$row=mysql_fetch_row($result1);
+		$row=mysqli_fetch_row($result1);
 		$id=$row[0]+1;
 	}
 else
@@ -140,7 +140,7 @@ else
 	//(2)Insert Data to Table
 	//echo($univcode."</br> ".$id."</br> ".$LabName."</br> ".$Capacity."</br> ".$Loc);
 		$sql2 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
-	$result2 = mysql_query($sql2);
+	$result2 = mysqli_query($sql2);
 	if ($result2)
 		{
 

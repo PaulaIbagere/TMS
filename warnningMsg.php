@@ -68,8 +68,8 @@ if($username)
 				DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 				ClassNo='$Classno' and
 				SemNo='$Sem' and SubCode='$op' ";
-		$result1 = mysql_query($sql1);
-		$row1=mysql_fetch_row($result1);
+		$result1 = mysqli_query($sql1);
+		$row1=mysqli_fetch_row($result1);
 		//echo("no of row=".$row1[0]);
 		//check lab
 		$sql11="select count(SubCode) from ManagingLec where
@@ -79,8 +79,8 @@ if($username)
 						DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 						ClassNo='$Classno' and
 						SemNo='$Sem' and SubCode='$op' ";
-		$result11 = mysql_query($sql11);
-		$row11=mysql_fetch_row($result11);
+		$result11 = mysqli_query($sql11);
+		$row11=mysqli_fetch_row($result11);
 		if(($row1[0]==0)||($row11[0]==0))
 		{
 
@@ -95,7 +95,7 @@ if($username)
 							ClassNo='$Classno' and
 							SemNo='$Sem' and
 							SubName='$BName'";
-			$result = mysql_query($sql);
+			$result = mysqli_query($sql);
 			if($result)
 			{
 				//echo("subject deleted..");
@@ -183,7 +183,7 @@ if($username)
 				ClassNo='$Classno' and
 				SemNo='$Sem' and
 				SubCode='$op' or SubCode='$opl'";
-		$result = mysql_query($sql);
+		$result = mysqli_query($sql);
 		if($result)
 		{
 			$f=1;
@@ -204,7 +204,7 @@ if($username)
 					ClassNo='$Classno' and
 					SemNo='$Sem' and
 					SubCode='$op' or SubCode='$opl'";
-			$result2 = mysql_query($sql2);
+			$result2 = mysqli_query($sql2);
 			if($result2)
 			{
 				$header=$BName." &nbsp;>> &nbsp;"."&#1578;&#1605;&#1578; &#1593;&#1605;&#1604;&#1610;&#1577; &#1575;&#1604;&#1581;&#1584;&#1601; &#1576;&#1606;&#1580;&#1575;&#1581;";

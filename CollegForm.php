@@ -20,8 +20,8 @@ if($username)
 	// Get University Name
 	$conn = db_connect();
 	$sql2 = "select UniversityName from Universities where UniversityCode='$uncode'";
-	$result2 = mysql_query($sql2);
-	$row2=mysql_fetch_row($result2);
+	$result2 = mysqli_query($sql2);
+	$row2=mysqli_fetch_row($result2);
 
 	$header=$row2[0];
 
@@ -38,7 +38,7 @@ if($username)
 		//$conn = db_connect();
 		// Check Locations
 		$sql = "select UnLoc from UnivLoc where UniversityCode='$uncode'";
-		$result = mysql_query($sql);
+		$result = mysqli_query($sql);
 		if (mysql_num_rows($result)>0)
 		{
 			$msg="&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578;";

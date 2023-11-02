@@ -105,7 +105,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 		  	//prepare the update data
 
 		  	$sql2 = "update SubBuildingSeminar set SubBName='$LectureName',Capacity='$Capacity' where UniversityCode='$univcode' and BId='$value' and SubBId='$Bid'";
-		  	$result2 = mysql_query($sql2);
+		  	$result2 = mysqli_query($sql2);
 		  
 		  	if ($result2)
 		  	{
@@ -209,7 +209,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				//prepare the update data
 
 				$sql2 = "update SubBuildingSeminar set SubBName='$LabName',Capacity='$Capacity' where UniversityCode=$univcode and BId=$value and SubBId=$Bid";
-				$result2 = mysql_query($sql2);
+				$result2 = mysqli_query($sql2);
 
 				if ($result2)
 				 {

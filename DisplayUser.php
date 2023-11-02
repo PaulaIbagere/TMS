@@ -31,7 +31,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 		$result=mysqli_query($conn, $sql1);
 		if (mysqli_num_rows($result))
 		{
-			while($row=mysql_fetch_row($result))
+			while($row=mysqli_fetch_row($result))
 			{
 				$collegename="";
 				$sql2 = "select CollegeCode,CollegeName,UserName,Passwd from Colleges where
@@ -80,7 +80,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 					</tr>
 				<?php
 					//Display Regiseted Colleges
-					while($row2=mysql_fetch_row($result2))
+					while($row2=mysqli_fetch_row($result2))
 					{
 					?>
 					<tr>

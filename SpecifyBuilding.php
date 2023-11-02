@@ -106,10 +106,10 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$op'";
-				$result1 = mysql_query($sql1);
+				$result1 = mysqli_query($sql1);
 				if (mysql_num_rows($result1)>0 )
 			  	{
-					$row=mysql_fetch_row($result1);
+					$row=mysqli_fetch_row($result1);
 					$id=$row[0]+1;
 					//echo("id= ".$id);
 			  	}
@@ -125,7 +125,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			
 			
 				$sql3 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','1','$id','$BuildName','$Capacity','$Loc')";
-			$result3 = mysql_query($sql3);
+			$result3 = mysqli_query($sql3);
 		  	if ($result3)
 		  	{
 				$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;';
@@ -204,10 +204,10 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$op'";
-				$result1 = mysql_query($sql1);
+				$result1 = mysqli_query($sql1);
 				if (mysql_num_rows($result1)>0 )
 			  	{
-					$row=mysql_fetch_row($result1);
+					$row=mysqli_fetch_row($result1);
 					$id=$row[0]+1;
 					//echo("id= ".$id);
 			  	}
@@ -223,7 +223,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			
 			
 				$sql3 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','2','$id','$BuildName','$Capacity','$Loc')";
-			$result3 = mysql_query($sql3);
+			$result3 = mysqli_query($sql3);
 		  	if ($result3)
 		  	{
 				$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;';

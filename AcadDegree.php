@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 require_once('main.php');
 
@@ -83,12 +83,12 @@ if($username)
 					<tr>
 
 				  <?php
-				  while($row11=mysql_fetch_row($result11))
+				  while($row11=mysqli_fetch_row($result11))
 				  {
 					$SemName="";
 				  	$sql22 = "select SemName,SemNo from Semester where ClassNo='$row11[1]'";
-				  	$result22 = mysql_query($sql22);
-				  	while($row22=mysql_fetch_row($result22))
+				  	$result22 = mysqli_query($conn, $sql22);
+				  	while($row22=mysqli_fetch_row($result22))
 				  	{
 				  		$SemName=$SemName."<a target='_blank' href='PrintSubject.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo' width='80' height='60'>"." <img src='print.gif' width='37' height='28' align='left' alt='&#1591;&#1576;&#1575;&#1593;&#1577; &#1575;&#1604;&#1605;&#1608;&#1575;&#1583;' >"."</a>"."<a href='subject.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&value=1' align='center' title='&#1575;&#1590;&#1594;&#1591; &#1607;&#1606;&#1575; &#1604;&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1605;&#1608;&#1575;&#1583;' target='_BLANK' width='80' height='60'>".$row22[0]."</a>"."</br>"."</br>";
 				  	}//end while2

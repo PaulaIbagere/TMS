@@ -33,8 +33,8 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 	   	//(1)get NO of Semester
 	   	$sql3 = "select NoOfSemester,AcadDegreeName,AcadProgType from AcadDegree where
 	   	AcadDegreeId='$AcadDeg'";
-	 	$result3 = mysql_query($sql3);
-	  	$row3=mysql_fetch_row($result3);
+	 	$result3 = mysqli_query($conn, $sql3);
+	  	$row3=mysqli_fetch_row($result3);
 
 
 	   	//(2) Get No of Yearsin the Depart
@@ -42,8 +42,8 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 
 		
 	   		$sql11 = "select ClassName,ClassNo from ClassYear where ClassNo<='$NoOFYear'";
-	   		$result11 = mysql_query($sql11);
-			if (mysql_num_rows($result11)>0 )
+	   		$result11 = mysqli_query($conn, $sql11);
+			if (mysqli_num_rows($result11)>0 )
 			{
 			?>
 			<div align="center">
@@ -98,11 +98,11 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 				  ?>
 				  <tr>
 				  <?php
-				  while($row11=mysql_fetch_row($result11))
+				  while($row11=mysqli_fetch_row($result11))
 				  {
 					$SemName="";
-				  	$sql22 = "select SemName,SemNo from Semester where ClassNo='$row11[1]'";
-				  	$result22 = mysql_query($sql22);
+				  	$sql22 = "SELECT SemName,SemNo FROM Semester WHERE ClassNo='$row11[1]'";
+				  	$result22 = mysqli_query($conn, $sql22);
 				  	
 				  	//check if there any Section on this depart 
 				  	if(CheckDeptSection($uncode1,$CollegeCode1,$DeptNo,$AcadDeg,$row11[1]))
@@ -110,19 +110,19 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 							//Display Sections on this depart
 							
 							$checksec=1;
-							$result44=mysql_query("select SecID,SecName from DeptSection where 
+							$result44=mysqli_query($conn, "select SecID,SecName from DeptSection where 
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$row11[1]' ");
     
-    						while($row44=mysql_fetch_row($result44))
+    						while($row44=mysqli_fetch_row($result44))
     						{
     							
     							$SecName=$SecName.$row44[1]."</br></br>";
     							
     							$sql22 = "select SemName,SemNo from Semester where ClassNo='$row11[1]'";
-				  				$result22 = mysql_query($sql22);
+				  				$result22 = mysqli_query($conn,$sql22);
     							
-    							while($row22=mysql_fetch_row($result22))
+    							while($row22=mysqli_fetch_row($result22))
 				  				{
     								if($f==2) //users
 				  					{
@@ -140,7 +140,7 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 					}//end of if checkSections
 				    else
 				    {
-				  		while($row22=mysql_fetch_row($result22))
+				  		while($row22=mysqli_fetch_row($result22))
 				  		{
 				  			if($f==2) //users
 				  			{

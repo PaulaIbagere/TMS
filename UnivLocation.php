@@ -25,8 +25,8 @@ if($username)
 
 	//Display UniversityName..
 	$sql = "select UniversityName from Universities where UniversityCode='$univCode'";
-	$result = mysql_query($sql);
-	$row=mysql_fetch_row($result);
+	$result = mysqli_query($sql);
+	$row=mysqli_fetch_row($result);
 
 	if($loct==1)
 	{

@@ -65,7 +65,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	
 		$sql2 = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' order by CollegeCode";
 			
-		$result2 = mysql_query($sql2);
+		$result2 = mysqli_query($conn, $sql2);
 
 
 		//[3] Get all Depart on specific College and make paging Mechanism

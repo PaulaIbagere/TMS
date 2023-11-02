@@ -80,13 +80,13 @@ if($username)
    		   		
    		//[1]update Department Name
    		
-   			$res=mysql_query("update Departments set DeptName='$DeptName' where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
+   			$res=mysqli_query("update Departments set DeptName='$DeptName' where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
    		
    		if($res)
    		{
    			//[2]update AcadProg Name or NoOfSem
 
-			$res=mysql_query("update AcadDegree set AcadDegreeName='$AcadProg', NoOfSemester='$noOfSem', AcadProgType='$ProgType' where AcadDegreeId='$AcadProgId'");
+			$res=mysqli_query("update AcadDegree set AcadDegreeName='$AcadProg', NoOfSemester='$noOfSem', AcadProgType='$ProgType' where AcadDegreeId='$AcadProgId'");
 				
 			if($res)
 			{
@@ -163,15 +163,15 @@ if($username)
   	{
   		//delete from Three tables( DeptandSem | Departments | AcadDegree )
   		  
-  		$res=mysql_query("delete from DeptandSem  where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
+  		$res=mysqli_query("delete from DeptandSem  where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
   		  	
   		if($res)
   		{
-  		  	$res=mysql_query("delete from Departments where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
+  		  	$res=mysqli_query("delete from Departments where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
   		  	
   		  if($res)
   		  {
-  		  	  	$res=mysql_query("delete from AcadDegree where AcadDegreeId='$AcadProgId'");
+  		  	  	$res=mysqli_query("delete from AcadDegree where AcadDegreeId='$AcadProgId'");
   		  	  	
   		  	  	if($res)
   		  	  	{
@@ -314,9 +314,9 @@ if($username)
 			
 		//---------- First insert into academic Prog ------------
 			
-		$res=mysql_query("select max(AcadDegreeId) from acaddegree");
+		$res=mysqli_query($conn, "select max(AcadDegreeId) from acaddegree");
     			
-    	$rows=mysql_fetch_row($res);
+    	$rows=mysqli_fetch_row($res);
     			
     	if(intval($rows[0]==0))
     	{
@@ -329,17 +329,17 @@ if($username)
 
 		//echo("</br>Insert AcadProg:</br>Prog Id=".$AcadId."</br>"."name=".$AcadProg."</br>NoofSem=".$noOfSem."</br>");
 	
-			$res2=mysql_query("insert into acaddegree( `AcadDegreeId` , `AcadDegreeName` , `NoOfSemester`, `AcadProgType`) VALUES ('$AcadId','$AcadProg','$noOfSem','$ProgType')");
+			$res2=mysqli_query($conn, "insert into acaddegree( `AcadDegreeId` , `AcadDegreeName` , `NoOfSemester`, `AcadProgType`) VALUES ('$AcadId','$AcadProg','$noOfSem','$ProgType')");
 				
 		if(	$res2)
 		{
 			
 			//(1)prepare the id
 			$sql1="select max(DeptNo) from Departments where UniversityCode='$uncode' and  CollegeCode='$CollegeCode'";
-			$result1 = mysql_query($sql1);
-			if (mysql_num_rows($result1)>0 )
+			$result1 = mysqli_query($conn, $sql1);
+			if (mysqli_num_rows($result1)>0 )
 			  {
-				$row=mysql_fetch_row($result1);
+				$row=mysqli_fetch_row($result1);
 				$id=$row[0]+1;
 			  }
 			else
@@ -354,7 +354,7 @@ if($username)
 			
 			//[1] insert into Department	
 			$sql_query3="insert into Departments(DeptNo,CollegeCode,UniversityCode,AcadDegreeId,DeptName) values('$id','$CollegeCode','$uncode','$AcadId','$DeptName')";
-	        $result3=mysql_query($sql_query3);
+	        $result3=mysqli_query($conn, $sql_query3);
 
 			if($result3)
 			{
@@ -367,12 +367,12 @@ if($username)
 			
 				//Get Number of Semester on Each Class Year [Two Semesters]
 				$sql333 = "select SemNo,ClassNo from Semester where ClassNo<='$NoOFYear'";
-				$result333 = mysql_query($sql333);
-				while($row333=mysql_fetch_row($result333))
+				$result333 = mysqli_query($conn, $sql333);
+				while($row333=mysqli_fetch_row($result333))
 				{
 					//insert the ClassNo and SemNo
 						$sql_query33="insert into DeptandSem(UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID) values('$uncode','$CollegeCode','$id','$AcadId','$row333[0]','$row333[1]','0')";
-					$result33=mysql_query($sql_query33);
+					$result33=mysqli_query($conn, $sql_query33);
 
 				}
 				

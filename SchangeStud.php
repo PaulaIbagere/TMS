@@ -111,9 +111,9 @@ if($username)
 			DeptNo='$DeptNo' and
 			AcadDegreeId='$AcadDeg' and
 			ClassNo='$Classno' and SecID='$SecID'";
-			$Mresult1=mysql_query($Mang_query1);
+			$Mresult1=mysqli_query($Mang_query1);
 
-    		$mrow1=mysql_fetch_row($Mresult1);
+    		$mrow1=mysqli_fetch_row($Mresult1);
 
     		//echo($mrow1);
     		if(mysql_num_rows($Mresult1)>0)
@@ -182,7 +182,7 @@ if($username)
 							DeptNo='$DeptNo' and
 							AcadDegreeId='$AcadDeg' and
 							ClassNo='$Classno' and SecID='$SecID'";
-				$Mresult2=mysql_query($Mang_query2);
+				$Mresult2=mysqli_query($Mang_query2);
 				if($Mresult2)
 				{
 					//(2)delete from StudyPerSem
@@ -194,12 +194,12 @@ if($username)
 							DeptNo='$DeptNo' and
 							AcadDegreeId='$AcadDeg' and
 							ClassNo='$Classno' and SecID='$SecID'";
-					$Mresult2=mysql_query($Mang_query2);
+					$Mresult2=mysqli_query($Mang_query2);
 				}
 			//First: insert into table StudyPerSem
 
 				$sql = "insert into StudyPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,NoOfStud,NoOfGroup) values ('$year','$uncode','$CollegeCode','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$NoOfStud','$NoOfGroup')";
-			$result = mysql_query($sql);
+			$result = mysqli_query($sql);
 			if ($result)
 		  	{
 		  			// Second: Insert  Groups on table GroupPerSem
@@ -210,7 +210,7 @@ if($username)
 		  		   {
 		  		   		$GName="&#1605;&#1580;&nbsp;".$count;
 		  					$sql2 = "insert into GroupPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,GId,GName) values ('$year','$uncode','$CollegeCode','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$count','$GName')";
-						$result2 = mysql_query($sql2);
+						$result2 = mysqli_query($sql2);
 						if ($result2)
 		  				{
 							//echo("insert ".$GName);
@@ -253,7 +253,7 @@ if($username)
 			DeptNo='$DeptNo' and
 			AcadDegreeId='$AcadDeg' and
 			ClassNo='$Classno' and SecID='$SecID'";
-			$Mresult1=mysql_query($Mang_query1);
+			$Mresult1=mysqli_query($Mang_query1);
 			if($Mresult1)
 			{
 				//(2)delete from GroupPerSem
@@ -265,7 +265,7 @@ if($username)
 							DeptNo='$DeptNo' and
 							AcadDegreeId='$AcadDeg' and
 							ClassNo='$Classno' and SecID='$SecID'";
-				$Mresult2=mysql_query($Mang_query2);
+				$Mresult2=mysqli_query($Mang_query2);
 				if($Mresult2)
 				{
 					//(3)delete from StudyPerSem
@@ -277,7 +277,7 @@ if($username)
 							DeptNo='$DeptNo' and
 							AcadDegreeId='$AcadDeg' and
 							ClassNo='$Classno' and SecID='$SecID'";
-					$Mresult2=mysql_query($Mang_query2);
+					$Mresult2=mysqli_query($Mang_query2);
 				}
 			}
 
@@ -287,7 +287,7 @@ if($username)
 			//First: insert into table StudyPerSem
 
 				$sql = "insert into StudyPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,NoOfStud,NoOfGroup) values ('$year','$uncode','$CollegeCode','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$NoOfStud','$NoOfGroup')";
-			$result = mysql_query($sql);
+			$result = mysqli_query($sql);
 			if ($result)
 		  	{
 		  			// Second: Insert  Groups on table GroupPerSem
@@ -298,7 +298,7 @@ if($username)
 		  		   {
 		  		   		$GName="&#1605;&#1580;&nbsp;".$count;
 		  					$sql2 = "insert into GroupPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,GId,GName) values ('$year','$uncode','$CollegeCode','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$count','$GName')";
-						$result2 = mysql_query($sql2);
+						$result2 = mysqli_query($sql2);
 						if ($result2)
 		  				{
 							//echo("insert ".$GName);

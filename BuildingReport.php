@@ -25,13 +25,13 @@ if($username)
 
 	//(1)select the Location Of College
 	$sql = "select UnLoc from Colleges where UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
-	$result = mysql_query($sql);
-	$row=mysql_fetch_row($result);
+	$result = mysqli_query($sql);
+	$row=mysqli_fetch_row($result);
 
 	$yyear=$_SESSION['year'];
 	// select Building from usedBy Table on MaxYear
 	$sql_query332="select BId,SubBId from usedBy where AcadYNo='$yyear' and BId='$op' and UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
-	$result332=mysql_query($sql_query332);
+	$result332=mysqli_query($sql_query332);
 
 	//(2)Then select the Lecture Room at the Same Location
 		?>
@@ -93,11 +93,11 @@ if($username)
 		</tr>
 		<tr>
 		<?php
-		while($row332=mysql_fetch_row($result332))
+		while($row332=mysqli_fetch_row($result332))
 		{
 			$sql_query33="select SubBName,Capacity from SubBuildingSeminar where BId='$row332[0]' and SubBId='$row332[1]' and UniversityCode='$univCode' and UnLoc='$row[0]'";
-			$result33=mysql_query($sql_query33);
-			$row33=mysql_fetch_row($result33);
+			$result33=mysqli_query($sql_query33);
+			$row33=mysqli_fetch_row($result33);
 		?>
 
 			<td bordercolor="#003366" align="center" width="14%" height="35" bordercolorlight="#000000" bordercolordark="#000000">
@@ -147,7 +147,7 @@ if($username)
 		
 					echo('<img border="0" id="img53" src="LectureRoom_files/buttonNOLab.jpg"  height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;">');
 				
-				//echo("áã íÊã ÊÍÏíÏ ÇáãÚÇãá");
+				//echo("ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
 			}
 		?>

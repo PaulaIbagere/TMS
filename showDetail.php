@@ -97,7 +97,7 @@ switch($mday)
 
 	//and TeacherId='$mteach' and BId='$BId' and SubBId='$LectureName'
 
-	$Mresult1=mysql_query($Mang_query1);
+	$Mresult1=mysqli_query($Mang_query1);
 
    ?>
    <!--Display Tabel Header-->
@@ -116,7 +116,7 @@ switch($mday)
 
    <?php
  
-   while($mrow1=mysql_fetch_row($Mresult1))
+   while($mrow1=mysqli_fetch_row($Mresult1))
    {
 	
 	$showdetail="";
