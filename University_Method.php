@@ -83,7 +83,7 @@ function UpdateUniv_Form($uncode11,$univCode,$univName,$logo)
 {
 	//Update University Form
 ?>
- <div align="center">
+ï¿½<div align="center">
 
 <table border="0" width="78%" id="table1">
 <tr>
@@ -172,7 +172,7 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 			<!-- MaxYear-->
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
 				<b><font size="4" face="Traditional Arabic" color="#FFFFFF">&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
-				</font></b>
+				</font></b>School Year
 			</td>
 
 			<td width="67%" dir="ltr" height="30" colspan="2" align="right">
@@ -188,7 +188,7 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
 				<b><font size="4" face="Traditional Arabic" color="#FFFFFF">
 				&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
-				</font></b>
+				</font></b>Semester
 			</td>
 
 			<td width="67%" dir="ltr" height="30" colspan="2" align="right">
@@ -196,11 +196,11 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 					<select size="1" name="SemNo" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl">
 					
 					<option value="1" <?php if($SemNo==1){?> selected <?php }?> > 
-							&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1575;&#1608;&#1604;
+							First Semester
 					</option>
 					
 					<option value="2" <?php if($SemNo==2){?> selected <?php }?> > 
-							&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1579;&#1575;&#1606;&#1609;
+							Second Semester
 					</option>
 				</select>
 			</td>
@@ -210,7 +210,7 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 			<!--university name --> 
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
 				<b><font size="4" face="Traditional Arabic" color="#FFFFFF">&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;
-				</font></b>
+				</font></b>University Name
 			</td>
 
 			<td width="67%" dir="ltr" height="30" colspan="2" align="right">
@@ -218,7 +218,7 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 					<select size="1" name="UnivCode" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl">
 					
 					<option value="" <?php if(strcmp($univCode,"")==0){?> selected <?php }?> selected> 
-						--&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;---
+						--Choose the University---
 					</option>
 					
 					<?php
@@ -1033,17 +1033,17 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 				<td width="67%" dir="ltr" height="30" align="right">
 
 						<select size="1" name="report" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="4" dir="rtl">
-						<!--ÇÌãÇáì ÓÇÚÇÊ ÇáÚãáì æÇáäÙÑì-->
+						<!--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 						<option value="1" <?php if($report==1){?> selected <?php }?> > 
 								&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1606;&#1592;&#1585;&#1609; &#1608;&#1575;&#1604;&#1593;&#1605;&#1604;&#1609;
 						</option>
 						
-						<!--ÇÚÏÇÏ ÇáØáÇÈ-->
+						<!--ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->
 						<option value="2" <?php if($report==2){?> selected <?php }?> > 
 						&#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;
 						</option>
 						
-						<!--ÇÚÏÇÏ  ÇáÇÓÇÊÐÉ -->
+						<!--ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
 						<option value="3" <?php if($report==3){?> selected <?php }?> > 
 						&#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1577;
 						</option>

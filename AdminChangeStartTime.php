@@ -48,7 +48,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 		//[2] Select all Colleges on University
 	
 		$sql2 = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' order by CollegeCode";
-		$result2 = mysql_query($sql2);
+		$result2 = mysqli_query($conn, $sql2);
 
 		while($rowc = mysql_fetch_row($result2))
 		{
@@ -69,7 +69,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			{
 				$PrevTimeslot=GetCollegeTimeSlot($univCode,$CollegeCode,$SemNo,$year);
 					$sql3 = "update CollegeStartTime set TSID='$StartSlot' where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo'";
-			   	$result3 = mysql_query($sql3);
+			   	$result3 = mysqli_query($conn, $sql3);
 			}
 				
 			//update data
@@ -109,15 +109,15 @@ if (strcmp($_SESSION['username'],"")!=0)
 						
 					//get lecture detail on previous slot					
 					
-						$result=mysql_query("select * from managinglec where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo' and MTimes='$PrevTimeslot[$j]'")or die(mysql_error());
+						$result=mysqli_query("select * from managinglec where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo' and MTimes='$PrevTimeslot[$j]'")or die(mysql_error());
 						
-					while($mrow=mysql_fetch_row($result))
+					while($mrow=mysqli_fetch_row($result))
 					{
 						
 						//update PreviousSlot with the CurrSlot 
 								
 							$sql33 = "update managinglec set MTimes='$currslot' where MTimes='$PrevTimeslot[$j]' and AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo'";
-						$result33 = mysql_query($sql33);
+						$result33 = mysqli_query($conn, $sql33);
 								
 						if($result33)
 						{
@@ -126,7 +126,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 							//insert Time slot[2]
 							
 								$sql333 = "insert into managinglec values ('$mrow[0]',$mrow[1],'$currslot2',$mrow[3],$mrow[4],$mrow[5],$mrow[6],$mrow[7],$mrow[8],$mrow[9],$mrow[10],$mrow[11],'$mrow[12]',$mrow[13],$mrow[14],$mrow[15])";
-							$result333 = mysql_query($sql333)or die(mysql_error());
+							$result333 = mysqli_query($sql333)or die(mysqli_error());
 		
 						}//end of if
 								

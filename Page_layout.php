@@ -174,23 +174,48 @@ function Display_Admin_Menu1()
 			
 			<td align="center" bgcolor="#5A74A0"  dir="rtl">
 				<a href="logout.php">
-					<img border="0" id="img25" src="AdminMenu/buttoneE.jpg" height="26" width="130" alt="&#1582;&#1585;&#1608;&#1580;" onmouseover="FP_swapImg(1,0,/*id*/'img25',/*url*/'AdminMenu/buttoneF.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img25',/*url*/'AdminMenu/buttoneE.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img25',/*url*/'AdminMenu/buttone10.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img25',/*url*/'AdminMenu/buttoneF.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1582;&#1585;&#1608;&#1580;">
+					<img border="0" id="img25" src="AdminMenu/buttoneE.jpg" height="26" width="130" 
+					alt="&#1582;&#1585;&#1608;&#1580;" onmouseover="FP_swapImg(1,0,/*id*/'img25',/*url*/'AdminMenu/buttoneF.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img25',/*url*/'AdminMenu/buttoneE.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img25',/*url*/'AdminMenu/buttone10.jpg')" 
+					onmouseup="FP_swapImg(0,0,/*id*/'img25',/*url*/'AdminMenu/buttoneF.jpg')" fp-style="fp-btn: Braided Row 1; 
+					fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; 
+					fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" 
+					fp-title="&#1582;&#1585;&#1608;&#1580;">
 				</a>
+				Logout
 			</td>
 			
 			<td align="center" bgcolor="#5A74A0"  dir="rtl">
 				<a href="AdminChangeStartTime.php">
 					<img border="0" id="img30" src="AdminMenu/startTime3.jpg" height="26" width="130" alt="&#1578;&#1594;&#1610;&#1610;&#1585; &#1586;&#1605;&#1606; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" onmouseover="FP_swapImg(1,0,/*id*/'img30',/*url*/'AdminMenu/startTime1.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img30',/*url*/'AdminMenu/startTime3.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img30',/*url*/'AdminMenu/startTime2.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img30',/*url*/'AdminMenu/startTime1.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1594;&#1610;&#1610;&#1585; &#1586;&#1605;&#1606; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;">
-				</a>
+				</a>Change Time of lectures
 			</td>
 			
 			<td align="center" bgcolor="#5A74A0"  dir="rtl">
 				<a href="ChangePasswdForm.php">
-					<img border="0" id="img24" src="AdminMenu/buttoncB.jpg" height="26" width="130" alt="&#1578;&#1594;&#1610;&#1610;&#1585; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" onmouseover="FP_swapImg(1,0,/*id*/'img24',/*url*/'AdminMenu/buttoncC.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img24',/*url*/'AdminMenu/buttoncB.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img24',/*url*/'AdminMenu/buttoncD.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img24',/*url*/'AdminMenu/buttoncC.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1594;&#1610;&#1610;&#1585; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"></a>
+					<img border="0" id="img24" src="AdminMenu/buttoncB.jpg" height="26" width="130" 
+					alt="&#1578;&#1594;&#1610;&#1610;&#1585; &#1603;&#1604;&#1605;&#1577; 
+					&#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" onmouseover="FP_swapImg(1,0,/*id*/'img24',/*url*/
+					'AdminMenu/buttoncC.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img24',/*url*/'AdminMenu/buttoncB.jpg')" 
+					onmousedown="FP_swapImg(1,0,/*id*/'img24',/*url*/'AdminMenu/buttoncD.jpg')" 
+					onmouseup="FP_swapImg(0,0,/*id*/'img24',/*url*/'AdminMenu/buttoncC.jpg')" fp-style="fp-btn: 
+					Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
+					fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
+					fp-bgcolor: #5A74A0" fp-title="&#1578;&#1594;&#1610;&#1610;&#1585; &#1603;&#1604;&#1605;&#1577; 
+					&#1575;&#1604;&#1605;&#1585;&#1608;&#1585;">
+				</a>Change Password
 			</td>
 			
 			<td align="center" bgcolor="#5A74A0"  dir="rtl">
-					<img border="0" id="img17" src="AdminMenu/button2.jpg" height="26" width="130" alt="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button1.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button3.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')">
+					<img border="0" id="img17" src="AdminMenu/button2.jpg" height="26" width="130" 
+					alt="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;
+					&#1610;&#1587;&#1610;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: 
+					Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: 
+					#FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: 
+					#5A74A0" fp-title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;
+					&#1610;&#1587;&#1610;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img17',/*url*/
+					'AdminMenu/button2.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button1.jpg')" 
+					onmousedown="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button3.jpg')" onmouseup="FP_swapImg
+					(0,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')"> HomePage
 			</td>
 		</tr>
 	</table>
@@ -214,8 +239,16 @@ function Display_Admin_Menu2()
 			<td bgcolor="#3D5285" height="41" bordercolorlight="#7985A8" bordercolordark="#92B0E4" style="border-color: #B0CCFF">
 				<p align="center">
 					<a href="university.php?id=<?php echo($id); ?>">
-						<img border="0" id="img20" src="AdminMenu/TMSButon23.jpg" height="36" width="180" alt="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;" onmouseover="FP_swapImg(1,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon21.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon23.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon22.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon21.jpg')" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 22; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;">
-					</a>
+						<img border="0" id="img20" src="AdminMenu/TMSButon23.jpg" height="36" width="180" 
+						alt="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;" onmouseover="FP_swapImg
+						(1,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon21.jpg')" onmouseout="FP_swapImg
+						(0,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon23.jpg')" onmousedown="FP_swapImg
+						(1,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon22.jpg')" onmouseup="FP_swapImg
+						(0,0,/*id*/'img20',/*url*/'AdminMenu/TMSButon21.jpg')" fp-style="fp-btn: 
+						Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 22; 
+						fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
+						fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;">
+					</a>Universities
 				</p>
 			</td>
 		</tr>
@@ -224,8 +257,16 @@ function Display_Admin_Menu2()
 			<td bgcolor="#3D5285" height="41" bordercolorlight="#7985A8" bordercolordark="#92B0E4" style="border-color: #B0CCFF">
 				<p align="center">
 					<a href="BuildingForm.php?id=<?php echo($id); ?>">
-						<img border="0" id="img23" src="AdminMenu/TMSButon33.jpg" height="36" width="180" alt="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" onmouseover="FP_swapImg(1,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon31.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon33.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon32.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon31.jpg')" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 22; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">
-					</a>
+						<img border="0" id="img23" src="AdminMenu/TMSButon33.jpg" height="36" width="180" 
+						alt="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;
+						&#1575;&#1605;&#1604;" onmouseover="FP_swapImg(1,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon31.jpg')" 
+						onmouseout="FP_swapImg(0,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon33.jpg')" onmousedown="FP_swapImg
+						(1,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon32.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img23',/*url*/'AdminMenu/TMSButon31.jpg')" 
+						fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 22; 
+						fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #003366" 
+						fp-title="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;
+						&#1605;&#1604;">
+					</a>Halls and Laburatory
 				</p>
 			</td>
 		</tr>
@@ -234,8 +275,17 @@ function Display_Admin_Menu2()
 			<td bgcolor="#3D5285" height="39" bordercolorlight="#7985A8" bordercolordark="#92B0E4" style="border-color: #B0CCFF">
 				<p align="center">
 					<a href="DisplayUser.php">
-							<img border="0" id="img21" src="AdminMenu/TMSButon13.jpg" height="36" width="180" alt="&#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;&#1610;&#1606;" onmouseover="FP_swapImg(1,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon1.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon13.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon12.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon1.jpg')" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 22; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;&#1610;&#1606;">
-					</a>
+							<img border="0" id="img21" src="AdminMenu/TMSButon13.jpg" height="36" width="180" 
+							alt="&#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;&#1610;&#1606;" 
+							onmouseover="FP_swapImg(1,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon1.jpg')" 
+							onmouseout="FP_swapImg(0,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon13.jpg')" 
+							onmousedown="FP_swapImg(1,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon12.jpg')" 
+							onmouseup="FP_swapImg(0,0,/*id*/'img21',/*url*/'AdminMenu/TMSButon1.jpg')" 
+							fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: 
+							Bold; fp-font-size: 22; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; 
+							fp-font-color-press: #FFFFFF; fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1605;
+							&#1587;&#1578;&#1582;&#1583;&#1605;&#1610;&#1606;">
+					</a>Users
 				</p>
 			</td>
 		</tr>
@@ -265,12 +315,20 @@ function Display_Admin_Menu3()
 		<tr>
 			<td align="center" bgcolor="#5A74A0" width="130" dir="rtl">
 			<a href="logout.php">
-				<img border="0" id="img27" src="AdminMenu/buttoneE.jpg" height="26" width="130" alt="&#1582;&#1585;&#1608;&#1580;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1582;&#1585;&#1608;&#1580;"></a></td>
+				<img border="0" id="img27" src="AdminMenu/buttoneE.jpg" height="26" width="130" alt="&#1582;&#1585;&#1608;&#1580;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1582;&#1585;&#1608;&#1580;">
+			</a>Exit</td>
 			<td align="center" bgcolor="#5A74A0" width="130" dir="rtl">
-				<img border="0" id="img26" src="AdminMenu/buttoncB.jpg" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1594;&#1610;&#1610;&#1585; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"></td>
+				<img border="0" id="img26" src="AdminMenu/buttoncB.jpg" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1594;&#1610;&#1610;&#1585; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;">
+			Change Password</td>
 			<td  align="center" bgcolor="#5A74A0" width="130" dir="rtl">
 			<a href="welcomeAdmin.php?flag=2">
-					<img border="0" id="img17" src="AdminMenu/button1.jpg" height="26" width="130" alt="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;"></a></td>
+					<img border="0" id="img17" src="AdminMenu/button1.jpg" height="26" width="130" 
+					alt="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" 
+					fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
+					fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
+					fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; 
+					&#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;">
+			</a>Home Page</td>
 		</tr>
 	</table>
 	</div>

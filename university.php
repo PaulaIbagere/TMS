@@ -75,7 +75,11 @@ if (strcmp($_SESSION['username'],"")!=0)
 					<td width="75">
 
 					<a href="UnivLocation.php?uncode=<?php echo($uncode);?>">
-					<img border="0" id="img47" src="Colleges-PAGE/addLoc.jpg" height="15" width="75" alt="&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 11; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;"></a></td>
+					<img border="0" id="img47" src="Colleges-PAGE/addLoc.jpg" height="15" width="75" 
+					alt="&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" 
+					fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 11; 
+					fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" 
+					fp-title="&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;"></a></td>
 				</tr>
 				</table>
 
