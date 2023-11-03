@@ -174,7 +174,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 		$uncode=$_GET['uncode'];
 		$uncode1=intval($uncode);
 
-		$AcadDeg = $_GET['AcadDeg'];
+		$AcadDeg = isset($_GET['AcadDeg']) ? $_GET['AcadDeg'] : '';
 		$AcadDeg1=intval($AcadDeg);
 
 		$f=$_GET['f'];

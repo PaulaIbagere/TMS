@@ -75,9 +75,9 @@ if($username)
 				  	{
 					  $sql33 = "select NoOfSemester from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
 
-					  $result33 = mysqli_query($sql33);
+					  $result33 = mysqli_query($conn, $sql33);
 
-					  if (mysql_num_rows($result33)>0 )
+					  if (mysqli_num_rows($result33)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="19%" height="35">
@@ -176,7 +176,7 @@ if($username)
 		$uncode=$_GET['uncode'];
 		$uncode1=intval($uncode);
 
-		$AcadDeg = $_GET['AcadDeg'];
+		$AcadDeg = isset($_GET['AcadDeg']) ? $_GET['AcadDeg'] : '';
 		$AcadDeg1=intval($AcadDeg);
 		?>
 		<a name='#AcadDeg'>

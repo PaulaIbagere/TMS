@@ -42,7 +42,7 @@ if($username)
 		$value=intval($value);
 		
 		//do update
-		$doupdate=$_GET['doupdate'];
+		$doupdate=isset($_GET['doupdate']) ? $_GET['doupdate'] : '';
 		$doupdate=intval($doupdate);
 		
 		if(($value==1)||($value==2))

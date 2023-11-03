@@ -38,7 +38,7 @@ if($username)
 	//echo("sec=".$SecID);
 
 	//SubCode
-	$op = $_GET['op'];
+	$op = isset($_GET['op']) ? $_GET['op'] : '';
 
 	$year=$_SESSION['year'];
 

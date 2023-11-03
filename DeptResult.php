@@ -159,7 +159,7 @@ if($username)
   	//Get DeptNo
    	$DeptNo=GetDeptNo($uncode,$CollegeCode,$AcadProgId);
 
-	if($_POST['B2'])
+	if(isset($_POST['B2']))
   	{
   		//delete from Three tables( DeptandSem | Departments | AcadDegree )
   		  
@@ -383,6 +383,7 @@ if($username)
 				$AcadProg="";
 				$noOfSem="";
 				$ProgType=1;
+				$AcadProgId = "";
 			    DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,$AcadProgId,$ProgType);
 
 			}//end of if

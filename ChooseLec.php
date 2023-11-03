@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 require_once('main.php');
 require_once('College_Method.php');
 
@@ -29,8 +29,8 @@ if($username)
 
 	DisplayLectureBuilding($op,$univCode,$CollegeCode,$value);
 
-	$Year=$_POST['D4'];
-	$LectureName=$_POST['D5'];
+	$Year=isset($_POST['D4']) ? $_POST['D4'] : '';
+	$LectureName=isset($_POST['D4']) ? $_POST['D4'] : '';
 
 	//echo("year".$Year."</br>".$LectureName);
 	if (!filled_out($_POST))

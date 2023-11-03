@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require_once('main.php');
 require_once('College_Method.php');
 

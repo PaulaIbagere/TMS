@@ -174,7 +174,7 @@ if($username)
 		$uncode=$_GET['uncode'];
 		$uncode1=intval($uncode);
 
-		$AcadDeg = $_GET['AcadDeg'];
+		$AcadDeg = isset($_GET['AcadDeg']) ? $_GET['AcadDeg'] : '';
 		$AcadDeg1=intval($AcadDeg);
 		?>
 		<a name='#AcadDeg'>

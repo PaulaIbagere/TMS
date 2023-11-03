@@ -40,9 +40,9 @@ if(($username)&&($year))
 	$Sem = $_GET['Sem'];
 	$Sem=intval($Sem);
 	
-	$SecID=$_POST['D1'];
+	$SecID=isset($_POST['D1']) ? $_POST['D1'] : '';
 	
-	$f = $_GET['f'];
+	$f = isset($_POST['f']) ? $_POST['f'] : '';
 	$f=intval($f);
 
 	$value = $_GET['value'];
@@ -85,6 +85,11 @@ if(($username)&&($year))
 				{
 					
 					echo("</br>");
+					$SubCode = isset($_GET['SubCode']) ? $_GET['SubCode'] : '';
+					$SubName = isset($_GET['SubName']) ? $_GET['SubName'] : '';
+					$SubHour = isset($_GET['SubHour']) ? $_GET['SubHour'] : '';
+					$SubPerWeek = isset($_GET['SubPerWeek']) ? $_GET['SubPerWeek'] : '';
+					$stype = isset($_GET['stype']) ? $_GET['stype'] : '';
 					
 					Subject_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$f,$SubCode,$SubName,$SubHour,$SubPerWeek,$stype,$SecID);
 				}

@@ -19,6 +19,8 @@
 		$CollegeCode = $_GET['CollegeCode'];
 		$CollegeCode=intval($CollegeCode);
 
+
+
 		$uncode=$_GET['uncode'];
 		$uncode=intval($uncode);
 
@@ -26,6 +28,12 @@
  		$href="ConfigDept.php?CollegeCode=$CollegeCode&uncode=$uncode";
 		$header="CollegeCode=$CollegeCode&uncode=$uncode";
 		
+		$DeptName = isset($_GET['DeptName']) ? $_GET['DeptName'] : '';
+		$AcadDeg = isset($_GET['AcadDeg']) ? $_GET['AcadDeg'] : '';
+		$noOfSem = isset($_GET['noOfSem']) ? $_GET['noOfSem'] : '';
+		$do = isset($_GET['do']) ? $_GET['do'] : '';
+		$AcadProgId = isset($_GET['AcadProgId']) ? $_GET['AcadProgId'] : '';
+		$ProgType = isset($_GET['ProgType']) ? $_GET['ProgType'] : '';
 		//Href2($href,$header);
 		Href2Dept($href,$header); //found on Method.php
 

@@ -169,6 +169,7 @@ if($username)
 					  <td width="10%" bordercolor="#003366" align="center" height="35">
 						<font face="Times New Roman" color="#FFFFFF" size="3">
 						<?php
+						$count = 0;
 						$Count=$Count+1;
 						//echo($row2[1]);
 						echo($Count);
@@ -204,7 +205,7 @@ if($username)
 		$uncode=$_GET['uncode'];
 		$uncode1=intval($uncode);
 
-		$AcadDeg = $_GET['AcadDeg'];
+		$AcadDeg = isset($_GET['AcadDeg']) ? $_GET['AcadDeg'] : ' ';
 		$AcadDeg1=intval($AcadDeg);
 		?>
 		<a name='#AcadDegree'>

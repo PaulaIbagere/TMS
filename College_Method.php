@@ -455,8 +455,8 @@ function DisplayLectureBuilding($op,$univCode,$CollegeCode,$value)
 {
 //echo("lec=".$Lec."</br> univ=".$univCode."</br> coll=".$CollegeCode);
 
-$year= $_POST['D4'];
-$LecName= $_POST['D5'];
+$year= isset($_POST['D4']) ? $_POST['D4'] : '';
+$LecName= isset($_POST['D5']) ? $_POST['D5'] : '';
 $yyear=$_SESSION['year'];
 
 ?>
@@ -541,20 +541,20 @@ $yyear=$_SESSION['year'];
 			$conn = db_connect();
 			//(1)select the Location Of College
 			$sql = "select UnLoc from Colleges where UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
-			$result = mysqli_query($sql);
+			$result = mysqli_query($conn, $sql);
 			$row=mysqli_fetch_row($result);
 
 			//(2)Then select the Lecture Room at the Same Location
 			$sql_query33="select SubBId,SubBName from SubBuildingSeminar where BId='$op' and UniversityCode='$univCode' and UnLoc='$row[0]'";
-			$result33=mysqli_query($sql_query33);
-			if (mysql_num_rows($result33))
+			$result33=mysqli_query($conn, $sql_query33);
+			if (mysqli_num_rows($result33))
 			{
 			  while($row33=mysqli_fetch_row($result33))
 			   {
 			   	//check if Lecture inserted before
 					$conn = db_connect();
 					$sql_query332="select count(SubBId) from usedBy where AcadYNo='$yyear' and UniversityCode='$univCode' and CollegeCode='$CollegeCode' and BId='$op' and SubBId='$row33[0]'";
-					$result332=mysqli_query($sql_query332);
+					$result332=mysqli_query($conn, $sql_query332);
 					$row332=mysqli_fetch_row($result332);
 					if($row332[0]==0)
 					{
@@ -1065,7 +1065,7 @@ function checkTeacherName($TName,$uncode,$CollegeCode)
 function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 {
 	$year=$_SESSION['year'];
-	$selectedCollege=$_SESSION['SelectedCollege'];
+	$selectedCollege=isset($_SESSION['SelectedCollege']) ? $_SESSION['SelectedCollege'] : '';
 	//echo("selected College=".$selectedCollege);
 
 ?>
@@ -2853,7 +2853,7 @@ $href="CollegeStartTime.php?uncode=$uncode&CollegeCode=$CollegeCode";
 						<?php
 						//get Max Year
 						
-						$maxres=mysqli_query("select max(AcadYNo) from acadyear");
+						$maxres=mysqli_query($conn, "SELECT max(AcadYNo) FROM acadyear");
 						$maxrow=mysqli_fetch_row($maxres);
 
 						?>	

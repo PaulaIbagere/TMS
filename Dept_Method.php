@@ -39,7 +39,9 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 				?>
 				<tr>
 						<td bordercolor="#003366" align="right" bgcolor="#B0CCFF" height="43" colspan="2" bordercolorlight="#003366" bordercolordark="#003366">
-					    <img border="0" id="img46" src="Depart_Files/DepartReg.jpg" height="29" width="147"  fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #B0CCFF" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1587;&#1605;" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1587;&#1605;"></td>
+							<p>Add section</p>
+					    <!-- <img border="0" id="img46" src="Depart_Files/DepartReg.jpg" height="29" width="147"  fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #B0CCFF" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1587;&#1605;" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1587;&#1605;"> -->
+					</td>
 				</tr>
 	 			<?php
 	 			}
@@ -49,8 +51,9 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 						<p align="center">
 							<input type="text" name="T2" value="<?php echo($DeptName);?>" size="47" style="float: right; font-size:12pt; color:#003366; font-family:Traditional Arabic; font-weight:bold" tabindex="1" dir="rtl"></td>
 						<td bordercolor="#5A74A0" align="right" width="26%" bgcolor="#5A74A0" height="31" bordercolorlight="#003366" bordercolordark="#003366">
-						<p align="center">
-							<img border="0" id="img48" src="InsertDept/button4E.jpg" height="27" width="135"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" ></td>
+							<p align="center">Department Name
+							<!-- <img border="0" id="img48" src="InsertDept/button4E.jpg" height="27" width="135"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" > -->
+						</td>
 				</tr>
 	 			
 	 			<tr>
@@ -62,7 +65,7 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 					<td bordercolor="#003366" align="right" width="26%" bgcolor="#5A74A0" bordercolorlight="#003366" bordercolordark="#003366">
 					<p align="center">	<b>
 						<font color="#FFFFFF" face="Traditional Arabic" size="4">
-					&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1610;</font></b></td>
+					Academic Program</font></b></td>
 				</tr>
 	 			
 	 			<tr>
@@ -85,7 +88,7 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 					<td bordercolor="#003366" align="right" width="26%" bgcolor="#5A74A0" bordercolorlight="#003366" bordercolordark="#003366">
 					<p align="center"><b>
 					<font color="#FFFFFF" face="Traditional Arabic" size="4">
-					&#1578;&#1589;&#1606;&#1610;&#1601; &#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;</font></b></td>
+					Academic Program Classification</font></b></td>
 				</tr>
 	 			
 	 			<tr>
@@ -94,8 +97,7 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 							<input type="text" name="T4" value="<?php echo($noOfSem);?>" size="10" style="float: right; color:#003366; font-family:Traditional Arabic; font-weight:bold; font-size:12pt" tabindex="4" dir="rtl"><font size="2">
 							</font>
 							<font face="Traditional Arabic" color="#FFFF00"><b>
-						<span dir ="rtl"><font size="2">&#1605;&#1579;&#1604;&#1575;: 8 &#1548; 10 (&#1601;&#1589;&#1608;&#1604; 
-							&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;)
+						<span dir ="rtl"><font size="2">Example: 8, 10 semesters
 							</font>
 
 					</span>
@@ -105,7 +107,7 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 					<td bordercolor="#003366" align="right" width="26%" bgcolor="#5A74A0" bordercolorlight="#003366" bordercolordark="#003366">
 						<p align="center"><b>
 							<font color="#FFFFFF" face="Traditional Arabic" size="4">
-						&#1593;&#1583;&#1583; &#1575;&#1604;&#1601;&#1589;&#1608;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;
+						Number Of Classes
 						</font></b>
 					</td>
 				</tr>
@@ -127,7 +129,7 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 							//do Delete
 						?>
 						
-								<input name="B2" type="submit" value="   &#1581;&#1584;&#1601;    "  tabindex="7" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl">
+								keep<input name="B2" type="submit" value="   &#1581;&#1584;&#1601;    "  tabindex="7" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl">
 
 						<?php
 						}
@@ -135,7 +137,7 @@ function DisplayDept_Form($CollegeCode,$uncode,$DeptName,$AcadProg,$noOfSem,$do,
 						{
 						//save
 						?>
-								<input name="B3" type="submit" value="   &#1581;&#1601;&#1592;    "  tabindex="5" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl">
+								keep<input name="B3" type="submit" value="   &#1581;&#1601;&#1592;    "  tabindex="5" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl">
 
 						<?php
 						}//end of else

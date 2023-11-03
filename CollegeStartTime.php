@@ -6,7 +6,7 @@ require_once('University_Method.php');
 Display_Title();
 
 
-if (!($_POST['B2']))
+if (empty($_POST['B2']))
 {
 
 	CollegeStartTimeForm($univCode,$CollegeCode,$SemNo,$StartSlot);
