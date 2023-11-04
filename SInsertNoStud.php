@@ -39,7 +39,7 @@ if($username)
 	$SecID= $_GET['SecID'];
 	$SecID=intval($SecID);
 	
-	$f = $_GET['f'];
+	$f = isset($_GET['f']);
 	$f=intval($f);
 
 	//College header
@@ -75,7 +75,7 @@ if($username)
 			    echo("</br>");
 					$msg='&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1575;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;';
 				Display_error_msg($msg,$path);
-				DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,,$NoOfStud,$NoOfGroup,$f,$SecID);
+				DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$NoOfStud,$NoOfGroup,$f,$SecID);
 			    $flag=false;
     		}
     		//Check fields
@@ -110,7 +110,7 @@ if($username)
 				//First: insert into table StudyPerSem
 				$conn = db_connect();
 					$sql = "insert into StudyPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,NoOfStud,NoOfGroup) values ('$year','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$NoOfStud','$NoOfGroup')";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn, $sql);
 				if ($result)
 		  		{
 		  			// Second: Insert  Groups on table GroupPerSem
@@ -121,7 +121,7 @@ if($username)
 		  		   {
 		  		   		$GName="&#1605;&#1580;&nbsp;".$count;
 		  					$sql2 = "insert into GroupPerSem (AcadYNo,UniversityCode,CollegeCode,DeptNo,AcadDegreeId,SemNo,ClassNo,SecID,GId,GName) values ('$year','$uncode1','$CollegeCode1','$DeptNo','$AcadDeg','$Sem','$Classno','$SecID','$count','$GName')";
-						$result2 = mysqli_query($sql2);
+						$result2 = mysqli_query($conn, $sql2);
 						if ($result2)
 		  				{
 							//echo("insert ".$GName);
@@ -151,7 +151,8 @@ if($username)
  					//Duplicated Data
  					//echo("Data already Existed..");
  						$msg="&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1607;&#1584;&#1607; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1605;&#1587;&#1576;&#1602;&#1575;";
- 					Display_error_msg($msg,$path);
+ 					$path = isset($_GET['path']) ? $_GET['path'] : '';
+						Display_error_msg($msg,$path);
 
 
 					$NoOfStud="";
