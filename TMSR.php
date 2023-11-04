@@ -56,7 +56,7 @@ if(($uncode1>0)&&($CollegeCode1>0))
 		// Display College header
 		$CollegeName=GetCollegeName($uncode1,$CollegeCode1);
 	
-		Display_welcomeHeader_College($CollegeName."- &#1575;&#1587;&#1578;&#1582;&#1585;&#1575;&#1580; &#1575;&#1604;&#1578;&#1602;&#1575;&#1585;&#1610;&#1585;");
+		Display_welcomeHeader_College($CollegeName);
 
 	}
 	DisplayTMRmenu($uncode1,$CollegeCode1,$flag);
