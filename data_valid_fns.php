@@ -48,9 +48,9 @@ function checkLName($LName,$univcode,$value,$Loc)
 	
 	$result3 = mysqli_query($sql3);
 	
-	//echo("no of row=".mysql_num_rows($result3) );
+	//echo("no of row=".mysqli_num_rows($result3) );
 	
-	if (mysql_num_rows($result3)>0 )
+	if (mysqli_num_rows($result3)>0 )
 	  {
 		 while($row3=mysqli_fetch_row($result3))
 		  {
@@ -93,7 +93,7 @@ function checkUniversityCode($univCode)
 	db_connect();
 	$sql_query="select UniversityCode from Universities where UniversityCode='$univCode'";//
 	$result2=mysqli_query($sql_query);
-	if(mysql_num_rows($result2)==1)
+	if(mysqli_num_rows($result2)==1)
 	{
 		$flag=true;
 	}
@@ -110,7 +110,7 @@ function checkUniversityName($univName)
 	db_connect();
 	$sql_query="select UniversityName from Universities where UniversityName='$univName'";//
 	$result2=mysqli_query($sql_query);
-	if(mysql_num_rows($result2)==1)
+	if(mysqli_num_rows($result2)==1)
 	{
 		$flag=true;
 	}
@@ -127,7 +127,7 @@ function DoUpdate()
 $conn = db_connect();
 $sql1="select count(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
 $result1 = mysqli_query($sql1);
-if (mysql_num_rows($result1)>0 )
+if (mysqli_num_rows($result1)>0 )
 	{
 		$row=mysqli_fetch_row($result1);
 		$id=$row[0]+1;

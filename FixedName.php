@@ -38,7 +38,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 							
 								UniversityCode='$uncode1' order by CollegeName");
 						
-						if(mysql_num_rows($result)>0)
+						if(mysqli_num_rows($result)>0)
 						{
 		
 					?>
@@ -114,7 +114,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 						//����� �������	
 						$sqls_query8 = "select TeacherNo,TeacherName from Teachers where UniversityCode='$uncode1' and CollegeCode='$SelectedCollege' and Status='0' order by TeacherName ";						
 						$results8=mysqli_query($sqls_query8);
-						if (mysql_num_rows($results8))
+						if (mysqli_num_rows($results8))
 						{
 							while($rows8=mysqli_fetch_row($results8))
 							{?>
@@ -204,7 +204,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 						//����� �������	
 						$sqls_query8 = "select TeacherNo,TeacherName from Teachers where UniversityCode='$uncode1' and CollegeCode='$_POST[AssistCollege]' and Status='1' order by TeacherName ";						
 						$results8=mysqli_query($sqls_query8);
-						if (mysql_num_rows($results8))
+						if (mysqli_num_rows($results8))
 						{
 							while($rows8=mysqli_fetch_row($results8))
 							{?>

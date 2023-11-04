@@ -53,7 +53,7 @@ function Diplay_Date()
    		<td align="right">
    		<font color="#FFFFFF" size="4" face="Traditional Arabic"><b>
 
-   		&#1575;&#1604;&#1578;&#1575;&#1585;&#1610;&#1582; :
+   		Date:
 
    		</b></font>
    		<font color="#B0CCFF" size="4" face="Traditional Arabic"><b>
@@ -63,31 +63,31 @@ function Diplay_Date()
 		switch($day)
 		{
 		 case 'Sat':
-	            echo('&#1575;&#1604;&#1587;&#1576;&#1578;');
+	            echo('Saturday');
 				break;
 
 	 	 case 'Sun':
-				echo('&#1575;&#1604;&#1575;&#1581;&#1583;');
+				echo('Sunday');
 				break;
 
 	 	 case 'Mon':
-			    echo('&#1575;&#1604;&#1575;&#1579;&#1606;&#1610;&#1606;');
+			    echo('Monday');
 				break;
 
 	     case 'Tue':
-				echo('&#1575;&#1604;&#1579;&#1604;&#1575;&#1579;&#1575;&#1569;');
+				echo('Tuesday');
 				break;
 
 	     case 'Wed':
-				echo('&#1575;&#1604;&#1575;&#1585;&#1576;&#1593;&#1575;&#1569;');
+				echo('Wednesday');
 				break;
 
 	     case 'Thu':
-				echo('&#1575;&#1604;&#1582;&#1605;&#1610;&#1587;');
+				echo('Thursday');
 				break;
 
 	     case 'Fri':
-				echo('&#1575;&#1604;&#1580;&#1605;&#1593;&#1577;');
+				echo('Friday');
 				break;
          }//end of switch
         ?>
@@ -119,31 +119,31 @@ function Diplay_RDate()
 		switch($day)
 		{
 		 case 'Sat':
-	            echo('&#1575;&#1604;&#1587;&#1576;&#1578;');
+	            echo('Saturday');
 				break;
 
 	 	 case 'Sun':
-				echo('&#1575;&#1604;&#1575;&#1581;&#1583;');
+				echo('Sunday');
 				break;
 
 	 	 case 'Mon':
-			    echo('&#1575;&#1604;&#1575;&#1579;&#1606;&#1610;&#1606;');
+			    echo('Monday');
 				break;
 
 	     case 'Tue':
-				echo('&#1575;&#1604;&#1579;&#1604;&#1575;&#1579;&#1575;&#1569;');
+				echo('Tuesday');
 				break;
 
 	     case 'Wed':
-				echo('&#1575;&#1604;&#1575;&#1585;&#1576;&#1593;&#1575;&#1569;');
+				echo('Wednesday');
 				break;
 
 	     case 'Thu':
-				echo('&#1575;&#1604;&#1582;&#1605;&#1610;&#1587;');
+				echo('Thrsday');
 				break;
 
 	     case 'Fri':
-				echo('&#1575;&#1604;&#1580;&#1605;&#1593;&#1577;');
+				echo('Friday');
 				break;
          }//end of switch
 
@@ -367,7 +367,8 @@ function display_login_form()
 	<table border="0" width="47%" id="table2" dir="rtl" height="78">
 	<tr>
 		<td width="38%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
-				<p>&nbsp;<img border="0" id="img28" src="Background/busername.jpg" height="32" width="155" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;">
+				<p>&nbsp;Username
+					<!-- <img border="0" id="img28" src="Background/busername.jpg" height="32" width="155" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;"> -->
 		</td>
 		
 		<td width="59%" dir="ltr" height="30">
@@ -379,8 +380,8 @@ function display_login_form()
 
 	<tr>
 		<td width="38%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr" align="center">
-			<p align="center">
-					<img border="0" id="img29" src="Background/bPasswder.jpg" height="32" width="160" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;">
+			<p align="center">Password
+					<!-- <img border="0" id="img29" src="Background/bPasswder.jpg" height="32" width="160" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"> -->
 			</p>
 		</td>
 		
@@ -393,7 +394,7 @@ function display_login_form()
 
 	<tr>
 		<td width="80%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="78" dir="ltr" align="center" colspan="2">
-			<input name="Submit" type="submit" value=" &#1583;&#1582;&#1608;&#1604;  "  tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
+			<input name="Submit" type="submit" value="Submit"  tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
 	</tr>
 	</table>
 	</form>
@@ -438,8 +439,7 @@ function MainDisplay($uncode1,$CollegeCode1,$f,$year)
 		<tr>
 			<td bgcolor="#2F446F" align="right">
 			<p><span dir="rtl"><b><span lang="ar-sa">
-			<font size="5" face="Traditional Arabic" color="#FFFFFF">&#1605;&#1585;&#1581;&#1576;&#1575; &#1576;&#1603;&#1605;&nbsp;
-			&#1601;&#1609; &#1606;&#1592;&#1575;&#1605; &#1575;&#1583;&#1575;&#1585;&#1577; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;&#1577; ....</font></span></b></span></td>
+			<font size="5" face="Traditional Arabic" color="#FFFFFF">Welcome to the Time Table Management System</font></span></b></span></td>
 		</tr>
 	</table>
 </div>
@@ -460,7 +460,7 @@ function MainDisplay($uncode1,$CollegeCode1,$f,$year)
 				$sql2 = "select CollegeCode,CollegeName from Colleges where
 						UniversityCode='$row[0]' order by CollegeName";
 				$result2=mysqli_query($sql2);
-				if (mysqli_num_rows($result2))
+				if (mysqli_num_rows($result2) > 0)
 				{
 					$collegename="<ul>";
 					//Display Regiseted Colleges
@@ -526,7 +526,7 @@ function MainDisplay($uncode1,$CollegeCode1,$f,$year)
 					<img border="0" src="Background/d2.gif" width="48" height="48" align="right">
 				</span></b>
 				<font color="#FFFFFF" face="Traditional Arabic">
-				<span style="text-decoration: none" dir="rtl"><b>&#1593;&#1606; &#1575;&#1604;&#1606;&#1592;&#1575;&#1605;</b></span></font></b>
+				<span style="text-decoration: none" dir="rtl"><b>About the system</b></span></font></b>
 			</a></td>
 		</tr>
 	</table>

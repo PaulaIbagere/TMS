@@ -49,7 +49,7 @@ if($univCode>0)
 
 				$sql_get="select count(LocId) from UnivLoc where UniversityCode='$univCode'";
 				$result_get = mysqli_query($sql_get);
-				if (mysql_num_rows($result_get)>0 )
+				if (mysqli_num_rows($result_get)>0 )
 				  {
 					$row_get=mysqli_fetch_row($result_get);
 					$id=$row_get[0]+1;

@@ -60,7 +60,7 @@ if($username)
 		<tr>
 	<?php
 
-	if (mysql_num_rows($result)>0 )
+	if (mysqli_num_rows($result)>0 )
 	{
 	?>
 

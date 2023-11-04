@@ -35,14 +35,14 @@ if($username)
 	$DeptNo=intval($DeptNo);
 	
 	
-	if($_GET['checkit']==1)
+	if(isset($_GET['checkit'])==1)
 	{
 		$SecID=$_POST['D2'];
 	}
 	else
 	{
 	
-		$SecID= $_GET['SecID'];
+		$SecID= isset($_GET['SecID']);
 		$SecID=intval($SecID);
 	}
 	
@@ -69,7 +69,7 @@ if($username)
 
 	//check if inserted before
 	$conn = db_connect();
-	$sql = "select NoOfStud,NoOfGroup from StudyPerSem where
+	$sql = "SELECT NoOfStud,NoOfGroup from StudyPerSem where
 			AcadYNo='$year' and
 			UniversityCode='$uncode1' and
 			CollegeCode='$CollegeCode1' and
@@ -77,7 +77,7 @@ if($username)
 			AcadDegreeId='$AcadDeg' and
 			ClassNo='$Classno' and SecID='$SecID' and 			
 			SemNo='$Sem'";
-	$result = mysqli_query($sql);
+	$result = mysqli_query($conn, $sql);
 	$row=mysqli_fetch_row($result);
 	if($row>0)
 	{
@@ -92,6 +92,8 @@ if($username)
 		//display Form
 		// Add Data
 		$flag=0;
+		$NoOfStud = isset($_GET['NoOfStud']) ? $_GET['NoOfStud'] : '';
+		$NoOfGroup = isset($_GET['NoOfGroup']) ? $_GET['NoOfGroup'] : '';
 		DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$year,$NoOfStud,$NoOfGroup,$flag,$SecID);
 	}
 

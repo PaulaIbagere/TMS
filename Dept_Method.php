@@ -775,7 +775,7 @@ function GetCollegeTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 				SemNo='$Sem'";
 	$result6=mysqli_query($sql_query6);
 	
-	if(mysql_num_rows($result6)>0)
+	if(mysqli_num_rows($result6)>0)
 	{
 		$trow=mysqli_fetch_row($result6);
 		
@@ -835,7 +835,7 @@ function HeaderTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 				SemNo='$Sem'";
 	$result6=mysqli_query($sql_query6);
 	
-	if(mysql_num_rows($result6)>0)
+	if(mysqli_num_rows($result6)>0)
 	{
 		$trow=mysqli_fetch_row($result6);
 		
@@ -906,7 +906,7 @@ function HeaderSubForm($uncode1,$CollegeCode1,$Sem,$year)
 				SemNo='$Sem'";
 	$result6=mysqli_query($sql_query6);
 	
-	if(mysql_num_rows($result6)>0)
+	if(mysqli_num_rows($result6)>0)
 	{
 		$trow=mysqli_fetch_row($result6);
 		
@@ -1123,7 +1123,7 @@ function GetSubjecttName($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$
 			SemNo='$Sem' and
 			SubCode='$SubCode'";
 
-	$results = mysqli_query($sqls);
+	$results = mysqli_query($conn, $sqls);
 
 	$rows=mysqli_fetch_row($results);
 
@@ -1182,29 +1182,39 @@ Your browser does not support inline frames or is currently configured not to di
 
 		<tr>
 		<td width="84%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold" colspan="3" align="right">
-		<font color="#FFFF00" size="5">&#1578;&#1587;&#1580;&#1610;&#1604; &#1580;&#1583;&#1610;&#1583; &#1604;&#1604;&#1605;&#1608;&#1575;&#1583;</font></td>
+		<font color="#FFFF00" size="5">New Registration of materials</font></td>
 
 		</tr>
 
 		<tr>
 		<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img7" src="Colleges-PAGE/DEptName4.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;"></td>
+			<p align="center">Department Name </p>
+			<!-- <img border="0" id="img7" src="Colleges-PAGE/DEptName4.jpg" height="22" width="110" 
+			alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;" fp-style="fp-btn: 
+			Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: 
+			#FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title=
+			"&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;"> -->
+		</td>
 
 		<td width="40%" dir="ltr" height="28" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 
 		<p align="right"><font face="Traditional Arabic" color="#FFFFFF"><b><span lang="en-us">
 		<?php
-		//DeptName
-		echo($row2[0]);
+			//DeptName
+			echo($row2[0]);
 		?>
 		</span></b></font></td>
 		</tr>
 
 		<tr>
 		<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img50" src="Depart_Files/ACDYEARS.jpg" height="22" width="110" alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"></td>
+			<p align="center">Academic Year
+			<!-- <img border="0" id="img50" src="Depart_Files/ACDYEARS.jpg" height="22" width="110" 
+			alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" 
+			fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
+			fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" 
+			fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"> -->
+		</td>
 
 		<td width="40%" dir="ltr" height="28" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 
@@ -1219,7 +1229,13 @@ Your browser does not support inline frames or is currently configured not to di
 
 		<tr>
 		<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="30" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">&nbsp;<img border="0" id="img8" src="Colleges-PAGE/Acadmic.jpg" height="22" width="110" alt="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;">
+		<p align="center">&nbsp; Academic Program
+			<!-- <img border="0" id="img8" src="Colleges-PAGE/Acadmic.jpg" height="22" width="110" 
+			alt="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;
+			&#1610;&#1605;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: 
+			Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 
+			0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;
+			&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;"> -->
 		</td>
 
 		<p align="right">
@@ -1281,11 +1297,11 @@ Your browser does not support inline frames or is currently configured not to di
 							//$SecID=$_POST['D1'];
 							$conn = db_connect();
 							
-							$result=mysqli_query("select SecID,SecName from DeptSection where 
+							$result=mysqli_query($conn, "select SecID,SecName from DeptSection where 
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno'");
 								
-							if(mysql_num_rows($result)>0)
+							if(mysqli_num_rows($result)>0)
 							{
 								
 								while($row=mysqli_fetch_row($result))
@@ -1317,8 +1333,13 @@ Your browser does not support inline frames or is currently configured not to di
 		
 		<tr>
 		<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
-		<p align="center">
-		<img border="0" id="img9" src="Colleges-PAGE/subjCode.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"></td>
+			<p align="center">Material Code</p>
+			<!-- <img border="0" id="img9" src="Colleges-PAGE/subjCode.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; 
+			&#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; 
+			fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; 
+			fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;
+			"> -->
+		</td>
 
 		<p align="right">
 
@@ -1334,8 +1355,12 @@ Your browser does not support inline frames or is currently configured not to di
 
 	<tr>
 	<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-	<img border="0" id="img10" src="Colleges-PAGE/SubjName.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"></td>
+		<p align="center"> Subject Name
+		<!-- <img border="0" id="img10" src="Colleges-PAGE/SubjName.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; 
+		&#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; 
+		fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; 
+		fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"> -->
+	</td>
 
 	<td width="40%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" colspan="2">
 		<p align="right">
@@ -1344,8 +1369,13 @@ Your browser does not support inline frames or is currently configured not to di
 
 	<tr>
 	<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-	<img border="0" id="img11" src="Colleges-PAGE/SubHours.jpg" height="22" width="110" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;"></td>
+		<p align="center">Lecture Hours</p>
+		<!-- <img border="0" id="img11" src="Colleges-PAGE/SubHours.jpg" height="22" width="110" alt="&#1587;&#1575;&#1593;
+		&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;" fp-style="fp-btn: Simple Text 1; 
+		fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover:
+		0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; 
+		&#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;"> -->
+	</td>
 	<td width="40%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" colspan="2">
 
 		<p align="right">
@@ -1355,19 +1385,31 @@ Your browser does not support inline frames or is currently configured not to di
 
 	<tr>
 	<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-			<img border="0" id="img12" src="Colleges-PAGE/NoOfTech.jpg" height="22" width="110" alt="&#1610;&#1615;&#1587;&#1578;&#1601;&#1575;&#1583; &#1605;&#1606;&#1607;&#1575; &#1601;&#1609; &#1581;&#1575;&#1604;&#1577; &#1578;&#1602;&#1587;&#1610;&#1605; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576; &#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1575;&#1578; &#1576;&#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;"></td>
+	<p align="center">Exercise Houres</p>
+			<!-- <img border="0" id="img12" src="Colleges-PAGE/NoOfTech.jpg" height="22" width="110" alt="&#1610;&#1615;
+			&#1587;&#1578;&#1601;&#1575;&#1583; &#1605;&#1606;&#1607;&#1575; &#1601;&#1609; &#1581;&#1575;&#1604;
+			&#1577; &#1578;&#1602;&#1587;&#1610;&#1605; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576; &#1604;&#1605;
+			&#1580;&#1605;&#1608;&#1593;&#1575;&#1578; &#1576;&#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;
+			&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 
+			16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" 
+			fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;"> -->
+		</td>
 	<td width="40%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" colspan="2">
 
 		<p align="right">
 
-		<input name="T6" value="<?php echo($SubTHour);?>" size="19" dir="rtl" tabindex="4" style="font-size: 12pt; color: #2F446F; font-weight: bold; font-family:Traditional Arabic; float:right"><b><span lang="ar-sa"><font size="2" face="Traditional Arabic" color="#000066"><span style="background-color: #FFFF00"><a onclick="javascript:openWin()">&#1605;&#1604;&#1581;&#1608;&#1592;&#1577;*</a></span></font></span></b></td>
+		<input name="T6" value="<?php echo($SubTHour);?>" size="19" dir="rtl" tabindex="4" style="font-size: 12pt; color: #2F446F; font-weight: bold; font-family:Traditional Arabic; float:right"><b><span lang="ar-sa"><font size="2" face="Traditional Arabic" color="#000066"><span style="background-color: #FFFF00"><a onclick="javascript:openWin()">NB*</a></span></font></span></b></td>
 	</tr>
 
 	<tr>
 	<td width="44%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-	<img border="0" id="img76" src="Colleges-PAGE/NoOFLabH.jpg" height="22" width="110" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;"></td>
+		<p align="center"> Practical Hours </p>
+		<!-- <img border="0" id="img76" src="Colleges-PAGE/NoOFLabH.jpg" height="22" width="110" alt="&#1587;&#1575;&#1593;
+		&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional 
+		Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; 
+		fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;
+		&#1604;&#1609;"> -->
+	</td>
 	<td width="40%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" colspan="2">
 
 		<p align="right">
@@ -1380,7 +1422,7 @@ Your browser does not support inline frames or is currently configured not to di
 	<td width="44%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" height="35%" bgcolor="#B0CCFF">
 	<p align="center">&nbsp;</td>
 	<td width="16%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" height="35%" bgcolor="#5A74A0">
-	<input name="Submit" type="submit" value="  &#1581;&#1601;&#1592;  "  tabindex="8" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; float:left" dir="rtl"></td>
+	<input name="Submit" type="submit" value="Submit"  tabindex="8" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; float:left" dir="rtl"></td>
 	<td width="21%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" height="35%" bgcolor="#B0CCFF">
 	&nbsp;</td>
 	</tr>
@@ -1405,13 +1447,13 @@ function UpdateSubDetail_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$
 			UniversityCode='$uncode1' and
 			CollegeCode='$CollegeCode1' and
 			DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg'";
-	$result2 = mysqli_query($sql2);
+	$result2 = mysqli_query($conn, $sql2);
 	$row2=mysqli_fetch_row($result2);
 
 	//Get Acadmic Name
 	$sql3 = "select AcadDegreeName from AcadDegree where
 	   	AcadDegreeId='$AcadDeg'";
-	$result3 = mysqli_query($sql3);
+	$result3 = mysqli_query($conn, $sql3);
 	$row3=mysqli_fetch_row($result3);
 
 	//Display ClassName & SemName
@@ -1419,7 +1461,7 @@ function UpdateSubDetail_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$
 	where Semester.ClassNo='$Classno' and
 	ClassYear.ClassNo=Semester.ClassNo and
 	Semester.SemNo='$Sem'";
-	$result4 = mysqli_query($sql4);
+	$result4 = mysqli_query($conn, $sql4);
 	$row4=mysqli_fetch_row($result4);
 
 ?>
@@ -1768,7 +1810,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno'");
 								
-							if(mysql_num_rows($result)>0)
+							if(mysqli_num_rows($result)>0)
 							{
 								
 								while($row=mysqli_fetch_row($result))
@@ -1843,7 +1885,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 					$result33=mysqli_query($sql_query33);
 
-					if (mysql_num_rows($result33)>0)
+					if (mysqli_num_rows($result33)>0)
 					{
 					?>
 					<select size="1" name="D2" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
@@ -1871,7 +1913,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 							AcadYNo='$MaxYear' and 
 					 							UniversityCode='$uncode1' and 
 					 							CollegeCode='$CollegeCode1' and BId=1");
-					 	if (mysql_num_rows($result33)>0)
+					 	if (mysqli_num_rows($result33)>0)
 					 	{
 								echo("&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577; &#1604;&#1575; &#1578;&#1587;&#1593; &#1607;&#1584;&#1575; &#1575;&#1604;&#1593;&#1583;&#1583; &#1605;&#1606; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;");
 					 	}
@@ -1910,7 +1952,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 					$result33=mysqli_query($sql_query33);
 
-					if (mysql_num_rows($result33)>0)
+					if (mysqli_num_rows($result33)>0)
 					{
 					?>
 					<select size="1" name="D2" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
@@ -1938,7 +1980,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 							AcadYNo='$MaxYear' and 
 					 							UniversityCode='$uncode1' and 
 					 							CollegeCode='$CollegeCode1' and BId=1");
-					 	if (mysql_num_rows($result33)>0)
+					 	if (mysqli_num_rows($result33)>0)
 					 	{
 
 								echo("&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577; &#1604;&#1575; &#1578;&#1587;&#1593; &#1607;&#1584;&#1575; &#1575;&#1604;&#1593;&#1583;&#1583; &#1605;&#1606; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;");
@@ -1981,7 +2023,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 					$result33=mysqli_query($sql_query33);
 
-					if (mysql_num_rows($result33))
+					if (mysqli_num_rows($result33))
 					{
 					?>
 					<select size="1" name="D2" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
@@ -2011,7 +2053,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 							AcadYNo='$MaxYear' and 
 					 							UniversityCode='$uncode1' and 
 					 							CollegeCode='$CollegeCode1' and BId=2");
-					 	if (mysql_num_rows($result33)>0)
+					 	if (mysqli_num_rows($result33)>0)
 					 	{
 
 					 			echo("&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577; &#1604;&#1575; &#1578;&#1587;&#1593; &#1607;&#1584;&#1575; &#1575;&#1604;&#1593;&#1583;&#1583; &#1605;&#1606; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;");
@@ -2071,7 +2113,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 						$results=mysqli_query($sqls_query);
 
-						if(mysql_num_rows($results))
+						if(mysqli_num_rows($results))
 						{
 						  while($rowss=mysqli_fetch_row($results))
 						   {
@@ -2085,7 +2127,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 							SemNo='$Sem' and
 							ClassNo='$Classno' and SecID='$SecID'";
 							$result88=mysqli_query($sql_query88);
-							if (mysql_num_rows($result88))
+							if (mysqli_num_rows($result88))
 							{
 							  while($row88=mysqli_fetch_row($result88))
 							   {
@@ -2224,7 +2266,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 						$sqls_query7 = "select SubCode,SubName,SubHour from CollegeSubject where AcadYNo='$MaxYear' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SecID='$SecID' and SemNo='$Sem' and SubType=1 and SubHour!=0";
 
 					$results7=mysqli_query($sqls_query7);
-					if (mysql_num_rows($results7)>0)
+					if (mysqli_num_rows($results7)>0)
 					{
 					  while($rows7=mysqli_fetch_row($results7))
 					  {
@@ -2331,7 +2373,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				$conn = db_connect();
 					$sqls_query8 = "select TeacherNo,TeacherName from Teachers where AcadYNo='$MaxYear' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' ORDER BY TeacherName";
 				$results8=mysqli_query($sqls_query8);
-				if (mysql_num_rows($results8))
+				if (mysqli_num_rows($results8))
 				{
 					while($rows8=mysqli_fetch_row($results8))
 					{?>
@@ -2455,7 +2497,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 	}
 
 	$result11 = mysqli_query($sql11);
-	if (mysql_num_rows($result11))
+	if (mysqli_num_rows($result11))
 	{
 		$row11=mysqli_fetch_row($result11);
 		$subname=$row11[0];
@@ -4065,7 +4107,7 @@ function CheckGroupOnBId($BId,$year,$LectureName,$mday,$avTime,$uncode1,$College
 
 	//$mrow=mysqli_fetch_row($Mresult);
 
-	if(mysql_num_rows($Mresult)==0)
+	if(mysqli_num_rows($Mresult)==0)
 		return true;
 	else
 		return false;
@@ -4099,7 +4141,7 @@ function CheckGroup($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$AcadDeg,
 
 	//$mrow=mysqli_fetch_row($Mresult);
 
-	if(mysql_num_rows($Mresult)==0)
+	if(mysqli_num_rows($Mresult)==0)
 		return true;
 	else
 		return false;
@@ -4127,7 +4169,7 @@ function CheckOpenLab($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$AcadDe
 			
 	$Mresult=mysqli_query($Mang_query);
 			
-	if(mysql_num_rows($Mresult)==0)
+	if(mysqli_num_rows($Mresult)==0)
 		
 		return true;
 	else
@@ -4154,7 +4196,7 @@ function CheckLectureRoom($year,$mday,$avTime,$uncode1,$Sem,$BId,$LectureName)
 			
 	$Mresult=mysqli_query($Mang_query);
 
-	if(mysql_num_rows($Mresult)==0)
+	if(mysqli_num_rows($Mresult)==0)
 		return true;
 	else
 		return false;
@@ -4183,7 +4225,7 @@ function CheckClassYear($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$Acad
 			
 	$Mresult=mysqli_query($Mang_query);
 	
-	if(mysql_num_rows($Mresult)==0)
+	if(mysqli_num_rows($Mresult)==0)
 		return true;
 	else
 		return false;
@@ -4205,7 +4247,7 @@ function CheckTime2($BId,$year,$LectureName,$mday,$avTime,$GId,$uncode1,$College
 	$Mresult=mysqli_query($Mang_query);
 
 	//get num of row return
-	$c=mysql_num_rows($Mresult);
+	$c=mysqli_num_rows($Mresult);
 	/*
 	 UniversityCode=$mrow[0],
 	 CollegeCode=$mrow[1],
@@ -5026,7 +5068,7 @@ function DeptSection_Form($CollegeCode,$uncode,$DeptNo,$SecName,$ClassNo,$FlagSe
 							
 								$result=mysqli_query("select DeptNo,DeptName from Departments where UniversityCode='$uncode' and  CollegeCode='$CollegeCode'");
 								
-							if(mysql_num_rows($result)>0)
+							if(mysqli_num_rows($result)>0)
 							{
 								$ch=1;
 								while($row=mysqli_fetch_row($result))

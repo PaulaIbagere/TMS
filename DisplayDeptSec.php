@@ -59,7 +59,7 @@ if($username)
     		 				DeptNo='$DeptNo' and 
     		 				AcadDegreeId ='$AcadDeg' and 
     		 				ClassNo ='$Classno' and SecID!='$SecID'");
-    	if( mysql_num_rows($result)>0)
+    	if( mysqli_num_rows($result)>0)
     	{
     		//Display other Sections
     	?>
@@ -84,7 +84,7 @@ if($username)
     		 							DeptNo='$DeptNo' and 
     		 							ClassNo='$Classno' and  SemNo='$Sem' and SubCode='$subcode' and SecID ='$row[0]'");
     			
-    				if( mysql_num_rows($resultd)>0)
+    				if( mysqli_num_rows($resultd)>0)
     				{
     					//check if there are available session for 
 						$secid='Sec'.$id;
@@ -136,7 +136,7 @@ if($username)
     		 	UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 	DeptNo!='$DeptNo'");
     		
-    		if( mysql_num_rows($result)>0)
+    		if( mysqli_num_rows($result)>0)
     		{
     		//Display other Departs
     	?>
@@ -161,7 +161,7 @@ if($username)
     		 							DeptNo='$row[0]' and 
     		 							ClassNo='$Classno' and  SemNo='$Sem' and SubCode='$subcode'");
     			
-    				if( mysql_num_rows($resultd)>0)
+    				if( mysqli_num_rows($resultd)>0)
     				{
     					//check if there are available session for 
 						$secid='Sec'.$id;
@@ -238,7 +238,7 @@ if($username)
     		 	DeptNo='$row[0]' and 
     		 	ClassNo='$Classno' and  SemNo='$Sem' and SubCode='$subcode'");
     			
-    			if( mysql_num_rows($resultd)>0)
+    			if( mysqli_num_rows($resultd)>0)
     			{
     				//check if there are available session for 
 					$secid='Sec'.$id;

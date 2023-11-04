@@ -60,7 +60,7 @@ o\:*         { behavior: url(#default#VML) }
 src="header_files/image001.gif" alt="&#1606;&#1592;&#1575;&#1605; &#1573;&#1583;&#1575;&#1585;&#1577; &#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" v:shapes="_x0000_s1026"><![endif]></td>
 		</tr>
 		<tr>
-		<td bgcolor="#B0CCFF" align="center">&nbsp;</td>
+		<td bgcolor="#B0CCFF" align="center">&nbsp; </td>
 		</tr>
 		<tr>
 			<td><!--[if gte vml 1]><v:shape
@@ -69,11 +69,13 @@ src="header_files/image001.gif" alt="&#1606;&#1592;&#1575;&#1605; &#1573;&#1583;
  <v:shadow color="#868686"/>
  <v:textpath style='font-family:"Traditional Arabic";font-size:16pt;
   font-weight:bold;v-text-kern:t' trim="t" fitpath="t" string="&#1605;&#1585;&#1581;&#1576;&#1575; &#1605;&#1583;&#1610;&#1585; &#1575;&#1604;&#1606;&#1592;&#1575;&#1605; ..."/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=194 height=40
-src="header_files/image002.gif" align=right
-alt="&#1606;&#1592;&#1575;&#1605; &#1573;&#1583;&#1575;&#1585;&#1577; &#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" v:shapes="_x0000_s1025"><![endif]></td>
+</v:shape><![endif]--><p align= "right">Welcome system administrator</p></td>
 		</tr>
+    
 	</table>
+  <a href="index.php">Home Page</a>
+  <a href="TMS-College.php">College Login</a>
+  <a href="TMS-Manager.php">Admin login</a>
 </div>
 
 </body>

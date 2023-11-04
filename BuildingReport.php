@@ -25,13 +25,14 @@ if($username)
 
 	//(1)select the Location Of College
 	$sql = "select UnLoc from Colleges where UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
-	$result = mysqli_query($sql);
+	$result = mysqli_query($conn, $sql);
 	$row=mysqli_fetch_row($result);
 
 	$yyear=$_SESSION['year'];
 	// select Building from usedBy Table on MaxYear
-	$sql_query332="select BId,SubBId from usedBy where AcadYNo='$yyear' and BId='$op' and UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
-	$result332=mysqli_query($sql_query332);
+	//come back and check UsedBy
+	$sql_query332="SELECT BId,SubBId from managinglec where AcadYNo='$yyear' and BId='$op' and UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
+	$result332=mysqli_query($conn, $sql_query332);
 
 	//(2)Then select the Lecture Room at the Same Location
 		?>
@@ -66,7 +67,7 @@ if($username)
 
 		   <tr>
 	<?php
-	if (mysql_num_rows($result332))
+	if (mysqli_num_rows($result332))
 	{
 	?>
 		<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="14%" bordercolorlight="#000000" bordercolordark="#000000">

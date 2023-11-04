@@ -80,13 +80,13 @@ if($username)
    		   		
    		//[1]update Department Name
    		
-   			$res=mysqli_query("update Departments set DeptName='$DeptName' where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
+   			$res=mysqli_query($conn, "update Departments set DeptName='$DeptName' where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
    		
    		if($res)
    		{
    			//[2]update AcadProg Name or NoOfSem
 
-			$res=mysqli_query("update AcadDegree set AcadDegreeName='$AcadProg', NoOfSemester='$noOfSem', AcadProgType='$ProgType' where AcadDegreeId='$AcadProgId'");
+			$res=mysqli_query($conn, "update AcadDegree set AcadDegreeName='$AcadProg', NoOfSemester='$noOfSem', AcadProgType='$ProgType' where AcadDegreeId='$AcadProgId'");
 				
 			if($res)
 			{
@@ -163,15 +163,15 @@ if($username)
   	{
   		//delete from Three tables( DeptandSem | Departments | AcadDegree )
   		  
-  		$res=mysqli_query("delete from DeptandSem  where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
+  		$res=mysqli_query($conn, "delete from DeptandSem  where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
   		  	
   		if($res)
   		{
-  		  	$res=mysqli_query("delete from Departments where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
+  		  	$res=mysqli_query($conn, "delete from Departments where UniversityCode='$uncode' and CollegeCode='$CollegeCode' and DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId'");
   		  	
   		  if($res)
   		  {
-  		  	  	$res=mysqli_query("delete from AcadDegree where AcadDegreeId='$AcadProgId'");
+  		  	  	$res=mysqli_query($conn, "delete from AcadDegree where AcadDegreeId='".$AcadProgId."'");
   		  	  	
   		  	  	if($res)
   		  	  	{

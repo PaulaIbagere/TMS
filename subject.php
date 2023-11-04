@@ -148,7 +148,7 @@ if(($username)&&($year))
 									ClassNo='$Classno' and SecID='$SecID' and
 									SemNo='$Sem' and SubCode='$SubLCode'");
 				
-						if(mysql_num_rows($res)==0)
+						if(mysqli_num_rows($res)==0)
 							$SubLHour=0;
 						else
 						{

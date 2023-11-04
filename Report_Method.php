@@ -21,7 +21,7 @@ function GetAllDeparts($uncode,$CollegeCode)
 							
 							UniversityCode='$uncode' and CollegeCode='$CollegeCode'");
 
-	if(mysql_num_rows($result)>0)
+	if(mysqli_num_rows($result)>0)
 	{
 		while($row=mysqli_fetch_row($result))
 		{	
@@ -44,7 +44,7 @@ function GetAllColleges($year,$univCode,$LecRoom)
 							
 							AcadYNo='$year' and UniversityCode='$univCode' and BId='1' and SubBId='$LecRoom'");
 
-	if(mysql_num_rows($result)>0)
+	if(mysqli_num_rows($result)>0)
 	{
 		$i=1;
 		while($row=mysqli_fetch_row($result))
@@ -111,7 +111,7 @@ function GetDeptSection($univCode,$CollegeCode,$DeptNo,$AcadProgId,$ClassNo)
     		 	DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ");
     		 	
     
-    if(mysql_num_rows($result)>0)
+    if(mysqli_num_rows($result)>0)
     {
     	while( $row= mysqli_fetch_row($result))
     	{
@@ -1293,7 +1293,7 @@ function GetAllTeachers($univCode,$CollegeCode,$SemNo,$year,$Qualif,$status)
 	
 	$count=1;
 	
-	if(mysql_num_rows($results)>0)
+	if(mysqli_num_rows($results)>0)
 	{
 		while($row=mysqli_fetch_row($results))
 		{	

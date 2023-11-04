@@ -102,9 +102,9 @@ if($username)
 
 					  <?php
 					  	$sql3 = "select AcadDegreeName,Departments.AcadDegreeId,Departments.DeptNo  from Departments,AcadDegree where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
-					  $result3 = mysqli_query($sql3);
+					  $result3 = mysqli_query($conn, $sql3);
 
-					  if (mysql_num_rows($result3)>0 )
+					  if (mysqli_num_rows($result3)>0 )
 					  {
 					  ?>
 					  <td bordercolor="#003366" align="center" width="30%" height="35">

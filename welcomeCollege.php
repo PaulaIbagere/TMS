@@ -3,7 +3,7 @@
 session_start();
 
 require_once('main.php');
-include('header.php');	
+// include('header.php');	
 
 //Page Title & Background
 
@@ -12,7 +12,7 @@ Display_Title();
 Background_Page();
 
 
-$flag = $_GET['flag'];
+$flag = isset($_GET['flag']) ? $_GET['flag'] : '';
 $flag=intval($flag);
 
 

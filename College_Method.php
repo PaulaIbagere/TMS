@@ -77,7 +77,7 @@ function FP_getObjectByID(id,o) {//v1.0
 				$conn = db_connect();
 				$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
 				$result22=mysqli_query($sql_query22);
-				if (mysql_num_rows($result22))
+				if (mysqli_num_rows($result22))
 				{
 					while($row22=mysqli_fetch_row($result22))
 					{?>
@@ -485,7 +485,8 @@ $yyear=$_SESSION['year'];
 							$Dmsg="&#1593;&#1585;&#1590; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577; &#1604;&#1604;&#1603;&#1604;&#1610;&#1577;";
 
 						?>
-							<img border="0" id="img44" src="College_files/labss.jpg" height="35" width="175" alt="&#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="&#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">
+							Specify the parameter
+							<!-- <img border="0" id="img44" src="College_files/labss.jpg" height="35" width="175" alt="&#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="&#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"> -->
 						<?php
 						}
 						?>
@@ -513,7 +514,9 @@ $yyear=$_SESSION['year'];
 			</td>
 			<td height="28%" width="22%">
 			<p align="center">
-			<img border="0" id="img45" src="Colleges-PAGE/year22.jpg" height="24" width="118" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+			Academic Year
+			<!-- <img border="0" id="img45" src="Colleges-PAGE/year22.jpg" height="24" width="118" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"> -->
+			</td>
 			</tr>
 			<tr>
 			<td height="28%" width="25%">
@@ -535,7 +538,7 @@ $yyear=$_SESSION['year'];
 				//Lab
 			?>
 				<option value="" selected><p align="right"><b>
-				<font color="#FFFFFF" face="Traditional Arabic">&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589; &#1604;&#1604;&#1603;&#1604;&#1610;&#1577;</font></b></option>
+				<font color="#FFFFFF" face="Traditional Arabic">Choose laboratory assigned to college</font></b></option>
 			<?php
 			}
 			$conn = db_connect();
@@ -553,7 +556,8 @@ $yyear=$_SESSION['year'];
 			   {
 			   	//check if Lecture inserted before
 					$conn = db_connect();
-					$sql_query332="select count(SubBId) from usedBy where AcadYNo='$yyear' and UniversityCode='$univCode' and CollegeCode='$CollegeCode' and BId='$op' and SubBId='$row33[0]'";
+					$sql_query332="SELECT count(SubBId) FROM usedBy where AcadYNo='$yyear' and UniversityCode='$univCode' 
+					and CollegeCode='$CollegeCode' and BId='$op' and SubBId='$row33[0]'";
 					$result332=mysqli_query($conn, $sql_query332);
 					$row332=mysqli_fetch_row($result332);
 					if($row332[0]==0)
@@ -584,7 +588,8 @@ $yyear=$_SESSION['year'];
 						else
 						{
 						?>
-							<img border="0" id="img47" src="Colleges-PAGE/chLabs.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;">
+							Lab Name
+							<!-- <img border="0" id="img47" src="Colleges-PAGE/chLabs.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;"> -->
 						<?php
 						}
 						?>
@@ -628,9 +633,14 @@ $yyear=$_SESSION['year'];
 				
 				<div align="right" dir="rtl">
 						<b><font face="Traditional Arabic" color="white">*<font size="2"> </font></font><font size="2"> 
-						<font face="Traditional Arabic" color="#FFFF00">				
-						&#1601;&#1609; &#1581;&#1575;&#1604;&#1577; &#1593;&#1583;&#1605; &#1608;&#1580;&#1608;&#1583; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581; &#1604;&#1604;&#1603;&#1604;&#1610;&#1577; &#1601;&#1609; &#1575;&#1604;&#1602;&#1575;&#1574;&#1605;&#1577; &#1575;&#1604;&#1605;&#1608;&#1590;&#1581;&#1577;&#1548; 
-&#1610;&#1605;&#1603;&#1606; &#1575;&#1590;&#1575;&#1601;&#1577; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1605;&#1606; &#1582;&#1604;&#1575;&#1604; &#1575;&#1604;&#1590;&#1594;&#1591; &#1593;&#1604;&#1609;
+						<font face="Traditional Arabic" color="#FFFF00">If the class available to the college is not 
+							in the list shown, It can be added by clicking on 			
+						<!-- &#1601;&#1609; &#1581;&#1575;&#1604;&#1577; &#1593;&#1583;&#1605; &#1608;&#1580;&#1608;&#1583;
+						 &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581; &#1604;
+						 &#1604;&#1603;&#1604;&#1610;&#1577; &#1601;&#1609; &#1575;&#1604;&#1602;&#1575;&#1574;&#1605;
+						 &#1577; &#1575;&#1604;&#1605;&#1608;&#1590;&#1581;&#1577;&#1548;
+						 &#1610;&#1605;&#1603;&#1606; &#1575;&#1590;&#1575;&#1601;&#1577; &#1575;&#1604;&#1605;&#1593;
+						 &#1605;&#1604; &#1605;&#1606; &#1582;&#1604;&#1575;&#1604; &#1575;&#1604;&#1590;&#1594;&#1591; &#1593;&#1604;&#1609; -->
 						
 						</font></font><font size="2" color="#FFFF00" face="Traditional Arabic">
 						</font></b> 
@@ -642,7 +652,7 @@ $yyear=$_SESSION['year'];
 				<font color="#FFFFFF">
 				<span lang="ar-sa" style="text-decoration: none">
 					<!--����� ����-->
-					&#1573;&#1590;&#1575;&#1601;&#1577; &#1605;&#1593;&#1605;&#1604;
+					Add a class
 				<img border="0" src="College_files/Add.gif" width="15" height="15" align="bottom"></span></font></a><font color="#FFFFFF">
 				</font></b></font>
 				</div>
@@ -659,7 +669,7 @@ $yyear=$_SESSION['year'];
 						</tr>
 					<tr>
 						<td bordercolor="#003366" align="center" width="93%" bgcolor="#2F446F" bordercolorlight="#2F446F" bordercolordark="#2F446F">
-						<input type="submit" value="   &#1581;&#1601;&#1592;  " name="B1" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
+						<input type="submit" value="Submit" name="B1" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
 					</tr>
 				</table>
 				</div>
@@ -682,29 +692,81 @@ function DisplayRegMenu($univCode,$CollegeCode)
 			<!--College Start Time Per Semester -->
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
 				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=5#CollegeStartTime">
-					<img border="0" id="collstart" src="Colleges-PAGE/CollTimeSlot.jpg" height="35" width="174" alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; &#1576;&#1583;&#1575;&#1610;&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" onmouseover="FP_swapImg(1,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeslot7.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeSlot.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeSlot8.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeslot7.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; &#1576;&#1583;&#1575;&#1610;&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;"></a>
+					<!-- <img border="0" id="collstart" src="Colleges-PAGE/CollTimeSlot.jpg" height="35" width="174" 
+					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; &#1576;&#1583;&#1575;&#1610;
+					&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" onmouseover=
+					"FP_swapImg(1,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeslot7.jpg')" onmouseout=
+					"FP_swapImg(0,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeSlot.jpg')" onmousedown=
+					"FP_swapImg(1,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeSlot8.jpg')" onmouseup=
+					"FP_swapImg(0,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeslot7.jpg')" fp-style=
+					"fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
+					fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
+					fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; 
+					&#1576;&#1583;&#1575;&#1610;&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575; -->
+					&#1578;"> <p style="color:white;">Determine the start time of Lectures</p>
+				</a>
 			</td>
 
 			<!--College Labs -->
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
 				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&op=2&value=4#RegLab">
-					<img border="0" id="img68" src="Colleges-PAGE/LabConfig6.jpg" height="32" width="160" alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" onmouseover="FP_swapImg(1,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig4.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig6.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig5.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig4.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"></a>
+					<img border="0" id="img68" src="Colleges-PAGE/LabConfig6.jpg" height="32" width="160" 
+					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" 
+					onmouseover="FP_swapImg(1,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig4.jpg')" 
+					onmouseout="FP_swapImg(0,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig6.jpg')" onmousedown=
+					"FP_swapImg(1,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig5.jpg')" onmouseup="FP_swapImg
+					(0,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig4.jpg')" fp-style="fp-btn: Braided Row 1; 
+					fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: 
+					#FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" 
+					fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">
+					<p style="color:white;">Determine the parameter</p>
+				</a>
 			</td>
 			
 			<!--College Lectures -->
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
 				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&op=1&value=3#RegLec">
-					<img border="0" id="img67" src="Colleges-PAGE/LecConfig3.jpg" height="32" width="160" alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" onmouseover="FP_swapImg(1,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig4.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig3.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig5.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig4.jpg')"></a>
+					<img border="0" id="img67" src="Colleges-PAGE/LecConfig3.jpg" height="32" width="160" 
+					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" 
+					fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 
+					16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
+					fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;
+					&#1593;&#1575;&#1578;" onmouseover="FP_swapImg(1,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig4.jpg')" 
+					onmouseout="FP_swapImg(0,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig3.jpg')" onmousedown=
+					"FP_swapImg(1,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig5.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig4.jpg')">
+					<p style="color:white;">Determine the halls</p>
+				</a>
 			</td>
 			
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
 				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=2#RegNewYear">
-					<img border="0" id="img57" src="Colleges-PAGE/NOOFStd3.jpg" height="32" width="160" alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" onmouseover="FP_swapImg(1,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd1.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd3.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd2.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd1.jpg')"></a>
+					<img border="0" id="img57" src="Colleges-PAGE/NOOFStd3.jpg" height="32" width="160" 
+					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;
+					&#1604;&#1575;&#1576;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: 
+					Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: 
+					#FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;
+					&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" onmouseover=
+					"FP_swapImg(1,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd1.jpg')" onmouseout=
+					"FP_swapImg(0,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd3.jpg')" onmousedown=
+					"FP_swapImg(1,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd2.jpg')" onmouseup=
+					"FP_swapImg(0,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd1.jpg')">
+					<p style="color:white;">Determine Number of students</p>
+				</a>
 			</td>
 			
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
 				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=1#RegNoOfStud">
-					<img border="0" id="img56" src="Colleges-PAGE/NewYear3.jpg" height="32" width="160" alt="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; " fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; " onmouseover="FP_swapImg(1,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear1.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear3.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear2.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear1.jpg')"></a>
+					<img border="0" id="img56" src="Colleges-PAGE/NewYear3.jpg" height="32" width="160" 
+					alt="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; " 
+					fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
+					fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: 
+					#5A74A0" fp-title="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;
+					&#1609; " onmouseover="FP_swapImg(1,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear1.jpg')" onmouseout=
+					"FP_swapImg(0,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear3.jpg')" onmousedown=
+					"FP_swapImg(1,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear2.jpg')" onmouseup=
+					"FP_swapImg(0,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear1.jpg')">
+					<p style="color:white;">Determine Academic Year</p>
+				</a>
 			</td>
 		</tr>
 	</table>
@@ -728,7 +790,14 @@ $href="SuccDirect.php?uncode=$uncode&CollegeCode=$CollegeCode";
 			<table border="2" width="95%" bordercolorlight="#003366" bordercolordark="#003366" id="table18" bordercolor="#003366">
 				<tr >
 					<td bordercolor="#003366" align="right" bgcolor="#2F446F" height="16">
-						<img border="0" id="img61" src="Colleges-PAGE/Regheader.jpg" height="35" width="175" alt="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; &#1580;&#1583;&#1610;&#1583;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; &#1580;&#1583;&#1610;&#1583;">
+						<p>Registration for a new academic Year</p>
+						<!-- <img border="0" id="img61" src="Colleges-PAGE/Regheader.jpg" height="35" width="175" 
+						alt="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;
+						&#1587;&#1609; &#1580;&#1583;&#1610;&#1583;" fp-style="fp-btn: Simple Text 1; fp-font: 
+						Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; 
+						fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="&#1578;
+						&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; 
+						&#1580;&#1583;&#1610;&#1583;"> -->
 					</td>
 				</tr>
 				<tr>
@@ -738,7 +807,7 @@ $href="SuccDirect.php?uncode=$uncode&CollegeCode=$CollegeCode";
 					   <td height="28%" width="76%">
 						<p align="right">
 						<select size="1" name="D1" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1">
-							<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;</option>
+							<option value="" selected>Select Academic Year</option>
 							<option value="2009/2008">2009/2008</option>
 							<!--
 							<option value="2010/2009">2010/2009</option>
@@ -750,15 +819,22 @@ $href="SuccDirect.php?uncode=$uncode&CollegeCode=$CollegeCode";
 
 					   </td>
 					<td height="28%" width="22%">
-					<p align="center">
-						<img border="0" id="img60" src="Colleges-PAGE/year22.jpg" height="24" width="118" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+					<p align="center"> School Year </p>
+						<!-- <img border="0" id="img60" src="Colleges-PAGE/year22.jpg" height="24" width="118" 
+						alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" 
+						fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 
+						14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; 
+						fp-orig: 0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"> -->
+					</td>
 				   </tr>
 				    </table>
 					</td>
 					</tr>
 					<tr>
 						<td bordercolor="#003366" align="center" width="93%" bgcolor="#2F446F" bordercolorlight="#2F446F" bordercolordark="#2F446F">
-						<input type="submit" value="   &#1581;&#1601;&#1592;  " name="B2" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
+						<input type="submit" value="Submit" name="B2" style="color: #FFFFFF; font-family: 
+						Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" 
+						tabindex="3"></td>
 					</tr>
 				</table>
 				</div>
@@ -775,7 +851,7 @@ $href="SuccDirect.php?uncode=$uncode&CollegeCode=$CollegeCode";
 //Cofigration For New Year
 function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$year,$NoOfStud,$NoOfGroup,$flag,$SecID)
 {
-
+	$conn = db_connect();
 	//Get Dept Name
 	$sql2 = "select DeptName from Departments where
 			UniversityCode='$uncode1' and
@@ -825,8 +901,13 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 
 		<tr>
 		<td width="28%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img7" src="Colleges-PAGE/DEptName4.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;"></td>
+		<p align="center">Department Name </p>
+		<!-- <img border="0" id="img7" src="Colleges-PAGE/DEptName4.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605;
+		 &#1575;&#1604;&#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; 
+		 fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; 
+		 fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;
+		 &#1605;"> -->
+		</td>
 
 		<td width="68%" dir="ltr" height="28" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 
@@ -840,8 +921,13 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 
 		<tr>
 		<td width="28%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="12" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img62" src="Depart_Files/ACDYEARS.jpg" height="22" width="110" alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"></td>
+		<p align="center">Academic Year
+		<!-- <img border="0" id="img62" src="Depart_Files/ACDYEARS.jpg" height="22" width="110" 
+		alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" 
+		fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
+		fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0"
+		 fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"> -->
+		</td>
 
 		<td width="68%" dir="ltr" height="12" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 
@@ -855,8 +941,13 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 		</tr>
 		<tr>
 		<td width="28%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="30" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img63" src="Colleges-PAGE/Year26.jpg" height="22" width="110" alt="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+		<p align="center">Semester
+		<!-- <img border="0" id="img63" src="Colleges-PAGE/Year26.jpg" height="22" width="110" alt="&#1575;&#1604;&#1601;
+		&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: 
+		Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; 
+		fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;
+		&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"> -->
+		</td>
 
 		<td width="68%" dir="ltr" height="30" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 		<p align="right">
@@ -878,8 +969,13 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 
 		<tr>
 		<td width="28%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
-		<p align="center">
-		<img border="0" id="img64" src="Colleges-PAGE/year27.jpg" height="22" width="110" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+		<p align="center">School Year </p>
+		<!-- <img border="0" id="img64" src="Colleges-PAGE/year27.jpg" height="22" width="110" alt="&#1575;&#1604;&#1593;
+		&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: 
+		Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; 
+		fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;
+		&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"> -->
+		</td>
 
 		<p align="right">
 
@@ -928,7 +1024,7 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno'");
 								
-							if(mysql_num_rows($result)>0)
+							if(mysqli_num_rows($result)>0)
 							{
 								
 								while($row=mysqli_fetch_row($result))
@@ -1257,7 +1353,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 							
 								UniversityCode='$uncode1' and CollegeCode!='$CollegeCode1' order by CollegeName");
 						
-						if(mysql_num_rows($result)>0)
+						if(mysqli_num_rows($result)>0)
 						{
 		
 					?>
@@ -1333,7 +1429,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 					}
 											
 					$results8=mysqli_query($sqls_query8);
-					if (mysql_num_rows($results8))
+					if (mysqli_num_rows($results8))
 					{
 						while($rows8=mysqli_fetch_row($results8))
 						{?>
@@ -1599,7 +1695,7 @@ function SelectYear($uncode1,$CollegeCode1,$AcadDeg,$Classno,$Sem,$f,$DeptNo,$ye
 						$conn = db_connect();
 						$sql_query3="select * from AcadYear";
 						$result3=mysqli_query($sql_query3);
-						if (mysql_num_rows($result3))
+						if (mysqli_num_rows($result3))
 						{
 						  while($row3=mysqli_fetch_row($result3))
 					   {?>
@@ -2549,8 +2645,8 @@ Your browser does not support inline frames or is currently configured not to di
 		ClassNo='$Classno' and
 		SemNo='$Sem'";
 		$result=mysqli_query($sql1);
-		$count=mysql_num_rows($result);
-		if (mysql_num_rows($result)>0)
+		$count=mysqli_num_rows($result);
+		if (mysqli_num_rows($result)>0)
 		{
 			//�� ������ ������
 		
@@ -2670,7 +2766,7 @@ function CollegeLecture_Form($value,$uncode,$LectureName,$Capacity,$Loc,$College
 			$conn = db_connect();
 			$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
 			$result22=mysqli_query($sql_query22);
-			if (mysql_num_rows($result22))
+			if (mysqli_num_rows($result22))
 			{
 				while($row22=mysqli_fetch_row($result22))
 				{?>
@@ -2758,7 +2854,7 @@ function CollegeLecture_Form($value,$uncode,$LectureName,$Capacity,$Loc,$College
 			$conn = db_connect();
 			$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
 			$result22=mysqli_query($sql_query22);
-			if (mysql_num_rows($result22))
+			if (mysqli_num_rows($result22))
 			{
 				while($row22=mysqli_fetch_row($result22))
 				{?>

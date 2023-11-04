@@ -40,7 +40,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				   <p align="center"><span lang="ar-sa"><b>
 				   <font face="Traditional Arabic" color="#FFFFFF" size="4">
 				   <?php
-					if (mysql_num_rows($result2)>0 )
+					if (mysqli_num_rows($result2)>0 )
 					{
 					$row2=mysqli_fetch_row($result2);
 					DisplaySuccHeader($row2[0]);
@@ -58,7 +58,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			<?php
 				$sql = "select CollegeName,CollegeCode from Colleges where UniversityCode='$uncode11'order by CollegeCode";
 				$result = mysqli_query($sql);
-				if (mysql_num_rows($result)>0 )
+				if (mysqli_num_rows($result)>0 )
 		          {
 			      ?>
 			      <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="73%" bordercolorlight="#003366" bordercolordark="#003366">

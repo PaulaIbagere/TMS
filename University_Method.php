@@ -302,7 +302,7 @@ function display_Building_form()
 				<?php
 				$sql_query="select * from Universities order by UniversityCode";
 				$result=mysqli_query($sql_query);
-				if (mysql_num_rows($result))
+				if (mysqli_num_rows($result))
 				 {
 				    while($row=mysqli_fetch_row($result))
 					{?>
@@ -396,7 +396,7 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 		$conn = db_connect();
 		$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
 		$result22=mysqli_query($sql_query22);
-		if (mysql_num_rows($result22))
+		if (mysqli_num_rows($result22))
 		{
 			while($row22=mysqli_fetch_row($result22))
 			{?>
@@ -500,7 +500,7 @@ function Display_Lecture($univCode,$r)
 	<?php
 		$sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
 		$result11 = mysqli_query($sqll);
-		if (mysql_num_rows($result11)>0 )
+		if (mysqli_num_rows($result11)>0 )
 		{
   			//display
 			while($row11=mysqli_fetch_row($result11))
@@ -525,7 +525,7 @@ function Display_Lecture($univCode,$r)
 
 					$result2 = mysqli_query($sql2);
 
-					if (mysql_num_rows($result2)>0 )
+					if (mysqli_num_rows($result2)>0 )
 					{
 
       		?>
@@ -626,7 +626,7 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 				$conn = db_connect();
 				$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
 				$result22=mysqli_query($sql_query22);
-				if (mysql_num_rows($result22))
+				if (mysqli_num_rows($result22))
 				{
 					while($row22=mysqli_fetch_row($result22))
 					{?>
@@ -729,7 +729,7 @@ function Display_Lab($univCode,$r)
 <?php
 $sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
 $result11 = mysqli_query($sqll);
-if (mysql_num_rows($result11)>0 )
+if (mysqli_num_rows($result11)>0 )
 {
   //display
 while($row11=mysqli_fetch_row($result11))
@@ -756,7 +756,7 @@ while($row11=mysqli_fetch_row($result11))
 
 	$result = mysqli_query($sql);
 
-	if (mysql_num_rows($result)>0 )
+	if (mysqli_num_rows($result)>0 )
 	{
       ?>
 
@@ -933,7 +933,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 				$sql = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' ";
 				$result = mysqli_query($sql);
 				
-				if( mysql_num_rows($result)>0 )
+				if( mysqli_num_rows($result)>0 )
 				{
 			?>
 				 	<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="33" align="center">
@@ -1155,7 +1155,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 				$sql = "select UnLoc from univloc where UniversityCode='$univCode' ";
 				$result = mysqli_query($sql);
 				
-				if( mysql_num_rows($result)>0 )
+				if( mysqli_num_rows($result)>0 )
 				{
 			?>
 				 	<td width="20%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" align="center">

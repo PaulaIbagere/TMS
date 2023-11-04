@@ -89,7 +89,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			$conn = db_connect();
 			$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
 			$result1 = mysqli_query($sql1);
-			if (mysql_num_rows($result1)>0 )
+			if (mysqli_num_rows($result1)>0 )
 			  {
 				$row=mysqli_fetch_row($result1);
 				$id=$row[0]+1;
@@ -196,7 +196,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
 				$result1 = mysqli_query($sql1);
-				if (mysql_num_rows($result1)>0 )
+				if (mysqli_num_rows($result1)>0 )
 				{
 					$row=mysqli_fetch_row($result1);
 					$id=$row[0]+1;

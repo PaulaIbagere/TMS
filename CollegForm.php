@@ -39,7 +39,7 @@ if($username)
 		// Check Locations
 		$sql = "select UnLoc from UnivLoc where UniversityCode='$uncode'";
 		$result = mysqli_query($sql);
-		if (mysql_num_rows($result)>0)
+		if (mysqli_num_rows($result)>0)
 		{
 			$msg="&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578;";
 			DisplayHeader($msg);

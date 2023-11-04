@@ -99,7 +99,7 @@ if($username)
 								ClassNo='$Classno' and
 								SemNo='$Sem' and SubType='1'";
 			$result = mysqli_query($sql);
-			if (mysql_num_rows($result)>0 )
+			if (mysqli_num_rows($result)>0 )
 			{
 			?>
 				<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="18%" bordercolorlight="#000000" bordercolordark="#000000">

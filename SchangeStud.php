@@ -116,7 +116,7 @@ if($username)
     		$mrow1=mysqli_fetch_row($Mresult1);
 
     		//echo($mrow1);
-    		if(mysql_num_rows($Mresult1)>0)
+    		if(mysqli_num_rows($Mresult1)>0)
     		{
 
     		?>

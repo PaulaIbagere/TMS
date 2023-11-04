@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 require_once('main.php');
 
@@ -35,7 +35,7 @@ if($username)
 
 	   	$sql3 = "select NoOfSemester,AcadDegreeName from AcadDegree where
 	   	AcadDegreeId='$AcadDeg'";
-	 	$result3 = mysqli_query($sql3);
+	 	$result3 = mysqli_query($conn, $sql3);
 	  	$row3=mysqli_fetch_row($result3);
 		//echo($row3[0]);
 
@@ -50,8 +50,8 @@ if($username)
 
 		
 	   		$sql11 = "select ClassName,ClassNo from ClassYear where ClassNo<='$NoOFYear'";
-	   		$result11 = mysqli_query($sql11);
-			if (mysql_num_rows($result11)>0 )
+	   		$result11 = mysqli_query($conn, $sql11);
+			if (mysqli_num_rows($result11)>0 )
 			{
 			?>
 			</br>
@@ -84,7 +84,7 @@ if($username)
 				  {
 					$SemName="";
 				  	$sql22 = "select SemName,SemNo from Semester where ClassNo='$row11[1]'";
-				  	$result22 = mysqli_query($sql22);
+				  	$result22 = mysqli_query($conn, $sql22);
 				  	while($row22=mysqli_fetch_row($result22))
 				  	{
 				  		//here

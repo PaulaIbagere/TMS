@@ -39,7 +39,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	$conn = db_connect();
 	$sql_query22="select UnLoc from UnivLoc where UniversityCode='$uncode'";
 	$result22=mysqli_query($sql_query22);
-	if (!(mysql_num_rows($result22)))
+	if (!(mysqli_num_rows($result22)))
 	{
 		// Go to Insert Location Page
 		$_SESSION['Ltype']=$value;

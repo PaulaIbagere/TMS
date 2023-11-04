@@ -25,7 +25,7 @@ else
 	// check if it inserted before
 	$sql = "select AcadYNo from AcadYear where AcadYNo='$year' ";
 	$result = mysqli_query($sql);
-	if (mysql_num_rows($result)==0)
+	if (mysqli_num_rows($result)==0)
 	{
 		//not inserted
 		$sql3 = "insert into AcadYear (AcadYNo) values ('$year')";

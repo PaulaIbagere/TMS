@@ -49,7 +49,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 					    <p align="center"><b>
 						<font face="Traditional Arabic" color="#FFFFFF" size="4">
 						<?php
-						if (mysql_num_rows($result1)>0 )
+						if (mysqli_num_rows($result1)>0 )
 						 {
 						   $row1=mysqli_fetch_row($result1);
 						   DisplaySuccHeader($row1[0]);
@@ -66,7 +66,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				<?php
 
-				if (mysql_num_rows($result2)>0 )
+				if (mysqli_num_rows($result2)>0 )
 				 {
 				?>
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="26%" bordercolorlight="#003366" bordercolordark="#003366">
@@ -96,8 +96,8 @@ if (strcmp($_SESSION['username'],"")!=0)
 						//echo($row2[0]);
 						$sql3 = "select AcadDegreeName from Departments,AcadDegree where UniversityCode='$uncode11' and CollegeCode='$CollegeCode11' and Departments.DeptName='$row2[0]' and Departments.AcadDegreeId=AcadDegree.AcadDegreeId order by DeptNo";
 			 			$result3 = mysqli_query($sql3);
-			 			$c=mysql_num_rows($result3);
-			 			if (mysql_num_rows($result3)>0 )
+			 			$c=mysqli_num_rows($result3);
+			 			if (mysqli_num_rows($result3)>0 )
 			 			{
 			 				while($row3=mysqli_fetch_row($result3))
 			 				{

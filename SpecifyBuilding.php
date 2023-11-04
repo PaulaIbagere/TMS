@@ -42,7 +42,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	
 	Href2($href,$header);
 	
-	if($_POST['B1'])
+	if(isset($_POST['B1']))
 	{
 		//Get Form's Field
 		
@@ -107,7 +107,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$op'";
 				$result1 = mysqli_query($sql1);
-				if (mysql_num_rows($result1)>0 )
+				if (mysqli_num_rows($result1)>0 )
 			  	{
 					$row=mysqli_fetch_row($result1);
 					$id=$row[0]+1;
@@ -205,7 +205,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$op'";
 				$result1 = mysqli_query($sql1);
-				if (mysql_num_rows($result1)>0 )
+				if (mysqli_num_rows($result1)>0 )
 			  	{
 					$row=mysqli_fetch_row($result1);
 					$id=$row[0]+1;
@@ -253,6 +253,9 @@ if (strcmp($_SESSION['username'],"")!=0)
 	else
 	{
 		//Display Form
+		$BuildName = isset($_GET['BuildName']) ? $_GET['BuildName'] : '';
+		$Capacity = isset($_GET['Capacity']) ? $_GET['Capacity'] : '';
+		$Loc= isset($_GET['Loc']) ? $_GET['Loc'] : '';
 		CollegeLecture_Form($op,$univcode,$BuildName,$Capacity,$Loc,$CollegeCode,$tabval);
 	}
 
