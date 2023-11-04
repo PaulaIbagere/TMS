@@ -38,11 +38,11 @@ if($username)
 		db_connect();
 		//(1)
 			$sql_query2="select UnLoc from UnivLoc where LocId='$LId' and UniversityCode='$univCode'";
-			$result2=mysqli_query($sql_query2);
+			$result2=mysqli_query($conn, $sql_query2);
 			$row2=mysqli_fetch_row($result2);
 
 			$sql_query3="delete from SubBuildingSeminar where UnLoc='$row2[0]' and UniversityCode='$univCode'";
-			$result3=mysqli_query($sql_query3);
+			$result3=mysqli_query($conn, $sql_query3);
 		//(2)
 
 		//(3)

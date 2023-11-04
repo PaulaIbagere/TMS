@@ -434,7 +434,7 @@ if($value==2)
 				//delete subject
 				$SubLCode=$oldSubCode."L";
 
-				$res2 = mysqli_query("delete from CollegeSubject where
+				$res2 = mysqli_query($conn, "delete from CollegeSubject where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and

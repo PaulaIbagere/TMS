@@ -115,10 +115,10 @@ if($username)
 							<font face="Traditional Arabic" color="#FFFFFF" size="3">
 					  			<!--update-->
 					  				<a href="DeptResult.php?do=1&AcadId=<?php echo($row33[1]); ?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($row2[1]); ?>"><b><font color="#FFFFFF" face="Traditional Arabic">
-										Delete</font></b></a>
+										Edit</font></b></a>
 								&nbsp;&nbsp;
 								<!--Delete-->					  			
-									<a href="DeptResult.php?do=2&AcadId=<?php echo($row33[1]); ?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($row2[1]); ?>"><b><font color="#FFFFFF" face="Traditional Arabic">Edit</font></b></a></br>
+									<a href="DeptResult.php?do=2&AcadId=<?php echo($row33[1]); ?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($row2[1]); ?>"><b><font color="#FFFFFF" face="Traditional Arabic">Delete</font></b></a></br>
 					  		</font>
 					  	<?php
 					  	}//end of while

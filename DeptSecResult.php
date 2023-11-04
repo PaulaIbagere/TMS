@@ -200,13 +200,13 @@ if($username)
 				 $sql_query="delete from DeptandSem where
 								UniversityCode='$uncode' and CollegeCode='$CollegeCode' and 
     		 					DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ";
-				 $resultsec=mysqli_query($sql_query);
+				 $resultsec=mysqli_query($conn, $sql_query);
 				if($resultsec)
 				{
 	        		$sql_query="delete from DeptSection where 
 								UniversityCode='$uncode' and CollegeCode='$CollegeCode' and 
     		 					DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ";
-    		 		$resultsec=mysqli_query($sql_query);
+    		 		$resultsec=mysqli_query($conn, $sql_query);
     		 	
 	        		if($resultsec)
 	        		{
