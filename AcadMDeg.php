@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 require_once('main.php');
 
@@ -144,10 +144,10 @@ if($username)
 		$DeptNo = $_GET['Dept'];
 		$DeptNo=intval($DeptNo);
 
-		$Classno = $_GET['Class'];
+		$Classno = isset($_GET['Class']) ? $_GET['Class'] : '';
 		$Classno=intval($Classno);
 
-		$Sem = $_GET['Sem'];
+		$Sem = isset($_GET['Sem']) ? $_GET['Sem'] : '';
 		$Sem=intval($Sem);
 
 

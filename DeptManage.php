@@ -40,11 +40,11 @@ if($username)
 	$Sem = $_GET['Sem'];
 	$Sem=intval($Sem);
 
-	$notshare=$_POST['anysection'];
+	$notshare=isset($_POST['anysection']) ? $_POST['anysection'] : '';
 	
 	//echo("notshare=".$notshare);
 	
-	if($_GET['checkit']==1)
+	if(isset($_GET['checkit'])==1)
 	{
 		
 		$SecID=$_POST['DSec'];
@@ -57,18 +57,18 @@ if($username)
 	$op=$_GET['op'];
 	$op=intval($op);
 
-	$s=$_GET['s'];
+	$s=isset($_GET['s']) ? $_GET['s'] : '';
 	$s=intval($s);
 	
 	//Check Subject Form Feild
 	//-------------------------
-	$LectureName=$_POST['D2'];
+	$LectureName=isset($_POST['D2']) ? $_POST['D2'] : '';
 
-	$msub=$_POST['D4'];
+	$msub=isset($_POST['D4']) ? $_POST['D4'] : '';
 	
-	$mday=$_POST['D3'];
+	$mday=isset($_POST['D3']) ? $_POST['D3'] : '';
 
-	$mteach=$_POST['D5'];
+	$mteach=isset($_POST['D5']) ? $_POST['D5'] : '';
 	
 	//--------------------------
 	//College header
@@ -112,7 +112,7 @@ if($username)
 			if((($op==1)&&($s==1)) ||($op==2))
 			{
 					$sql = "select * from CollegeSubject where AcadYNo='$year' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SemNo='$Sem' and SubType=1 and SubHour!=0";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn, $sql);
 				
 				if(mysqli_num_rows($result))
 				{
@@ -130,7 +130,7 @@ if($username)
  			 if(($op==1)&&($s==2))
 			 {
 			 	$sql = "select * from CollegeSubject where AcadYNo='$year' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SemNo='$Sem' and SubType=1 and SubTHour!=0";
-			 	$result = mysqli_query($sql);
+			 	$result = mysqli_query($conn, $sql);
 			 	if(mysqli_num_rows($result))
 			 	{
 			 		DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$year,$LectureName,$mday,$mtime,$msub,$mteach,$StudGroup,$SecID);

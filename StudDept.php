@@ -58,20 +58,22 @@ if(($uncode1>0)&&($CollegeCode1>0))
 				 {
 				?>
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="26%" bordercolorlight="#003366" bordercolordark="#003366">
-				  	<img border="0" id="img48" src="ConfigDept/button35.jpg" height="27" width="135" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1601;&#1589;&#1608;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1601;&#1589;&#1608;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;">
+					<P>Number of Semesters</P>
+				  	<!-- <img border="0" id="img48" src="ConfigDept/button35.jpg" height="27" width="135" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1601;&#1589;&#1608;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1601;&#1589;&#1608;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"> -->
 				  </td>
 
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="26%" bordercolorlight="#003366" bordercolordark="#003366">
-				   	<p dir="rtl">
-					<img border="0" id="img27" src="Depart_Files/button35.jpg" height="27" width="135" alt="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;">
+				   	<p dir="rtl">Academic Programme
+					<!-- <img border="0" id="img27" src="Depart_Files/button35.jpg" height="27" width="135" alt="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;"> -->
 				  </td>
 
 				  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="46%" bordercolorlight="#003366" bordercolordark="#003366">
-					  <img border="0" id="img45" src="Depart_Files/button34.jpg" height="27" width="135" alt="�����/������" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="�����/������">
+					<p>College Department</p>
+					  <!-- <img border="0" id="img45" src="Depart_Files/button34.jpg" height="27" width="135" alt="�����/������" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="�����/������"> -->
 				  </td>
 				  <td width="24%" bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" bordercolorlight="#003366" bordercolordark="#003366">
-					  <p align="center" dir="rtl">
-					 <img border="0" id="img25" src="Depart_Files/button33.jpg" height="27" width="135" alt="#" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="#">
+					  <p align="center" dir="rtl">S/N
+					 <!-- <img border="0" id="img25" src="Depart_Files/button33.jpg" height="27" width="135" alt="#" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="#"> -->
 				  </td>
 				  </tr>
 				  <tr>
@@ -142,7 +144,8 @@ if(($uncode1>0)&&($CollegeCode1>0))
 					  <td width="24%" bordercolor="#003366" align="center" height="35">
 						<font face="Times New Roman" color="#FFFFFF" size="3">
 						<?php
-						$Count=$Count+1;
+						$Count = 0;
+						$Count= $Count+1;
 						//echo($row2[1]);
 						echo($Count);
 						?>

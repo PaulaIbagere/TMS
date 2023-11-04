@@ -56,6 +56,7 @@ if($username)
 
 	if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 	{
+		$year = isset($_GET['year']) ? $_GET['year'] : '';
 		SelectYear($uncode1,$CollegeCode1,$AcadDeg,$Classno,$Sem,$DeptNo,$f,$year,$ProgType);
 	}
 	else

@@ -32,7 +32,7 @@ if($username)
 	$Sem = $_GET['Sem'];
 	$Sem=intval($Sem);
 	
-	$SecID= $_GET['SecID'];
+	$SecID= isset($_GET['SecID']) ? $_GET['SecID'] : '';
 	$SecID=intval($SecID);
 	
 	//echo("sec=".$SecID);

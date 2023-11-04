@@ -64,7 +64,8 @@ if($username)
 
 			Display_welcomeHeader_College($CollegeName);
 
-				$msg='&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1575;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;';
+				$msg='Please enter all data';
+				$path = isset($_GET['path']) ? $_GET['path'] : '';
 			Display_error_msg($msg,$path);
 			SelectYear($uncode1,$CollegeCode1,$AcadDeg,$Classno,$Sem,$DeptNo,$f,$year,$ProgType);
 			$flag=false;

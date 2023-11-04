@@ -178,6 +178,7 @@ $sql2 = "select  DeptName from Departments where UniversityCode='$uncode'
 //check Duplicated Subject insert on Depart
 function Check_SubCode($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubCode,$year,$SecID)
 {
+	$conn = db_connect();
 	$flag=true;
 	$sql="select SubCode from CollegeSubject where
 			AcadYNo='$year' and
@@ -197,6 +198,7 @@ function Check_SubCode($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubC
 //Check SubName
 function Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubName,$SecID)
 {
+	$conn = db_connect();
 	$flag=true;
 	$sql="select SubName from CollegeSubject where
 			AcadYNo='$year' and
@@ -226,7 +228,7 @@ function Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubN
 function GetUniversityName($uncode1)
 {
 	$conn = db_connect();
-	$sqls = "SELECT UniversityName from Universities  where
+	$sqls = "SELECT UniversityName from universities  where
 	UniversityCode='$uncode1'";
 
 	$results = mysqli_query($conn, $sqls);
@@ -1113,7 +1115,7 @@ function GetSubjecttName($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$
 {
 
 	$conn = db_connect();
-	$sqls="select SubName from CollegeSubject where
+	$sqls="select SubName from Collegesubject where
 			AcadYNo='$year' and
 			UniversityCode='$uncode1' and
 			CollegeCode='$CollegeCode1' and
@@ -1441,6 +1443,7 @@ Your browser does not support inline frames or is currently configured not to di
 
 function UpdateSubDetail_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$f,$SubCode,$SubName,$SubHour,$SubTHour,$SubLHour,$SecID)
 {
+	$conn = db_connect();
 	//stype:refer to SubLabHour
 	//Get Dept Name
 	$sql2 = "select DeptName from Departments where

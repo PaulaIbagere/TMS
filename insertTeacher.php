@@ -48,6 +48,9 @@ if($username)
 		if(($value==1)||($value==2))
 		{
 			// Display RegTeacher Form
+			$TName = isset($_GET['TName']) ? $_GET['TName'] : '';
+			$TQ = isset($_GET['TQ']) ? $_GET['TQ'] : '';
+			$status = isset($_GET['status']) ? $_GET['status'] : '';
 			DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status);	
 		}
 		else

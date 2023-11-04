@@ -45,7 +45,7 @@ if(($username)&&($year))
 	$f = isset($_POST['f']) ? $_POST['f'] : '';
 	$f=intval($f);
 
-	$value = $_GET['value'];
+	$value = isset($_GET['value']) ? $_GET['value'] : '';
 	$value=intval($value);
 
 	//College header
@@ -98,6 +98,7 @@ if(($username)&&($year))
 				if($value==2)
 				{
 					echo("</br>");
+					$SubName = isset($_GET['SubName']) ? $_GET['SubName'] : '';
 					Subject_UpdateForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$f,$SubName,$year);
 				}
 				else
@@ -105,7 +106,7 @@ if(($username)&&($year))
 					//update Subject Detail
 					//check if we click on update
 	
-					$update = $_GET['update'];
+					$update = isset($_GET['update']) ? $_GET['update'] : '';
 					$update=intval($update);
 
 					if($update==1)
@@ -124,7 +125,7 @@ if(($username)&&($year))
 				
 						//get subject details [lecture]
 				
-						$res = mysqli_query("select SubHour,SubTHour from CollegeSubject where
+						$res = mysqli_query($conn, "select SubHour,SubTHour from CollegeSubject where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and
@@ -140,7 +141,7 @@ if(($username)&&($year))
 						//get subject details [lab]
 				
 						$SubLCode=$SubCode."L";
-						$res = mysqli_query("select SubHour from CollegeSubject where
+						$res = mysqli_query($conn, "select SubHour from CollegeSubject where
 									AcadYNo='$year' and
 									UniversityCode='$uncode' and
 									CollegeCode='$CollegeCode' and

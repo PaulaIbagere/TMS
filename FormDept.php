@@ -40,7 +40,8 @@ if(($uncode1>0)&&($CollegeCode1>0))
 	if($f==2)
 		$year=GetMaxYear();
 
-
+	$Sem = isset($_GET['Sem'])? $_GET['Sem'] : '';
+	$Select = isset($_GET['Select'])? $_GET['Select'] : '';
 	SelectMForm($uncode1,$CollegeCode1,$year,$Sem,$Select,$value,$f);
 
 }//end of if

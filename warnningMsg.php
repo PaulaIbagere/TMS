@@ -33,13 +33,13 @@ if($username)
 
 
 	//SubName
-	$SubName = $_GET['SubName'];
+	$SubName = isset($_GET['SubName']) ? $_GET['SubName'] : '';
 
 	//$year=$_GET['year'];
 	$year=$_SESSION['year'];
 	//echo($year);
 
-	$flag=$_GET['flag'];
+	$flag=isset($_GET['flag']) ? $_GET['flag'] : '';
 	$flag=intval($flag);
 
 	$opl=$op."L"; //if we have SubLabHour
@@ -49,6 +49,7 @@ if($username)
 	{
 		$href="DisplaySubject.php?op=$op&AcadDeg=$AcadDeg&Class=$Classno&Sem=$Sem&uncode=$uncode&CollegeCode=$CollegeCode&Dept=$DeptNo";
 
+		$emheader = isset($_GET['emheader']) ? $_GET['emheader'] : '';
 		Href2($href,$emheader);
 
 		if($flag!==2)
@@ -68,7 +69,7 @@ if($username)
 				DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 				ClassNo='$Classno' and
 				SemNo='$Sem' and SubCode='$op' ";
-		$result1 = mysqli_query($sql1);
+		$result1 = mysqli_query($conn, $sql1);
 		$row1=mysqli_fetch_row($result1);
 		//echo("no of row=".$row1[0]);
 		//check lab
@@ -79,7 +80,7 @@ if($username)
 						DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 						ClassNo='$Classno' and
 						SemNo='$Sem' and SubCode='$op' ";
-		$result11 = mysqli_query($sql11);
+		$result11 = mysqli_query($conn, $sql11);
 		$row11=mysqli_fetch_row($result11);
 		if(($row1[0]==0)||($row11[0]==0))
 		{
@@ -95,7 +96,7 @@ if($username)
 							ClassNo='$Classno' and
 							SemNo='$Sem' and
 							SubName='$BName'";
-			$result = mysqli_query($sql);
+			$result = mysqli_query($conn, $sql);
 			if($result)
 			{
 				//echo("subject deleted..");

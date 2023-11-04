@@ -41,13 +41,13 @@ if($username)
 						UniversityCode='$uncode1' and
 						CollegeCode='$CollegeCode1' and
 						DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg'";
-				$result2 = mysqli_query($sql2);
+				$result2 = mysqli_query($conn, $sql2);
 				$row2=mysqli_fetch_row($result2);
 
 			//Get Acadmic Name
 				$sql3 = "select AcadDegreeName from AcadDegree where
 				   	AcadDegreeId='$AcadDeg'";
-				$result3 = mysqli_query($sql3);
+				$result3 = mysqli_query($conn, $sql3);
 				$row3=mysqli_fetch_row($result3);
 
 			//Display ClassName & SemName
@@ -55,7 +55,7 @@ if($username)
 				where Semester.ClassNo='$Classno' and
 				ClassYear.ClassNo=Semester.ClassNo and
 				Semester.SemNo='$Sem'";
-				$result4 = mysqli_query($sql4);
+				$result4 = mysqli_query($conn, $sql4);
 				$row4=mysqli_fetch_row($result4);
 
 		 ?>
@@ -98,7 +98,7 @@ if($username)
 								DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and
 								ClassNo='$Classno' and
 								SemNo='$Sem' and SubType='1'";
-			$result = mysqli_query($sql);
+			$result = mysqli_query($conn, $sql);
 			if (mysqli_num_rows($result)>0 )
 			{
 			?>

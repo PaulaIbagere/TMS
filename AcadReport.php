@@ -109,7 +109,7 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 					{
 							//Display Sections on this depart
 							
-							$checksec=1;
+							
 							$result44=mysqli_query($conn, "select SecID,SecName from DeptSection where 
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$row11[1]' ");
@@ -156,7 +156,7 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 				  		 }//end while2
 				  		 
 				  	}//end of else
-				  	
+				  	$checksec=1;
 				  	//Display Details
 					if($checksec==0)
 					{
@@ -224,6 +224,7 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 					 		<font face="Traditional Arabic" color="#FFFFFF" size="3">
 
 					 	<?php
+							
 					 		//Display Sections
 					 		echo($SecName);
 					 	?>
@@ -264,13 +265,13 @@ if((($uncode1>0)&&($CollegeCode1>0))&&(($AcadDeg>0)&&($DeptNo>0)))
 		$DeptNo = $_GET['Dept'];
 		$DeptNo=intval($DeptNo);
 
-		$Classno = $_GET['Class'];
+		$Classno = isset($_GET['Class']) ? $_GET['Class'] : '';
 		$Classno=intval($Classno);
 
-		$Sem = $_GET['Sem'];
+		$Sem = isset($_GET['Sem']) ? $_GET['Sem'] : '';
 		$Sem=intval($Sem);
 		
-		$SecID = $_GET['SecID'];
+		$SecID = isset($_GET['SecID']) ? $_GET['Sem'] : '';
 		$SecID=intval($SecID);
 
 
