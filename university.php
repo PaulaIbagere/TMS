@@ -36,7 +36,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	<table border="2" width="95%" bordercolorlight="#003366" bordercolordark="#003366" id="table2" bordercolor="#003366"  cellpadding="5" cellspacing="5">
 	  <tr>
 	  	  <td bordercolor="#003366" align="right" bgcolor="#5A74A0" height="31" colspan="4" bordercolorlight="#003366" bordercolordark="#003366">
-	  	  <img border="0" id="img44" src="university_Page/university.jpg" height="27" width="135" alt="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;"></td>
+	  	  Universities <!--<img border="0" id="img44" src="university_Page/university.jpg" height="27" width="135" alt="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;" fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1575;&#1578;"></td>-->
 	  </tr>
 	  <tr>
 
@@ -124,7 +124,7 @@ if (strcmp($_SESSION['username'],"")!=0)
  			?>
 
  		   <td bordercolor="#003366" align="center" width="73%" bgcolor="#5A74A0" colspan="4" height="78">
-		     <img border="0" id="img42" src="university_Page/button3.jpg" height="40" width="200" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1580;&#1575;&#1605;&#1593;&#1577;">
+		    No University has been entered <!--<img border="0" id="img42" src="university_Page/button3.jpg" height="40" width="200" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1573;&#1583;&#1582;&#1575;&#1604; &#1571;&#1609; &#1580;&#1575;&#1605;&#1593;&#1577;">-->
 		   </td>
 		   </tr>
 		   <?php
@@ -138,7 +138,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	<tr>
 	    <td width="17%">
 	    	<p align="center"><a href="UniversityForm.php">
-	    	<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">
+	    	Enter<!--<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">-->
 	    	</a>
 	     </td>
 	     <td width="73%">&nbsp;</td>

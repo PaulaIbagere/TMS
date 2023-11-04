@@ -18,7 +18,7 @@ function display_University_form($univCode,$univName,$logo,$uploaded)
 		<table class="aaa" border="0" width="101%" id="table2" dir="rtl" height="165">
 		<tr>
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
-					<p align="center">&nbsp;<img border="0" id="img1" src="InsertUniversity_file/button4.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">
+					<p align="center">&nbsp; University Code <!--<img border="0" id="img1" src="InsertUniversity_file/button4.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">-->
 				</p>
 			</td>
 			
@@ -31,8 +31,8 @@ function display_University_form($univCode,$univName,$logo,$uploaded)
 
 		<tr>
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr" align="center">
-				<p align="center">
-					<img border="0" id="img2" src="InsertUniversity_file/button6.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">
+				<p align="center">University Name
+					<!--<img border="0" id="img2" src="InsertUniversity_file/button6.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">-->
 				</p>
 			</td>
 
@@ -45,7 +45,8 @@ function display_University_form($univCode,$univName,$logo,$uploaded)
 
 		<tr>
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="41" dir="ltr" align="center" bgcolor="#5A74A0">
-					<img border="0" id="img3" src="InsertUniversity_file/button7.jpg" height="22" width="110" alt="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">
+					<p> University Logo</p>
+					<!--<img border="0" id="img3" src="InsertUniversity_file/button7.jpg" height="22" width="110" alt="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">-->
 			</td>
 		
 			<td width="34%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="41" dir="ltr" align="center">
