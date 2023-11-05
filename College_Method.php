@@ -544,7 +544,7 @@ $yyear=$_SESSION['year'];
 			}
 			$conn = db_connect();
 			//(1)select the Location Of College
-			$sql = "select UnLoc from Colleges where UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
+			$sql = "select UnLoc from colleges where UniversityCode='$univCode' and CollegeCode='$CollegeCode'";
 			$result = mysqli_query($conn, $sql);
 			$row=mysqli_fetch_row($result);
 
@@ -2173,7 +2173,7 @@ function ReportDetails($year,$mday,$avTime,$Sem,$Select,$value,$uncode,$CollegeC
 		if($value==3) //Lab		
 			$BId=2;
 
-		$Mang_query1 = "select UniversityCode,CollegeCode,DeptNo,AcadDegreeId,ClassNo,SubCode,GId,TeacherId,SecID from ManagingLec where
+		$Mang_query1 = "select UniversityCode,CollegeCode,DeptNo,AcadDegreeId,ClassNo,SubCode,GId,TeacherId,SecID from managinglec where
 		AcadYNo='$year' and
 		MDays ='$mday' and
 		MTimes='$avTime' and
@@ -2181,7 +2181,7 @@ function ReportDetails($year,$mday,$avTime,$Sem,$Select,$value,$uncode,$CollegeC
 		BId='$BId' and
 		SubBId='$Select'";
 
-		$Mresult1=mysqli_query($Mang_query1);
+		$Mresult1=mysqli_query($conn, $Mang_query1);
 
     	if($mrow1=mysqli_fetch_row($Mresult1))
    		{
@@ -2816,7 +2816,7 @@ function CollegeLecture_Form($value,$uncode,$LectureName,$Capacity,$Loc,$College
 		</tr>
 		<tr>
 			<td align="center" colspan="2">
-				<input type="submit" value="Keep" name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
+				<input type="submit" value="Submit" name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
 		</tr>
 	</table>
 	</form>
@@ -2892,19 +2892,19 @@ function CollegeLecture_Form($value,$uncode,$LectureName,$Capacity,$Loc,$College
 			
 			<td width="156" bgcolor="#5A74A0">
 				<p align="center">Laboratory Name
-					<img border="0" id="img55" src="insertLectureRoom_file/buttonLab.jpg" height="30" width="150" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" align="right"></td>
+					<!-- <img border="0" id="img55" src="insertLectureRoom_file/buttonLab.jpg" height="30" width="150" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" align="right"></td> -->
 		</tr>
 		
 		<tr>
 			<td>
 				<input name="T2" value="<?php echo($Capacity);?>" size="30" style="float: right; color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl"></td>
 			<td width="156" bgcolor="#5A74A0">
-				<p align="center">
-				<img border="0" id="img56" src="insertLectureRoom_file/button21.jpg" height="30" width="150" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+				<p align="center">Total Capacity of students
+				<!-- <img border="0" id="img56" src="insertLectureRoom_file/button21.jpg" height="30" width="150" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;"></td> -->
 		</tr>
 		<tr>
 			<td align="center" colspan="2">
-				<input type="submit" value="  &#1581;&#1601;&#1592;  " name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
+				<input type="submit" value="Submit" name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
 		</tr>
 	</table>
 	</form>
@@ -2928,6 +2928,7 @@ function CollegeLecture_Form($value,$uncode,$LectureName,$Capacity,$Loc,$College
 //Cofigration For College StartTime Per Semester
 function CollegeStartTimeForm($uncode,$CollegeCode,$SemNo,$StartSlot)
 {
+	$conn = db_connect();
 ?>
 <div align="center">
 <?php
@@ -2941,7 +2942,8 @@ $href="CollegeStartTime.php?uncode=$uncode&CollegeCode=$CollegeCode";
 			<table border="2" width="95%" bordercolorlight="#003366" bordercolordark="#003366" id="table18" bordercolor="#003366">
 				<tr >
 					<td bordercolor="#003366" align="right" bgcolor="#2F446F" height="16" colspan="2">
-						<img border="0" id="img61" src="Colleges-PAGE/specifyCStartTime.jpg" height="63" width="314" alt="����� ��� ����� ��������� ���� ����� �������" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 17; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="����� ��� ����� ��������� ���� ����� �������">
+						<p>Determine the start time of lectures during the semester</p>
+						<!-- <img border="0" id="img61" src="Colleges-PAGE/specifyCStartTime.jpg" height="63" width="314" alt="����� ��� ����� ��������� ���� ����� �������" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 17; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="����� ��� ����� ��������� ���� ����� �������"> -->
 					</td>
 				</tr>
 				<tr>
@@ -2965,24 +2967,24 @@ $href="CollegeStartTime.php?uncode=$uncode&CollegeCode=$CollegeCode";
 					   </td>
 					
 					<td height="28%" width="23%">
-					<p align="center">
-						<img border="0" id="img60" src="Colleges-PAGE/year22.jpg" height="24" width="118" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+					<p align="center">School Year </p>
+						<!-- <img border="0" id="img60" src="Colleges-PAGE/year22.jpg" height="24" width="118" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td> -->
 				   </tr>
 				   
 					<tr>
 						<td align="right" height="28%" width="75%">
 								<select size="1" name="D2" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
-							<!--����� ������� �����-->
-								<option value="1" <?php if($SemNo==1){?> selected <?php } ?> selected>&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1575;&#1608;&#1604;</option>
-								<option value="2" <?php if($SemNo==2){?> selected <?php } ?>>&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1579;&#1575;&#1606;&#1609;</option>
+							
+								<option value="1" <?php if($SemNo==1){?> selected <?php } ?> selected>First Semester</option>
+								<option value="2" <?php if($SemNo==2){?> selected <?php } ?>>Second Semester</option>
 
 						</select>
 
 						</td>
 						
 						<td height="28%" width="23%">
-							<p align="center">
-								<img border="0" id="img92" src="Colleges-PAGE/SlotSemNo.jpg" height="24" width="118"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" >
+							<p align="center">Semester
+								<!-- <img border="0" id="img92" src="Colleges-PAGE/SlotSemNo.jpg" height="24" width="118"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" > -->
 						</td>
 					</tr>
 				
@@ -2990,8 +2992,8 @@ $href="CollegeStartTime.php?uncode=$uncode&CollegeCode=$CollegeCode";
 						<td align="right" height="28%" width="75%">
 						<!--Start Time per Semseter-->
 								<select size="3" name="D3" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3">
-							<!--�� ������ ��� ������� ���������--->							
-								<option value="" selected>&#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; &#1576;&#1583;&#1575;&#1610;&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578; :</option>
+													
+								<option value="" selected> Determine the start time for lectures:</option>
 
 								<option value="1" <?php if( strcmp($StartSlot,1)==0 ){?> selected <?php };?> > 7:30</option>
 								<option value="2" <?php if( strcmp($StartSlot,2)==0 ){?> selected <?php };?> > 8:00</option>
@@ -2999,8 +3001,8 @@ $href="CollegeStartTime.php?uncode=$uncode&CollegeCode=$CollegeCode";
 						
 						</td>
 						<td height="28%" width="23%">
-						<p align="center">
-							<img border="0" id="img93" src="Colleges-PAGE/StartSlot.jpg" height="24" width="118" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0">
+						<p align="center">Lecture Start Time </p>
+							<!-- <img border="0" id="img93" src="Colleges-PAGE/StartSlot.jpg" height="24" width="118" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0"> -->
 						</td>
 					</tr>
 				 </table>
@@ -3008,7 +3010,7 @@ $href="CollegeStartTime.php?uncode=$uncode&CollegeCode=$CollegeCode";
 					</tr>
 				<tr>
 						<td bordercolor="#003366" align="center" width="93%" bgcolor="#2F446F" bordercolorlight="#2F446F" bordercolordark="#2F446F" colspan="2">
-						<input type="submit" value="   &#1581;&#1601;&#1592;  " name="B2" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
+						<input type="submit" value="Submit" name="B2" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
 				</tr>
 				</table>
 				</div>

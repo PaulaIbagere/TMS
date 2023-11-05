@@ -784,7 +784,7 @@ function GetCollegeTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 		$trow=mysqli_fetch_row($result6);
 		
 		//get Time Slots
-		$res6=mysqli_query("select * from TimeSlots where TSID='$trow[0]'");
+		$res6=mysqli_query($conn, "select * from TimeSlots where TSID='$trow[0]'");
 		$slot=mysqli_fetch_row($res6);
 
 		//----- prepare Time Slots --------
