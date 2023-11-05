@@ -384,7 +384,7 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 {
 ?>
 <div align="center">
-<form method="POST" action="IinsertBuilding.php?r=<?php echo($value);?>&uncode=<?php echo($uncode);?>">
+<form method="POST" action="IinsertBuilding.php?r=<?php echo($value);?>&univCode=<?php echo($uncode);?>">
 
 	<table border="0" width="57%" id="table10">
 	<tr>
@@ -392,12 +392,12 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 		<p align="right">
 		<select size="1" name="D2" dir="rtl" tabindex="1" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold">
 
-		<option  value="" selected>&#1575;&#1582;&#1578;&#1585; &#1605;&#1603;&#1575;&#1606; &#1608;&#1580;&#1608;&#1583; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;
+		<option  value="" selected>Hall site
 
 		</option>
 		<?php
 		$conn = db_connect();
-		$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
+		$sql_query22="select LocId,UnLoc from univloc where UniversityCode='$uncode'";
 		$result22=mysqli_query($conn,$sql_query22);
 		if (mysqli_num_rows($result22))
 		{
@@ -423,7 +423,7 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 		</td>
 		<td width="156" bgcolor="#5A74A0">
 		<p align="center">
-				<img border="0" id="img67" src="Colleges-PAGE/selectLOC.jpg" height="30" width="150" alt="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;">
+				Hall Location<!--<img border="0" id="img67" src="Colleges-PAGE/selectLOC.jpg" height="30" width="150" alt="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;">-->
 		</td>
 		</tr>
 		<tr>
@@ -431,18 +431,18 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 			<input name="T1" value="<?php echo($LectureName);?>" size="30" style="float: right; color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl"></td>
 			<td width="156" bgcolor="#5A74A0">
 			<p align="center">
-			<img border="0" id="img55" src="insertLectureRoom_file/button20.jpg" height="30" width="150" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" align="right"></td>
+			Hall Name<!--<img border="0" id="img55" src="insertLectureRoom_file/button20.jpg" height="30" width="150" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" align="right">--></td>
 		</tr>
 		<tr>
 			<td>
 				<input name="T2" value="<?php echo($Capacity);?>" size="30" style="float: right; color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl"></td>
 			<td width="156" bgcolor="#5A74A0">
 				<p align="center">
-				<img border="0" id="img56" src="insertLectureRoom_file/button21.jpg" height="30" width="150" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+				Capacity<!--<img border="0" id="img56" src="insertLectureRoom_file/button21.jpg" height="30" width="150" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;">--></td>
 		</tr>
 		<tr>
 			<td align="center" colspan="2">
-				<input type="submit" value="  &#1581;&#1601;&#1592;  " name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
+				<input type="submit" value="  Enter  " name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
 		</tr>
 	</table>
 	</form>
@@ -459,7 +459,7 @@ function Lecture_UpadteForm($value,$uncode,$LectureName,$Capacity,$bid)
 {
 ?>
 <div align="center">
-	<form method="POST" action="IUBuilding.php?r=<?php echo($value);?>&uncode=<?php echo($uncode);?>&bid=<?php echo($bid);?>">
+	<form method="POST" action="IUBuilding.php?r=<?php echo($value);?>&univCode=<?php echo($uncode);?>&bid=<?php echo($bid);?>">
 					<table border="0" width="57%" id="table10">
 						<tr>
 							<td>
@@ -502,7 +502,7 @@ function Display_Lecture($univCode,$r)
    <table border="2" width="83%" bordercolorlight="#003366" bordercolordark="#003366" id="table8" bordercolor="#003366">
 
 	<?php
-		$sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
+		$sqll="select distinct(UnLoc) from univloc where UniversityCode='$univCode'";
 		$result11 = mysqli_query($conn,$sqll);
 		if (mysqli_num_rows($result11)>0 )
 		{
@@ -525,7 +525,7 @@ function Display_Lecture($univCode,$r)
 
 			<tr>
 			<?php
-					$sql2 = "select SubBName,Capacity,SubBId from SubBuildingSeminar where UnLoc='$row11[0]' and UniversityCode='$univCode' and BId='$r'";
+					$sql2 = "select SubBName,Capacity,SubBId from Subbuildingseminar where UnLoc='$row11[0]' and UniversityCode='$univCode' and BId='$r'";
 
 					$result2 = mysqli_query($conn,$sql2);
 
@@ -536,10 +536,10 @@ function Display_Lecture($univCode,$r)
 	 			<td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="20%" bordercolorlight="#003366" bordercolordark="#003366">
 	 			&nbsp;</td>
 	 			<td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="31%" bordercolorlight="#003366" bordercolordark="#003366">
-	 					<img border="0" id="img66" src="LectureRoom_files/button9.jpg" height="26" width="130" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+	 					Hall Capacity<!--<img border="0" id="img66" src="LectureRoom_files/button9.jpg" height="26" width="130" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;">--></td>
 	 			<td width="43%" bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" bordercolorlight="#003366" bordercolordark="#003366">
 	 				<p align="center" dir="rtl">
-	 					<img border="0" id="img51" src="LectureRoom_files/button48.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;"></td>
+	 					Hall Name<!--<img border="0" id="img51" src="LectureRoom_files/button48.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;">--></td>
 			</tr>
 
 			<tr>
@@ -577,7 +577,7 @@ function Display_Lecture($univCode,$r)
 		{
 		?>
 		<td bordercolor="#003366" align="center" width="87%" height="35" colspan="3" bgcolor="#5A74A0">
-	 			<img border="0" id="img53" src="LectureRoom_files/button4A.jpg" height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;"></td>
+	 			 No Halls<!--<img border="0" id="img53" src="LectureRoom_files/button4A.jpg" height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;">--></td>
 	 	</tr>
 		<?php
 		}
@@ -598,8 +598,8 @@ function Display_Lecture($univCode,$r)
 	</td>
 		</tr>
 		<tr>
-			<td width="19%"><a href="insertBuilding.php?r=<?php echo($r)?>&univCode=<?php echo($univCode);?>">
-			<img border="0" id="img54" src="LectureRoom_files/button1A.jpg" height="24" width="121" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1575;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img54',/*url*/'LectureRoom_files/button1B.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img54',/*url*/'LectureRoom_files/button1A.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img54',/*url*/'LectureRoom_files/button1C.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img54',/*url*/'LectureRoom_files/button1B.jpg')"></a></td>
+			<td width="19%"><a href="insertBuilding.php?r=<?php echo($r)?>&univCode=<?php echo($univCode);?>" style="color:white;">
+			Add hall<!--<img border="0" id="img54" src="LectureRoom_files/button1A.jpg" height="24" width="121" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1602;&#1575;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img54',/*url*/'LectureRoom_files/button1B.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img54',/*url*/'LectureRoom_files/button1A.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img54',/*url*/'LectureRoom_files/button1C.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img54',/*url*/'LectureRoom_files/button1B.jpg')">--></a></td>
 			<td width="80%">&nbsp;</td>
 
 		</tr>
@@ -614,7 +614,7 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 {$conn=db_connect();
 ?>
 <div align="center">
-<form method="POST" action="IinsertBuilding.php?r=<?php echo($value);?>&uncode=<?php echo($uncode);?>">
+<form method="POST" action="IinsertBuilding.php?r=<?php echo($value);?>&univCode=<?php echo($uncode);?>">
 
 <table border="0" width="57%" id="table10">
 			<tr>
@@ -623,7 +623,7 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 				<p align="right">
 			<select size="1" name="D3" dir="rtl" tabindex="1" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold">
 
-			<option selected>&#1575;&#1582;&#1578;&#1585; &#1605;&#1603;&#1575;&#1606; &#1608;&#1580;&#1608;&#1583; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;
+			<option selected>Lab Location
 
 			</option>
 			<?php
@@ -654,7 +654,7 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 					</td>
 				<td width="156" bgcolor="#5A74A0">
 				<p align="center">
-				<img border="0" id="img68" src="insertLectureRoom_file/labLocation.jpg" height="30" width="150" alt="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;"></td>
+				Lab Site<!--<img border="0" id="img68" src="insertLectureRoom_file/labLocation.jpg" height="30" width="150" alt="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;">--></td>
 			</tr>
 			<tr>
 
@@ -662,18 +662,18 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 				<input name="T1" value="<?php echo($LabName);?>" size="30" style="float: right; color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl"></td>
 				<td width="156" bgcolor="#5A74A0">
 				<p align="center">
-				<img border="0" id="img58" src="insertLectureRoom_file/buttonLab.jpg" height="30" width="150" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;"></td>
+				Lab Name<!--<img border="0" id="img58" src="insertLectureRoom_file/buttonLab.jpg" height="30" width="150" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;">--></td>
 			</tr>
 			<tr>
 				<td>
 				<input name="T2" value="<?php echo($Capacity);?>" size="30" style="float: right; color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1" dir="rtl"></td>
 				<td width="156" bgcolor="#5A74A0">
 				<p align="center">
-				<img border="0" id="img56" src="insertLectureRoom_file/button21.jpg" height="30" width="150" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+				Capacity<!--<img border="0" id="img56" src="insertLectureRoom_file/button21.jpg" height="30" width="150" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 18; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;">--></td>
 			</tr>
 			<tr>
 				<td align="center" colspan="2">
-				<input type="submit" value="  &#1581;&#1601;&#1592;  " name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
+				<input type="submit" value="  Enter  " name="B1" tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-family: Traditional Arabic; font-weight: bold; background-color: #5A74A0"></td>
 			</tr>
 		</table>
 	</form>
@@ -757,7 +757,7 @@ while($row11=mysqli_fetch_row($result11))
 	<tr>
 
 <?php
-	$sql = "select SubBName,Capacity,SubBId from SubBuildingSeminar where UnLoc='$row11[0]'and UniversityCode='$univCode' and BId=2";
+	$sql = "select SubBName,Capacity,SubBId from Subbuildingseminar where UnLoc='$row11[0]'and UniversityCode='$univCode' and BId=2";
 
 	$result = mysqli_query($conn,$sql);
 
@@ -768,10 +768,10 @@ while($row11=mysqli_fetch_row($result11))
 		 <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="20%" bordercolorlight="#003366" bordercolordark="#003366">
 		 	&nbsp;</td>
 		 <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="31%" bordercolorlight="#003366" bordercolordark="#003366">
-		 	<img border="0" id="img52" src="LectureRoom_files/button49.jpg" height="27" width="135" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+		 	Total Capacity<!--<img border="0" id="img52" src="LectureRoom_files/button49.jpg" height="27" width="135" alt="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1604;&#1591;&#1604;&#1575;&#1576;">--></td>
 				<td width="32%" bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" bordercolorlight="#003366" bordercolordark="#003366">
 				<p align="center" dir="rtl">
-				 <img border="0" id="img51" src="LectureRoom_files/buttonLab.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;"></td>
+				Laboratory Name <!--<img border="0" id="img51" src="LectureRoom_files/buttonLab.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;">--></td>
 
 			</tr>
 
@@ -813,7 +813,7 @@ while($row11=mysqli_fetch_row($result11))
 			{
 			?>
 			<td bordercolor="#003366" align="center" width="95%" height="35" colspan="3" bgcolor="#5A74A0">
-			<img border="0" id="img53" src="LectureRoom_files/buttonNOLab.jpg"  height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;"></td>
+			The parameter was not entered<!--<img border="0" id="img53" src="LectureRoom_files/buttonNOLab.jpg"  height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;">--></td>
 
 		 	</tr>
 			<?php
@@ -837,8 +837,8 @@ while($row11=mysqli_fetch_row($result11))
 			</tr>
 
 			<tr>
-				<td width="19%"><a href="insertBuilding.php?r=<?php echo($r)?>&univCode=<?php echo($univCode);?>">
-				<img border="0" id="img65" src="LectureRoom_files/button56.jpg" height="24" width="121" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1605;&#1593;&#1605;&#1604;" onmouseover="FP_swapImg(1,0,/*id*/'img65',/*url*/'LectureRoom_files/button66.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img65',/*url*/'LectureRoom_files/button56.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img65',/*url*/'LectureRoom_files/button76.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img65',/*url*/'LectureRoom_files/button66.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1605;&#1593;&#1605;&#1604;"></a>
+				<td width="19%"><a href="insertBuilding.php?r=<?php echo($r)?>&univCode=<?php echo($univCode);?>" style="color:white;">
+				Add Lab<!--<img border="0" id="img65" src="LectureRoom_files/button56.jpg" height="24" width="121" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1605;&#1593;&#1605;&#1604;" onmouseover="FP_swapImg(1,0,/*id*/'img65',/*url*/'LectureRoom_files/button66.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img65',/*url*/'LectureRoom_files/button56.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img65',/*url*/'LectureRoom_files/button76.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img65',/*url*/'LectureRoom_files/button66.jpg')" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1605;&#1593;&#1605;&#1604;">--></a>
 				</td>
 				<td width="80%">&nbsp;</td>
 

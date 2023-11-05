@@ -15,10 +15,10 @@ if (strcmp($_SESSION['username'],"")!=0)
 	$href="BuildingForm.php?id=2";
 	backto($href);
 
-	$r = $_GET['r'];
+	$r = isset($_GET['r'])?$_GET['r']:'';
 	$value=intval($r);
 
-	$uncode = $_GET['uncode'];
+	$uncode = isset($_GET['univCode'])?$_GET['univCode']:'';
 	$univcode=intval($uncode);
 
 
@@ -87,7 +87,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			//(1)prepare the id
 
 			$conn = db_connect();
-			$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
+			$sql1="select max(SubBId) from Subbuildingseminar where UniversityCode='$univcode' and BId='$value'";
 			$result1 = mysqli_query($conn,$sql1);
 			if (mysqli_num_rows($result1)>0 )
 			  {
@@ -101,7 +101,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 			//(2)Insert Data to Table
 			$conn = db_connect();
-			$sql3 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','1','$id','$LectureName','$Capacity','$Loc')";
+			$sql3 = "insert into Subbuildingseminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','1','$id','$LectureName','$Capacity','$Loc')";
 			$result3 = mysqli_query($conn,$sql3);
 		  	if ($result3)
 		  	{
@@ -123,6 +123,7 @@ if (strcmp($_SESSION['username'],"")!=0)
           		echo("Data not Inserted..");
           			$msger='&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1575;&#1604;&#1585;&#1580;&#1575;&#1569; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1607; &#1604;&#1575;&#1581;&#1602;&#1575;';
 				DisplaySuccHeader($msger);
+				Lecture_Form($value,$univcode,$LectureName,$Capacity,$Loc);
           	}
           	
           }//end of else
@@ -148,21 +149,9 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				$msg='&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1575;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;';
 			Display_error_msg($msg);
-			Lab_Form($value,$univcode,$LabName,$Capacity,$Loc);
+			
 		  }
-		/*else
-		if (ctype_alpha($LabName)||ctype_alnum($LabName))
-		  {
-
-			$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;';
-			DisplayHeader($msg);
-
-
-				$msg='&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1604;&#1575;&#1576;&#1583; &#1575;&#1606; &#1610;&#1581;&#1578;&#1608;&#1609; &#1593;&#1604;&#1609;  &#1581;&#1585;&#1608;&#1601; &#1593;&#1585;&#1576;&#1610;&#1577; &#1608;&#1575;&#1585;&#1602;&#1575;&#1605; &#1601;&#1602;&#1591;';
-			$LabName="";
-			Display_error_msg($msg);
-			Lab_Form($value,$univcode,$LabName,$Capacity,$Loc);
-		  }*/
+		
 	   else
 	   if(!(checkLName($LabName,$univcode,$value,$Loc)))
 		    {
@@ -173,7 +162,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			   $msg='&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604; &#1605;&#1583;&#1582;&#1604; &#1605;&#1587;&#1576;&#1602;&#1575;';
 			   $LabName="";
 			   Display_error_msg($msg);
-			   Lab_Form($value,$univcode,$LabName,$Capacity,$Loc);
+			  
 		    }
 		else
 		if(!(ctype_digit($Capacity)))
@@ -185,7 +174,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				$msg='&#1575;&#1604;&#1587;&#1593;&#1577; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577; &#1604;&#1575;&#1576;&#1583; &#1605;&#1606; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1585;&#1602;&#1575;&#1605; &#1601;&#1602;&#1591;';
 			$Capacity="";
 			Display_error_msg($msg);
-		    Lab_Form($value,$univcode,$LabName,$Capacity,$Loc);
+		    
 		   }
 		 else
 		     {
@@ -194,7 +183,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				//(1)prepare the id
 
 				$conn = db_connect();
-				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
+				$sql1="select max(SubBId) from Subbuildingseminar where UniversityCode='$univcode' and BId='$value'";
 				$result1 = mysqli_query($conn,$sql1);
 				if (mysqli_num_rows($result1)>0 )
 				{
@@ -208,7 +197,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				//(2)Insert Data to Table
 
-				$sql2 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
+				$sql2 = "insert into Subbuildingseminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
 				$result2 = mysqli_query($conn,$sql2);
 				if ($result2)
 				{

@@ -51,13 +51,13 @@ function change_password($username,$old_password,$new_password)
   	// else throw an exception
   	
 	$f=Checkuser($username, $old_password);
-	if(f)
+	if($f)
 	{
 	 	$conn = db_connect();
  		$sql_query= "update Loginadmin
                             set Passwd = '$new_password'
                             where UserName = '$username'";
-		$result=mysqli_query($sql_query);
+		$result=mysqli_query($conn,$sql_query);
 	 	if (!$result)
    				die('Password could not be changed.');
  		else
@@ -238,7 +238,7 @@ function backto($href)
 		<a href='<?php echo($href);?>'>
 		<img border="0" id="img2" src="Success/button5D.jpg" height="22" width="111" alt="&#1585;&#1580;&#1608;&#1593;" onmouseover="FP_swapImg(1,0,/*id*/'img2',/*url*/'Success/button5E.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img2',/*url*/'Success/button5D.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img2',/*url*/'Success/button5F.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img2',/*url*/'Success/button5E.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1585;&#1580;&#1608;&#1593;" align="left"></a><p align="right">
 		<a href="welcomeAdmin.php?flag=2">
-		<img border="0" id="img17" src="AdminMenu/button2.jpg" height="26" width="130" alt="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button1.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button3.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')">
+		Back<img border="0" id="img17" src="AdminMenu/button2.jpg" height="26" width="130" alt="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1589;&#1601;&#1581;&#1577; &#1575;&#1604;&#1585;&#1574;&#1610;&#1587;&#1610;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button1.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img17',/*url*/'AdminMenu/button3.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img17',/*url*/'AdminMenu/button2.jpg')">
 		</a></td>
 	</tr>
 </table>

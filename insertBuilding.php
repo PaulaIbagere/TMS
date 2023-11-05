@@ -37,7 +37,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
    // Check the Location
 	$conn = db_connect();
-	$sql_query22="select UnLoc from subbuildingseminar where UniversityCode='$uncode'";
+	$sql_query22="select UnLoc from univloc where UniversityCode='$uncode'";
 	$result22=mysqli_query($conn,$sql_query22);
 	if (!(mysqli_num_rows($result22)))
 	{
@@ -47,12 +47,12 @@ if (strcmp($_SESSION['username'],"")!=0)
 		$_SESSION['loct']=$loct;
 		if($value==1)
 		{
-			$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;';
+			$msg='damn!!!&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;';
 			DisplayHeader($msg);
 		}
 		else
 		{
-			$msg="&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;";
+			$msg="Enter the parameter";
 			DisplayHeader($msg);
 		}
 		?>
@@ -98,7 +98,7 @@ if (strcmp($_SESSION['username'],"")!=0)
  	if(($value==1)&&($uncode>0))
   	{
   		//insert Lecture
-		$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;';
+		$msg='The new hall was successfully inserted';
 		DisplayHeader($msg);
   		Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc);
 
@@ -106,8 +106,13 @@ if (strcmp($_SESSION['username'],"")!=0)
     if(($value==2)&&($uncode>0))
   	{
     	//insert lab
-		$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;';
+		$msg='The new Lab was successfully inserted';
 		DisplayHeader($msg);
+
+		$LabName=$_GET['LabName'];
+		$Capacity=$_GET['Capacity'];
+		$Loc=$_GET['Loc'];
+
 		Lab_Form($value,$uncode,$LabName,$Capacity,$Loc);
     }
     } //end of else

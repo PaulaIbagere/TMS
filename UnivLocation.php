@@ -14,7 +14,7 @@ if($username)
 	include("header2.php");
 	$conn = db_connect();
 
-	$uncode1 = $_GET['uncode'];
+	$uncode1 = $_GET['univCode'];
 	$univCode=intval($uncode1);
 
 	$r=isset($_SESSION['Ltype']) ? $_SESSION['Ltype'] : '';
