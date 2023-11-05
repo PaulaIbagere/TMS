@@ -96,7 +96,7 @@ if($username)
 		<?php
 		while($row332=mysqli_fetch_row($result332))
 		{
-			$sql_query33="select SubBName,Capacity from SubBuildingSeminar where BId='$row332[0]' and SubBId='$row332[1]' and UniversityCode='$univCode' and UnLoc='$row[0]'";
+			$sql_query33="select SubBName,Capacity from subbuildingseminar where BId='$row332[0]' and SubBId='$row332[1]' and UniversityCode='$univCode' and UnLoc='$row[0]'";
 			$result33=mysqli_query($sql_query33);
 			$row33=mysqli_fetch_row($result33);
 		?>

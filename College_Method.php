@@ -1024,7 +1024,7 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 							
 							$conn = db_connect();
 							
-							$result=mysqli_query("select SecID,SecName from DeptSection where 
+							$result=mysqli_query($conn, "select SecID,SecName from DeptSection where 
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno'");
 								
@@ -1055,8 +1055,8 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 	?>
 	<tr>
 	<td width="28%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-	<img border="0" id="img65" src="Colleges-PAGE/stud28.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+	<p align="center">Number of Students
+	<!-- <img border="0" id="img65" src="Colleges-PAGE/stud28.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;"></td> -->
 
 	<td width="68%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" colspan="2">
 		<p align="right">
@@ -1066,8 +1066,8 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 
 	<tr>
 	<td width="28%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-	<img border="0" id="img66" src="Colleges-PAGE/noofGroup29.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1575;&#1578;"></td>
+	<p align="center">Number of Groups
+	<!-- <img border="0" id="img66" src="Colleges-PAGE/noofGroup29.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1575;&#1578;"></td> -->
 	<td width="68%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="32" dir="ltr" colspan="2">
 
 		<p align="right">
@@ -1093,7 +1093,7 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 		else
 		{
 	?>
-			<input name="Submit" type="submit" value="  &#1578;&#1593;&#1583;&#1610;&#1604;  "  tabindex="4" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; " dir="rtl" align="absmiddle"></td>
+			<input name="Submit" type="submit" value="Submit"  tabindex="4" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; " dir="rtl" align="absmiddle"></td>
 
 			<td width="21%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" height="35%" bgcolor="#5A74A0">
 		<div align="center">

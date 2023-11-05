@@ -160,7 +160,8 @@ if($username)
 					<td bordercolor="#003366" align="center" width="10%" bgcolor="#5A74A0">
 					&nbsp;<span lang="ar-sa">&nbsp;&nbsp; </span>&nbsp;&nbsp;
 					
-					<a href="InsertDept.php?CollegeCode=<?php echo($CollegeCode1);?>&uncode=<?php echo($uncode1);?>">    
+					<a href="InsertDept.php?CollegeCode=<?php echo($CollegeCode1);?>&uncode=<?php echo($uncode1);?>">
+					    
 					    <img border="0" id="img49" src="Depart_Files/addNewDepart.jpg" height="27" width="135" alt="&#1573;&#1590;&#1594;&#1591; &#1607;&#1606;&#1575; &#1604;&#1573;&#1590;&#1575;&#1601;&#1577; &#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 11; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1573;&#1590;&#1594;&#1591; &#1607;&#1606;&#1575; &#1604;&#1573;&#1590;&#1575;&#1601;&#1577; &#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;"><img border="0" src="College_files/Add.gif" width="15" height="15" align="top"></a>
 					
 					</td>
