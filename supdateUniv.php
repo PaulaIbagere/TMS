@@ -30,7 +30,7 @@ if($username)
 
 		$conn = db_connect();
 		$sql = "select Logo,UniversityName,UniversityCode from Universities where UniversityCode='$uncode'";
-		$result = mysqli_query($sql);
+		$result = mysqli_query($conn,$sql);
 		$row=mysqli_fetch_row($result);
 		//real Data from DB
 		$logo=$row[0];
@@ -133,19 +133,19 @@ if($username)
 
             //(1)update Code
 			$sql_query1="update Universities set UniversityCode='$univCode' where UniversityCode='$uncode'";
-	        $result1=mysqli_query($sql_query1);
+	        $result1=mysqli_query($conn,$sql_query1);
 
          	//(2)Update Name
          	$sql_query2="update Universities set UniversityName='$univName' where UniversityCode='$uncode'";
-	        $result2=mysqli_query($sql_query2);
+	        $result2=mysqli_query($conn,$sql_query2);
 
 	        //(3) update Logo
 	        $sql_query3="update Universities set  Logo='$newfile' where UniversityCode='$uncode'";
-	        $result3=mysqli_query($sql_query3);
+	        $result3=mysqli_query($conn,$sql_query3);
 
 			//(4) Update UniversityCode on UnivLoc Table
 			$sql_query4="update UnivLoc set UniversityCode='$univCode' where UniversityCode='$uncode'";
-			$result4=mysqli_query($sql_query4);
+			$result4=mysqli_query($conn,$sql_query4);
 			//
 
 		 }//end of else

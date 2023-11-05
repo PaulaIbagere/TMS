@@ -14,8 +14,9 @@ $username=$_SESSION['username'];
 if($username)
 {
 	// Get University Code
-	$uncode1 = $_GET['uncode'];//universityCode
+	$uncode1 = isset($_GET['uncode'])?$_GET['uncode']:'';//universityCode
 	$uncode=intval($uncode1);
+	
 
 	// Get University Name
 	$conn = db_connect();
@@ -37,7 +38,7 @@ if($username)
 		//
 		$conn = db_connect();
 		// Check Locations
-		$sql = "select UnLoc from subbuildingseminar where UniversityCode='$uncode'";
+		$sql = "select UnLoc from univloc where UniversityCode='$uncode'";
 		$result = mysqli_query($conn,$sql);
 		if (mysqli_num_rows($result)>0)
 		{
@@ -45,6 +46,11 @@ if($username)
 			DisplayHeader($msg);
 
 			$_SESSION['UnivCode']=$uncode;
+			$colLoc= isset($_POST['D2'])?$_POST['D2']:'';
+  	        $colCode = isset($_POST['T1'])?$_POST['T1']:'';
+  	        $colName = isset($_POST['T3'])?$_POST['T3']:'';
+  	        $colUName = isset($_POST['T4'])?$_POST['T4']:'';
+	        $colPass = isset($_POST['T5'])?$_POST['T5']:'';
 
 			display_College_form($colLoc,$colCode,$colName,$colUName,$colPass);
 		}

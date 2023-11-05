@@ -18,6 +18,11 @@ if($username)
 	$conn = db_connect();
 	echo("</br>");
 	$uploaded=0;
+
+	$univCode=isset($_GET['$univCode'])?$_GET['$univCode']:'';
+	$univName=isset($_GET['$univName'])?$_GET['$univName']:'';
+	$logo=isset($_GET['logo'])?$_GET['$logo']:'';
+
 	display_University_form($univCode,$univName,$logo,$uploaded);
 
 }

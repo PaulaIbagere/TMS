@@ -126,7 +126,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 							//insert Time slot[2]
 							
 								$sql333 = "insert into managinglec values ('$mrow[0]',$mrow[1],'$currslot2',$mrow[3],$mrow[4],$mrow[5],$mrow[6],$mrow[7],$mrow[8],$mrow[9],$mrow[10],$mrow[11],'$mrow[12]',$mrow[13],$mrow[14],$mrow[15])";
-							$result333 = mysqli_query($sql333)or die(mysqli_error());
+							$result333 = mysqli_query($conn,$sql333)or die(mysqli_error());
 		
 						}//end of if
 								

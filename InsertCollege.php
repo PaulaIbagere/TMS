@@ -17,7 +17,7 @@ if($username)
 {
 	//universityCode
 
-	$uncode=$_SESSION['UnivCode'];
+	$uncode=isset($_SESSION['UnivCode'])?$_SESSION['UnivCode']:'';
 	$header=$_SESSION['UnivName'];
 
 	include("header.php");
@@ -30,11 +30,11 @@ if($username)
 
   // create short variable names
 
-  	$colLoc= $_POST['D2'];
-  	$colCode = $_POST['T1'];
-  	$colName = $_POST['T3'];
-  	$colUName = $_POST['T4'];
-	$colPass = $_POST['T5'];
+  	$colLoc= isset($_POST['D2'])?$_POST['D2']:'';
+  	$colCode = isset($_POST['T1'])?$_POST['T1']:'';
+  	$colName = isset($_POST['T3'])?$_POST['T3']:'';
+  	$colUName = isset($_POST['T4'])?$_POST['T4']:'';
+	$colPass = isset($_POST['T5'])?$_POST['T5']:'';
 
 	
     if (!filled_out($_POST))
@@ -142,7 +142,7 @@ if($username)
 					DisplayHeader($msg);
 
 					$sql_query1="insert into Colleges values('$colCode','$uncode','$colName','$colUName','$colPass','$colLoc') ";
-					$result1=mysqli_query($sql_query1);
+					$result1=mysqli_query($conn,$sql_query1);
 					if($result1)
 						 {
 							//echo("Successful...");

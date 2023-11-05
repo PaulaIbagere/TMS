@@ -24,7 +24,7 @@ if($username)
 		Href($href);
 		$conn = db_connect();
 		$sql = "select UniversityName,UniversityCode,Logo from Universities where UniversityCode='$uncode11'";
-		$result = mysqli_query($sql);
+		$result = mysqli_query($conn,$sql);
 		if (mysqli_num_rows($result)>0 )
 		{
 			$row=mysqli_fetch_row($result);

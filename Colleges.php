@@ -8,10 +8,10 @@ require_once('main.php');
 
 Display_Title();
 
-$id = $_GET['id'];
+$id = isset($_GET['id'])?$_GET['id']:'';
 $value=intval($id);
 
-$uncode1 = $_GET['uncode'];//universityCode
+$uncode1 = isset($_GET['uncode'])?$_GET['uncode']:'';//universityCode
 $uncode11=intval($uncode1);
 
 
@@ -124,10 +124,10 @@ if (strcmp($_SESSION['username'],"")!=0)
      }//end of if
      }//end of if
 
-$id = $_GET['id'];
+$id = isset($_GET['id'])?$_GET['id']:'';
 $value=intval($id);
 
-$uncode1 = $_GET['uncode'];
+$uncode1 = isset($_GET['uncode'])?$_GET['uncode']:'';
 $uncode11=intval($uncode1);
 
 $CollegeCode1 = isset($_GET['CollegeCode'])?$_GET['CollegeCode']:'';

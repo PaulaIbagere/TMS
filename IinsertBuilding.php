@@ -35,7 +35,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;';
 			DisplayHeader($msg);
 
-				$msg='&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1575;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;';
+				$msg='uf&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1575;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;';
 			Display_error_msg($msg);
 			Lecture_Form($value,$univcode,$LectureName,$Capacity,$Loc);
           }
@@ -88,7 +88,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 			$conn = db_connect();
 			$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
-			$result1 = mysqli_query($sql1);
+			$result1 = mysqli_query($conn,$sql1);
 			if (mysqli_num_rows($result1)>0 )
 			  {
 				$row=mysqli_fetch_row($result1);
@@ -102,7 +102,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 			//(2)Insert Data to Table
 			$conn = db_connect();
 			$sql3 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','1','$id','$LectureName','$Capacity','$Loc')";
-			$result3 = mysqli_query($sql3);
+			$result3 = mysqli_query($conn,$sql3);
 		  	if ($result3)
 		  	{
 				//Successfully Insereted
@@ -195,7 +195,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
-				$result1 = mysqli_query($sql1);
+				$result1 = mysqli_query($conn,$sql1);
 				if (mysqli_num_rows($result1)>0 )
 				{
 					$row=mysqli_fetch_row($result1);
@@ -209,7 +209,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				//(2)Insert Data to Table
 
 				$sql2 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
-				$result2 = mysqli_query($sql2);
+				$result2 = mysqli_query($conn,$sql2);
 				if ($result2)
 				{
 					$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;';

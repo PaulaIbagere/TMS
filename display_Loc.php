@@ -18,7 +18,7 @@ if($username)
 	$op = isset($_GET['op'])?$_GET['op']:'';
 	$opv=intval($op);
 
-	$uncode1 = $_GET['uncode'];
+	$uncode1 = isset($_GET['uncode'])?$_GET['uncode']:'';
 	$univCode=intval($uncode1);
 
 	//echo("opv=".$opv);
@@ -37,21 +37,21 @@ if($username)
 
 		db_connect();
 		//(1)
-			$sql_query2="select UnLoc from subbuildingseminar where LocId='$LId' and UniversityCode='$univCode'";
+			$sql_query2="select UnLoc from univloc where LocId='$LId' and UniversityCode='$univCode'";
 			$result2=mysqli_query($conn, $sql_query2);
 			$row2=mysqli_fetch_row($result2);
 
-			$sql_query3="delete from SubBuildingSeminar where UnLoc='$row2[0]' and UniversityCode='$univCode'";
+			$sql_query3="delete from univloc where UnLoc='$row2[0]' and UniversityCode='$univCode'";
 			$result3=mysqli_query($conn, $sql_query3);
 		//(2)
 
 		//(3)
-			$sql_query2="delete from subbuildingseminar where LocId='$LId' and UniversityCode='$univCode'";
-			$result2=mysqli_query($sql_query2);
+			$sql_query2="delete from univloc where LocId='$LId' and UniversityCode='$univCode'";
+			$result2=mysqli_query($conn,$sql_query2);
 
 	}
 
-	$sql = "select UnLoc,LocId from subbuildingseminar where UniversityCode='$univCode'";
+	$sql = "select UnLoc,LocId from univloc where UniversityCode='$univCode'";
 	$result = mysqli_query($conn,$sql);
 	?>
 	<div align="center">
@@ -66,7 +66,7 @@ if($username)
 
 			<td bordercolor="#003366" align="center" bgcolor="#5A74A0" height="31" width="95%" bordercolorlight="#003366" bordercolordark="#003366" style="border-color: #003366" colspan="2">
 			<p dir="rtl">
-			<img border="0" id="img56" src="Colleges-PAGE/locnames.jpg" height="20" width="100" fp-style="fp-btn: Simple Arrow 4; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" align="right">
+			Sitename<img border="0" id="img56" src="Colleges-PAGE/locnames.jpg" height="20" width="100" fp-style="fp-btn: Simple Arrow 4; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" align="right">
 			</td>
 		</tr>
 
