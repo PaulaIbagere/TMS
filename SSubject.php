@@ -140,7 +140,7 @@ if($value==1)
 					$flag=false;
 			}*/
 			else
-			if(!Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubName,$SecID))
+			if(!Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubName,$SecID, $year))
 				{
 					echo("</br>");
 						$msg="&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577; &#1605;&#1587;&#1576;&#1602;&#1575;";
@@ -212,7 +212,7 @@ if($value==1)
 							//echo("Lab = code=".$SubCode."</br>hour=".$SubHour."</br>thour=".$SubTHour);
 
 								$sql33 = "insert into CollegeSubject (AcadYNo,DeptNo,CollegeCode,UniversityCode,AcadDegreeId,ClassNo,SecID,SemNo,SubCode,SubName,SubHour,SubTHour,SubType) values ('$year','$DeptNo','$CollegeCode1','$uncode1','$AcadDeg','$Classno','$SecID','$Sem',UCASE('$SubCode'),'$SubName','$SubHour','$SubTHour','2')";
-							$result33 = mysqli_query($sql33);
+							$result33 = mysqli_query($conn, $sql33);
 							if ($result33)
 		  					{
 									$msg="&#1578;&#1605; &#1578;&#1587;&#1580;&#1610;&#1604; &#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577; &#1576;&#1606;&#1580;&#1575;&#1581;";

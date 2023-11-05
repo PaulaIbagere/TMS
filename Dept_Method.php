@@ -196,7 +196,7 @@ function Check_SubCode($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubC
  	return $flag;
 }
 //Check SubName
-function Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubName,$SecID)
+function Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubName,$SecID, $year)
 {
 	$conn = db_connect();
 	$flag=true;
@@ -618,7 +618,7 @@ function GetNoOFStudent($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$M
 		$MaxYear=$_SESSION['year'];
 	}
 	// Display Number of student on this Semester
-	$sql_query31="select NoOfStud from StudyPerSem where
+	$sql_query31="SELECT NoOfStud from studypersem where
 					AcadYNo='$MaxYear' and
 					UniversityCode='$uncode1' and
 					CollegeCode='$CollegeCode1' and
@@ -626,9 +626,10 @@ function GetNoOFStudent($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$M
 					AcadDegreeId='$AcadDeg'and
 					SemNo='$Sem' and
 					ClassNo='$Classno' and SecID='$SecID'";
-	$result31=mysqli_query($sql_query31);
+	$result31=mysqli_query($conn, $sql_query31);
 	$row31=mysqli_fetch_row($result31);
-	$NoStud=$row31[0];
+	//come back
+	$NoStud=isset($row31[0]) ? count($row31[0]) : '';
 
 	if($NoStud > 0)
 		return $NoStud;
@@ -645,7 +646,7 @@ function GetNoOFGroups($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$Ma
 	
     // Display Number of student on this Semester
 	
-	$sql_query31="select NoOfGroup from StudyPerSem where
+	$sql_query31="SELECT NoOfGroup from studypersem where
 					AcadYNo='$MaxYear' and
 					UniversityCode='$uncode1' and
 					CollegeCode='$CollegeCode1' and
@@ -655,9 +656,10 @@ function GetNoOFGroups($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$Ma
 					ClassNo='$Classno' and SecID='$SecID'";
 	
 	
-	$result31=mysqli_query($sql_query31);
+	$result31=mysqli_query($conn, $sql_query31);
 	$row31=mysqli_fetch_row($result31);
-	$NoGroup=$row31[0];
+	//come back
+	$NoGroup=isset($row31[0]) ? count($row31[0]) : '';
 	
 	if($NoGroup > 0)
 		return $NoGroup;
@@ -775,7 +777,7 @@ function GetCollegeTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 				CollegeCode='$CollegeCode1' and
 				UniversityCode='$uncode1' and 
 				SemNo='$Sem'";
-	$result6=mysqli_query($sql_query6);
+	$result6=mysqli_query($conn, $sql_query6);
 	
 	if(mysqli_num_rows($result6)>0)
 	{
@@ -835,7 +837,7 @@ function HeaderTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 				CollegeCode='$CollegeCode1' and
 				UniversityCode='$uncode1' and 
 				SemNo='$Sem'";
-	$result6=mysqli_query($sql_query6);
+	$result6=mysqli_query($conn, $sql_query6);
 	
 	if(mysqli_num_rows($result6)>0)
 	{
@@ -1634,13 +1636,13 @@ Your browser does not support inline frames or is currently configured not to di
 function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$year,$LectureName,$mday,$msub,$mteach,$StudGroup,$SecID)
 {
 	
-	$LectureName=$_POST['D2'];
+	$LectureName=isset($_POST['D2']) ? $_POST['D2'] : '';
 
-	$msub=$_POST['D4'];
+	$msub=isset($_POST['D4']) ? $_POST['D4'] : '';
 	
-	$mday=$_POST['D3'];
+	$mday=isset($_POST['D3']) ? $_POST['D3'] : '';
 
-	$mteach=$_POST['D5'];
+	$mteach=isset($_POST['D5']) ? $_POST['D5'] : '';
 	
 	if(isset($_POST['DSec']))
 	{
@@ -1654,13 +1656,13 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				UniversityCode='$uncode1' and
 				CollegeCode='$CollegeCode1' and
 				DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg'";
-		$result2 = mysqli_query($sql2);
+		$result2 = mysqli_query($conn, $sql2);
 		$row2=mysqli_fetch_row($result2);
 
 	//Get Acadmic Name
 		$sql3 = "select AcadDegreeName from AcadDegree where
 		   	AcadDegreeId='$AcadDeg'";
-		$result3 = mysqli_query($sql3);
+		$result3 = mysqli_query($conn, $sql3);
 		$row3=mysqli_fetch_row($result3);
 
 	//Display ClassName & SemName
@@ -1668,7 +1670,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 		where Semester.ClassNo='$Classno' and
 		ClassYear.ClassNo=Semester.ClassNo and
 		Semester.SemNo='$Sem'";
-		$result4 = mysqli_query($sql4);
+		$result4 = mysqli_query($conn, $sql4);
 		$row4=mysqli_fetch_row($result4);
 
 	// select the MaxYear registered
@@ -1867,7 +1869,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				//(1)select the Location Of College
 
 				$sql = "select UnLoc from Colleges where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1'";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn, $sql);
 				$row=mysqli_fetch_row($result);
 
 				//Get the Number Of Student to choose suitable Lecture
@@ -1876,17 +1878,17 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				{
 				  if(strcmp($NoStud,"")!=0)
 				  {
-					$sql_query33="select usedBy.SubBId,SubBuildingSeminar.SubBName,SubBuildingSeminar.Capacity from usedBy,SubBuildingSeminar where
-					usedBy.BId=1 and
-					SubBuildingSeminar.BId=1 and
-					usedBy.AcadYNo='$MaxYear' and
-					usedBy.SubBId=SubBuildingSeminar.SubBId and
-					usedBy.UniversityCode='$uncode1' and
-					usedBy.CollegeCode='$CollegeCode1' and
-					SubBuildingSeminar.UnLoc='$row[0]' and
-					SubBuildingSeminar.Capacity>='$NoStud'";
+					$sql_query33="SELECT managinglec.SubBId,SubBuildingSeminar.SubBName,SubBuildingSeminar.Capacity from managinglec,subbuildingseminar where
+					managinglec.BId=1 and
+					subbuildingseminar.BId=1 and
+					managinglec.AcadYNo='$MaxYear' and
+					managinglec.SubBId=SubBuildingSeminar.SubBId and
+					managinglec.UniversityCode='$uncode1' and
+					managinglec.CollegeCode='$CollegeCode1' and
+					subbuildingseminar.UnLoc='$row[0]' and
+					subbuildingseminar.Capacity>='$NoStud'";
 
-					$result33=mysqli_query($sql_query33);
+					$result33=mysqli_query($conn, $sql_query33);
 
 					if (mysqli_num_rows($result33)>0)
 					{
@@ -1912,7 +1914,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 }//end of if
 					else
 					 {
-					 	$result33=mysqli_query("select BId,SubBId from  usedby  where 
+					 	$result33=mysqli_query($conn, "SELECT BId,SubBId from  managinglec  where 
 					 							AcadYNo='$MaxYear' and 
 					 							UniversityCode='$uncode1' and 
 					 							CollegeCode='$CollegeCode1' and BId=1");
@@ -1941,6 +1943,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 			//Toutorial
 			if(($op==1)&&($s==2))
 			{
+				
 				if(strcmp($CapGroup,"")!=0)
 				  {
 					$sql_query33="select usedBy.SubBId,SubBuildingSeminar.SubBName,SubBuildingSeminar.Capacity from usedBy,SubBuildingSeminar where
@@ -2404,7 +2407,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 		<?php
 			//check if lecture share or not
 			
-			$notshare=$_POST['anysection'];
+			$notshare=isset($_POST['anysection']) ? $_POST['anysection'] : '';
 
 		?>
 		
@@ -4648,7 +4651,7 @@ function FinalDetails($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$AcadDe
 	AcadDegreeId='$AcadDeg' and
 	ClassNo='$Classno' and SecID='$SecID'";
 
-	$Mresult1=mysqli_query($Mang_query1);
+	$Mresult1=mysqli_query($conn, $Mang_query1);
 
     while($mrow1=mysqli_fetch_row($Mresult1))
    {

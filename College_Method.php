@@ -808,12 +808,7 @@ $href="SuccDirect.php?uncode=$uncode&CollegeCode=$CollegeCode";
 						<p align="right">
 						<select size="1" name="D1" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="1">
 							<option value="" selected>Select Academic Year</option>
-							<?php 
-								$query1 = "SELECT * FROM acadyear";
-								$result34 = mysqli_query($conn, $query1);
-								mysqli_fetch_row($result34);
-							
-							?>
+							<!-- come back -->
 							<option value="2009/2008">2009/2008</option>
 							<!--
 							<option value="2010/2009">2010/2009</option>

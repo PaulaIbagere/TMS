@@ -116,6 +116,8 @@ if($username)
 				
 				if(mysqli_num_rows($result))
 				{
+					$mtime = isset($_GET['mtime']) ? $_GET['mtime'] : '';
+					$StudGroup = isset($_GET['StudGroup']) ? $_GET['StudGroup'] : '';
 
 						DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$year,$LectureName,$mday,$mtime,$msub,$mteach,$StudGroup,$SecID);
 				}
@@ -133,6 +135,10 @@ if($username)
 			 	$result = mysqli_query($conn, $sql);
 			 	if(mysqli_num_rows($result))
 			 	{
+					$mtime = isset($_GET['mtime']) ? $_GET['mtime'] : '';
+					$msub = isset($_GET['msub']) ? $_GET['msub'] : '';
+					$StudGroup = isset($_GET['StudGroup']) ? $_GET['StudGroup'] : '';
+			
 			 		DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$year,$LectureName,$mday,$mtime,$msub,$mteach,$StudGroup,$SecID);
 			 	}
 			 	else

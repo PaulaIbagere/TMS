@@ -87,7 +87,7 @@ if($username)
 				 		<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="94%" bordercolorlight="#000000" bordercolordark="#000000" colspan="5">
 						<font size="4" face="Traditional Arabic">
 				 		<p align="right"><b>
-				 		<?php echo("&#1605;&#1608;&#1575;&#1583;&nbsp;".$row4[1]."&nbsp;&#1604;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;&nbsp;"."<span dir='rtl'>".$year."</span>");?></b></font></td>
+				 		<?php echo("<span dir='rtl'>".$year."</span>"." Academic Year ".$row4[1]." Materials data");?></b></font></td>
 				 	</tr>
 					<tr>
 		 <?php
@@ -103,21 +103,25 @@ if($username)
 			{
 			?>
 				<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="18%" bordercolorlight="#000000" bordercolordark="#000000">
-					<img border="0" id="img73" src="Colleges-PAGE/butTOFLabHours.jpg" height="27" width="135" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;"></td>
+					<p>Practical Hours</p>
+					<!-- <img border="0" id="img73" src="Colleges-PAGE/butTOFLabHours.jpg" height="27" width="135" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1593;&#1605;&#1604;&#1609;"></td> -->
 
 				<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="18%" bordercolorlight="#000000" bordercolordark="#000000">
-					<img border="0" id="img72" src="Colleges-PAGE/NoOfHourH.jpg" height="27" width="135" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;" align="center"></td>
+					<p>Exercise Hours</p>
+					<!-- <img border="0" id="img72" src="Colleges-PAGE/NoOfHourH.jpg" height="27" width="135" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;" align="center"></td> -->
 
 				<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="20%" bordercolorlight="#000000" bordercolordark="#000000">
-					<img border="0" id="img71" src="Colleges-PAGE/NoOfLecHours.jpg" height="27" width="135" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;"></td>
+					<p>Lecture Hours</p>
+					<!-- <img border="0" id="img71" src="Colleges-PAGE/NoOfLecHours.jpg" height="27" width="135" alt="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577;"></td> -->
 
 				<td bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" width="30%" bordercolorlight="#000000" bordercolordark="#000000">
-					<img border="0" id="img69" src="Depart_Files/subbname.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;">
+					<p>Subject Name</p>
+					<!-- <img border="0" id="img69" src="Depart_Files/subbname.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"> -->
 				</td>
 
 				<td width="19%" bordercolor="#5A74A0" align="center" bgcolor="#C0C0C0" height="31" bordercolorlight="#000000" bordercolordark="#000000">
-					<p align="center" dir="rtl">
-					<img border="0" id="img70" src="Depart_Files/subbcode.jpg" height="27" width="135" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;">
+					<p align="center" dir="rtl">Material Code </p>
+					<!-- <img border="0" id="img70" src="Depart_Files/subbcode.jpg" height="27" width="135" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #000000; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #C0C0C0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"> -->
 				</td>
 
 				</tr>
@@ -139,7 +143,7 @@ if($username)
 								ClassNo='$Classno' and
 								SemNo='$Sem' and SubType='2' and
 								SubName='$SubName'";
-						$results = mysqli_query($sqls);
+						$results = mysqli_query($conn, $sqls);
 						$rows=mysqli_fetch_row($results);
 						if($rows)
 							echo($rows[0]);
@@ -172,7 +176,8 @@ if($username)
 			{
 			?>
 			<td bordercolor="#003366" align="center" width="95%" height="35" colspan="5" bgcolor="#5A74A0">
-				<img border="0" id="img68" src="Depart_Files/NotInsert.jpg" height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;">
+				<p style = "color: white;">No Materials Entered</p>
+				<!-- <img border="0" id="img68" src="Depart_Files/NotInsert.jpg" height="27" width="135" alt="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;"> -->
 			</td>
 			<?php
 			}

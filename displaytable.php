@@ -36,8 +36,10 @@ if($username)
 	$op=$_GET['op'];
 	$op=intval($op);
 
-	$f=$_GET['f'];
+	$f=isset($_GET['f']) ? $_GET['f'] : '';
 	$f=intval($f);
+
+	$frep = isset($_GET['frep']) ? $_GET['frep'] : '';
 
 	if($frep!=1)
 		$year=$_SESSION['year'];
@@ -48,13 +50,13 @@ if($username)
 	$s=$_GET['s'];
 	$s=intval($s);
 
-	$ch=$_GET['ch'];
+	$ch=isset($_GET['ch']) ? $_GET['ch'] : '';
 	$ch=intval($ch);
 	
 	$SecID=$_GET['SecID'];
 	$SecID=intval($SecID);
 	
-	$ProgType=$_GET['ProgType'];
+	$ProgType=isset($_GET['ProgType']) ? $_GET['ProgType'] : '';
 	$ProgType=intval($ProgType);
 
 if((($uncode1>0)&&($CollegeCode1))&&(($AcadDeg>0)&&($DeptNo>0)))

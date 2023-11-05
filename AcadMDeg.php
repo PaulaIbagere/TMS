@@ -78,9 +78,11 @@ if($username)
 				  </tr>
 				  <tr>
 					 <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="66%" bordercolorlight="#003366" bordercolordark="#003366">
-					 	<img border="0" id="img67" src="Depart_Files/ClassYear.jpg" height="27" width="135" alt="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+					 	<p>Semester</p>
+					 	<!-- <img border="0" id="img67" src="Depart_Files/ClassYear.jpg" height="27" width="135" alt="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td> -->
 					 <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="31" width="28%" bordercolorlight="#003366" bordercolordark="#003366">
-						<img border="0" id="img66" src="Depart_Files/AcadminYears.jpg" height="27" width="135" alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"></td>
+						<p>Academic Year</p>
+					 	<!-- <img border="0" id="img66" src="Depart_Files/AcadminYears.jpg" height="27" width="135" alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"></td> -->
 
 				  </tr>
 					<tr>
@@ -95,10 +97,12 @@ if($username)
 				  	{
 				  		//here
 				  		//$SemName=$SemName."<font color='#FFFFFF'>".$row22[0]."</font>"."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."<font color='#FFFF00'><a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=2'>"."&#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"."</a>"."&nbsp;&nbsp;&nbsp;&nbsp;"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=1'>"."&#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;"."</a></font>"."</br>"."</br>";
-						$SemName=$SemName."<font color='#FFFFFF'>".$row22[0]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."&#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;&nbsp;&nbsp;"."</font>"."<font color='#FFFF00'>"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=1&s=1'>"."[ &nbsp;&nbsp;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;&nbsp;&nbsp;]"."</a>"."&nbsp;&nbsp;&nbsp&nbsp;"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=1&s=2'>"."[&nbsp;&nbsp;&#1578;&#1605;&#1575;&#1585;&#1610;&#1606;&nbsp;&nbsp;]"."</a></font>"."&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;"."<font color='#FFFFFF'>"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=2'>"."&#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"."</a>"."</font>"."</br>"."</br>";
-				  	}//end while2
+						  $SemName=$SemName."<font color='#FFFFFF'>".$row22[0]."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"."Hall Schedule"."</font>"."<font color='#FFFF00'>"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=1&s=1'>"."[ Lectures]"."</a>"."&nbsp;&nbsp;&nbsp&nbsp;"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=1&s=2'>"."[Exercises]"."</a></font>"."&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;"."<font color='#FFFFFF'>"."<a href='DeptManage.php?AcadDeg=$AcadDeg&Class=$row11[1]&Sem=$row22[1]&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo&op=2'>"."Lab Scheduling"."</a>"."</font>"."</br>"."</br>";
+						}//end while2
 				  	?>
-					 <td bordercolor="#003366" align="center" width="70%" height="35" title="&#1610;&#1605;&#1603;&#1606;&#1603; &#1575;&#1580;&#1585;&#1575;&#1569; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;&#1577; &#1604;&#1603;&#1604; &#1601;&#1589;&#1604; &#1583;&#1585;&#1575;&#1587;&#1609;">
+					 <td bordercolor="#003366" align="center" width="70%" height="35" 
+					 title="&#1610;&#1605;&#1603;&#1606;&#1603; &#1575;&#1580;&#1585;&#1575;&#1569; 
+					 &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;&#1577; &#1604;&#1603;&#1604; &#1601;&#1589;&#1604; &#1583;&#1585;&#1575;&#1587;&#1609;">
 					 <font face="Traditional Arabic"  size="3">
 					 <b align="right">
 					 	<?php
