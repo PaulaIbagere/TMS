@@ -49,14 +49,14 @@ if (strcmp($_SESSION['username'],"")!=0)
 		  <td align="center" height="25" width="28%" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
 		        &nbsp;</td>
 		  <td bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="25" width="37%" bordercolorlight="#003366" bordercolordark="#003366">
-		        <img border="0" id="img46" src="university_Page/button18.jpg" height="18" width="90" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;"></td>
+		       Univesity Name <!--<img border="0" id="img46" src="university_Page/button18.jpg" height="18" width="90" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;"></td>-->
 		  <td width="15%" bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="25" bordercolorlight="#003366" bordercolordark="#003366">
 		  	 	<p align="center" dir="rtl">
-		  	 	<img border="0" id="img26" src="university_Page/button17.jpg" height="17" width="85" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">
+		  	 	University Code<!--<img border="0" id="img26" src="university_Page/button17.jpg" height="17" width="85" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">-->
 		  </td>
 		  <td width="15%" bordercolor="#5A74A0" align="center" bgcolor="#5A74A0" height="25" bordercolorlight="#003366" bordercolordark="#003366">
 		  	 	<p align="center" dir="rtl">
-		  	 	<img border="0" id="img25" src="university_Page/button16.jpg" height="17" width="85" alt="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">
+		  	 	University Logo<!--<img border="0" id="img25" src="university_Page/button16.jpg" height="17" width="85" alt="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1588;&#1593;&#1575;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;">-->
 		  </td>
 		  </tr>
 		  <tr>
@@ -71,15 +71,13 @@ if (strcmp($_SESSION['username'],"")!=0)
 					<td>
 					<?php $op=2;?><a href="updateUniv.php?op=<?php echo($op); ?>"><img border="0" alt="&#1581;&#1584;&#1601;" src="university_Page/delete.jpg" width="33" height="26" align="center" style="color: #003366; border: 1px solid #003366; background-color: #003366"></a></td>
 					<td width="35">
-					<?php $uncode=$row[1];?><?php $op=1;?><a href="updateUniv.php?op=<?php echo($op); ?>&uncode=<?php echo($uncode);?>"><img border="0" alt="&#1578;&#1593;&#1583;&#1610;&#1604;" src="university_Page/update.jpg" width="33" height="26" style="color: #003366; border: 1px solid #003366; background-color: #003366"></a></td>
+					<?php $uncode=$row[1];?><?php $op=1;?><a href="updateUniv.php?op=<?php echo($op); ?>&uncode=<?php echo($uncode);?>">
+					<img border="0" alt="&#1578;&#1593;&#1583;&#1610;&#1604;" src="university_Page/update.jpg" width="33" height="26" style="color: #003366; border: 1px solid #003366; background-color: #003366"></a></td>
 					<td width="75">
 
 					<a href="UnivLocation.php?uncode=<?php echo($uncode);?>">
-					<img border="0" id="img47" src="Colleges-PAGE/addLoc.jpg" height="15" width="75" 
-					alt="&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" 
-					fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 11; 
-					fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" 
-					fp-title="&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;"></a></td>
+					<p style="color:white;">University Branches</p>
+					<!--<img border="0" id="img47" src="Colleges-PAGE/addLoc.jpg" >--></a></td>
 				</tr>
 				</table>
 
@@ -138,7 +136,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	<tr>
 	    <td width="17%">
 	    	<p align="center"><a href="UniversityForm.php">
-	    	Enter<!--<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">-->
+	    	Log out<!--<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">-->
 	    	</a>
 	     </td>
 	     <td width="73%">&nbsp;</td>

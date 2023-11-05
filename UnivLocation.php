@@ -17,15 +17,15 @@ if($username)
 	$uncode1 = $_GET['uncode'];
 	$univCode=intval($uncode1);
 
-	$r=$_SESSION['Ltype'];
+	$r=isset($_SESSION['Ltype']) ? $_SESSION['Ltype'] : '';
 	$r=intval($r);
 
-	$loct=$_SESSION['loct'];
+	$loct=isset($_SESSION['loct']) ? $_SESSION['loct'] : '';
 	$loct=intval($loct);
 
 	//Display UniversityName..
 	$sql = "select UniversityName from Universities where UniversityCode='$univCode'";
-	$result = mysqli_query($sql);
+	$result = mysqli_query($conn,$sql);
 	$row=mysqli_fetch_row($result);
 
 	if($loct==1)
@@ -60,7 +60,7 @@ if($username)
 		<tr>
 			<td colspan="2">
 			<p align="right">
-			<b><font size="6" color="#FFFFFF" face="Traditional Arabic">
+			<b><font size="6" color="#FFFFFF" face="Arial">
 			<?php
 			echo($row[0]);
 			?>
@@ -70,7 +70,7 @@ if($username)
 			<td colspan="2">
 			<p align="right">
 			<?php
-			 	$msg2="&#1575;&#1604;&#1601;&#1585;&#1608;&#1593; &#1575;&#1604;&#1578;&#1575;&#1576;&#1593;&#1577; &#1604;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577";
+			 	$msg2="Branches affiliated with the university";
 			 	DisplaySuccHeader($msg2);
 
 			?>

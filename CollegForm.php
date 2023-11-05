@@ -20,7 +20,7 @@ if($username)
 	// Get University Name
 	$conn = db_connect();
 	$sql2 = "select UniversityName from Universities where UniversityCode='$uncode'";
-	$result2 = mysqli_query($sql2);
+	$result2 = mysqli_query($conn,$sql2);
 	$row2=mysqli_fetch_row($result2);
 
 	$header=$row2[0];
@@ -35,10 +35,10 @@ if($username)
 		Href2($href,$header);
 		$_SESSION['UnivName']=$header;
 		//
-		//$conn = db_connect();
+		$conn = db_connect();
 		// Check Locations
-		$sql = "select UnLoc from UnivLoc where UniversityCode='$uncode'";
-		$result = mysqli_query($sql);
+		$sql = "select UnLoc from subbuildingseminar where UniversityCode='$uncode'";
+		$result = mysqli_query($conn,$sql);
 		if (mysqli_num_rows($result)>0)
 		{
 			$msg="&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578;";

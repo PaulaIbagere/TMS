@@ -129,11 +129,11 @@ if (strcmp($_SESSION['username'],"")!=0)
 					</tr>
 					<tr>
 						<td dir="rtl" align="center" colspan="4">
-							<font face="Traditional Arabic" color="white">
+							<font face="Arial" color="white">
 							<b>
 							<?php
 								//there is no Colleges inserted
-								echo("&#1604;&#1605; &#1610;&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578;");
+								echo("No colleges were entered");
 							?>
 							</b>
 							</font>

@@ -264,8 +264,8 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 
 function display_Building_form()
 {
-	$un= $_POST['D1'];
-	$z = $_POST['R1'];
+	$un= isset($_POST['D1'])?$_POST['D1']:'';
+	$z = isset($_POST['R1'])?$_POST['R1']:'';
 	
 	switch($z)
 	{
@@ -875,7 +875,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 		<tr>
 			<!-- MaxYear-->
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
-				<b><font size="4" face="Traditional Arabic" color="#FFFFFF">&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
+				<b><font size="4" face="Arial" color="#FFFFFF">Academic Year
 				</font></b>
 			</td>
 
@@ -890,7 +890,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 		<tr>
 			<!--university name --> 
 			<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
-				<b><font size="4" face="Traditional Arabic" color="#FFFFFF">&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;
+				<b><font size="4" face="Traditional Arabic" color="#FFFFFF">Univerity Name
 				</font></b>
 			</td>
 

@@ -36,8 +36,8 @@ function SerachForLoc($location,$univCode)
  	$flag=true;
  	$conn = db_connect();
 
-	$sql = "select UnLoc from UnivLoc where UniversityCode='$univCode' and UnLoc='$location'";
-	$result = mysqli_query($sql);
+	$sql = "select UnLoc from subbuildingseminar where UniversityCode='$univCode' and UnLoc='$location'";
+	$result = mysqli_query($conn,$sql);
 
 	if (mysqli_num_rows($result)>0 )
 	  {

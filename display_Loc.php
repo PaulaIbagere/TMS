@@ -15,7 +15,7 @@ if($username)
 {
 
 	$conn = db_connect();
-	$op = $_GET['op'];
+	$op = isset($_GET['op'])?$_GET['op']:'';
 	$opv=intval($op);
 
 	$uncode1 = $_GET['uncode'];
@@ -37,7 +37,7 @@ if($username)
 
 		db_connect();
 		//(1)
-			$sql_query2="select UnLoc from UnivLoc where LocId='$LId' and UniversityCode='$univCode'";
+			$sql_query2="select UnLoc from subbuildingseminar where LocId='$LId' and UniversityCode='$univCode'";
 			$result2=mysqli_query($conn, $sql_query2);
 			$row2=mysqli_fetch_row($result2);
 
@@ -46,13 +46,13 @@ if($username)
 		//(2)
 
 		//(3)
-			$sql_query2="delete from UnivLoc where LocId='$LId' and UniversityCode='$univCode'";
+			$sql_query2="delete from subbuildingseminar where LocId='$LId' and UniversityCode='$univCode'";
 			$result2=mysqli_query($sql_query2);
 
 	}
 
-	$sql = "select UnLoc,LocId from UnivLoc where UniversityCode='$univCode'";
-	$result = mysqli_query($sql);
+	$sql = "select UnLoc,LocId from subbuildingseminar where UniversityCode='$univCode'";
+	$result = mysqli_query($conn,$sql);
 	?>
 	<div align="center">
 

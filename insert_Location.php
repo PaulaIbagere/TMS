@@ -19,7 +19,7 @@ if($univCode>0)
 	DisplayHeader($msg3);
 
 	insert_University_Locations($univCode);
-	$location=$_POST['T1'];
+	$location=isset($_POST['T1'])?$_POST['T1'] :'';
 
 	//Validate Data..
 	//(1)Validate Integer Values
@@ -47,8 +47,8 @@ if($univCode>0)
 
 				db_connect();
 
-				$sql_get="select count(LocId) from UnivLoc where UniversityCode='$univCode'";
-				$result_get = mysqli_query($sql_get);
+				$sql_get="select count(LocId) from subbuildingseminar where UniversityCode='$univCode'";
+				$result_get = mysqli_query($conn,$sql_get);
 				if (mysqli_num_rows($result_get)>0 )
 				  {
 					$row_get=mysqli_fetch_row($result_get);
@@ -64,7 +64,7 @@ if($univCode>0)
 				//echo("datavalid="."id=".$id.$location."univcode=".$univCode);
 				//echo("datavalid="."id=".$id);
 				$sql_query1="insert into UnivLoc values('$id','$univCode','$location') ";
-				$result1=mysqli_query($sql_query1);
+				$result1=mysqli_query($conn,$sql_query1);
 				$location="";
 			 }//end of if
 		   }// end of else

@@ -18,7 +18,7 @@ if($username)
 	$href="welcomeAdmin.php";
 	Href($href);
 
-	$msg='&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;';
+	$msg='Halls and laboratories';
 	DisplayHeader($msg);
 
 	$conn = db_connect();

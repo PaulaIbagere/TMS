@@ -57,7 +57,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	 		    <tr>
 			<?php
 				$sql = "select CollegeName,CollegeCode from Colleges where UniversityCode='$uncode11'order by CollegeCode";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn,$sql);
 				if (mysqli_num_rows($result)>0 )
 		          {
 			      ?>
@@ -130,7 +130,7 @@ $value=intval($id);
 $uncode1 = $_GET['uncode'];
 $uncode11=intval($uncode1);
 
-$CollegeCode1 = $_GET['CollegeCode'];
+$CollegeCode1 = isset($_GET['CollegeCode'])?$_GET['CollegeCode']:'';
 $CollegeCode11=intval($CollegeCode1);
 
 if(($id==1)&&($uncode11>0)&&($CollegeCode11>0))
