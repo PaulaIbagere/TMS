@@ -56,8 +56,8 @@ o\:*         { behavior: url(#default#VML) }
  <v:shadow color="#868686"/>
  <v:textpath style='font-family:"Traditional Arabic";font-size:26pt;
   font-weight:bold;v-text-kern:t' trim="t" fitpath="t" string="&#1606;&#1592;&#1575;&#1605; &#1573;&#1583;&#1575;&#1585;&#1577; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;&#1577; "/>
-</v:shape><![endif]--><![if !vml]><img border=0 width=286 height=42
-src="header_files/image001.gif" alt="&#1606;&#1592;&#1575;&#1605; &#1573;&#1583;&#1575;&#1585;&#1577; &#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" v:shapes="_x0000_s1026"><![endif]></td>
+</v:shape><![endif]--><![if !vml]>Time table Management Schedule<!--<img border=0 width=286 height=42
+src="header_files/image001.gif" alt="&#1606;&#1592;&#1575;&#1605; &#1573;&#1583;&#1575;&#1585;&#1577; &#1580;&#1583;&#1608;&#1604;&#1577; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1608;&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" v:shapes="_x0000_s1026"><![endif]>--></td>
 		</tr>
 		<tr>
 		<td bgcolor="#B0CCFF" align="center">&nbsp; </td>

@@ -18,14 +18,14 @@ if($username)
   	// create short variable names
 
   	$univCode = $_POST['D1'];
-  	$r = $_POST['R1'];
+  	$r = isset($_POST['R1'])?$_POST['R1']:'';
 
     if((strcmp($univCode,"")==0)||(strcmp($r,"")==0))
      {
 		$href="welcomeAdmin.php?flag=2";
 		backto($href);
      	$path="error_msg_files/image001.gif";
-  			$msg="&#1601;&#1590;&#1604;&#1575;&#1611; &#1602;&#1605; &#1576;&#1573;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578;";
+  			$msg="Please enter all data";
   		Display_error_msg($msg,$path);
   		display_Building_form();
   	  }

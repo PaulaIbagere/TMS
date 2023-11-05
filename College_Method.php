@@ -1033,10 +1033,9 @@ function DisplayRegStudentForm($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,
 							
 							$conn = db_connect();
 							
-							$result=mysqli_query("select SecID,SecName from DeptSection where 
-    		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
-    		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno'");
-								
+							$query = "SELECT SecID, SecName FROM DeptSection WHERE UniversityCode = '$uncode1' AND CollegeCode = '$CollegeCode1' AND DeptNo = '$DeptNo' AND AcadDegreeId = '$AcadDeg' AND ClassNo = '$Classno'";
+
+                              $result = mysqli_query($conn, $query);
 							if(mysqli_num_rows($result)>0)
 							{
 								
@@ -1160,7 +1159,7 @@ function checkTeacherName($TName,$uncode,$CollegeCode)
 	$year=$_SESSION['year'];
 	$sql = "select TeacherNo from Teachers where
 	TeacherName='$TName' and AcadYNo='$year' and UniversityCode='$uncode' and CollegeCode='$CollegeCode'";
- 	$results=mysqli_query($sql);
+ 	$results=mysqli_query($conn,$sql);
  	$rows=mysqli_fetch_row($results);
  	if($rows[0]==0)
  		return true;
@@ -1173,6 +1172,7 @@ function checkTeacherName($TName,$uncode,$CollegeCode)
 //Teacher Form
 function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 {
+	$conn=db_connect();
 	$year=$_SESSION['year'];
 	$selectedCollege=isset($_SESSION['SelectedCollege']) ? $_SESSION['SelectedCollege'] : '';
 	//echo("selected College=".$selectedCollege);
@@ -1362,10 +1362,9 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 					<?php
 					if($status == 1)
 					{
-						$result = mysqli_query("select distinct(CollegeCode),CollegeName from Colleges where 
-							
-								UniversityCode='$uncode1' and CollegeCode!='$CollegeCode1' order by CollegeName");
-						
+						$query = "SELECT DISTINCT CollegeCode, CollegeName FROM Colleges WHERE UniversityCode = '$uncode1' AND CollegeCode != '$CollegeCode1' ORDER BY CollegeName";
+
+                            $result = mysqli_query($conn, $query);
 						if(mysqli_num_rows($result)>0)
 						{
 		
@@ -1383,10 +1382,13 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 									<select size="1" name="DCollege" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2" onchange="javascript:document.f1.action='sinsertTeacher.php?f=1&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&value=<?php echo($value);?>';javascript:document.f1.submit();">
 							
 								<?php
+								$c = 0;
 									while($row=mysqli_fetch_row($result))
 									{	
 								?>
-										<option value="<?php echo($row[0]);?>" <?php if($selectedCollege == $row[0]){?> selected <?php }?> >
+										<option value="<?php echo($row[0]);?>" 
+										
+										<?php if($selectedCollege == $row[0]){?> selected <?php }?> >
 											<?php 
 												echo($row[1]); 
 												$c++;
@@ -1441,7 +1443,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 
 					}
 											
-					$results8=mysqli_query($sqls_query8);
+					$results8=mysqli_query($conn,$sqls_query8);
 					if (mysqli_num_rows($results8))
 					{
 						while($rows8=mysqli_fetch_row($results8))
@@ -1927,7 +1929,7 @@ function SelectMForm($uncode1,$CollegeCode1,$year,$Sem,$Select,$value,$f)
 						//(1)select the Location Of College
 
 						$sql = "select UnLoc from Colleges where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1'";
-						$result = mysqli_query($sql);
+						$result = mysqli_query($conn,$sql);
 						$row=mysqli_fetch_row($result);
 
 						$sqls_query8 = "select distinct(usedBy.SubBId),SubBuildingSeminar.SubBName from usedBy,SubBuildingSeminar where
@@ -1979,7 +1981,7 @@ function SelectMForm($uncode1,$CollegeCode1,$year,$Sem,$Select,$value,$f)
 						//(1)select the Location Of College
 
 						$sql = "select UnLoc from Colleges where UniversityCode='$uncode1' and CollegeCode='$CollegeCode1'";
-						$result = mysqli_query($sql);
+						$result = mysqli_query($conn,$sql);
 						$row=mysqli_fetch_row($result);
 
 						$sqls_query8 = "select distinct(usedBy.SubBId),SubBuildingSeminar.SubBName from usedBy,SubBuildingSeminar where
@@ -2099,7 +2101,7 @@ function ReportDetails($year,$mday,$avTime,$Sem,$Select,$value,$uncode,$CollegeC
 
 	$details="";
 	
-	$color=black;
+	$color='black';
 
 	$conn = db_connect();
 	
@@ -2113,7 +2115,7 @@ function ReportDetails($year,$mday,$avTime,$Sem,$Select,$value,$uncode,$CollegeC
 		SemNo='$Sem' and
 		TeacherId='$Select'";
 
-		$Mresult1=mysqli_query($Mang_query1);
+		$Mresult1=mysqli_query($conn,$Mang_query1);
 
     	if($mrow1=mysqli_fetch_row($Mresult1))
    		{
@@ -2132,9 +2134,9 @@ function ReportDetails($year,$mday,$avTime,$Sem,$Select,$value,$uncode,$CollegeC
 			//Class Name
 			if(($uncode1==$uncode)&&($CollegeCode1==$CollegeCode))
 
-				$color=black;
+				$color="black";
 			else
-				$color=blue;
+				$color="blue";
 
 				//$details=$details."<div style='color:$color'><b><span dir='rtl'>".GetClassName($uncode1,$CollegeCode1,$DeptNo,$AcadDeg,$Classno,$Sem)."</span></b></div>";
 
@@ -2658,7 +2660,7 @@ Your browser does not support inline frames or is currently configured not to di
 		AcadDegreeId='$AcadDeg' and
 		ClassNo='$Classno' and
 		SemNo='$Sem'";
-		$result=mysqli_query($sql1);
+		$result=mysqli_query($conn,$sql1);
 		$count=mysqli_num_rows($result);
 		if (mysqli_num_rows($result)>0)
 		{
@@ -2678,8 +2680,9 @@ Your browser does not support inline frames or is currently configured not to di
 					ClassNo='$Classno' and
 					SemNo='$Sem' and
 					SubName='$row[0]'";
-				$result2=mysqli_query($sql2);
+				$result2=mysqli_query($conn,$sql2);
 				$row2=mysqli_fetch_row($result2);
+				$counter=0;
 				if($row2[0]==0)
 				{
 				?>
