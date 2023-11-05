@@ -393,8 +393,10 @@ function Display_College_Menu2($CollegeCode,$uncode)
 		<!--Add Depart-->
 		<tr>
 			<td bgcolor="#2F446F" height="38" align="center">
-			<a href="ConfigDept.php?uncode=<?php echo($uncode);?>&CollegeCode=<?php echo($CollegeCode);?>">Section
-			<img border="0" id="img40" src="College_files/Dept1.jpg" height="38" width="190"  fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="&#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;"></a></td>
+			<a href="ConfigDept.php?uncode=<?php echo($uncode);?>&CollegeCode=<?php echo($CollegeCode);?>">
+			<p style = "border: 1px solid blue; width: 50%; border-radius: 40%; padding: 10px; background-color: 
+			lightblue; text-decoration: none">Section</p>
+			<!-- <img border="0" id="img40" src="College_files/Dept1.jpg" height="38" width="190"  fp-style="fp-btn: Embossed Capsule 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 20; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #2F446F" fp-title="&#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;"></a></td> -->
 		</tr>
 		
 		<!--Configration-->
@@ -697,92 +699,49 @@ $yyear=$_SESSION['year'];
 function DisplayRegMenu($univCode,$CollegeCode)
 {
 ?>
-
-<div align="right">
-	<table border="0" width="36%" id="table13">
-		<tr>
-			<!--College Start Time Per Semester -->
-			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
-				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=5#CollegeStartTime">
-					<!-- <img border="0" id="collstart" src="Colleges-PAGE/CollTimeSlot.jpg" height="35" width="174" 
-					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; &#1576;&#1583;&#1575;&#1610;
-					&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" onmouseover=
-					"FP_swapImg(1,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeslot7.jpg')" onmouseout=
-					"FP_swapImg(0,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeSlot.jpg')" onmousedown=
-					"FP_swapImg(1,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeSlot8.jpg')" onmouseup=
-					"FP_swapImg(0,0,/*id*/'collstart',/*url*/'Colleges-PAGE/CollTimeslot7.jpg')" fp-style=
-					"fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
-					fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
-					fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1586;&#1605;&#1606; 
-					&#1576;&#1583;&#1575;&#1610;&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575; -->
-					&#1578;"> <p style="color:white;">Determine the start time of Lectures</p>
-				</a>
-			</td>
-
-			<!--College Labs -->
-			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
-				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&op=2&value=4#RegLab">
-					<img border="0" id="img68" src="Colleges-PAGE/LabConfig6.jpg" height="32" width="160" 
-					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" 
-					onmouseover="FP_swapImg(1,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig4.jpg')" 
-					onmouseout="FP_swapImg(0,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig6.jpg')" onmousedown=
-					"FP_swapImg(1,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig5.jpg')" onmouseup="FP_swapImg
-					(0,0,/*id*/'img68',/*url*/'Colleges-PAGE/LabConfig4.jpg')" fp-style="fp-btn: Braided Row 1; 
-					fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: 
-					#FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" 
-					fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">
-					<p style="color:white;">Determine the parameter</p>
-				</a>
-			</td>
-			
-			<!--College Lectures -->
-			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
-				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&op=1&value=3#RegLec">
-					<img border="0" id="img67" src="Colleges-PAGE/LecConfig3.jpg" height="32" width="160" 
-					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" 
-					fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 
-					16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; 
-					fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;
-					&#1593;&#1575;&#1578;" onmouseover="FP_swapImg(1,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig4.jpg')" 
-					onmouseout="FP_swapImg(0,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig3.jpg')" onmousedown=
-					"FP_swapImg(1,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig5.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img67',/*url*/'Colleges-PAGE/LecConfig4.jpg')">
-					<p style="color:white;">Determine the halls</p>
-				</a>
-			</td>
-			
-			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
-				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=2#RegNewYear">
-					<img border="0" id="img57" src="Colleges-PAGE/NOOFStd3.jpg" height="32" width="160" 
-					alt="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;
-					&#1604;&#1575;&#1576;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: 
-					Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: 
-					#FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;
-					&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" onmouseover=
-					"FP_swapImg(1,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd1.jpg')" onmouseout=
-					"FP_swapImg(0,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd3.jpg')" onmousedown=
-					"FP_swapImg(1,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd2.jpg')" onmouseup=
-					"FP_swapImg(0,0,/*id*/'img57',/*url*/'Colleges-PAGE/NOOFStd1.jpg')">
-					<p style="color:white;">Determine Number of students</p>
-				</a>
-			</td>
-			
-			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
-				<a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=1#RegNoOfStud">
-					<img border="0" id="img56" src="Colleges-PAGE/NewYear3.jpg" height="32" width="160" 
-					alt="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;&#1609; " 
-					fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; 
-					fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: 
-					#5A74A0" fp-title="&#1578;&#1587;&#1580;&#1610;&#1604; &#1593;&#1575;&#1605; &#1583;&#1585;&#1575;&#1587;
-					&#1609; " onmouseover="FP_swapImg(1,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear1.jpg')" onmouseout=
-					"FP_swapImg(0,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear3.jpg')" onmousedown=
-					"FP_swapImg(1,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear2.jpg')" onmouseup=
-					"FP_swapImg(0,0,/*id*/'img56',/*url*/'Colleges-PAGE/NewYear1.jpg')">
-					<p style="color:white;">Determine Academic Year</p>
-				</a>
-			</td>
-		</tr>
-	</table>
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="icon" href="/static/pictures/favicon.png">
+    <title>Timetable Management System</title>
+</head>
+<header class="header">
+        <section class="header__top">
+            <section class="header__logo">
+                <h3 class="logo-title">SETTINGS</h3>
+            </section>
+            <article class="header__icons">
+                <section>
+                    <a href="settingspage.html">
+                        <span class="material-symbols-outlined arrow-centre">
+                        settings
+                        </span>
+                    </a>
+                </section>
+                <section>
+                    <a href="homepage.html">
+                        <span class="material-symbols-outlined arrow-centre">
+                        home
+                        </span>
+                    </a>
+                </section>
+            </article>
+        </section>
+        <nav class="header__nav">
+                <ul>
+                    <li><a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=5#CollegeStartTime">Start Time of Lectures</a></li>
+                    <li><a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&op=2&value=4#RegLab">Parameters</a></li>
+                    <li><a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&op=1&value=3#RegLec">Halls</a></li>
+                    <li><a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=2#RegNewYear">Number of Students</a></li>
+                    <li><a href="ConfigNewYear.php?uncode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=1#RegNoOfStud">Academic Year</a></li>
+                </ul>
+        </nav>
+    </header>
 <?php
 }
 
