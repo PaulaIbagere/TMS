@@ -784,7 +784,7 @@ function GetCollegeTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 		$trow=mysqli_fetch_row($result6);
 		
 		//get Time Slots
-		$res6=mysqli_query("select * from TimeSlots where TSID='$trow[0]'");
+		$res6=mysqli_query($conn, "select * from TimeSlots where TSID='$trow[0]'");
 		$slot=mysqli_fetch_row($res6);
 
 		//----- prepare Time Slots --------
@@ -844,7 +844,7 @@ function HeaderTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 		$trow=mysqli_fetch_row($result6);
 		
 		//get Time Slots
-		$res6=mysqli_query("select * from TimeSlots where TSID='$trow[0]' ");
+		$res6=mysqli_query("select * from timeslots where TSID='$trow[0]' ");
 		$slot=mysqli_fetch_row($res6);
 		
 		
@@ -4740,7 +4740,7 @@ function FinalReports($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$AcadDe
 	$details="&nbsp;";
 	$conn = db_connect();
 
-	$Mang_query1 = "select SubCode,TeacherId,GId,BId,SubBId from ManagingLec where
+	$Mang_query1 = "select SubCode,TeacherId,GId,BId,SubBId from managinglec where
 	AcadYNo='$year' and
 	MDays ='$mday' and
 	MTimes='$avTime' and
@@ -4751,7 +4751,7 @@ function FinalReports($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$AcadDe
 	AcadDegreeId='$AcadDeg' and
 	ClassNo='$Classno' and SecID='$SecID'";
 
-	$Mresult1=mysqli_query($Mang_query1);
+	$Mresult1=mysqli_query($conn, $Mang_query1);
 
     while($mrow1=mysqli_fetch_row($Mresult1))
    {

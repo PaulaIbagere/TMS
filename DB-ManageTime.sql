@@ -597,8 +597,8 @@ CREATE TABLE `univloc` (
 -- Dumping data for table `univloc`
 -- 
 
-INSERT INTO `univloc` (`LocId`, `UniversityCode`, `UnLoc`) VALUES (1, 111, '&#1575;&#1604;&#1580;&#1606;&#1575;&#1581; &#1575;&#1604;&#1594;&#1585;&#1576;&#1609;');
-INSERT INTO `univloc` (`LocId`, `UniversityCode`, `UnLoc`) VALUES (2, 111, '&#1575;&#1604;&#1580;&#1606;&#1575;&#1581; &#1575;&#1604;&#1580;&#1606;&#1608;&#1576;&#1609;');
+INSERT INTO `univloc` (`LocId`, `UniversityCode`, `UnLoc`) VALUES (1, 111, 'West Wing');
+INSERT INTO `univloc` (`LocId`, `UniversityCode`, `UnLoc`) VALUES (2, 111, 'South Wing');
 
 -- --------------------------------------------------------
 

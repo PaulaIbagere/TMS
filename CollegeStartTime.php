@@ -8,7 +8,8 @@ Display_Title();
 
 if (empty($_POST['B2']))
 {
-
+	$SemNo = isset($_GET['SemNo']) ? $_GET['SemNo'] : '';
+	$StartSlot = isset($_GET['StartSlot']) ? $_GET['StartSlot'] : '';
 	CollegeStartTimeForm($univCode,$CollegeCode,$SemNo,$StartSlot);
 }
 else
@@ -20,7 +21,7 @@ else
 
 	$href="welcomeCollege.php?flag=1";
 
-	$header=$_SESSION['collegename'];
+	$header=isset($_SESSION['collegename']) ? $_SESSION['collegename'] : '';
 
 	Href2($href,$header);
 
@@ -81,14 +82,15 @@ else
 		}
 		
 		//get start slot
+		$conn = db_connect();
 		
-		$slotres=mysqli_query("select Slot1 from TimeSlots where TSID='$StartSlot'");
+		$slotres=mysqli_query($conn, "select Slot1 from TimeSlots where TSID='$StartSlot'");
 		$slotrow=mysqli_fetch_row($slotres);
 
 		//insert into
 		 
 			$sql3 = "insert into collegestarttime (AcadYNo,CollegeCode,UniversityCode,SemNo,TSID) values ('$year','$CollegeCode','$univCode','$SemNo','$StartSlot')";
-		$result3 = mysqli_query($sql3);
+		$result3 = mysqli_query($conn, $sql3);
 		if ($result3)
 		{
 			if($SemNo==1)
@@ -111,7 +113,7 @@ else
 		{
 			//if already inserted 
 			
-			$res=mysqli_query("select TSID from CollegeStartTime where AcadYNo='$year' and 
+			$res=mysqli_query($conn, "select TSID from CollegeStartTime where AcadYNo='$year' and 
 									CollegeCode='$CollegeCode' and 
 									UniversityCode='$univCode' and 
 									SemNo='$SemNo'");
@@ -122,7 +124,7 @@ else
 			{
 				$PrevTimeslot=GetCollegeTimeSlot($univCode,$CollegeCode,$SemNo,$year);
 					$sql3 = "update CollegeStartTime set TSID='$StartSlot' where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo'";
-		   		$result3 = mysqli_query($sql3);
+		   		$result3 = mysqli_query($conn, $sql3);
 			}
 			
 			//update data
@@ -139,7 +141,7 @@ else
 					//echo("prev=".$PrevTimeslot[$i]."</br>");	
 					
 						$sql33 = "update managinglec set MTimes='$CurrTimeslot[$i]'  where AcadYNo='$year' and CollegeCode='$CollegeCode' and UniversityCode='$univCode' and SemNo='$SemNo' and MTimes='$PrevTimeslot[$i]'";
-					$result33 = mysqli_query($sql33);
+					$result33 = mysqli_query($conn, $sql33);
 					if($result33)
 					{
 						//echo("ok");
