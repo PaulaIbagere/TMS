@@ -10,10 +10,10 @@ require_once('main.php');
 
 function display_College_form($colLoc,$colCode,$colName,$colUName,$colPass)
 {
-$uncode=$_SESSION['UnivCode'];
+$uncode=isset($_SESSION['UnivCode'])?$_SESSION['UnivCode']:'';
 ?>
 <script language="JavaScript">
-<!--
+
 function FP_preloadImgs() {//v1.0
 	var d=document,a=arguments; if(!d.FP_imgs) d.FP_imgs=new Array();
 	for(var i=0; i<a.length; i++){ 
@@ -52,11 +52,11 @@ function FP_getObjectByID(id,o) {//v1.0
 		<tr>
 			<td width="22%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30">
 				<p align="center">
-				<img border="0" id="img6" src="College_files/CollegeLocation.jpg" height="22" width="110" 
+				college Site<!--<img border="0" id="img6" src="College_files/CollegeLocation.jpg" height="22" width="110" 
 				alt="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;" 
 				fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 
 				16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" 
-				fp-title="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;">
+				fp-title="&#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;">-->
 			</td>
 
 			<td width="72%" dir="ltr" height="30" colspan="3">
@@ -68,7 +68,7 @@ function FP_getObjectByID(id,o) {//v1.0
 		if(strcmp($colLoc,"")==0)
 		{
 		?>
-			<option   value="" selected>&#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1605;&#1608;&#1602;&#1593; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;
+			<option   value="" selected>College Branch
 
 		</option>
 		<?php
@@ -103,7 +103,7 @@ function FP_getObjectByID(id,o) {//v1.0
 
 		<tr>
 		<td width="22%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30">
-		<p align="center">&nbsp;<img border="0" id="img1" src="College_files/CollegeCode.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;"></td>
+		<p align="center">&nbsp;College Code<!--<img border="0" id="img1" src="College_files/CollegeCode.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;">--></td>
 
 		<p align="right">
 		<td width="72%" dir="ltr" height="30" colspan="3">
@@ -114,10 +114,21 @@ function FP_getObjectByID(id,o) {//v1.0
 
 			$conn = db_connect();
 
-			$res=mysqli_query("select max(CollegeCode) from Colleges");
-			
-			$rows=mysqli_fetch_row($res);
-			
+			// Define the SQL query
+            $sql_query = "SELECT MAX(CollegeCode) FROM Colleges";
+
+			$res = mysqli_query($conn, $sql_query);
+
+             if (!$res) {
+                 die("Query failed: " . mysqli_error($conn));
+             }
+
+             // Fetch the result as a single value
+             $row = mysqli_fetch_array($res);
+
+            // Extract the maximum CollegeCode value and calculate the next one
+             $colCode = (intval($row[0]) == 0) ? 1 : intval($row[0]) + 1;
+
 			if(intval($rows[0])==0)
 			{
 				$colCode=1;
@@ -129,13 +140,23 @@ function FP_getObjectByID(id,o) {//v1.0
 
 
 		?>
+
+
+
+
+
+
+
+
+
+
 			<input type="text"  name="T1" value="<?php echo($colCode);?>"  size="23" dir="rtl" tabindex="2" style="font-size: 12pt; color: #2F446F; font-weight: bold; font-family:Traditional Arabic; "  readonly ></td>
 		</tr>
 
 		<tr>
 		<td width="22%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" height="25" dir="ltr">
 		<p align="center">
-		<img border="0" id="img2" src="College_files/CollegeName.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;"></td>
+		College Name<!--<img border="0" id="img2" src="College_files/CollegeName.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;">--></td>
 
 		<p align="right">
 
@@ -151,7 +172,7 @@ function FP_getObjectByID(id,o) {//v1.0
 	<tr>
 	<td width="22%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="32" dir="ltr" bgcolor="#5A74A0">
 	<p align="center">
-	<img border="0" id="img3" src="College_files/CollUsername.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;"></td>
+	Username<!--<img border="0" id="img3" src="College_files/CollUsername.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;">--></td>
 
 	<td width="34%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="32" dir="ltr" colspan="2">
 		<input name="T4" value="<?php echo($colUName);?>" size="23" dir="rtl" tabindex="4" style="color: #2F446F; font-size: 12pt; font-weight: bold; font-family:Traditional Arabic; float:right"></td>
@@ -171,7 +192,7 @@ function FP_getObjectByID(id,o) {//v1.0
 	<tr>
 	<td width="22%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="32" dir="ltr" bgcolor="#5A74A0">
 	<p align="center">
-	<img border="0" id="img4" src="College_files/CollegePasswd.jpg" height="22" width="110" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"></td>
+	Password<!--<img border="0" id="img4" src="College_files/CollegePasswd.jpg" height="22" width="110" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;">--></td>
 	<td width="34%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="32" dir="ltr" colspan="2">
 
 		<input name="T5" value="<?php echo($colPass);?>" size="18" tabindex="5" style="font-size: 12pt; color: #2F446F; font-weight: bold;float:right" type="password" dir="rtl"></td>
@@ -243,9 +264,9 @@ function ValidCollName($colName,$uncode,$colLoc)
 //(3)
 function ValidCollUserName($colUName,$uncode,$colLoc)
 {
-	db_connect();
+	$conn=db_connect();
 	$sql_query="select UserName from Colleges where UniversityCode='$uncode' and UnLoc='$colLoc'";
-	$result=mysqli_query($sql_query);
+	$result=mysqli_query($conn,$sql_query);
 	$flag=true;
 	while ($row=mysqli_fetch_row($result))
 	{
