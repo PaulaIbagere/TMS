@@ -129,15 +129,7 @@ function FP_getObjectByID(id,o) {//v1.0
             // Extract the maximum CollegeCode value and calculate the next one
              $colCode = (intval($row[0]) == 0) ? 1 : intval($row[0]) + 1;
 
-			if(intval($rows[0])==0)
-			{
-				$colCode=1;
-			}
-			else
-			{
-				$colCode=intval($rows[0])+1;
-			}
-
+		
 
 		?>
 
@@ -146,11 +138,7 @@ function FP_getObjectByID(id,o) {//v1.0
 
 
 
-
-
-
-
-			<input type="text"  name="T1" value="<?php echo($colCode);?>"  size="23" dir="rtl" tabindex="2" style="font-size: 12pt; color: #2F446F; font-weight: bold; font-family:Traditional Arabic; "  readonly ></td>
+		<input type="text"  name="T1" value="<?php echo($colCode);?>"  size="23" dir="rtl" tabindex="2" style="font-size: 12pt; color: #2F446F; font-weight: bold; font-family:Traditional Arabic; "  readonly ></td>
 		</tr>
 
 		<tr>
@@ -181,7 +169,7 @@ function FP_getObjectByID(id,o) {//v1.0
 
 	<?php
 	//������ �� ��� �������� ��� �� ����� ��� ���� �������� ���
-		$note="&#1610;&#1580;&#1576; &#1575;&#1606; &#1610;&#1581;&#1578;&#1608;&#1609; &#1593;&#1604;&#1609; &#1581;&#1585;&#1608;&#1601; &#1575;&#1606;&#1580;&#1604;&#1610;&#1586;&#1610;&#1577; &#1601;&#1602;&#1591;* ";
+		$note="It should contain only english letters";
 	echo($note);
 	?>
 	</b>
@@ -200,7 +188,7 @@ function FP_getObjectByID(id,o) {//v1.0
 <Font size="3" color="yellow" face="Traditional Arabic" ><b>
 <?php
 //������ �� ���� ������ ��� �� ����� ��� ����� ���� �����
-$note2="&#1610;&#1580;&#1576; &#1575;&#1606; &#1578;&#1581;&#1578;&#1608;&#1609; &#1593;&#1604;&#1609; 4 &#1581;&#1585;&#1608;&#1601; &#1601;&#1575;&#1603;&#1579;&#1585;*";
+$note2="It must contain 4 letter or more";
 echo($note2);
 ?>
 </b></font>
