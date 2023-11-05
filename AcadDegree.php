@@ -140,7 +140,7 @@ if($username)
 		//{
 			// Master Semester
 		?>
-		<!--
+		
 		<div align="center">
 		<table border="0" width="85%" id="table12"  >
 		<tr>

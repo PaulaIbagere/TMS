@@ -13,6 +13,8 @@ function Background_Page()
 	<link rel="stylesheet" href="../Background/ripp1011.css">
 	<!--mstheme--><link rel="stylesheet" href="ripp1011.css">
 	<meta name="Microsoft Theme" content="ripple 1011">
+	<link rel="stylesheet" href="styles/login.css">
+    <link rel="icon" href="/static/pictures/favicon.png">
 	<script language="JavaScript">
 	
 	function FP_swapImg() {//v1.0
@@ -364,7 +366,7 @@ function Display_Admin_Menu_Logout()
 function display_login_form()
 {
 ?>
-	<div align="center">
+  	<div align="center">
 	<form method="POST" action="welcomeAdmin.php">	
 	<table border="0" width="47%" id="table2" dir="rtl" height="78">
 	<tr>
