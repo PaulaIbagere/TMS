@@ -40,13 +40,15 @@ if (strcmp($_SESSION['username'],"")!=0)
 		
 		$year=$_POST['MaxYear'];
 		
-		$CollegeCode=$_POST['CollegeCode'];
+		$CollegeCode=isset($_POST['CollegeCode'])?$_POST['CollegeCode']:'';
+
+		$SemNo=isset($_GET['SemNo'])?$_GET['SemNo']:'';
 		
 		display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,1);
 
 	}
 	else
-	if ( (isset($_POST['BS'])?$_POST['BS']:'') && ($_POST['UnivCode']) && ($_POST['CollegeCode']) )
+	if ( (isset($_POST['BS'])?$_POST['BS']:'') && ($_POST['UnivCode']) && (isset($_POST['CollegeCode'])) )
 	{
 		$univCode=$_POST['UnivCode'];
 		$univCode=intval($univCode);
@@ -112,7 +114,11 @@ if (strcmp($_SESSION['username'],"")!=0)
 	{
 		$SemNo=1;
 		$year=GetMaxYear();
-		
+		$SemNo=isset($_GET['SemNo'])?$_GET['SemNo']:'';
+		$univCode=isset($_GET['univCode'])?$_GET['univCode']:'';
+		$CollegeCode=isset($_GET['CollegeCode'])?$_GET['CollegeCode']:'';
+		$report=isset($_GET['report'])?$_GET['report']:'';
+
 		display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report);
 	}
 	

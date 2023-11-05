@@ -15,7 +15,7 @@ if($univCode>0)
  {
 
 	//Display Header
-	$msg3="&#1575;&#1583;&#1582;&#1575;&#1604; &#1601;&#1585;&#1593; (&#1605;&#1608;&#1602;&#1593;) &#1580;&#1583;&#1610;&#1583;";
+	$msg3="Enter a new location ";
 	DisplayHeader($msg3);
 
 	insert_University_Locations($univCode);
@@ -25,7 +25,7 @@ if($univCode>0)
 	//(1)Validate Integer Values
 		  if(ctype_digit($location))
 	      {
-	      	$msg2="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1608;&#1602;&#1593; &#1594;&#1610;&#1585; &#1589;&#1581;&#1610;&#1581;";
+	      	$msg2="invalid data type";
 			Display_error_msg($msg2);
 	      }
 	      else
@@ -47,7 +47,7 @@ if($univCode>0)
 
 				db_connect();
 
-				$sql_get="select count(LocId) from subbuildingseminar where UniversityCode='$univCode'";
+				$sql_get="select count(LocId) from UnivLoc where UniversityCode='$univCode'";
 				$result_get = mysqli_query($conn,$sql_get);
 				if (mysqli_num_rows($result_get)>0 )
 				  {

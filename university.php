@@ -84,9 +84,9 @@ if (strcmp($_SESSION['username'],"")!=0)
 		   </td>
 
 	      <td bordercolor="#003366" align="center" width="37%">
-	        <span lang="ar-sa">
+	        <span lang="en">
 
-		   <font face="Traditional Arabic" size="3" color="#FFFFFF">
+		   <font face="Arial" size="3" color="#FFFFFF">
 		   <a href='university.php?id=<?php echo($id)?>&uncode=<?php echo($uncode);?>#college'>
 		   <font color="#FFFFFF">
 		   <?php
@@ -136,7 +136,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	<tr>
 	    <td width="17%">
 	    	<p align="center"><a href="UniversityForm.php">
-	    	Log out<!--<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">-->
+	    	New University<!--<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">-->
 	    	</a>
 	     </td>
 	     <td width="73%">&nbsp;</td>
@@ -153,7 +153,7 @@ else
 }
 
 
-$uncode1 = $_GET['uncode'];
+$uncode1 = isset($_GET['uncode'])?$_GET['uncode']:'';
 $uncode11=intval($uncode1);
 
 

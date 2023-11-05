@@ -195,7 +195,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 				$conn = db_connect();
 				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value'";
-				$result1 = mysqli_query($sql1);
+				$result1 = mysqli_query($conn,$sql1);
 				if (mysqli_num_rows($result1)>0 )
 				{
 					$row=mysqli_fetch_row($result1);
@@ -209,7 +209,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 				//(2)Insert Data to Table
 
 				$sql2 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
-				$result2 = mysqli_query($sql2);
+				$result2 = mysqli_query($conn,$sql2);
 				if ($result2)
 				{
 					$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;';

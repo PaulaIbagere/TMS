@@ -9,17 +9,17 @@ Display_Title();
 
 Background_Page();
 
-$r = $_GET['r'];
+$r = isset($_GET['r'])?$_GET['r']:'';
 $value=intval($r);
 
-$univCode = $_GET['univCode'];
+$univCode = isset($_GET['univCode'])?$_GET['univCode']:'';
 $uncode=intval($univCode);
 
 //echo("r=".$value."  uncode=".$uncode);
 
 // Destroy sessions
-$old1 = $_SESSION['Ltype'];
-$old2 = $_SESSION['loct'];
+$old1 = isset($_SESSION['Ltype'])?$_SESSION['Ltype']:'';
+$old2 = isset($_SESSION['loct'])? $_SESSION['loct']:'';
 
 //echo("sr=".$old1."  sl=".$old2);
 if((strcmp($old1,"")!=0)&&(strcmp($old2,"")!=0))
@@ -37,8 +37,8 @@ if (strcmp($_SESSION['username'],"")!=0)
 
    // Check the Location
 	$conn = db_connect();
-	$sql_query22="select UnLoc from UnivLoc where UniversityCode='$uncode'";
-	$result22=mysqli_query($sql_query22);
+	$sql_query22="select UnLoc from subbuildingseminar where UniversityCode='$uncode'";
+	$result22=mysqli_query($conn,$sql_query22);
 	if (!(mysqli_num_rows($result22)))
 	{
 		// Go to Insert Location Page

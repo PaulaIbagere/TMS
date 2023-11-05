@@ -76,7 +76,7 @@ function FP_getObjectByID(id,o) {//v1.0
 				
 				$conn = db_connect();
 				$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
-				$result22=mysqli_query($sql_query22);
+				$result22=mysqli_query($conn,$sql_query22);
 				if (mysqli_num_rows($result22))
 				{
 					while($row22=mysqli_fetch_row($result22))

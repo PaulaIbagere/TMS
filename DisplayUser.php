@@ -106,7 +106,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 
 						<td width="15%" dir="rtl" align="center" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#2F446F">
 						<font face="Traditional Arabic" color="#FFFFFF"><b>
-						<span lang="ar-sa">
+						<span lang="en">
 						<?php
 							echo($row2[0]);
 						?>

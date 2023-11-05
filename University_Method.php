@@ -154,6 +154,7 @@ function UpdateUniv_Form($uncode11,$univCode,$univName,$logo)
 
 function display_AdminChangSlot_form($year,$SemNo,$univCode)
 {
+	$conn=db_connect();
 ?>
 <body>
 
@@ -226,7 +227,7 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 					//select * Universities Registered on the System
 					
 					$sql = "select UniversityCode,UniversityName from Universities";
-					$result = mysqli_query($sql);
+					$result = mysqli_query($conn,$sql);
 					
 					while($row = mysqli_fetch_row($result))
 					{
@@ -264,6 +265,7 @@ function display_AdminChangSlot_form($year,$SemNo,$univCode)
 
 function display_Building_form()
 {
+	$conn=db_connect();
 	$un= isset($_POST['D1'])?$_POST['D1']:'';
 	$z = isset($_POST['R1'])?$_POST['R1']:'';
 	
@@ -299,10 +301,10 @@ function display_Building_form()
 				<td bordercolor="#003366" align="center" height="30" bordercolorlight="#003366" bordercolordark="#003366">
 			    <p align="right">
 			    <select size="1" name="D1" dir="rtl" tabindex="1" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold">
-				<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;</option>
+				<option value="" selected>Select University Name</option>
 				<?php
 				$sql_query="select * from Universities order by UniversityCode";
-				$result=mysqli_query($sql_query);
+				$result=mysqli_query($conn,$sql_query);
 				if (mysqli_num_rows($result))
 				 {
 				    while($row=mysqli_fetch_row($result))
@@ -328,7 +330,7 @@ function display_Building_form()
 			</td>
 			<td bordercolor="#003366" align="center" bgcolor="#5A74A0" height="30" bordercolorlight="#003366" bordercolordark="#003366" width="32%">
 				<p align="center">
-					<img border="0" id="img46" src="LectureRoom_files/button3E.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" align="left">
+					University Name<!--<img border="0" id="img46" src="LectureRoom_files/button3E.jpg" height="27" width="135" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;" align="left">-->
 				</p>
 			</td>
 		</tr>
@@ -350,7 +352,7 @@ function display_Building_form()
 						
 					<td bordercolor="#003366" align="right" height="31" bordercolorlight="#003366" bordercolordark="#003366" width="23%">
 			    		<p align="center">
-								<img border="0" id="img59" src="LectureRoom_files/button18.jpg" height="20" width="100" alt="&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">
+								Laboratories<!--<img border="0" id="img59" src="LectureRoom_files/button18.jpg" height="20" width="100" alt="&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">-->
 						</p>
 					</td>
 					
@@ -362,7 +364,7 @@ function display_Building_form()
 					
 					<td bordercolor="#003366" align="right" height="31" bordercolorlight="#003366" bordercolordark="#003366" width="37%">
 			    		<p align="center">
-								<img border="0" id="img58" src="LectureRoom_files/button12.jpg" height="20" width="100" alt="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;">
+								Halls<!--<img border="0" id="img58" src="LectureRoom_files/button12.jpg" height="20" width="100" alt="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;">-->
 						</p>
 					</td>
 				</tr>
@@ -396,7 +398,7 @@ function Lecture_Form($value,$uncode,$LectureName,$Capacity,$Loc)
 		<?php
 		$conn = db_connect();
 		$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
-		$result22=mysqli_query($sql_query22);
+		$result22=mysqli_query($conn,$sql_query22);
 		if (mysqli_num_rows($result22))
 		{
 			while($row22=mysqli_fetch_row($result22))
@@ -490,6 +492,7 @@ function Lecture_UpadteForm($value,$uncode,$LectureName,$Capacity,$bid)
 //[3] Display Lecture Room 
 function Display_Lecture($univCode,$r)
 {
+	$conn=db_connect();
 ?>
 <div align="center">
 <table border="0" width="66%" id="table7">
@@ -500,7 +503,7 @@ function Display_Lecture($univCode,$r)
 
 	<?php
 		$sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
-		$result11 = mysqli_query($sqll);
+		$result11 = mysqli_query($conn,$sqll);
 		if (mysqli_num_rows($result11)>0 )
 		{
   			//display
@@ -524,7 +527,7 @@ function Display_Lecture($univCode,$r)
 			<?php
 					$sql2 = "select SubBName,Capacity,SubBId from SubBuildingSeminar where UnLoc='$row11[0]' and UniversityCode='$univCode' and BId='$r'";
 
-					$result2 = mysqli_query($sql2);
+					$result2 = mysqli_query($conn,$sql2);
 
 					if (mysqli_num_rows($result2)>0 )
 					{
@@ -608,7 +611,7 @@ function Display_Lecture($univCode,$r)
 //[Lab]:
 //[1] Lab Form
 function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
-{
+{$conn=db_connect();
 ?>
 <div align="center">
 <form method="POST" action="IinsertBuilding.php?r=<?php echo($value);?>&uncode=<?php echo($uncode);?>">
@@ -626,7 +629,7 @@ function Lab_Form($value,$uncode,$LabName,$Capacity,$Loc)
 			<?php
 				$conn = db_connect();
 				$sql_query22="select LocId,UnLoc from UnivLoc where UniversityCode='$uncode'";
-				$result22=mysqli_query($sql_query22);
+				$result22=mysqli_query($conn,$sql_query22);
 				if (mysqli_num_rows($result22))
 				{
 					while($row22=mysqli_fetch_row($result22))
@@ -719,6 +722,7 @@ function Lab_UpadteForm($value,$uncode,$LabName,$Capacity,$bid)
 //[3] Display Labs 
 function Display_Lab($univCode,$r)
 {
+	$conn=db_connect();
 ?>
 <div align="center">
 <table border="0" width="66%" id="table7">
@@ -729,7 +733,7 @@ function Display_Lab($univCode,$r)
 
 <?php
 $sqll="select distinct(UnLoc) from UnivLoc where UniversityCode='$univCode'";
-$result11 = mysqli_query($sqll);
+$result11 = mysqli_query($conn, $sqll);
 if (mysqli_num_rows($result11)>0 )
 {
   //display
@@ -755,7 +759,7 @@ while($row11=mysqli_fetch_row($result11))
 <?php
 	$sql = "select SubBName,Capacity,SubBId from SubBuildingSeminar where UnLoc='$row11[0]'and UniversityCode='$univCode' and BId=2";
 
-	$result = mysqli_query($sql);
+	$result = mysqli_query($conn,$sql);
 
 	if (mysqli_num_rows($result)>0 )
 	{
@@ -856,7 +860,7 @@ while($row11=mysqli_fetch_row($result11))
 //****************************************************
 
 function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
-{
+{ $conn=db_connect();
 ?>
 <body>
 
@@ -906,7 +910,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 					//select * Universities Registered on the System
 					
 					$sql = "select UniversityCode,UniversityName from Universities";
-					$result = mysqli_query($sql);
+					$result = mysqli_query($conn,$sql);
 					
 					while($row = mysqli_fetch_row($result))
 					{
@@ -928,11 +932,12 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 		<tr>
 			<!--College Code-->
 			<?php
+		
 			
 			if($_POST['UnivCode']> 0)
 			{
 				$sql = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' ";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn,$sql);
 				
 				if( mysqli_num_rows($result)>0 )
 				{
@@ -981,7 +986,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 		
 			<?php
 			
-			if ( $_POST['CollegeCode']> 0) 
+			if ( isset($_POST['CollegeCode'])> 0) 
 			{
 				//Display Semster [one] and [two] as a default
 			?>
@@ -1078,6 +1083,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 //New[May 2009]: Free Cells on Lecture Room
 function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 {
+	$conn=db_connect();
 ?>
 <body>
 
@@ -1127,7 +1133,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 					//select * Universities Registered on the System
 					
 					$sql = "select UniversityCode,UniversityName from Universities";
-					$result = mysqli_query($sql);
+					$result = mysqli_query($conn,$sql);
 					
 					while($row = mysqli_fetch_row($result))
 					{
@@ -1152,9 +1158,9 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 			<?php
 			
 			if($_POST['UnivCode']> 0)
-			{
+			{ $conn=db_connect();
 				$sql = "select UnLoc from univloc where UniversityCode='$univCode' ";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn,$sql);
 				
 				if( mysqli_num_rows($result)>0 )
 				{
@@ -1200,7 +1206,7 @@ function display_FreeCellReport_form($year,$SemNo,$univCode,$UnivLoc,$LecRoom)
 				//Display Semster [one] and [two] as a default
 				
 					$sql = "select distinct(SubBId),SubBName from subbuildingseminar where UniversityCode='$univCode' and BId='1' and UnLoc='$_POST[UnivLoc]' order by SubBName";
-				$result = mysqli_query($sql);
+				$result = mysqli_query($conn,$sql);
 
 			?>
 			<!-- LectureRooms-->
