@@ -227,6 +227,7 @@ function Check_SubName($CollegeCode,$uncode,$DeptNo,$AcadDeg,$Sem,$Classno,$SubN
 
 function GetUniversityName($uncode1)
 {
+	
 	$conn = db_connect();
 	$sqls = "SELECT UniversityName from universities  where
 	UniversityCode='$uncode1'";

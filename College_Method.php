@@ -1172,7 +1172,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 				 <td bordercolor="#003366" align="right" bgcolor="#2F446F" height="16">
 				 <font face="Traditional Arabic" color="yellow" size="4"><b>
 				 <?php
-					 	$header="&#1575;&#1593;&#1590;&#1575;&#1569; &#1575;&#1604;&#1578;&#1583;&#1585;&#1610;&#1587; &#1604;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"."<span dir='rtl'>".$year."</span>";
+					 	$header="<span dir='rtl'>".$year."</span>" ." Teaching members for the academic year ";
 					 echo($header);
 				  ?>
 				  </b></font>
@@ -1182,14 +1182,14 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 					<td bordercolor="#003366" align="right" bgcolor="#5A74A0" height="15" bordercolorlight="#B0CCFF" bordercolordark="#B0CCFF">
 					<table border="0" width="100%" id="table26">
 					<tr>
-					   <td height="28%" width="24%">
-					  		<img border="0" id="img69" src="Colleges-PAGE/pTeacherNam.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;">
+					   <td height="28%" width="24%"><p>Professors Name</p>
+					  		<!-- <img border="0" id="img69" src="Colleges-PAGE/pTeacherNam.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;"> -->
 					  </td>
 					   <td height="28%" width="9%">
 					  		<p align="right">
 					  			<select size="1" name="pre" dir="rtl" style="color: #000000; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold; vertical-align:baseline; letter-spacing:1" tabindex="1">
 					  			<option value="&#1571;." selected >&#1571;.</option>
-								<option value="&#1583;.">&#1583;.</option>
+								<option value="of the.">of the.</option>
 								<option value="&#1583;.">&#1576;.</option>
 
 					  		</select>
@@ -1200,44 +1200,44 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 					  </td>
 				   		</tr>
 						<tr>
-					   <td height="28%" width="24%">
-						<img border="0" id="img70" src="Colleges-PAGE/PTeacherJob.jpg" height="24" width="118"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="������ ��������"></td>
+					   <td height="28%" width="24%"><p>Teachers Job</p>
+						<!-- <img border="0" id="img70" src="Colleges-PAGE/PTeacherJob.jpg" height="24" width="118"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="������ ��������"></td> -->
 					   <td height="28%" width="99%" colspan="2">
 						<select size="1" name="D1" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
 							
 							<!-- case 0 --->
 							<option  value="" <?php if(strcmp($TQ,"")==0){ ?> selected <?php }	?> >
-								&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1608;&#1592;&#1610;&#1601;&#1607;
+								Choose the Job
 							</option>
 
 							<!-- case 1 : Teacher --->
-							<option value="1" <?php if($TQ==1){ ?> selected <?php }?> >&#1575;&#1587;&#1578;&#1575;&#1584;</option>
+							<option value="1" <?php if($TQ==1){ ?> selected <?php }?> >Mr</option>
 
 							<!-- case 2 : Co.Teacher --->
-							<option value="2" <?php if($TQ ==2){ ?> selected <?php }?> >&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1588;&#1575;&#1585;&#1603;</option>
+							<option value="2" <?php if($TQ ==2){ ?> selected <?php }?> >Associate Professor</option>
 
 							<!-- case 3 : Assist.Teacher --->
-							<option value="3" <?php if($TQ == 3){ ?> selected <?php }?> >&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1587;&#1575;&#1593;&#1583;</option>
+							<option value="3" <?php if($TQ == 3){ ?> selected <?php }?> >Assistant Professor</option>
 
 							
 							<!-- case 4: Lectural --->
-							<option value="4" <?php if($TQ ==4){ ?> selected <?php }?> >&#1605;&#1581;&#1575;&#1590;&#1585;</option>
+							<option value="4" <?php if($TQ ==4){ ?> selected <?php }?> >Lecturer</option>
 								
 						   
 						   <!-- case 5 : Teaching Assistant--->
-							<option value="5" <?php if($TQ ==5){ ?> selected <?php }?> >&#1605;&#1587;&#1575;&#1593;&#1583; &#1578;&#1583;&#1585;&#1610;&#1587;</option>
+							<option value="5" <?php if($TQ ==5){ ?> selected <?php }?> >Teaching Assistant</option>
 								
 						   <!-- case 6 : Kapeer.Teacher[Modares]--->
-							<option value="6" <?php if($TQ ==6){ ?> selected <?php }?> >&#1603;&#1576;&#1610;&#1585; &#1605;&#1583;&#1585;&#1587;&#1610;&#1606;</option>
+							<option value="6" <?php if($TQ ==6){ ?> selected <?php }?> >Senior teacher</option>
 	
 						   <!-- case 7 : First.Teacher[Modares]--->
-							<option value="7" <?php if($TQ == 7 ){ ?> selected <?php }?> >&#1605;&#1583;&#1585;&#1587; &#1571;&#1608;&#1604;</option>
+							<option value="7" <?php if($TQ == 7 ){ ?> selected <?php }?> >First Teacher</option>
 							
 							<!-- case 8 : Modares--->
-							<option value="8" <?php if( $TQ ==8){ ?> selected <?php }?> >&#1605;&#1583;&#1585;&#1587;</option>
+							<option value="8" <?php if( $TQ ==8){ ?> selected <?php }?> >Teacher</option>
 							
 							<!-- case 9 : Technical Lectural--->
-								<option value="9" <?php if($TQ == 9){ ?> selected <?php }?> >&#1605;&#1581;&#1575;&#1590;&#1585; &#1578;&#1603;&#1606;&#1608;&#1604;&#1608;&#1580;&#1609;</option>
+								<option value="9" <?php if($TQ == 9){ ?> selected <?php }?> >Technology lecturer</option>
 
 						</select>
 						</td>
@@ -1253,13 +1253,11 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 							<select size="1" name="DS" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3">
 							
 							<option  value="0" <?php if(strcmp($status,"0")==0){ ?> selected <?php }?> selected >
-							<!--����� �������-->
-							&#1575;&#1587;&#1578;&#1575;&#1584; &#1576;&#1575;&#1604;&#1603;&#1604;&#1610;&#1577;
+							College Professor
 							</option>
 							
 							<option  value="1" <?php if(strcmp($status,"1")==0){ ?> selected <?php }?> >
-							<!--����� ������ �� ���� ����-->
-								&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1578;&#1593;&#1575;&#1608;&#1606; &#1605;&#1606; &#1603;&#1604;&#1610;&#1577; &#1571;&#1582;&#1585;&#1609;
+								A cooperating professor from another college
 							</option>
 						</select>
 							
@@ -1270,7 +1268,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 					</tr>
 					<tr>
 						<td bordercolor="#003366" align="center" width="93%" bgcolor="#2F446F" bordercolorlight="#2F446F" bordercolordark="#2F446F">
-						<input type="submit" value="   &#1581;&#1601;&#1592;  " name="B3" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
+						<input type="submit" value="Submit" name="B3" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
 					</tr>
 				</table>
 			<?php

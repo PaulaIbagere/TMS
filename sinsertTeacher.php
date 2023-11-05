@@ -28,7 +28,7 @@ if($username)
 	$value=intval($value);
 	
 	//do update
-	$doupdate=$_GET['doupdate'];
+	$doupdate=isset($_GET['doupdate']) ? $_GET['doupdate'] : '';
 	$doupdate=intval($doupdate);
 	
 
@@ -84,6 +84,7 @@ if($username)
 			{
 				echo("</br>");
 				$msg='&#1575;&#1604;&#1575;&#1587;&#1605; &#1594;&#1610;&#1585; &#1589;&#1581;&#1610;&#1581;';
+				$path = isset($_GET['path']) ? $_GET['path'] : '';
 				Display_error_msg($msg,$path);
 				$TName="";
 				DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status);
