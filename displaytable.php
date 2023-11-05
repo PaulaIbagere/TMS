@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// session_start();
 require_once('main.php');
 //Page Title
 
@@ -33,7 +33,7 @@ if($username)
 	$Sem = $_GET['Sem'];
 	$Sem=intval($Sem);
 
-	$op=$_GET['op'];
+	$op=isset($_GET['op']) ? $_GET['op'] : '';
 	$op=intval($op);
 
 	$f=isset($_GET['f']) ? $_GET['f'] : '';
@@ -47,13 +47,13 @@ if($username)
 	//echo("year=".$year);
 	// s refer to type of lectuer lec=1 and tuotorial=2
 
-	$s=$_GET['s'];
+	$s=isset($_GET['s']) ? $_GET['s'] : '';
 	$s=intval($s);
 
 	$ch=isset($_GET['ch']) ? $_GET['ch'] : '';
 	$ch=intval($ch);
 	
-	$SecID=$_GET['SecID'];
+	$SecID=isset($_GET['SecID']) ? $_GET['SecID'] : '';
 	$SecID=intval($SecID);
 	
 	$ProgType=isset($_GET['ProgType']) ? $_GET['ProgType'] : '';

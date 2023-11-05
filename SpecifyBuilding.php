@@ -105,8 +105,8 @@ if (strcmp($_SESSION['username'],"")!=0)
 				//(1)prepare the id
 
 				$conn = db_connect();
-				$sql1="select max(SubBId) from SubBuildingSeminar where UniversityCode='$univcode' and BId='$op'";
-				$result1 = mysqli_query($sql1);
+				$sql1="select max(SubBId) from subbuildingseminar where UniversityCode='$univcode' and BId='$op'";
+				$result1 = mysqli_query($conn, $sql1);
 				if (mysqli_num_rows($result1)>0 )
 			  	{
 					$row=mysqli_fetch_row($result1);
@@ -124,8 +124,8 @@ if (strcmp($_SESSION['username'],"")!=0)
 			//echo("</br>univ=".$univcode."</br> BID".$id."</br> ".$BuildName."</br>cap= ".$Capacity."</br> loc=".$Loc);
 			
 			
-				$sql3 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','1','$id','$BuildName','$Capacity','$Loc')";
-			$result3 = mysqli_query($sql3);
+				$sql3 = "insert into subbuildingseminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ('$univcode','1','$id','$BuildName','$Capacity','$Loc')";
+			$result3 = mysqli_query($conn, $sql3);
 		  	if ($result3)
 		  	{
 				$msg='&#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;';
