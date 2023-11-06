@@ -44,9 +44,9 @@ if (strcmp($_SESSION['username'],"")!=0)
 						<td dir="rtl" align="right" width="95%" bordercolorlight="#2F446F" bordercolordark="#2F446F" colspan="4" bgcolor="#2F446F">
 						<p align="center">
 						<b>
-						<font size="5" face="Traditional Arabic" color="#FFFF00">&#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578; &#1575;&#1604;&#1605;&#1615;&#1587;&#1580;&#1604;&#1577; &#1576;&#1575;&#1604;&#1606;&#1592;&#1575;&#1605; 
+						<font size="5" face="Traditional Arabic" color="#FFFF00">Colleges Registered In the System  
 						</font><font size="5" face="Traditional Arabic"></span>
-						<font color="#FFFFFF">[ <span lang="ar-sa">&#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;&#1610;&#1606; </span>]</font>						
+						<font color="#FFFFFF">[ <span lang="ar-sa">Users</span>]</font>						
 						</font></font></font></b></td>
 					</tr>
 					<tr>
@@ -60,23 +60,23 @@ if (strcmp($_SESSION['username'],"")!=0)
 						
 						<td dir="rtl" align="center" width="15%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#2F446F">
 						<b>
-						<font face="Traditional Arabic" size="4" color="#FFFFFF">&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;
+						<font face="Traditional Arabic" size="4" color="#FFFFFF">Password
 						</font></b>
 						</td>
 
 						<td dir="rtl" align="center" width="15%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#2F446F">
-						<span lang="ar-sa"><b>
-						<font face="Traditional Arabic" size="4" color="#FFFFFF">
-						&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605;</font></b></span></td>
+						<span lang="en"><b>
+						<font face="Traditional Arabic" size="4" color="#FFFFFF">Username
+						</font></b></span></td>
 
 						<td dir="rtl" align="center" width="45%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#2F446F">
 						<b>
 						<font face="Traditional Arabic" size="4" color="#FFFFFF">
-						&#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</font></b></td>
+						The College</font></b></td>
 
 					<td width="15%" dir="rtl" align="center" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#2F446F">
 					<font face="Traditional Arabic" color="#FFFFFF" size="4"><b>
-					<span lang="ar-sa">&#1603;&#1608;&#1583; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</span></b></font></td>
+					<span lang="ar-sa">College Code</span></b></font></td>
 					</tr>
 				<?php
 					//Display Regiseted Colleges

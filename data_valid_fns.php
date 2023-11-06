@@ -44,7 +44,7 @@ function checkLName($LName,$univcode,$value,$Loc)
 		
 	$conn = db_connect();
 	
-	$sql3="select SubBName from SubBuildingSeminar where UniversityCode='$univcode' and  BId='$value' and UnLoc='$Loc'";
+	$sql3="select SubBName from Subbuildingseminar where UniversityCode='$univcode' and  BId='$value' and UnLoc='$Loc'";
 	
 	$result3 = mysqli_query($conn, $sql3);
 	
@@ -77,7 +77,7 @@ function GetLocName($LectureName,$univcode,$value,$Bid)
 
 	$conn = db_connect();
 	$sql2="select UnLoc from SubBuildingSeminar where UniversityCode='$univcode' and BId='$value' and SubBId='$Bid'";
-	$result2 = mysqli_query($sql2);
+	$result2 = mysqli_query($conn,$sql2);
 	$LocName=mysqli_fetch_row($result2);
 	return $LocName[0];
 
@@ -89,10 +89,11 @@ function GetLocName($LectureName,$univcode,$value,$Bid)
 
 function checkUniversityCode($univCode)
 {
+	$conn=db_connect();
 
 	db_connect();
 	$sql_query="select UniversityCode from Universities where UniversityCode='$univCode'";//
-	$result2=mysqli_query($sql_query);
+	$result2=mysqli_query($conn,$sql_query);
 	if(mysqli_num_rows($result2)==1)
 	{
 		$flag=true;
@@ -105,7 +106,7 @@ function checkUniversityCode($univCode)
 }
 
 function checkUniversityName($univName)
-{
+{$conn=db_connect();
 
 	db_connect();
 	$sql_query="select UniversityName from universities where UniversityName='$univName'";//
@@ -139,8 +140,8 @@ else
 
 	//(2)Insert Data to Table
 	//echo($univcode."</br> ".$id."</br> ".$LabName."</br> ".$Capacity."</br> ".$Loc);
-		$sql2 = "insert into SubBuildingSeminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
-	$result2 = mysqli_query($sql2);
+		$sql2 = "insert into Subbuildingseminar (UniversityCode,BId,SubBId,SubBName,Capacity,UnLoc) values ($univcode,2,$id,'$LabName',$Capacity,'$Loc')";
+	$result2 = mysqli_query($conn,$sql2);
 	if ($result2)
 		{
 

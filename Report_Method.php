@@ -15,11 +15,10 @@
 
 function GetAllDeparts($uncode,$CollegeCode)
 {
+	$conn=db_connect();
 	//return DeptNo -> $Depts[0]
 	
-	$result = mysqli_query("select DeptNo from Departments where 
-							
-							UniversityCode='$uncode' and CollegeCode='$CollegeCode'");
+	$result = mysqli_query($conn,"select DeptNo from Departments where UniversityCode='$uncode' and CollegeCode='$CollegeCode'");
 
 	if(mysqli_num_rows($result)>0)
 	{
@@ -39,10 +38,9 @@ function GetAllDeparts($uncode,$CollegeCode)
 // Get All College used Specific LectureRoom
 function GetAllColleges($year,$univCode,$LecRoom)
 {
+	$conn=db_connect();
 	
-	$result = mysqli_query("select distinct(CollegeCode) from usedby where 
-							
-							AcadYNo='$year' and UniversityCode='$univCode' and BId='1' and SubBId='$LecRoom'");
+	$result = mysqli_query($conn, "select distinct(CollegeCode) from usedby where AcadYNo='$year' and UniversityCode='$univCode' and BId='1' and SubBId='$LecRoom'");
 
 	if(mysqli_num_rows($result)>0)
 	{
@@ -63,7 +61,7 @@ function GetAllColleges($year,$univCode,$LecRoom)
 //[2] Check ProgType on each College to display three semester or two 
 
 function CheckToDisplaySem($univCode,$CollegeCode)
-{
+{$conn=db_connect();
 		
 	//-- Get Department on this College
 				
@@ -104,10 +102,10 @@ function CheckToDisplaySem($univCode,$CollegeCode)
 
 function GetDeptSection($univCode,$CollegeCode,$DeptNo,$AcadProgId,$ClassNo)
 {	
+	$conn=db_connect();
 	//get all SecId on specific Depart 
 	
-	$result=mysqli_query("select SecID from DeptSection where 
-    		 	UniversityCode='$univCode' and CollegeCode='$CollegeCode' and 
+	$result=mysqli_query($conn,"select SecID from DeptSection where UniversityCode='$univCode' and CollegeCode='$CollegeCode' and 
     		 	DeptNo='$DeptNo' and AcadDegreeId='$AcadProgId' and ClassNo='$ClassNo' ");
     		 	
     
@@ -132,6 +130,7 @@ function GetDeptSection($univCode,$CollegeCode,$DeptNo,$AcadProgId,$ClassNo)
  
 function GetSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 {
+	$conn=db_connect();
 	$MaxYear=GetMaxYear();
 	$LecHours=0;
 		
@@ -145,7 +144,7 @@ function GetSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$Se
 			SemNo='$SemNo' and
 			SubType='1'";
 	
-	$results = mysqli_query($sqls);
+	$results = mysqli_query($conn,$sqls);
 
 	while($rows=mysqli_fetch_row($results))
 	{
@@ -164,6 +163,7 @@ function GetSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$Se
 
 function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 {
+	$conn=db_connect();
 	$MaxYear=GetMaxYear();
 	
 	$LabHours=0;
@@ -190,7 +190,7 @@ function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 			SubType='2'";
 	
 		
-		$results = mysqli_query($sqls);
+		$results = mysqli_query($conn,$sqls);
 
 		while($rows=mysqli_fetch_row($results))
 		{
@@ -227,7 +227,7 @@ function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 			SemNo='$SemNo' and
 			SubType='2'";
 	
-			$results = mysqli_query($sqls);
+			$results = mysqli_query($conn,$sqls);
 
 			while($rows=mysqli_fetch_row($results))
 			{
@@ -261,6 +261,7 @@ function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
  
 function GetManagSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 {
+	$conn=db_connect();
 	$MaxYear=GetMaxYear();
 	$LecHours=0;
 	
@@ -276,7 +277,7 @@ function GetManagSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classn
 			SubType='1'";
 	
 	
-	$results = mysqli_query($sqls);
+	$results = mysqli_query($conn,$sqls);
 
 	while($rows=mysqli_fetch_row($results))
 	{
@@ -293,6 +294,8 @@ function GetManagSubjectHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classn
 
 function GetManagLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 {
+	$conn=db_connect();
+
 	$MaxYear=GetMaxYear();
 	
 	$LabHours=0;
@@ -320,7 +323,7 @@ function GetManagLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$S
 			SubType='2'";
 	
 		
-		$results = mysqli_query($sqls);
+		$results = mysqli_query($conn,$sqls);
 
 		while($rows=mysqli_fetch_row($results))
 		{
@@ -360,7 +363,7 @@ function GetManagLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$S
 			SemNo='$SemNo' and
 			SubType='2'";
 	
-			$results = mysqli_query($sqls);
+			$results = mysqli_query($conn,$sqls);
 
 			while($rows=mysqli_fetch_row($results))
 			{
@@ -390,6 +393,8 @@ function GetManagLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$S
 
 function GeneralHeader($univCode,$CollegeCode,$SemNo)
 {
+	$conn=db_connect();
+
 	$year=GetMaxYear();
 ?>
 	<div align="center">

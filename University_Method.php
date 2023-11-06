@@ -934,7 +934,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 			<?php
 		
 			
-			if($_POST['UnivCode']> 0)
+			if(isset($_POST['UnivCode'])?$_POST['UnivCode']:''> 0)
 			{
 				$sql = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' ";
 				$result = mysqli_query($conn,$sql);

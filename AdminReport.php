@@ -33,7 +33,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	$href="welcomeAdmin.php";
 	Href($href);	
 	
-	if( !(isset($_POST['BS'])?$_POST['BS']:'') && ( (isset($_POST['UnivCode'])?$_POST['UnivCode']:'') || (isset($_POST['CollegeCode'])?$_POST['CollegeCode']:'' ) ))
+	if( !(isset($_POST['BS'])?$_POST['BS']:'') && ( (isset($_POST['univCode'])?$_POST['univCode']:'') || (isset($_POST['CollegeCode'])?$_POST['CollegeCode']:'' ) ))
 	{
 		$univCode=$_POST['UnivCode'];
 		$univCode=intval($univCode);
