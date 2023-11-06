@@ -45,7 +45,7 @@
 	{
 		if ( (strcmp($_SESSION['username'],"")!=0) && (strcmp($_SESSION['passwd'],"")!=0) )
 		{
-			include("header.php");
+			
 	
 			
 		}
@@ -104,6 +104,9 @@
             </article>
         </section>
         <nav class="header__nav">
+        <?php
+		$id=1;
+	      ?>
                 <ul>
                     <li><a href="university.php?id=<?php echo($id); ?>">UNIVERSITIES</a></li>
                     <li><a href="BuildingForm.php?id=<?php echo($id); ?>">HALLS & LABS</a></li>
