@@ -275,7 +275,7 @@ function DisplayLoginForm()
 {
 ?>
 
-<div align="center">
+<div align="center">ll
 <form method="POST" action="welcomeCollege.php">
 
 	<table border="0" width="51%" id="table5" dir="rtl" height="120">
