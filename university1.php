@@ -1,24 +1,14 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="styles/homepage.css">
-    <link rel="icon" href="/static/pictures/favicon.png">
-    <title>Timetable Management System</title>
-</head>
-
-
 <?php
 
 session_start();
 
 require_once('main.php');
+
+//Page Title
+
+Display_Title();
+
+Background_Page();
 
 
 $id = $_GET['id'];
@@ -26,64 +16,19 @@ $value=intval($id);
 
 
 if (strcmp($_SESSION['username'],"")!=0)
-  {
+{
 
-	  if($value==1)
-	   {
-		 
-		
-		  $conn = db_connect();
+  if($value==1)
+{
+	include("header.php");
+	$href="welcomeAdmin.php";
+	Href($href);
+	$conn = db_connect();
 
 ?>
 
-
-
-
-
-
-<body class="body">
-    <header class="header">
-        <section class="header__top">
-            <section class="header__logo">
-                <h3 class="logo-title">ADMIN</h3>
-            </section>
-            <article class="header__icons">
-                <section>
-                    <a href="logout.php">
-                        <span class="material-symbols-outlined arrow-centre">
-                        logout
-                        </span>
-                    </a>
-                </section>
-                <section>
-                    <a href="index.php">
-                        <span class="material-symbols-outlined arrow-centre">
-                        home
-                        </span>
-                    </a>
-                </section>
-            </article>
-        </section>
-        <nav class="header__nav">
-        <?php
-		$id=1;
-	      ?>
-                <ul>
-                    <li><a href="university.php?id=<?php echo($id); ?>">UNIVERSITIES</a></li>
-                    <li><a href="BuildingForm.php?id=<?php echo($id); ?>">HALLS & LABS</a></li>
-                    <li><a href="DisplayUser.php">USERS</a></li>
-                    <li><a href="AdminReport.php">REPORTS</a></li>
-                    <li><a href="password-change.html">CHANGE PASSWORD</a></li>
-                </ul>
-        </nav>
-    </header>
-    <main class="main">
-	<?php
-	   $href="welcomeAdmin.php";
-		  Href($href);
-        ?>
-
-	<div align="center">
+ <body>
+ <div align="center">
   <table border="0" width="80%" id="table1" height="219" >
     <tr>
 	<td height="55" colspan="2">&nbsp;
@@ -190,7 +135,7 @@ if (strcmp($_SESSION['username'],"")!=0)
 	</tr>
 	<tr>
 	    <td width="17%">
-	    	<p align="center"><a href="UniversityForm.php" style="color: white;">
+	    	<p align="center"><a href="UniversityForm.php">
 	    	New University<!--<img border="0" id="img43" src="InsertUniversity_file/buttonIns.jpg" height="20" width="100" alt="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;" onmouseover="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonAb.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonCb.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img43',/*url*/'InsertUniversity_file/buttonBb.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1590;&#1575;&#1601;&#1577; &#1580;&#1575;&#1605;&#1593;&#1577;"></a><a href="insertCollege.php">-->
 	    	</a>
 	     </td>
@@ -198,19 +143,6 @@ if (strcmp($_SESSION['username'],"")!=0)
 	</tr>
 </table>
 </div>
-
-
-
-
-
-
-
-    </main>
-    <footer class="footer"></footer>
-   
-
- 
- 
 
 <?php
 print('</body>');

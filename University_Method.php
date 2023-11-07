@@ -351,7 +351,7 @@ function display_Building_form()
 					</td>
 						
 					<td bordercolor="#003366" align="right" height="31" bordercolorlight="#003366" bordercolordark="#003366" width="23%">
-			    		<p align="center">
+			    		<p style="color: white;" align="center">
 								Laboratories<!--<img border="0" id="img59" src="LectureRoom_files/button18.jpg" height="20" width="100" alt="&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;">-->
 						</p>
 					</td>
@@ -363,7 +363,7 @@ function display_Building_form()
 					</td>
 					
 					<td bordercolor="#003366" align="right" height="31" bordercolorlight="#003366" bordercolordark="#003366" width="37%">
-			    		<p align="center">
+			    		<p align="center" style="color: white;">
 								Halls<!--<img border="0" id="img58" src="LectureRoom_files/button12.jpg" height="20" width="100" alt="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578;">-->
 						</p>
 					</td>
@@ -900,7 +900,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 
 			<td width="67%" dir="ltr" height="30" align="right">
 				
-					<select size="1" name="UnivCode" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3" dir="rtl" onchange="javascript:document.f1.action='AdminReport.php?#Report1';document.f1.submit();">
+					<select size="1" name="univCode" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3" dir="rtl" onchange="javascript:document.f1.action='AdminReport.php?#Report1';document.f1.submit();">
 					
 					<option value="" <?php if(strcmp($univCode,"")==0){?> selected <?php }?> selected> 
 						--&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1580;&#1575;&#1605;&#1593;&#1577;---
@@ -934,7 +934,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 			<?php
 		
 			
-			if(isset($_POST['UnivCode'])?$_POST['UnivCode']:''> 0)
+			if(isset($_POST['univCode'])?$_POST['univCode']:''> 0)
 			{
 				$sql = "select CollegeCode,CollegeName from Colleges where UniversityCode='$univCode' ";
 				$result = mysqli_query($conn,$sql);
@@ -943,7 +943,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 				{
 			?>
 				 	<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="33" align="center">
-							<b><font size="4" face="Traditional Arabic" color="#FFFFFF">&#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</font></b><font size="4" face="Traditional Arabic" color="#FFFFFF"><b>
+							<b><font size="4" face="Traditional Arabic" color="#FFFFFF">College<!--&#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</font></b><font size="4" face="Traditional Arabic" color="#FFFFFF">--><b>
 						</b></font>
 					</td>
 					
@@ -952,7 +952,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 							<select size="4" name="CollegeCode" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="4" dir="rtl" onchange="javascript:document.f1.action='AdminReport.php?#Report1';document.f1.submit();" >
 			
 							<option value="0" <?php if($CollegeCode==0) {?> selected <?php }?> >
-							-- &#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;  --
+							--Choose College<!-- &#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;  --> --
 							</option> 
 						
 						<?php
@@ -994,7 +994,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 			<tr>
 				<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
 					<b><font size="4" face="Traditional Arabic" color="#FFFFFF">
-						&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;
+						Semester<!--&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;-->
 					</font></b>
 				</td>
 
@@ -1003,11 +1003,11 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 						<select size="1" name="SemNo" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="4" dir="rtl">
 					
 						<option value="1" <?php if($SemNo==1){?> selected <?php }?> > 
-							&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1575;&#1608;&#1604;
+							First Semester<!--&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1575;&#1608;&#1604;-->
 						</option>
 					
 						<option value="2" <?php if($SemNo==2){?> selected <?php }?> > 
-							&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1579;&#1575;&#1606;&#1609;
+							Second Semester<!--&#1575;&#1604;&#1601;&#1589;&#1604; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1579;&#1575;&#1606;&#1609;-->
 						</option>
 					
 						<?php
@@ -1032,7 +1032,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 				<!--Report Type-->
 				<td width="26%" bordercolorlight="#9999FF" bordercolordark="#6600FF" bgcolor="#5A74A0" dir="ltr" height="30" align="center">
 					<b><font size="4" face="Traditional Arabic" color="#FFFFFF">
-						&#1606;&#1608;&#1593; &#1575;&#1604;&#1578;&#1602;&#1585;&#1610;&#1585; 
+						Report Type<!--&#1606;&#1608;&#1593; &#1575;&#1604;&#1578;&#1602;&#1585;&#1610;&#1585;-->
 					</font></b>
 				</td>
 				
@@ -1041,17 +1041,17 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 						<select size="1" name="report" style="color: #2F446F; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="4" dir="rtl">
 						<!--������ ����� ������ �������-->
 						<option value="1" <?php if($report==1){?> selected <?php }?> > 
-								&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1606;&#1592;&#1585;&#1609; &#1608;&#1575;&#1604;&#1593;&#1605;&#1604;&#1609;
+								Total theory and practical hours <!--&#1575;&#1580;&#1605;&#1575;&#1604;&#1609; &#1587;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1606;&#1592;&#1585;&#1609; &#1608;&#1575;&#1604;&#1593;&#1605;&#1604;&#1609;-->
 						</option>
 						
 						<!--����� ������-->
 						<option value="2" <?php if($report==2){?> selected <?php }?> > 
-						&#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;
+						Number of students <!--&#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;-->
 						</option>
 						
 						<!--�����  �������� -->
 						<option value="3" <?php if($report==3){?> selected <?php }?> > 
-						&#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1577;
+						Number of professors <!--&#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1577;-->
 						</option>
 
 
@@ -1066,7 +1066,7 @@ function display_AdminReport_form($year,$SemNo,$univCode,$CollegeCode,$report)
 		?>
 		<tr>
 			<td width="60%" bordercolorlight="#9999FF" bordercolordark="#6600FF" height="93" dir="ltr" align="center" colspan="2">
-					<input name="BS" type="submit" value="&#1575;&#1587;&#1578;&#1593;&#1585;&#1575;&#1590;"  tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl">
+					<input name="BS" type="submit" value="Submit"  tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl">
 			</td>
 		</tr>
 </table>

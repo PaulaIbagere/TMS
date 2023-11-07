@@ -20,7 +20,7 @@
 			
 		foreach($Depts as $DeptNo)
 		{	
-				//-- Get AcadProg
+				//-- Get AcadProgwow
 				
 				$AcadProgId=GetAcadDegreeId($univCode,$CollegeCode,$DeptNo);
 				

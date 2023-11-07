@@ -421,8 +421,8 @@ function Hrefto($href)
 	<table border="0" width="13%" id="table2" height="24">
 	<tr>
 		<td align="left" bgcolor="#5A74A0">
-		<p align="center">
-			<?php $id=1;?><a href="<?php echo($href);?>?id=<?php echo($id);?>"><img border="0" id="img4" src="InsertUniversity_file/button1B.jpg" height="22" width="111" alt="&#1585;&#1580;&#1608;&#1593;" onmouseover="FP_swapImg(1,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1C.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1B.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1D.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1C.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1585;&#1580;&#1608;&#1593;"></a></td>
+		<p align="left" style="color: white;">
+			<?php $id=1;?><a href="<?php echo($href);?>?id=<?php echo($id);?>" style="color: white;">Back <!--<img border="0" id="img4" src="InsertUniversity_file/button1B.jpg" height="22" width="111" alt="&#1585;&#1580;&#1608;&#1593;" onmouseover="FP_swapImg(1,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1C.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1B.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1D.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img4',/*url*/'InsertUniversity_file/button1C.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0" fp-title="&#1585;&#1580;&#1608;&#1593;">--></a></td>
 	</tr>
 	</table>
 	<p align="center">&nbsp;</div>

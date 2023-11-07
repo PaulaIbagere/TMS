@@ -41,7 +41,7 @@
     </form>
     <div class="message"></div>
     <p class="pad-top-bottom pad-inline"><span class="dash"></span><span class="dash"></span></p> 
-    <p><a href="index.html">
+    <p><a href="index.php">
         <span class="material-symbols-outlined arrow-centre">
             Back
         </span>
