@@ -558,7 +558,7 @@ function GetTeacherQualification($CollegeCode1,$uncode1,$TeacherNo)
 			CollegeCode='$CollegeCode1' and
 			TeacherNo ='$TeacherNo'";
 
-	$resultt = mysqli_query($sqlt);
+	$resultt = mysqli_query($conn, $sqlt);
 
 	$rowt=mysqli_fetch_row($resultt);
 
@@ -581,7 +581,7 @@ function GetTeacherStatus($CollegeCode1,$uncode1,$TeacherNo)
 			CollegeCode='$CollegeCode1' and
 			TeacherNo ='$TeacherNo'";
 
-	$resultt = mysqli_query($sqlt);
+	$resultt = mysqli_query($conn, $sqlt);
 
 	$rowt=mysqli_fetch_row($resultt);
 
@@ -845,7 +845,7 @@ function HeaderTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 		$trow=mysqli_fetch_row($result6);
 		
 		//get Time Slots
-		$res6=mysqli_query("select * from timeslots where TSID='$trow[0]' ");
+		$res6=mysqli_query($conn, "select * from timeslots where TSID='$trow[0]' ");
 		$slot=mysqli_fetch_row($res6);
 		
 		
@@ -862,12 +862,12 @@ function HeaderTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 				$tslot=intval($btslot);
 				$eslot=intval($beslot);
 				
-				if ( ereg(":30",$btslot) || ereg(":30",$beslot) )
+				if ( preg_match(":30",$btslot) || preg_match("30",$beslot) )
 				{
-					if ( ereg(":30",$btslot))
+					if (preg_match(":30",$btslot))
 						$tslot="&frac12;".$tslot;
 					
-					if ( ereg(":30",$beslot))
+					if (preg_match(":30",$beslot))
 						$eslot="&frac12;".$eslot;
 		
 					$Headerslot[$j]= $tslot." - ".$eslot;
@@ -909,14 +909,14 @@ function HeaderSubForm($uncode1,$CollegeCode1,$Sem,$year)
 				CollegeCode='$CollegeCode1' and
 				UniversityCode='$uncode1' and 
 				SemNo='$Sem'";
-	$result6=mysqli_query($sql_query6);
+	$result6=mysqli_query($conn, $sql_query6);
 	
 	if(mysqli_num_rows($result6)>0)
 	{
 		$trow=mysqli_fetch_row($result6);
 		
 		//get Time Slots
-		$res6=mysqli_query("select * from TimeSlots where TSID='$trow[0]' ");
+		$res6=mysqli_query($conn, "select * from TimeSlots where TSID='$trow[0]' ");
 		$slot=mysqli_fetch_row($res6);
 		
 		
@@ -932,12 +932,12 @@ function HeaderSubForm($uncode1,$CollegeCode1,$Sem,$year)
 				$tslot=intval($btslot);
 				$eslot=intval($beslot);
 				
-				if ( ereg(":30",$btslot) || ereg(":30",$beslot) )
+				if (preg_match(":30",$btslot) || preg_match(":30",$beslot) )
 				{
-					if ( ereg(":30",$btslot))
+					if ( preg_match(":30",$btslot))
 						$tslot="&frac12;".$tslot;
 					
-					if ( ereg(":30",$beslot))
+					if ( preg_match(":30",$beslot))
 						$eslot="&frac12;".$eslot;
 		
 					$Headerslot[$j]= $tslot."</br>"." | "."</br>".$eslot;
@@ -1760,8 +1760,8 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 			</tr>
 			<tr>
 			<td width="33%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
-				<p align="center">
-					<img border="0" id="img59" src="Depart_Files/yearacad.jpg" height="22" width="110" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;">
+				<p align="center">School Year
+					<!-- <img border="0" id="img59" src="Depart_Files/yearacad.jpg" height="22" width="110" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"> -->
 			</td>
 				<p align="right">
 
@@ -1812,7 +1812,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 							
 							$conn = db_connect();
 							
-							$result=mysqli_query("select SecID,SecName from DeptSection where 
+							$result=mysqli_query($conn, "select SecID,SecName from DeptSection where 
     		 									UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and 
     		 									DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno'");
 								
@@ -1850,7 +1850,8 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 			if($op==1)
 			{
 			?>
-				<img border="0" id="img37" src="Colleges-PAGE/chLecct.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;"></td>
+				Hall Name
+				<!-- <img border="0" id="img37" src="Colleges-PAGE/chLecct.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1575;&#1593;&#1577;"></td> -->
 			<?php
 			}
 			else
@@ -1926,7 +1927,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 	else
 					 	{
 					 		echo("<a href='ConfigNewYear.php?uncode=$uncode1&CollegeCode=$CollegeCode1&value=3&op=1'>");
-					 			echo("&#1601;&#1590;&#1604;&#1575; &#1548; &#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1607; &#1604;&#1604;&#1603;&#1604;&#1610;&#1577;");
+					 			echo("Please, select the halls designated for the college");
 					 		echo("</a>");					 		
 
 					 	}
@@ -1937,7 +1938,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				  {
 				  
 					//echo("Error You Must Registered Number of student for the NewYear.. ");
-					echo("<a target='_BLANK' href='InsertNoStud.php?AcadDeg=$AcadDeg&Class=$Classno&Sem=$Sem&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo'>&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576; &#1604;&#1610;&#1578;&#1605; &#1593;&#1585;&#1590; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577;".'</a>');
+					echo("<a target='_BLANK' href='InsertNoStud.php?AcadDeg=$AcadDeg&Class=$Classno&Sem=$Sem&uncode=$uncode1&CollegeCode=$CollegeCode1&Dept=$DeptNo'&#1601;&#1590;&#1604;&#1575; &#1602;&#1605; &#1576;&#1578;&#1581;&#1583;&#1610;&#1583; &#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576; &#1604;&#1610;&#1578;&#1605; &#1593;&#1585;&#1590; &#1575;&#1604;&#1602;&#1575;&#1593;&#1575;&#1578; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577;".'</a>');
 				  }
 			}//end of if
 			else
@@ -1983,7 +1984,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 }//end of if
 					else
 					 {
-					 	$result33=mysqli_query("select BId,SubBId from  usedby  where 
+					 	$result33=mysqli_query($conn, "select BId,SubBId from  usedby  where 
 					 							AcadYNo='$MaxYear' and 
 					 							UniversityCode='$uncode1' and 
 					 							CollegeCode='$CollegeCode1' and BId=1");
@@ -2056,7 +2057,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					 {
 					 	//Lab Capacity not allowed
 
-					 	$result33=mysqli_query("select BId,SubBId from  usedby  where 
+					 	$result33=mysqli_query($conn, "select BId,SubBId from  usedby  where 
 					 							AcadYNo='$MaxYear' and 
 					 							UniversityCode='$uncode1' and 
 					 							CollegeCode='$CollegeCode1' and BId=2");
@@ -2118,7 +2119,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 							$sqls_query = "select SubCode,SubName,SubHour from CollegeSubject where  AcadYNo='$MaxYear' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SecID='$SecID' and SemNo='$Sem' and SubType=2 and SubHour!=0";
 						}
 
-						$results=mysqli_query($sqls_query);
+						$results=mysqli_query($conn, $sqls_query);
 
 						if(mysqli_num_rows($results))
 						{
@@ -2182,8 +2183,8 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 		<tr>
 		<td width="33%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
 
-		<p align="center">
-		<img border="0" id="img68" src="Depart_Files/ManDays.jpg" height="30" width="150" alt="&#1575;&#1604;&#1610;&#1608;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1610;&#1608;&#1605;"></td>
+		<p align="center">Today
+		<!-- <img border="0" id="img68" src="Depart_Files/ManDays.jpg" height="30" width="150" alt="&#1575;&#1604;&#1610;&#1608;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1610;&#1608;&#1605;"></td> -->
 		<td width="64%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" colspan="2">
 			 		<p align="right">
 					<select size="1" name="D3" tabindex="4" style="font-size: 12pt; color:#003366; font-family:Traditional Arabic; font-weight:bold" dir="rtl">
@@ -2191,37 +2192,37 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					<?php
 						if(strcmp($mday,"")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1610;&#1608;&#1605;</option>
+					?> >Choose a Day</option>
 					<option value="1"
 					<?php
 						if(strcmp($mday,"1")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1604;&#1587;&#1576;&#1578;</option>
+					?> >Saturday</option>
 					<option value="2"
 					<?php
 						if(strcmp($mday,"2")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1604;&#1575;&#1581;&#1583;</option>
+					?> >Sunday</option>
 					<option value="3"
 					<?php
 						if(strcmp($mday,"3")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1604;&#1575;&#1579;&#1606;&#1610;&#1606;</option>
+					?> >Monday</option>
 					<option value="4"
 					<?php
 						if(strcmp($mday,"4")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1604;&#1579;&#1604;&#1575;&#1579;&#1575;&#1569;</option>
+					?> >Tuesday</option>
 					<option value="5"
 					<?php
 						if(strcmp($mday,"5")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1604;&#1575;&#1585;&#1576;&#1593;&#1575;&#1569;</option>
+					?> >Wednesday</option>
 					<option value="6"
 					<?php
 						if(strcmp($mday,"6")==0)
 						{ ?> selected <?php }
-					?> >&#1575;&#1604;&#1582;&#1605;&#1610;&#1587;</option>
+					?> >Thursday</option>
 					</select>
 				</td>
 
@@ -2233,9 +2234,9 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 		<tr>
 		<td width="33%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
 
-		<p align="center">
+		<p align="center">Subject
 
-		 	<img border="0" id="img66" src="Depart_Files/ManSuBs.jpg" height="30" width="150" alt="&#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" align="center"></td>
+		 	<!-- <img border="0" id="img66" src="Depart_Files/ManSuBs.jpg" height="30" width="150" alt="&#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" align="center"></td> -->
 		<td width="64%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" colspan="2">
 		<p align="right">
 		<?php
@@ -2266,13 +2267,13 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				else
 				{
 				?>
-				<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;</option>
+				<option value="" selected>Choose the material</option>
 				<?php
 
 					$conn = db_connect();
 						$sqls_query7 = "select SubCode,SubName,SubHour from CollegeSubject where AcadYNo='$MaxYear' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SecID='$SecID' and SemNo='$Sem' and SubType=1 and SubHour!=0";
 
-					$results7=mysqli_query($sqls_query7);
+					$results7=mysqli_query($conn, $sqls_query7);
 					if (mysqli_num_rows($results7)>0)
 					{
 					  while($rows7=mysqli_fetch_row($results7))
@@ -2282,7 +2283,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 							//if op==1
 
 								$sqls_query77 = "select count(MTimes) from ManagingLec where AcadYNo='$MaxYear' and SubCode='$rows7[0]' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SecID='$SecID' and SemNo='$Sem' and SubType=1 and GId=0";
-							$results77=mysqli_query($sqls_query77);
+							$results77=mysqli_query($conn, $sqls_query77);
 
 						    $rows77=mysqli_fetch_row($results77);
 
@@ -2310,7 +2311,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 						   		//Duplicated Entry
 
 						   			$sqls_queryd = "select count(SubCode) from ManagingLec where AcadYNo='$MaxYear' and SubCode='$rows7[0]' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' and DeptNo='$DeptNo' and AcadDegreeId='$AcadDeg' and ClassNo='$Classno' and SecID='$SecID' and SemNo='$Sem'";
-								$resultsd=mysqli_query($sqls_queryd);
+								$resultsd=mysqli_query($conn, $sqls_queryd);
 								$rowsd=mysqli_fetch_row($resultsd);
 
 								//remender= ActuallHours- InsertedHour
@@ -2358,15 +2359,15 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 		<td width="33%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
 
-		<p align="center">
+		<p align="center">The Professor
 
-		 	<img border="0" id="img67" src="Depart_Files/ManTeach.jpg" height="30" width="150" alt="&#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" align="center"></td>
+		 	<!-- <img border="0" id="img67" src="Depart_Files/ManTeach.jpg" height="30" width="150" alt="&#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" align="center"></td> -->
 		<td width="64%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" colspan="2">
 		<p align="right">
 
 				<select size="4" name="D5" tabindex="6" style="font-size: 12pt; color:#003366; font-family:Traditional Arabic; font-weight:bold" dir="rtl" onchange="javascript:document.fmanage.action='DeptManage.php?AcadDeg=<?php echo($AcadDeg);?>&Class=<?php echo($Classno);?>&Sem=<?php echo($Sem);?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($DeptNo);?>&op=<?php echo($op);?>&s=<?php echo($s);?>#otherDept';javascript:document.fmanage.submit();">
 			
-				<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;</option>
+				<option value="" selected>Choose the professor</option>
 			
 			<?php
 				//if it open lab without Teacher
@@ -2379,7 +2380,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				
 				$conn = db_connect();
 					$sqls_query8 = "select TeacherNo,TeacherName from Teachers where AcadYNo='$MaxYear' and UniversityCode='$uncode1' and CollegeCode='$CollegeCode1' ORDER BY TeacherName";
-				$results8=mysqli_query($sqls_query8);
+				$results8=mysqli_query($conn, $sqls_query8);
 				if (mysqli_num_rows($results8))
 				{
 					while($rows8=mysqli_fetch_row($results8))
@@ -2414,9 +2415,9 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 		
 		<select size="1" name="anysection" tabindex="7" style="font-size: 12pt; color:#003366; font-family:Traditional Arabic; font-weight:bold" dir="rtl" onchange="javascript:document.fmanage.action='DeptManage.php?AcadDeg=<?php echo($AcadDeg);?>&Class=<?php echo($Classno);?>&Sem=<?php echo($Sem);?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($DeptNo);?>&op=<?php echo($op);?>&s=<?php echo($s);?>&subcode=<?php echo($_POST[D4]);?>#otherDept';javascript:document.fmanage.submit();">	
 				<option value="0" <?php if($notshare==0){?> selected <?php }?>>
-				&#1604;&#1575;&#1610;&#1608;&#1580;&#1583; &#1578;&#1588;&#1575;&#1585;&#1603; &#1576;&#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577; &#1605;&#1593; &#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605; &#1575;&#1604;&#1575;&#1582;&#1585;&#1609;</option>
+				There is no sharing of the lecture with other departments</option>
 				<option value="1" <?php if($notshare==1){?> selected <?php }?>>
-				&#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1577; &#1605;&#1588;&#1578;&#1585;&#1603;&#1577; &#1605;&#1593; &#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605; &#1575;&#1604;&#1575;&#1582;&#1585;&#1609;</option>
+				The lecture is shared with other departments</option>
 		</select>
 		<span dir="ltr"><font color="red" size="4">*</font></span>
 		</p>
@@ -2444,15 +2445,18 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 			// Display table
 		?>
 		<a href="displaytable.php?AcadDeg=<?php echo($AcadDeg);?>&Class=<?php echo($Classno);?>&Sem=<?php echo($Sem);?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($DeptNo);?>&op=<?php echo($op);?>&s=<?php echo($s);?>&SecID=<?php echo($SecID);?>" target="_blank" width="80%" height="40%" >
-		<img border="0" id="img71" src="Depart_Files/DisplayFTable.jpg" height="30" width="150" alt="&#1575;&#1587;&#1578;&#1593;&#1585;&#1575;&#1590; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFF00; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1578;&#1593;&#1585;&#1575;&#1590; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;"></a></td>
+		<P align="center" style="color:white;">Review Times</P>
+		<!-- <img border="0" id="img71" src="Depart_Files/DisplayFTable.jpg" height="30" width="150" alt="&#1575;&#1587;&#1578;&#1593;&#1585;&#1575;&#1590; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFF00; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1578;&#1593;&#1585;&#1575;&#1590; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;"> -->
+		</a></td>
 		<td width="32%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#B0CCFF" height="34" dir="ltr">
 
-		<input name="Submit" type="submit" value=" &#1575;&#1587;&#1578;&#1593;&#1585;&#1575;&#1590; &#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577;"  tabindex="6" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; float:right" dir="rtl"></td>
+		<input name="Submit" type="submit" value=" Review Times"  tabindex="6" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; float:right" dir="rtl"></td>
 		<td width="32%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#B0CCFF" height="34" dir="ltr">
 
 		<p align="center">
 		<a href="displaytable.php?AcadDeg=<?php echo($AcadDeg);?>&Class=<?php echo($Classno);?>&Sem=<?php echo($Sem);?>&uncode=<?php echo($uncode1);?>&CollegeCode=<?php echo($CollegeCode1);?>&Dept=<?php echo($DeptNo);?>&op=<?php echo($op);?>&s=<?php echo($s);?>&ch=1&SecID=<?php echo($SecID);?>" target="_blank">
-		<img border="0" id="img75" src="Depart_Files/DeleteTMSC.jpg" height="30" width="150" alt="&#1581;&#1584;&#1601; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFF00; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1581;&#1584;&#1601; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;"></a></td>
+		<p>Delete Table</p>
+		<!-- <img border="0" id="img75" src="Depart_Files/DeleteTMSC.jpg" height="30" width="150" alt="&#1581;&#1584;&#1601; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFF00; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1581;&#1584;&#1601; &#1575;&#1604;&#1580;&#1583;&#1608;&#1604;"></a></td> -->
 		</table>
 	</td>
 	</tr>
@@ -2503,7 +2507,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		SubCode='$msub'";
 	}
 
-	$result11 = mysqli_query($sql11);
+	$result11 = mysqli_query($conn, $sql11);
 	if (mysqli_num_rows($result11))
 	{
 		$row11=mysqli_fetch_row($result11);
@@ -2568,7 +2572,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 			GId='$GId'";
 		}
 
-		$aresults=mysqli_query($asqls_query);
+		$aresults=mysqli_query($conn, $asqls_query);
 
 		$arows=mysqli_fetch_row($aresults);
 

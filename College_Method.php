@@ -2346,7 +2346,7 @@ function DisplayAlter($uncode,$CollegeCode,$AcadDeg,$DeptNo,$Classno,$Sem,$year,
 			<p align="right">
 			<font face="Traditional Arabic" size="5" color="#FFFFFF"><b> 
 			
-					&#1578;&#1605; &#1578;&#1581;&#1583;&#1610;&#1583; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;
+					The number of students has been determined
 
 			</b></font></td>
 		</tr>
@@ -2359,8 +2359,8 @@ function DisplayAlter($uncode,$CollegeCode,$AcadDeg,$DeptNo,$Classno,$Sem,$year,
 			</font></b>
 			</td>
 			<td colspan="2" dir="rtl" bgcolor="#5A74A0">
-			<p align="center">
-					<img border="0" id="img83" src="Colleges-PAGE/year27.jpg" height="22" width="110" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td>
+			<p align="center">School Year
+					<!-- <img border="0" id="img83" src="Colleges-PAGE/year27.jpg" height="22" width="110" alt="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"></td> -->
 			</p>
 		</tr>
 		<tr>
@@ -2372,8 +2372,8 @@ function DisplayAlter($uncode,$CollegeCode,$AcadDeg,$DeptNo,$Classno,$Sem,$year,
 			</font></b>
 			</td>
 			<td colspan="2" dir="rtl" bgcolor="#5A74A0">
-			<p align="center">
-					<img border="0" id="img84" src="Colleges-PAGE/stud28.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;"></td>
+			<p align="center">Number of students 
+					<!-- <img border="0" id="img84" src="Colleges-PAGE/stud28.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;"></td> -->
 		</tr>
 		<tr>
 			<td colspan="2" dir="rtl" align="right">
@@ -2384,8 +2384,8 @@ function DisplayAlter($uncode,$CollegeCode,$AcadDeg,$DeptNo,$Classno,$Sem,$year,
 			</font></b>
 			</td>
 			<td colspan="2" dir="rtl" bgcolor="#5A74A0">
-			<p align="center">
-					<img border="0" id="img85" src="Colleges-PAGE/noofGroup29.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1608;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1608;&#1593;&#1575;&#1578;"></td>
+			<p align="center">Number of groups
+					<!-- <img border="0" id="img85" src="Colleges-PAGE/noofGroup29.jpg" height="22" width="110" alt="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1608;&#1593;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1593;&#1583;&#1583; &#1575;&#1604;&#1605;&#1580;&#1608;&#1593;&#1575;&#1578;"></td> -->
 		</tr>
 		<tr>
 			<td dir="rtl" width="32%" bgcolor="#003366" bordercolorlight="#003366" bordercolordark="#003366">
@@ -2393,8 +2393,8 @@ function DisplayAlter($uncode,$CollegeCode,$AcadDeg,$DeptNo,$Classno,$Sem,$year,
 			<?php
 			 	$href="ConfigNewYear.php?AcadDeg=$AcadDeg&uncode=$uncode&CollegeCode=$CollegeCode&Dept=$DeptNo&value=2#AcadDeg";
 			?>
-			<a href="<?php echo($href);?>">
-				<img border="0" id="img4" src="header_files/butCancle.jpg" height="25" width="125" alt="&#1575;&#1604;&#1594;&#1575;&#1569;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 12; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1594;&#1575;&#1569;">
+			<a href="<?php echo($href);?>"><p>Cancellation</p>
+				<!-- <img border="0" id="img4" src="header_files/butCancle.jpg" height="25" width="125" alt="&#1575;&#1604;&#1594;&#1575;&#1569;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 12; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #003366" fp-title="&#1575;&#1604;&#1594;&#1575;&#1569;"> -->
 			</a>
 			</font></td>
 			<td dir="rtl" width="30%" bgcolor="#003366" bordercolorlight="#003366" bordercolordark="#003366" colspan="2">
@@ -2404,8 +2404,8 @@ function DisplayAlter($uncode,$CollegeCode,$AcadDeg,$DeptNo,$Classno,$Sem,$year,
 		<?php
 			$href="changeStud.php?AcadDeg=$AcadDeg&uncode=$uncode&CollegeCode=$CollegeCode&Dept=$DeptNo&Class=$Classno&Sem=$Sem&year=$year&NoOfStud=$NoOfStud&NoOfGroup=$NoOfGroup&flag=1&SecID=$SecID";
 		?>
-		<a href="<?php echo($href);?>" target="_parent">
-			<img border="0" id="img2" src="header_files/butupdate.jpg" height="25" width="125" alt="&#1578;&#1593;&#1583;&#1610;&#1604; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #003366" fp-title="&#1578;&#1593;&#1583;&#1610;&#1604; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;">
+		<a href="<?php echo($href);?>" target="_parent">Adjusting the number of students
+			<!-- <img border="0" id="img2" src="header_files/butupdate.jpg" height="25" width="125" alt="&#1578;&#1593;&#1583;&#1610;&#1604; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #003366" fp-title="&#1578;&#1593;&#1583;&#1610;&#1604; &#1575;&#1593;&#1583;&#1575;&#1583; &#1575;&#1604;&#1591;&#1604;&#1575;&#1576;"> -->
 		</a>
 		</font></td>
 		</tr>
@@ -2485,15 +2485,15 @@ Your browser does not support inline frames or is currently configured not to di
 		<tr>
 		<td width="95%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold" colspan="3">
 		<p align="right"><span lang="ar-sa"><font color="#FFFF00" size="5">
-		 &nbsp;&#1578;&#1581;&#1583;&#1610;&#1579; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; &#1604;&#1604;&#1605;&#1608;&#1575;&#1583;
+		Update registration for materials
 		</font>&nbsp;</span></td>
 
 		</tr>
 
 		<tr>
 		<td width="31%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img7" src="Colleges-PAGE/DEptName4.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;"></td>
+		<p align="center">Department Name
+		<!-- <img border="0" id="img7" src="Colleges-PAGE/DEptName4.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1602;&#1587;&#1605;"></td> -->
 
 		<td width="64%" dir="ltr" height="28" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 
@@ -2507,8 +2507,8 @@ Your browser does not support inline frames or is currently configured not to di
 
 		<tr>
 		<td width="31%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="28" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">
-		<img border="0" id="img50" src="Depart_Files/ACDYEARS.jpg" height="22" width="110" alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"></td>
+		<p align="center">Academic Year
+		<!-- <img border="0" id="img50" src="Depart_Files/ACDYEARS.jpg" height="22" width="110" alt="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1587;&#1606;&#1577; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1610;&#1577;"></td> -->
 
 		<td width="64%" dir="ltr" height="28" colspan="2" bordercolorlight="#2F446F" bordercolordark="#2F446F">
 
@@ -2523,7 +2523,8 @@ Your browser does not support inline frames or is currently configured not to di
 
 		<tr>
 		<td width="31%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" dir="ltr" height="30" style="font-family: Traditional Arabic; font-size: 14pt; color: #FFFFFF; font-weight: bold">
-		<p align="center">&nbsp;<img border="0" id="img8" src="Colleges-PAGE/Acadmic.jpg" height="22" width="110" alt="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;">
+		<p align="center">&nbsp;Academic Progeamme
+			<!-- <img border="0" id="img8" src="Colleges-PAGE/Acadmic.jpg" height="22" width="110" alt="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1576;&#1585;&#1606;&#1575;&#1605;&#1580; &#1575;&#1604;&#1575;&#1603;&#1575;&#1583;&#1610;&#1605;&#1609;"> -->
 		</td>
 
 		<p align="right">
@@ -2544,8 +2545,8 @@ Your browser does not support inline frames or is currently configured not to di
 		<p align="right">
 		<?php
 			//SemesterName
-			$head="&#1605;&#1608;&#1575;&#1583;"."&nbsp;";
-			echo($head.$row4[1]);
+			$head="material ";
+			echo($row4[1]." ".$head);
 		?>
 		</td>
 
@@ -2553,8 +2554,8 @@ Your browser does not support inline frames or is currently configured not to di
 
 		<tr>
 		<td width="31%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
-		<p align="center">
-		<img border="0" id="img9" src="Colleges-PAGE/year27.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"></td>
+		<p align="center">School year
+		<!-- <img border="0" id="img9" src="Colleges-PAGE/year27.jpg" height="22" width="110" alt="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1608;&#1583; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"></td> -->
 
 		<p align="right">
 
@@ -2573,8 +2574,8 @@ Your browser does not support inline frames or is currently configured not to di
 	</tr>
 	<tr>
 		<td width="31%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" bgcolor="#5A74A0">
-	<p align="center">
-		<img border="0" id="img10" src="Colleges-PAGE/SubjName.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"></td>
+	<p align="center">Subject Name
+		<!-- <img border="0" id="img10" src="Colleges-PAGE/SubjName.jpg" height="22" width="110" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1575;&#1583;&#1577;"></td> -->
 
 	<td width="64%" bordercolorlight="#2F446F" bordercolordark="#2F446F" height="34" dir="ltr" colspan="2">
 		<p align="right">
@@ -2659,7 +2660,7 @@ Your browser does not support inline frames or is currently configured not to di
 		if( ($counter==0)&&($count==0) )
 		{
 			//<!--	������ ���� ����� ������ ������� ������ -->
-			echo("<option value='' selected>"."	&#1604;&#1575;&#1578;&#1608;&#1580;&#1583; &#1605;&#1608;&#1575;&#1583; &#1605;&#1587;&#1580;&#1604;&#1577; &#1576;&#1575;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;"."  ".$oldYear."</option>");
+			echo("<option value='' selected>".$oldYear. " "." There are no subjects registered for the previous academic year"."</option>");
 			
 			echo('<script>alert("Sorry, Subject Not Available On Previous Year");</script>');
 		}
@@ -2691,7 +2692,7 @@ Your browser does not support inline frames or is currently configured not to di
 	<p align="center">&nbsp;</td>
 	<td width="31%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" height="35%" bgcolor="#5A74A0">
 	<p align="center">
-	<input name="Submit" type="submit" value="  &#1581;&#1601;&#1592;  "  tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; " dir="rtl"></td>
+	<input name="Submit" type="submit" value="Submit"  tabindex="3" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0; " dir="rtl"></td>
 	<td width="31%" bordercolorlight="#5A74A0" bordercolordark="#5A74A0" height="35%" bgcolor="#B0CCFF">
 	&nbsp;</td>
 	</tr>

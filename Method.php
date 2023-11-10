@@ -182,9 +182,11 @@ function Href2($href,$header)
 <table border="0" width="100%" id="table2" height="16">
 	<tr>
 		<td align="center" bgcolor="#5A74A0">
-		<p align="right">
-		<a href='<?php echo($href);?>'>
-		<img border="0" id="img2" src="Success/button5D.jpg" height="22" width="111" alt="&#1585;&#1580;&#1608;&#1593;" onmouseover="FP_swapImg(1,0,/*id*/'img2',/*url*/'Success/button5E.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img2',/*url*/'Success/button5D.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img2',/*url*/'Success/button5F.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img2',/*url*/'Success/button5E.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1585;&#1580;&#1608;&#1593;" align="left"></a><p align="right">
+		<p align="left">
+		<a href='<?php echo($href);?>' style="color:white;">Back
+	 
+		<!-- <img border="0" id="img2" src="Success/button5D.jpg" height="22" width="111" alt="&#1585;&#1580;&#1608;&#1593;" onmouseover="FP_swapImg(1,0,/*id*/'img2',/*url*/'Success/button5E.jpg')" onmouseout="FP_swapImg(0,0,/*id*/'img2',/*url*/'Success/button5D.jpg')" onmousedown="FP_swapImg(1,0,/*id*/'img2',/*url*/'Success/button5F.jpg')" onmouseup="FP_swapImg(0,0,/*id*/'img2',/*url*/'Success/button5E.jpg')" fp-style="fp-btn: Braided Column 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1585;&#1580;&#1608;&#1593;" align="left"> -->
+		</a><p align="right">
 		<font color="yellow" face="Traditional Arabic" size="5"><b>
 
 		<?php

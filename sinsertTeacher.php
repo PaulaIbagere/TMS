@@ -108,7 +108,7 @@ if($username)
  				//before insert you must Get the Max TeacherID
 
  				$sql = "select max(TeacherNo) from Teachers";
- 				$results=mysqli_query($sql);
+ 				$results=mysqli_query($conn, $sql);
  				$rows=mysqli_fetch_row($results);
  				if($rows[0]==0)
  				 	$max=1;
@@ -118,7 +118,7 @@ if($username)
 				$TName=$pre.$TName;
 				// Now you can insert New Teacher
  					$sql2 = "insert into Teachers (AcadYNo,TeacherNo,UniversityCode,CollegeCode,TeacherName,Qualif,Status) values ('$year','$max','$uncode1','$CollegeCode1','$TName','$TQ','$status')";
-				$result2 = mysqli_query($sql2);
+				$result2 = mysqli_query($conn, $sql2);
 				if ($result2)
 				{
 						$msg="&#1578;&#1605; &#1575;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1576;&#1606;&#1580;&#1575;&#1581;";

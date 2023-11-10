@@ -43,7 +43,7 @@ if($username)
 		//Href2($href,$display);
 		
 		//����� �������
-		$header=$header." - "."&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1604;&#1575;&#1602;&#1587;&#1575;&#1605;"; 
+		$header="Department Registration". " - ".$header; 
 
 		Href2($href,$header);
 

@@ -38,7 +38,7 @@ if($username)
 	if(($uncode1>0)&&($CollegeCode1>0))
 	{
 		//Display Menu
-		$value = $_GET['value'];
+		$value = isset($_GET['value']) ? $_GET['value'] : '';
 		$value=intval($value);
 		
 		//do update

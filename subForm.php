@@ -69,7 +69,7 @@ if($username)
 	{
 
 		$SecID=0;
-		$otherDept=$_GET['otherDept'];
+		$otherDept=isset($_GET['otherDept']) ? $_GET['otherDept'] : '';
 		
 		$numbox=$_GET['numbox'];
 		
@@ -95,7 +95,7 @@ if($username)
 	//echo("group=".$GId."  [op=".$op);
 		//echo("</br>"."year=".$year."</br>"."lec=".$LecNo."</br>"."day=".$mday."</br>"."</br>"."sub=".$msub."</br>"."teach=".$mteach."</br>GID=".$StudGroup);
 
-	if($_POST['submit'])
+	if(isset($_POST['submit']))
 	{
 		
 		//check the No of Hours

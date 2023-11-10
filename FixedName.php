@@ -34,7 +34,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 
 						//Teacher on Specific College
 						
-						$result = mysqli_query("select distinct(CollegeCode),CollegeName from Colleges where 
+						$result = mysqli_query($conn, "select distinct(CollegeCode),CollegeName from Colleges where 
 							
 								UniversityCode='$uncode1' order by CollegeName");
 						
@@ -153,7 +153,7 @@ function DisplayFixedTeacherForm($uncode1,$SelectedCollege,$CollTeacherName,$Ass
 								<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1603;&#1604;&#1610;&#1577;</option>
 
 								<?php
-									$result = mysqli_query("select distinct(CollegeCode),CollegeName from Colleges where 
+									$result = mysqli_query($conn, "select distinct(CollegeCode),CollegeName from Colleges where 
 							
 									UniversityCode='$uncode1' order by CollegeName");
 
