@@ -30,7 +30,7 @@ if($username)
 	$header=$_SESSION['collegename'];
 
 	//Page Name: Teachers
-	$header=$header."- &#1575;&#1593;&#1590;&#1575;&#1569; &#1607;&#1610;&#1574;&#1577; &#1575;&#1604;&#1578;&#1583;&#1585;&#1610;&#1587;";
+	$header=$header."- Faculty Members";
 	Href2($href,$header);
 
 	DisplayTeacherMenu($uncode1,$CollegeCode1);

@@ -4,7 +4,7 @@
 	//Start New Table
 		echo('<div align="center" dir="rtl">
 				<table border="1" width="100%" id="Report1">');
-					
+		$print = isset($_GET['print']) ? $_GET['print'] : '';	
 		if (($print==0)&&($option==1))
 		{?>
 				<tr>
@@ -36,6 +36,13 @@
 					
 					if($option==1)
 					{
+						$DeptName = isset($_GET['DeptName']) ? $_GET['DeptName'] : '';
+						$AcadProgName = isset($_GET['AcadProgName']) ? $_GET['AcadProgName'] : '';
+						$Lectures = isset($_GET['Lectures']) ? $_GET['Lectures'] : '';
+						$Labs = isset($_GET['Labs']) ? $_GET['Labs'] : '';
+						$ToTLec = isset($_GET['ToTLec']) ? $_GET['ToTLec'] : '';
+						$ToTLab = isset($_GET['ToTLab']) ? $_GET['ToTLab'] : '';
+						$print = isset($_GET['print']) ? $_GET['print'] : '';
 						DisplayReportHeader($AcadProgType,$Levels,$SemNo,$DeptName,$AcadProgName,$Lectures,$Labs,$ToTLec,$ToTLab,1,$print);
 						$option++;
 					}
@@ -48,7 +55,8 @@
 					//------------------------------------	
 					
 					$Classno=1;
-					
+					$Lectures = array();
+					$Labs = array();
 					//----------initialize Arrays-------
 					for($j=1;$j<=5;$j++)
 					{
@@ -87,6 +95,7 @@
 						//[3] get Total Hours of All Managing Lectures and Labs
 						
 						$ToTLec=$ToTLec + $ManagLectureHours;
+						
 						
 						$ToTLab=$ToTLab + $ManagLabHours;
 						

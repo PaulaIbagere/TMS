@@ -4,7 +4,7 @@
 	//Start New Table
 		echo('<div align="center" dir="rtl">
 				<table border="1" width="100%" id="Report1">');
-		
+		$print = isset($_GET['print']) ? $_GET['print'] : '';
 		if (($print==0)&&($option==1))
 		{?>
 				<tr>
@@ -51,6 +51,9 @@
 					
 					if($option==1)
 					{
+						$DeptName = isset($_GET['DeptName']) ? $_GET['DeptName'] : '';
+						$AcadProgName = isset($_GET['AcadProgName']) ? $_GET['AcadProgName'] : '';
+						$ToTnum = isset($_GET['ToTnum']) ? $_GET['ToTnum'] : '';
 						DisplayReportHeader2($AcadProgType,$Levels,$SemNo,$DeptName,$AcadProgName,$ToTnum,1,$print,$report);
 						$option++;
 					}
@@ -64,6 +67,7 @@
 					
 					$Classno=1;
 					
+					$ToTnum = array();
 					//----------initialize Arrays-------
 					for($j=1;$j<=5;$j++)
 					{
@@ -134,7 +138,9 @@
 					
 					for($j=1;$j<=sizeof($ToTnum);$j++)
 					{
-						$TotalperLevel[$j]=$TotalperLevel[$j]+$ToTnum[$j][0];
+						// $TotalperLevel[$j]=$TotalperLevel[$j]+$ToTnum[$j][0];
+						$TotalperLevel[$j] = $TotalperLevel[$j] + (is_numeric($ToTnum[$j][0]) ? $ToTnum[$j][0] : 0);
+
 					}
 					
 				}//end of if

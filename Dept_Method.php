@@ -630,10 +630,10 @@ function GetNoOFStudent($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$M
 	$result31=mysqli_query($conn, $sql_query31);
 	$row31=mysqli_fetch_row($result31);
 	//come back
-	$NoStud=count($row31);
+	// $NoStud=count($row31);
 
-	if($NoStud > 0)
-		return $NoStud;
+	if($row31 > 0)
+		return $row31;
 	else
 		return 0;
 
@@ -660,10 +660,10 @@ function GetNoOFGroups($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$Ma
 	$result31=mysqli_query($conn, $sql_query31);
 	$row31=mysqli_fetch_row($result31);
 	//come back
-	$NoGroup= count($row31);
+	// $NoGroup= count($row31);
 	
-	if($NoGroup > 0)
-		return $NoGroup;
+	if($row31 > 0)
+		return $row31;
 	else
 		return 0;
 }
@@ -1704,8 +1704,17 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 
 	//calculate :No of students on one Group
-	if(($NoStud>0)&&($NoGroups>0))
-		$CapGroup=round($NoStud/$NoGroups);
+	// if(($NoStud>0)&&($NoGroups>0))
+	// 	$CapGroup=round($NoStud/$NoGroups);
+	if (is_numeric($NoStud) && is_numeric($NoGroups) && $NoGroups > 0) {
+		$CapGroup = round($NoStud / $NoGroups);
+	} else {
+		// Handle the case where $NoStud or $NoGroups is not numeric or $NoGroups is 0
+		// For example, you could set $CapGroup to a default value or log an error
+		$CapGroup = 0; // Set a default value
+		// Alternatively, you can log an error message
+		// error_log("Error: Unsupported operand types or NoGroups is 0");
+	}
 
 	//echo("CapGroup=".$CapGroup);
 	?>

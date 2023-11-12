@@ -192,18 +192,22 @@ function GetLabHours($univCode,$CollegeCode,$DeptNo,$AcadProgId,$Classno,$SemNo)
 		
 		$results = mysqli_query($conn,$sqls);
 
-		while($rows=mysqli_fetch_row($results))
-		{
-			$LabHours=$LabHours+$rows[0];
-		
+		while ($rows = mysqli_fetch_row($results)) {
+			// Check if $rows[0] is numeric before adding it to $LabHours
+			if (is_numeric($rows[0])) {
+				$LabHours = $LabHours + $rows[0];
+			}
 		}
- 		
- 		if($Group==0)
- 		{
- 			$Group=1;
- 		}
- 		 		
- 		return ($LabHours * $Group);
+		
+		// Check if $Group is numeric before using it in the multiplication
+		if (is_numeric($Group)) {
+			$Group = max(1, $Group); // Ensure $Group is at least 1
+		} else {
+			$Group = 1; // Set a default value if $Group is not numeric
+		}
+		
+		return ($LabHours * $Group);
+		
  	
  	}//end of if
  	else
