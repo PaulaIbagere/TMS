@@ -12,7 +12,7 @@
 						<p align="right">
 							<a style="cursor: pointer" onclick="javascript:window.open('PrintAdminReport.php?UnivCode=<?php echo($univCode);?>&CollegeCode=<?php echo($CollegeCode);?>&SemNo=<?php echo($SemNo);?>&report=1','','resizable=yes,scrollbars=yes,menubar=yes,width=600,height=500');" target="_blank">
 							<span lang="ar-sa">	<font face="Traditional Arabic"><b>
-								<span style="text-decoration: none">&#1591;&#1576;&#1575;&#1593;&#1577; &#1575;&#1604;&#1578;&#1602;&#1585;&#1610;&#1585;</span></b></font></span><img border="0" src="print.gif" width="37" height="28"></a></p>
+								<span style="text-decoration: none">Print the Report</span></b></font></span><img border="0" src="print.gif" width="37" height="28"></a></p>
 					</td>
 				</tr>	
 		<?php
