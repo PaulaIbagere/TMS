@@ -147,6 +147,7 @@ if((($uncode1>0)&&($CollegeCode1))&&(($AcadDeg>0)&&($DeptNo>0)))
 		}
 		else
 		{
+			$SecName = isset($_GET['SecName']) ? $_GET['SecName'] : '';
 			echo(GetClassName($uncode1,$CollegeCode1,$DeptNo,$AcadDeg,$Classno,$Sem).$SecName);
 		}
 	?>

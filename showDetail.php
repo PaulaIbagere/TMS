@@ -64,23 +64,23 @@ $curGId=intval($curGId);
 switch($mday)
 {
 	case '1': {
-				$days='&#1575;&#1604;&#1587;&#1576;&#1578;';
+				$days='Saturday';
 				break;
 			  }
 	case '2': {
-				$days='&#1575;&#1604;&#1575;&#1581;&#1583;';
+				$days='Sunday';
 				break;}
 	case '3': {
-				$days='&#1575;&#1604;&#1575;&#1579;&#1606;&#1610;&#1606;';
+				$days='Monday';
 				break;}
 	case '4': {
-				$days='&#1575;&#1604;&#1579;&#1604;&#1575;&#1579;&#1575;&#1569;';
+				$days='Tuesday';
 				break;}
 	case '5': {
-				$days='&#1575;&#1604;&#1575;&#1585;&#1576;&#1593;&#1575;&#1569;';
+				$days='Wednesday';
 				break;}
 	case '6': {
-				$days='&#1575;&#1604;&#1582;&#1605;&#1610;&#1587;';
+				$days='Thursday';
 				break;}
 
 	default: $days='';
@@ -97,7 +97,7 @@ switch($mday)
 
 	//and TeacherId='$mteach' and BId='$BId' and SubBId='$LectureName'
 
-	$Mresult1=mysqli_query($Mang_query1);
+	$Mresult1=mysqli_query($conn, $Mang_query1);
 
    ?>
    <!--Display Tabel Header-->
@@ -106,10 +106,10 @@ switch($mday)
 		<tr>
 			<td width="40%" bgcolor="#5A74A0" style="border-style:solid; border-width:0px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
 			<b><span lang="ar-sa">
-			<font size="4" face="Traditional Arabic" color="#FFFFFF">&#1575;&#1604;&#1610;&#1608;&#1605; : <?php echo($days);?></font></span></b></td>
+			<font size="4" face="Traditional Arabic" color="#FFFFFF">Today is : <?php echo($days);?></font></span></b></td>
 			<td width="40%" bgcolor="#5A74A0" style="border-style:solid; border-width:0px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
 			<font face="Traditional Arabic" color="#FFFFFF"><b><span lang="ar-sa">
-			<font size="4">&#1575;&#1604;&#1586;&#1605;&#1606;</font></span><font size="4">
+			<font size="4">Time:</font></span><font size="4">
 			</font> <span lang="ar-sa"><font size="4">&nbsp;<?php echo("[".$avTime."]");?> 
 			</font> </span></b></font></td>
 		</tr>

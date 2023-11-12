@@ -1102,8 +1102,11 @@ function DisplayTeacherMenu($uncode,$CollegeCode)
 		<tr>
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
 			<a href="insertTeacher.php?uncode=<?php echo($uncode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=2">
-			<img border="0" id="img75" src="Colleges-PAGE/pdisplayTeach3.jpg" height="35" width="175" alt="&#1578;&#1581;&#1583;&#1610;&#1579; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; &#1604;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1607; " fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1579; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; &#1604;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1607; "></a></td>
+			<img border="0" id="img75" src="Colleges-PAGE/pdisplayTeach3.jpg" height="35" width="175" alt="&#1578;&#1581;&#1583;&#1610;&#1579; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; &#1604;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1607; " fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1581;&#1583;&#1610;&#1579; &#1575;&#1604;&#1578;&#1587;&#1580;&#1610;&#1604; &#1604;&#1604;&#1575;&#1587;&#1575;&#1578;&#1584;&#1607; ">
+			<p style="color:white;">Update Registration for teachers</p>
+			</a></td>
 			<td bgcolor="#5A74A0" width="130" dir="rtl" align="center">
+			Register a new professor
 			<a href="insertTeacher.php?uncode=<?php echo($uncode);?>&CollegeCode=<?php echo($CollegeCode);?>&value=1">
 			<img border="0" id="img74" src="Colleges-PAGE/pAddTeach.jpg" height="35" width="175" alt="&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1587;&#1578;&#1575;&#1584; &#1580;&#1583;&#1610;&#1583;" fp-style="fp-btn: Braided Row 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-font-color-hover: #FFFFFF; fp-font-color-press: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1587;&#1580;&#1610;&#1604; &#1575;&#1587;&#1578;&#1575;&#1584; &#1580;&#1583;&#1610;&#1583;"></a></td>
 		</tr>
@@ -1285,7 +1288,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 				 <td bordercolor="#003366" align="right" bgcolor="#2F446F" height="4">
 				  <font face="Traditional Arabic" color="yellow" size="4"><b>
 				 <?php
-					 	$header="&#1575;&#1593;&#1590;&#1575;&#1569; &#1575;&#1604;&#1578;&#1583;&#1585;&#1610;&#1587; &#1604;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"."<span dir='rtl'>".$year."</span>";
+					 	$header= "<span dir='rtl'>".$year."</span>"." Teaching members for academic year ";
 					 echo($header);
 				  ?>
 				  </b></font>
@@ -1306,12 +1309,12 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 						<!-- ����� ������ �������� -->	
 							<option  value="0" <?php if(strcmp($status,"0")==0){ ?> selected <?php }?>>
 							<!--����� �������-->
-							&#1575;&#1587;&#1578;&#1575;&#1584; &#1576;&#1575;&#1604;&#1603;&#1604;&#1610;&#1577;
+							college Professor
 							</option>
 							
 							<option  value="1" <?php if(strcmp($status,"1")==0){ ?> selected <?php }?> >
 							<!--����� ������ �� ���� ����-->
-								&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1578;&#1593;&#1575;&#1608;&#1606; &#1605;&#1606; &#1603;&#1604;&#1610;&#1577; &#1571;&#1582;&#1585;&#1609;
+								A Cooperating Professor from another Professor
 							</option>
 						</select>
 					</td>
@@ -1373,14 +1376,14 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 					?>
 					<tr>
 					   <td height="28%" width="24%">
-					  		<p align="center">
-					  		<img border="0" id="img69" src="Colleges-PAGE/pTeacherNam.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;">
+					  		<p align="center">Professors Name
+					  		<!-- <img border="0" id="img69" src="Colleges-PAGE/pTeacherNam.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;"> -->
 					  </td>
 					
 					<td height="28%" width="75%">
 					
 							<select size="4" name="D2" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3" multiple>
-						<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;</option>
+						<option value="" selected>Choose the Professor</option>
 					<?php
 					$conn = db_connect();
 						
@@ -1430,7 +1433,7 @@ function DisplayTeacherForm($uncode1,$CollegeCode1,$value,$TName,$TQ,$status)
 				</tr>
 				<tr>
 					<td bordercolor="#003366" align="center" width="93%" bgcolor="#2F446F" bordercolorlight="#2F446F" bordercolordark="#2F446F">
-					<input type="submit" value="   &#1581;&#1601;&#1592;  " name="B3" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
+					<input type="submit" value="Submit" name="B3" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
 					</tr>
 					</table>
 			<?php
@@ -1478,7 +1481,7 @@ function UpdateTeacherForm($uncode1,$CollegeCode1,$TNo,$TName,$TQ,$status,$doupd
 				 <td bordercolor="#003366" align="right" bgcolor="#2F446F" height="16">
 				 <font face="Traditional Arabic" color="yellow" size="4"><b>
 				 <?php
-					 	$header="&#1575;&#1593;&#1590;&#1575;&#1569; &#1575;&#1604;&#1578;&#1583;&#1585;&#1610;&#1587; &#1604;&#1604;&#1593;&#1575;&#1605; &#1575;&#1604;&#1583;&#1585;&#1575;&#1587;&#1609;"."<span dir='rtl'>".$year."</span>";
+					 	$header="<span dir='rtl'>".$year."</span>"." Teaching members of the academic year";
 					 echo($header);
 				  ?>
 				  </b></font>
@@ -1488,8 +1491,8 @@ function UpdateTeacherForm($uncode1,$CollegeCode1,$TNo,$TName,$TQ,$status,$doupd
 					<td bordercolor="#003366" align="right" bgcolor="#5A74A0" height="15" bordercolorlight="#B0CCFF" bordercolordark="#B0CCFF">
 					<table border="0" width="100%" id="table26">
 					<tr>
-					   <td height="28%" width="24%">
-					  <img border="0" id="img69" src="Colleges-PAGE/pTeacherNam.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;"></td>
+					   <td height="28%" width="24%">Professors Name
+					  <!-- <img border="0" id="img69" src="Colleges-PAGE/pTeacherNam.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1575;&#1587;&#1578;&#1575;&#1584;"></td> -->
 					<td height="28%" width="75%">
 
 						<input name="T1" value="<?php echo($TName);?>" size="30" dir="rtl" tabindex="1" style="font-size: 12pt; color: #2F446F; font-weight: bold; font-family:Traditional Arabic; float:right">
@@ -1497,38 +1500,39 @@ function UpdateTeacherForm($uncode1,$CollegeCode1,$TNo,$TName,$TQ,$status,$doupd
 				   		</tr>
 						<tr>
 					   <td height="28%" width="24%">
-						<img border="0" id="img70" src="Colleges-PAGE/PTeacherJob.jpg" height="24" width="118"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="������ ��������"></td>
+						Functional Class
+						<!-- <img border="0" id="img70" src="Colleges-PAGE/PTeacherJob.jpg" height="24" width="118"  fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="������ ��������"></td> -->
 						<td height="28%" width="75%">
 						<select size="1" name="D1" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
 						
 							<!-- case 1 : Teacher --->
-							<option value="1" <?php if($TQ ==1){ ?> selected <?php }?> >&#1575;&#1587;&#1578;&#1575;&#1584;</option>
+							<option value="1" <?php if($TQ ==1){ ?> selected <?php }?> >Associate Professor</option>
 
 							<!-- case 2 : Co.Teacher --->
-							<option value="2" <?php if($TQ ==2){ ?> selected <?php }?> >&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1588;&#1575;&#1585;&#1603;</option>
+							<option value="2" <?php if($TQ ==2){ ?> selected <?php }?> >Mr</option>
 
 							<!-- case 3 : Assist.Teacher --->
-							<option value="3" <?php if($TQ == 3){ ?> selected <?php }?> >&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1587;&#1575;&#1593;&#1583;</option>
+							<option value="3" <?php if($TQ == 3){ ?> selected <?php }?> >Asistant Professor</option>
 
 							
 							<!-- case 4: Lectural --->
-							<option value="4" <?php if($TQ ==4){ ?> selected <?php }?> >&#1605;&#1581;&#1575;&#1590;&#1585;</option>
+							<option value="4" <?php if($TQ ==4){ ?> selected <?php }?> >Lecturer</option>
 								
 						   
 						   <!-- case 5 : Teaching Assistant--->
-							<option value="5" <?php if($TQ ==5){ ?> selected <?php }?> >&#1605;&#1587;&#1575;&#1593;&#1583; &#1578;&#1583;&#1585;&#1610;&#1587;</option>
+							<option value="5" <?php if($TQ ==5){ ?> selected <?php }?> >Teaching asistant</option>
 								
 						   <!-- case 6 : Kapeer.Teacher[Modares]--->
-							<option value="6" <?php if($TQ ==6){ ?> selected <?php }?> >&#1603;&#1576;&#1610;&#1585; &#1605;&#1583;&#1585;&#1587;&#1610;&#1606;</option>
+							<option value="6" <?php if($TQ ==6){ ?> selected <?php }?> >Senior teacher</option>
 	
 						   <!-- case 7 : First.Teacher[Modares]--->
-							<option value="7" <?php if($TQ == 7 ){ ?> selected <?php }?> >&#1605;&#1583;&#1585;&#1587; &#1571;&#1608;&#1604;</option>
+							<option value="7" <?php if($TQ == 7 ){ ?> selected <?php }?> >First Teacher</option>
 							
 							<!-- case 8 : Modares--->
-							<option value="8" <?php if( $TQ ==8){ ?> selected <?php }?> >&#1605;&#1583;&#1585;&#1587;</option>
+							<option value="8" <?php if( $TQ ==8){ ?> selected <?php }?> >Teacher</option>
 							
 							<!-- case 9 : Technical Lectural--->
-								<option value="9" <?php if($TQ == 9){ ?> selected <?php }?> >&#1605;&#1581;&#1575;&#1590;&#1585; &#1578;&#1603;&#1606;&#1608;&#1604;&#1608;&#1580;&#1609;</option>
+								<option value="9" <?php if($TQ == 9){ ?> selected <?php }?> >Technology Lecturer</option>
 								
 						</select>
 						</td>
@@ -1545,12 +1549,12 @@ function UpdateTeacherForm($uncode1,$CollegeCode1,$TNo,$TName,$TQ,$status,$doupd
 							
 							<option  value="0" <?php if(strcmp($status,"0")==0){ ?> selected <?php }?> selected >
 							<!--����� �������-->
-							&#1575;&#1587;&#1578;&#1575;&#1584; &#1576;&#1575;&#1604;&#1603;&#1604;&#1610;&#1577;
+							College Professor
 							</option>
 							
 							<option  value="1" <?php if(strcmp($status,"1")==0){ ?> selected <?php }?> >
 							<!--����� ������ �� ���� ����-->
-								&#1575;&#1587;&#1578;&#1575;&#1584; &#1605;&#1578;&#1593;&#1575;&#1608;&#1606; &#1605;&#1606; &#1603;&#1604;&#1610;&#1577; &#1571;&#1582;&#1585;&#1609;
+								A cooperating professor from another college
 							</option>
 						</select>
 							
@@ -1561,7 +1565,7 @@ function UpdateTeacherForm($uncode1,$CollegeCode1,$TNo,$TName,$TQ,$status,$doupd
 					</tr>
 					<tr>
 						<td bordercolor="#003366" align="center" width="93%" bgcolor="#2F446F" bordercolorlight="#2F446F" bordercolordark="#2F446F">
-						<input type="submit" value="   &#1578;&#1593;&#1583;&#1610;&#1604;  " name="B3" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
+						<input type="submit" value="Submit" name="B3" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; background-color: #5A74A0" tabindex="3"></td>
 					</tr>
 				</table>
 				
@@ -2249,7 +2253,7 @@ function PrepareTeacherReport($year,$mday,$Sem,$Select,$value,$uncode1,$CollegeC
 	//Time 		 : 12:00PM
 	
 	$conn = db_connect();
-	$detail="";  //set default value
+	$detail= array();  //set default value
 	
 	$i=0;
 	$j=0;

@@ -52,7 +52,7 @@ if($username)
 	$year= $_POST['D1'];
 	//echo($year);
 
-	$LectureName= $_POST['D2'];
+	$LectureName= isset($_POST['D2']) ? $_POST['D2'] : '';
 
 	$mday=$_POST['D3'];
 
@@ -88,7 +88,7 @@ if($username)
 	{
 		//Get Checkbox value from hidden input
 		
-		$numbox=$_POST['numbox'];
+		$numbox=isset($_POST['numbox']) ? $_POST['numbox'] : '';
 		
 		$checknum=0; //just used to check 
 	
@@ -179,7 +179,7 @@ if($username)
 					width="100%" height="65%" frameborder="0" scrolling="no" align="center" border="0">
 					Your browser does not support inline frames or is currently configured not to display inline frames.
 					</iframe>
-					<?php $_SESSION['otherDept']=$otherDept;?>
+					<?php $otherDept = $_SESSION['otherDept']?>
 				</div>
 				</a>
 				<p>&nbsp;</p>

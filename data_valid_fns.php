@@ -41,6 +41,7 @@ else
 function checkLName($LName,$univcode,$value,$Loc)
 {
 	//Check if Lecture Room already Registered or Not
+	$flag = isset($_GET['flag']);
 		
 	$conn = db_connect();
 	
@@ -54,7 +55,7 @@ function checkLName($LName,$univcode,$value,$Loc)
 	  {
 		 while($row3=mysqli_fetch_row($result3))
 		  {
-		    if(eregi($LName,$row3[0])) //match 
+		    if(preg_match("/".$LName."/i" ,$row3[0])) //match 
 		    { 	
 		    	$flag=false;
 		    	break;

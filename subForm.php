@@ -106,7 +106,7 @@ if($username)
 		{
 			$check='C'.$c;
 
-			if($_POST[$check]=="ON")
+			if(isset($_POST[$check])=="ON")
 			{
 				$counter=$counter+1;
 
