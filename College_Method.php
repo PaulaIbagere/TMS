@@ -2249,7 +2249,7 @@ function PrepareTeacherReport($year,$mday,$Sem,$Select,$value,$uncode1,$CollegeC
 	//Time 		 : 12:00PM
 	
 	$conn = db_connect();
-	$detail="";  //set default value
+	$detail= array();  //set default value
 	
 	$i=0;
 	$j=0;

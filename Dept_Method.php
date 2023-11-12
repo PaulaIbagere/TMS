@@ -596,18 +596,18 @@ function GetBuildingName($CollegeCode1,$uncode1,$BId,$LectureName)
 {
 	$conn = db_connect();
 
-	$sqlt="select SubBName from SubBuildingSeminar where
+	$sqlt="select SubBName from subbuildingseminar where
 	BId='$BId' and
 	SubBId='$LectureName' and
 	UniversityCode='$uncode1'";
 
-	$resultt = mysqli_query($sqlt);
+	$resultt = mysqli_query($conn, $sqlt);
 
 	$rowt=mysqli_fetch_row($resultt);
 
-	$BName=$rowt[0];
+	// $BName=$rowt[0];
 
- 	return $BName;
+ 	return $rowt;
 }
 
 function GetNoOFStudent($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$MaxYear,$SecID)
@@ -630,7 +630,7 @@ function GetNoOFStudent($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$M
 	$result31=mysqli_query($conn, $sql_query31);
 	$row31=mysqli_fetch_row($result31);
 	//come back
-	$NoStud=isset($row31[0]) ? count($row31[0]) : '';
+	$NoStud=count($row31);
 
 	if($NoStud > 0)
 		return $NoStud;
@@ -660,7 +660,7 @@ function GetNoOFGroups($CollegeCode1,$uncode1,$DeptNo,$AcadDeg,$Sem,$Classno,$Ma
 	$result31=mysqli_query($conn, $sql_query31);
 	$row31=mysqli_fetch_row($result31);
 	//come back
-	$NoGroup=isset($row31[0]) ? count($row31[0]) : '';
+	$NoGroup= count($row31);
 	
 	if($NoGroup > 0)
 		return $NoGroup;
@@ -819,7 +819,7 @@ function GetCollegeTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 		
 		//-----------------------------------
 	
-		return $Timeslot;
+		return implode($Timeslot);
 	}
 	else
 	{
@@ -861,13 +861,14 @@ function HeaderTimeSlot($uncode1,$CollegeCode1,$Sem,$year)
 					
 				$tslot=intval($btslot);
 				$eslot=intval($beslot);
-				
-				if ( preg_match(":30",$btslot) || preg_match("30",$beslot) )
+				$pattern1 = "/:30/i";
+				$pattern2 = "/30/i";
+				if ( preg_match($pattern1, $btslot) || preg_match($pattern2,$beslot) )
 				{
-					if (preg_match(":30",$btslot))
+					if (preg_match($pattern1, $btslot))
 						$tslot="&frac12;".$tslot;
 					
-					if (preg_match(":30",$beslot))
+					if (preg_match($pattern1, $beslot))
 						$eslot="&frac12;".$eslot;
 		
 					$Headerslot[$j]= $tslot." - ".$eslot;
@@ -931,13 +932,14 @@ function HeaderSubForm($uncode1,$CollegeCode1,$Sem,$year)
 									
 				$tslot=intval($btslot);
 				$eslot=intval($beslot);
+				$pattern = "/:30/i";
 				
-				if (preg_match(":30",$btslot) || preg_match(":30",$beslot) )
+				if (preg_match($pattern, $btslot) || preg_match($pattern, $beslot) )
 				{
-					if ( preg_match(":30",$btslot))
+					if ( preg_match($pattern, $btslot))
 						$tslot="&frac12;".$tslot;
 					
-					if ( preg_match(":30",$beslot))
+					if ( preg_match($pattern, $beslot))
 						$eslot="&frac12;".$eslot;
 		
 					$Headerslot[$j]= $tslot."</br>"." | "."</br>".$eslot;
@@ -1858,7 +1860,8 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 			if($op==2)
 			{
 			?>
-				<img border="0" id="img47" src="Colleges-PAGE/chLabs.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;">
+				Laboratory Name
+				<!-- <img border="0" id="img47" src="Colleges-PAGE/chLabs.jpg" height="24" width="118" alt="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1587;&#1605; &#1575;&#1604;&#1605;&#1593;&#1605;&#1604;"> -->
 			<?php
 			}
 			?>
@@ -1948,7 +1951,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				
 				if(strcmp($CapGroup,"")!=0)
 				  {
-					$sql_query33="select usedBy.SubBId,SubBuildingSeminar.SubBName,SubBuildingSeminar.Capacity from usedBy,SubBuildingSeminar where
+					$sql_query33="select usedBy.SubBId,subbuildingseminar.SubBName,subbuildingseminar.Capacity from usedBy,SubBuildingSeminar where
 					usedBy.BId=1 and
 					SubBuildingSeminar.BId=1 and
 					usedBy.AcadYNo='$MaxYear' and
@@ -1958,9 +1961,9 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 					SubBuildingSeminar.UnLoc='$row[0]' and
 					SubBuildingSeminar.Capacity>='$CapGroup'";
 
-					$result33=mysqli_query($sql_query33);
+					$result33=mysqli_query($conn, $sql_query33);
 
-					if (mysqli_num_rows($result33)>0)
+					if(mysqli_num_rows($result33)>0)
 					{
 					?>
 					<select size="1" name="D2" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="2">
@@ -2029,7 +2032,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 
 					//SubBuildingSeminar.Capacity>'$CapGroup'";
 
-					$result33=mysqli_query($sql_query33);
+					$result33=mysqli_query($conn, $sql_query33);
 
 					if (mysqli_num_rows($result33))
 					{
@@ -2092,8 +2095,8 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				<tr>
 				<td width="33%" bordercolorlight="#2F446F" bordercolordark="#2F446F" bgcolor="#5A74A0" height="34" dir="ltr">
 
-				<p align="center">
-				<img border="0" id="img74" src="Colleges-PAGE/GroupNoH.jpg" height="24" width="118" alt="&#1585;&#1602;&#1605; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1585;&#1602;&#1605; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;">
+				<p align="center">Group Number
+				<!-- <img border="0" id="img74" src="Colleges-PAGE/GroupNoH.jpg" height="24" width="118" alt="&#1585;&#1602;&#1605; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1585;&#1602;&#1605; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;"> -->
 
 				</td>
 
@@ -2101,7 +2104,7 @@ function DeptLec_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,
 				<p align="right">
 
 				<select size="1" name="D8" dir="rtl" style="color: #003366; font-family: Traditional Arabic; font-size: 12pt; font-weight: bold" tabindex="3">
-				<option value="" selected>&#1575;&#1582;&#1578;&#1585; &#1575;&#1604;&#1605;&#1580;&#1605;&#1608;&#1593;&#1577;</option>
+				<option value="" selected>Select the group</option>
 				<?php
 					//check
 					if(strcmp($CapGroup,"")!=0)
@@ -2589,7 +2592,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		{
 				if($arows[0]==0)
 				{
-					$msg=$subname."&nbsp; >> &nbsp;"."&#1593;&#1583;&#1583; &#1575;&#1604;&#1587;&#1575;&#1593;&#1575;&#1578;: ".$shour;
+					$msg=$subname."&nbsp; >> Number of Hours: ".$shour;
 					$_SESSION['subHour']=$shour;
 				}
 				else
@@ -2648,17 +2651,14 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 			<tr>
 		
 		 		<td bordercolor="#003366" align="center" width="100%" height="40" bordercolorlight="#003366" bordercolordark="#003366" bgcolor="#5A74A0" colspan="3">
-		 		<p align="right">
-					<img border="0" id="img70" src="Colleges-PAGE/availableTime.jpg" height="30" width="150" alt="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577;">
+		 		<p align="right">Available Times
+					<!-- <img border="0" id="img70" src="Colleges-PAGE/availableTime.jpg" height="30" width="150" alt="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 16; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1578;&#1575;&#1581;&#1577;"> -->
 					<font color="#FFFFFF"><b>
 					<font face="Traditional Arabic">
-					<span lang="ar-sa"><font size="4">&#1605;&#1604;&#1581;&#1608;&#1592;&#1577;: ( &#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1608;&#1590;&#1581;&#1577; &#1575;&#1583;&#1606;&#1575;&#1607; 
-					&#1578;&#1615;&#1578;&#1610;&#1581; &#1578;&#1582;&#1589;&#1610;&#1589; &#1580;&#1605;&#1610;&#1593; &#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578; &#1604;&#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578;&#1548; &#1575;&#1609; &#1575;&#1604;&#1603;&#1604;&#1610;&#1575;&#1578; 
-					&#1575;&#1604;&#1578;&#1609; &#1578;&#1576;&#1583;&#1571; &#1575;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578; &#1576;&#1607;&#1575; &#1605;&#1606; &#1575;&#1604;&#1587;&#1575;&#1593;&#1577; 
-					</font> </span></font>
+					<span lang="ar-sa"><font size="4">Note (the times shown below allow all lecture sessions to be allocated to all colleges, i.e colleges where lectures start at
 					</b></font><font size="4">
 					<font face="Times New Roman" color="#FFFF00"><span lang="en-us"><b>7:30</b></span></font><font color="#FFFFFF"><b><font face="Traditional Arabic"> 
-					&#1608;&#1575;&#1610;&#1590;&#1575; &#1575;&#1604;&#1578;&#1609; &#1578;&#1576;&#1583;&#1571; &#1605;&#1606; &#1575;&#1604;&#1587;&#1575;&#1593;&#1577; </font>
+					and also starting at</font>
 					</b></font></font><font face="Times New Roman">
 					<font color="#FFFF00" size="4"><span lang="en-us"><b>8:00</b></span></font><font color="#FFFFFF"><b><font size="4">)
 					</font></b></font>
@@ -2799,7 +2799,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 
 		 		?>
 		 	
-		 		 <input type="checkbox" name="C1" value="ON" tabindex="1"  <?php echo($status1);?> style="background-color:<?php echo($color1);?>" <?php if($_POST['C1']) { echo('checked');}?>>
+		 		 <input type="checkbox" name="C1" value="ON" tabindex="1"  <?php echo($status1);?> style="background-color:<?php echo($color1);?>" <?php if(isset($_POST['C1'])) { echo('checked');}?>>
 		 	
 		 		<div align="center">
 		 			<?php
@@ -2845,7 +2845,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 
 				}
 			?>
-		 		<input type="checkbox" name="C2" value="ON" tabindex="2"  <?php echo($status2);?> style="background-color:<?php echo($color2);?>" <?php if($_POST['C2']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C2" value="ON" tabindex="2"  <?php echo($status2);?> style="background-color:<?php echo($color2);?>" <?php if(isset($_POST['C2'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display2==1)
@@ -2892,7 +2892,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display3=1;
 				}
 			?>
-		 		<input type="checkbox" name="C3" value="ON" tabindex="3" <?php echo($status3);?> style="background-color:<?php echo($color3);?>" <?php if($_POST['C3']) { echo('checked');}?> >
+		 		<input type="checkbox" name="C3" value="ON" tabindex="3" <?php echo($status3);?> style="background-color:<?php echo($color3);?>" <?php if(isset($_POST['C3'])) { echo('checked');}?> >
 		 	<div align="center">
 		 			<?php
 		 			if($display3==1)
@@ -2938,7 +2938,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display4=1;
 				}
 			?>
-		 		<input type="checkbox" name="C4" value="ON" tabindex="4"  <?php echo($status4);?> style="background-color:<?php echo($color4);?>" <?php if($_POST['C4']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C4" value="ON" tabindex="4"  <?php echo($status4);?> style="background-color:<?php echo($color4);?>" <?php if(isset($_POST['C4'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display4==1)
@@ -2981,7 +2981,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display5=1;
 				}
 			?>
-		 		<input type="checkbox" name="C5" value="ON" tabindex="5"  <?php echo($status5);?> style="background-color:<?php echo($color5);?>" <?php if($_POST['C5']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C5" value="ON" tabindex="5"  <?php echo($status5);?> style="background-color:<?php echo($color5);?>" <?php if(isset($_POST['C5'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display5==1)
@@ -3024,7 +3024,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display6=1;
 				}
 			?>
-		 		<input type="checkbox" name="C6" value="ON" tabindex="6"  <?php echo($status6);?> style="background-color:<?php echo($color6);?>" <?php if($_POST['C6']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C6" value="ON" tabindex="6"  <?php echo($status6);?> style="background-color:<?php echo($color6);?>" <?php if(isset($_POST['C6'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display6==1)
@@ -3070,7 +3070,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 				}
 			?>
 
-		 		<input type="checkbox" name="C7" value="ON" tabindex="7"  <?php echo($status7);?> style="background-color:<?php echo($color7);?>" <?php if($_POST['C7']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C7" value="ON" tabindex="7"  <?php echo($status7);?> style="background-color:<?php echo($color7);?>" <?php if(isset($_POST['C7'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display7==1)
@@ -3112,7 +3112,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display8=1;
 				}
 			?>
-		 		<input type="checkbox" name="C8" value="ON" tabindex="8"  <?php echo($status8);?> style="background-color:<?php echo($color8);?>" <?php if($_POST['C8']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C8" value="ON" tabindex="8"  <?php echo($status8);?> style="background-color:<?php echo($color8);?>" <?php if(isset($_POST['C8'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display8==1)
@@ -3155,7 +3155,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display9=1;
 				}
 			?>
-		 		<input type="checkbox" name="C9" value="ON" tabindex="9"  <?php echo($status9);?> style="background-color:<?php echo($color9);?>" <?php if($_POST['C9']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C9" value="ON" tabindex="9"  <?php echo($status9);?> style="background-color:<?php echo($color9);?>" <?php if(isset($_POST['C9'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display9==1)
@@ -3198,7 +3198,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display10=1;
 				}
 			?>
-		 		<input type="checkbox" name="C10" value="ON" tabindex="10"  <?php echo($status10);?> style="background-color:<?php echo($color10);?>" <?php if($_POST['C10']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C10" value="ON" tabindex="10"  <?php echo($status10);?> style="background-color:<?php echo($color10);?>" <?php if(isset($_POST['C10'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display10==1)
@@ -3242,7 +3242,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display11=1;
 				}
 			?>
-		 		<input type="checkbox" name="C11" value="ON" tabindex="11"  <?php echo($status11);?> style="background-color:<?php echo($color11);?>" <?php if($_POST['C11']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C11" value="ON" tabindex="11"  <?php echo($status11);?> style="background-color:<?php echo($color11);?>" <?php if(isset($_POST['C11'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display11==1)
@@ -3287,7 +3287,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display12=1;
 				}
 			?>
-		 		<input type="checkbox" name="C12" value="ON" tabindex="12"  <?php echo($status12);?> style="background-color:<?php echo($color12);?>" <?php if($_POST['C12']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C12" value="ON" tabindex="12"  <?php echo($status12);?> style="background-color:<?php echo($color12);?>" <?php if(isset($_POST['C12'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display12==1)
@@ -3333,7 +3333,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display13=1;
 				}
 			?>
-		 		<input type="checkbox" name="C13" value="ON" tabindex="13"  <?php echo($status13);?> style="background-color:<?php echo($color13);?>" <?php if($_POST['C13']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C13" value="ON" tabindex="13"  <?php echo($status13);?> style="background-color:<?php echo($color13);?>" <?php if(isset($_POST['C13'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display13==1)
@@ -3379,7 +3379,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display14=1;
 				}
 			?>
-		 		<input type="checkbox" name="C14" value="ON" tabindex="14"  <?php echo($status14);?> style="background-color:<?php echo($color14);?>" <?php if($_POST['C14']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C14" value="ON" tabindex="14"  <?php echo($status14);?> style="background-color:<?php echo($color14);?>" <?php if(isset($_POST['C14'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display14==1)
@@ -3426,7 +3426,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display15=1;
 				}
 			?>
-		 		<input type="checkbox" name="C15" value="ON" tabindex="15"  <?php echo($status15);?> style="background-color:<?php echo($color15);?>" <?php if($_POST['C15']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C15" value="ON" tabindex="15"  <?php echo($status15);?> style="background-color:<?php echo($color15);?>" <?php if(isset($_POST['C15'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display15==1)
@@ -3472,7 +3472,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display16=1;
 				}
 			?>
-		 		<input type="checkbox" name="C16" value="ON" tabindex="16"  <?php echo($status16);?> style="background-color:<?php echo($color16);?>" <?php if($_POST['C16']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C16" value="ON" tabindex="16"  <?php echo($status16);?> style="background-color:<?php echo($color16);?>" <?php if(isset($_POST['C16'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display16==1)
@@ -3518,7 +3518,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display17=1;
 				}
 			?>
-		 		<input type="checkbox" name="C17" value="ON" tabindex="17"  <?php echo($status17);?> style="background-color:<?php echo($color17);?>" <?php if($_POST['C17']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C17" value="ON" tabindex="17"  <?php echo($status17);?> style="background-color:<?php echo($color17);?>" <?php if(isset($_POST['C17'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display17==1)
@@ -3564,7 +3564,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display18=1;
 				}
 			?>
-		 		<input type="checkbox" name="C18" value="ON" tabindex="18"  <?php echo($status18);?> style="background-color:<?php echo($color18);?>" <?php if($_POST['C18']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C18" value="ON" tabindex="18"  <?php echo($status18);?> style="background-color:<?php echo($color18);?>" <?php if(isset($_POST['C18'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display18==1)
@@ -3609,7 +3609,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display19=1;
 				}
 			?>
-		 		<input type="checkbox" name="C19" value="ON" tabindex="19"  <?php echo($status19);?> style="background-color:<?php echo($color19);?>" <?php if($_POST['C19']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C19" value="ON" tabindex="19"  <?php echo($status19);?> style="background-color:<?php echo($color19);?>" <?php if(isset($_POST['C19'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display19==1)
@@ -3655,7 +3655,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display20=1;
 				}
 			?>
-		 		<input type="checkbox" name="C20" value="ON" tabindex="20"  <?php echo($status20);?> style="background-color:<?php echo($color20);?>" <?php if($_POST['C20']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C20" value="ON" tabindex="20"  <?php echo($status20);?> style="background-color:<?php echo($color20);?>" <?php if(isset($_POST['C20'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display20==1)
@@ -3701,7 +3701,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display21=1;
 				}
 			?>
-		 		<input type="checkbox" name="C21" value="ON" tabindex="21"  <?php echo($status21);?> style="background-color:<?php echo($color21);?>" <?php if($_POST['C21']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C21" value="ON" tabindex="21"  <?php echo($status21);?> style="background-color:<?php echo($color21);?>" <?php if(isset($_POST['C21'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display21==1)
@@ -3747,7 +3747,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display22=1;
 				}
 			?>
-		 		<input type="checkbox" name="C22" value="ON" tabindex="22"  <?php echo($status22);?> style="background-color:<?php echo($color22);?>" <?php if($_POST['C22']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C22" value="ON" tabindex="22"  <?php echo($status22);?> style="background-color:<?php echo($color22);?>" <?php if(isset($_POST['C22'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display22==1)
@@ -3792,7 +3792,7 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display23=1;
 				}
 			?>
-		 		<input type="checkbox" name="C23" value="ON" tabindex="23"  <?php echo($status23);?> style="background-color:<?php echo($color23);?>" <?php if($_POST['C23']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C23" value="ON" tabindex="23"  <?php echo($status23);?> style="background-color:<?php echo($color23);?>" <?php if(isset($_POST['C23'])) { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display23==1)
@@ -3837,7 +3837,8 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 		 		 	$display24=1;
 				}
 			?>
-		 		<input type="checkbox" name="C24" value="ON" tabindex="24"  <?php echo($status24);?> style="background-color:<?php echo($color24);?>" <?php if($_POST['C24']) { echo('checked');}?>>
+		 		<input type="checkbox" name="C24" value="ON" tabindex="24"  <?php echo($status24);?> style="background-color:<?php echo($color24);?>" 
+				<?php if(isset($_POST['C24']) ? $_POST['C24'] : '') { echo('checked');}?>>
 		 	<div align="center">
 		 			<?php
 		 			if($display24==1)
@@ -3866,20 +3867,20 @@ function sub_Form($uncode1,$CollegeCode1,$AcadDeg,$DeptNo,$Classno,$Sem,$op,$s,$
 								<td width="10%" bordercolor="#003366">
 								<input type="checkbox" name="C13" value="ON" disabled style="background-color: #FF0000"></td>
 								<td>
-								<p align="center">
-								<img border="0" id="img72" src="Depart_Files/Mheader1.jpg" height="26" width="130" alt="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 12; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" align="right"></td>
+								<p align="center">The Time allocated for lectures
+								<!-- <img border="0" id="img72" src="Depart_Files/Mheader1.jpg" height="26" width="130" alt="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 12; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1581;&#1575;&#1590;&#1585;&#1575;&#1578;" align="right"></td> -->
 							</tr>
 							<tr>
 								<td width="10%" bordercolor="#003366" height="28">
 								<input type="checkbox" name="C14" value="ON" disabled style="background-color: #FF9933"></td>
-								<td height="28">
-								<img border="0" id="img73" src="Depart_Files/Mheader2.jpg" height="26" width="130" alt="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 12; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"></td>
+								<td height="28">The time allocated fo laboratories
+								<!-- <img border="0" id="img73" src="Depart_Files/Mheader2.jpg" height="26" width="130" alt="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 12; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0; fp-orig: 0" fp-title="&#1575;&#1604;&#1575;&#1586;&#1605;&#1606;&#1577; &#1575;&#1604;&#1605;&#1582;&#1589;&#1589;&#1577; &#1604;&#1604;&#1605;&#1593;&#1575;&#1605;&#1604;"></td> -->
 							</tr>
 						</table>
 			</td>
 		 	<td bordercolor="#003366" align="center" width="22%" height="55" bgcolor="#5A74A0" bordercolorlight="#003366" bordercolordark="#003366">
 
-						<input name="submit" type="submit" value="   &#1581;&#1601;&#1592;    "  tabindex="13" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
+						<input name="submit" type="submit" value="Submit"  tabindex="13" style="color: #FFFFFF; font-size: 14pt; font-weight: bold; font-family: Traditional Arabic; vertical-align: middle; letter-spacing: 2; border: 3px inset #B0CCFF; ; background-color:#5A74A0" dir="rtl"></td>
 		 	<td bordercolor="#003366" align="center" width="35%" height="55" bgcolor="#5A74A0" bordercolorlight="#003366" bordercolordark="#003366">
 			&nbsp;</td>
 			</tr>
@@ -3976,7 +3977,7 @@ function CheckTeacher($uncode1,$CollegeCode1,$year,$mday,$mteach,$avTime,$Sem)
 		SemNo='$Sem'";
 
     	//CollegeCode='$CollegeCode1' and
-    	$Mresults=mysqli_query($Mang_querys);
+    	$Mresults=mysqli_query($conn, $Mang_querys);
 
 		$mrows=mysqli_fetch_row($Mresults);
 		if ($mrows[0]==0)
@@ -4205,7 +4206,7 @@ function CheckLectureRoom($year,$mday,$avTime,$uncode1,$Sem,$BId,$LectureName)
 			BId='$BId' and 
 			SubBId='$LectureName'";
 			
-	$Mresult=mysqli_query($Mang_query);
+	$Mresult=mysqli_query($conn, $Mang_query);
 
 	if(mysqli_num_rows($Mresult)==0)
 		return true;
@@ -4234,7 +4235,7 @@ function CheckClassYear($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$Acad
 			SemNo='$Sem' and GId='0'"; 
 			
 			
-	$Mresult=mysqli_query($Mang_query);
+	$Mresult=mysqli_query($conn, $Mang_query);
 	
 	if(mysqli_num_rows($Mresult)==0)
 		return true;
@@ -4255,7 +4256,7 @@ function CheckTime2($BId,$year,$LectureName,$mday,$avTime,$GId,$uncode1,$College
 			MTimes='$avTime' and
 			SemNo='$Sem'";
 
-	$Mresult=mysqli_query($Mang_query);
+	$Mresult=mysqli_query($conn, $Mang_query);
 
 	//get num of row return
 	$c=mysqli_num_rows($Mresult);
@@ -4790,7 +4791,7 @@ function FinalReports($year,$mday,$avTime,$uncode1,$CollegeCode1,$DeptNo,$AcadDe
 	}
 
 	// Check the Type Of Lecture
-
+	$BId = isset($_GET['BId']) ? $_GET['BId'] : '';
 	if (($BId==1)&&($GId==0))
 	{
 		//

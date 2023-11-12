@@ -19,7 +19,7 @@ $value=$_GET['value'];
 $value=intval($value);
 
 //once click on print flagcolor=1
-$flagcolor=$_GET['fc'];
+$flagcolor=isset($_GET['fc']) ? $_GET['fc'] : '';
 $flagcolor=intval($flagcolor);
 
 if($flagcolor==1)
