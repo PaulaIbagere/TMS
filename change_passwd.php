@@ -27,30 +27,30 @@ if($username)
     if (!filled_out($_POST))
     {
     	echo("</br>");
-			$msg='&#1601;&#1590;&#1604;&#1575;&#1611; &#1602;&#1605; &#1576;&#1573;&#1583;&#1582;&#1575;&#1604; &#1580;&#1605;&#1610;&#1593; &#1575;&#1604;&#1581;&#1602;&#1608;&#1604;';
+			$msg='Please enter all fields';
 		$flag=false;
 		Display_error_msg($msg);
-        display_password_form();
+       
         
     }
 	else
     if ($new_passwd!=$new_passwd2)
     {
     	echo("</br>");
-     	$msg='&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1594;&#1610;&#1585; &#1605;&#1578;&#1591;&#1575;&#1576;&#1602;&#1577;';
+     	$msg='Password Mismatch';
 		$flag=false;
      	Display_error_msg($msg);
-        display_password_form();
+       
         
       }
   else
     if (strlen($new_passwd)>16 || strlen($new_passwd)<6)
     {
     	echo("</br>");
-       	$msg='&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1610;&#1580;&#1576; &#1575;&#1606; &#1578;&#1603;&#1608;&#1606; &#1576;&#1610;&#1606; 6 &#1575;&#1604;&#1609; 16 &#1581;&#1585;&#1601;';
+       	$msg='Password must be between 6 and 16 characters';
 		$flag=false;
 		Display_error_msg($msg,$path);
-    	display_password_form();
+    	
     	
     }
     if($flag==true)

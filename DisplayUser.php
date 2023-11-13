@@ -57,7 +57,7 @@ require_once('main.php');
                     <li><a href="BuildingForm.php?id=<?php echo($id); ?>">HALLS & LABS</a></li>
                     <li><a href="DisplayUser.php">USERS</a></li>
                     <li><a href="AdminReport.php">REPORTS</a></li>
-                    <li><a href="password-change.html">CHANGE PASSWORD</a></li>
+                    <li><a href="password-change.php">CHANGE PASSWORD</a></li>
                 </ul>
         </nav>
     </header>

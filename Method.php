@@ -16,27 +16,27 @@ function display_password_form()
 			<input type="password" name="old_passwd" size="21" maxlength=16 style="color: #003366; font-size:12pt; font-weight:bold; font-family:Times New Roman" dir="rtl" tabindex="1"></td>
 			<td bgcolor="#5A74A0">
 			<p align="center"> Previous Password
-			<img border="0" id="img23" src="changePasswd/button16.jpg" height="21" width="104" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;&#1577;"></td>
+			<!--<img border="0" id="img23" src="changePasswd/button16.jpg" height="21" width="104" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1587;&#1575;&#1576;&#1602;&#1577;">--></td>
 		</tr>
 		<tr>
 			<td width="207" align="right" bgcolor="#003366">
 			<input type="password" name="new_passwd" size="21" maxlength=16 style="color: #003366; font-size:12pt; font-weight:bold; font-family:Times New Roman" dir="rtl" tabindex="2"></td>
 			<td bgcolor="#5A74A0">
 			<p align="center">New Password
-			<img border="0" id="img24" src="changePasswd/button1B.jpg" height="21" width="104" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1580;&#1583;&#1610;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1580;&#1583;&#1610;&#1583;&#1577;"></td>
+			<!--<img border="0" id="img24" src="changePasswd/button1B.jpg" height="21" width="104" alt="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1580;&#1583;&#1610;&#1583;&#1577;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585; &#1575;&#1604;&#1580;&#1583;&#1610;&#1583;&#1577;">--></td>
 		</tr>
 		<tr>
 			<td width="207" align="right" bgcolor="#003366">
 			<input type="password" name="renew_passwd" size="21" maxlength=16 style="color: #003366; font-size:12pt; font-family:Times New Roman; font-weight:bold" dir="rtl" tabindex="3"></td>
 			<td bgcolor="#5A74A0">
-                  <p align="center">Conform Password
-					<img border="0" id="img25" src="changePasswd/button1E.jpg" height="21" width="104" alt="&#1578;&#1571;&#1603;&#1610;&#1583; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1571;&#1603;&#1610;&#1583; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;"></td>
+                  <p align="center">Confirm Password
+					<!--<img border="0" id="img25" src="changePasswd/button1E.jpg" height="21" width="104" alt="&#1578;&#1571;&#1603;&#1610;&#1583; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;" fp-style="fp-btn: Simple Text 1; fp-font: Traditional Arabic; fp-font-style: Bold; fp-font-size: 14; fp-font-color-normal: #FFFFFF; fp-img-hover: 0; fp-img-press: 0; fp-preload: 0; fp-bgcolor: #5A74A0" fp-title="&#1578;&#1571;&#1603;&#1610;&#1583; &#1603;&#1604;&#1605;&#1577; &#1575;&#1604;&#1605;&#1585;&#1608;&#1585;">--></td>
 		</tr>
 	</table>
 </div>
 
-<p align="center">&nbsp; Change
-<input type="submit" value="  &#1578;&#1594;&#1610;&#1610;&#1585;    " name="B1" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; border: 1px outset #003366; background-color: #5A74A0"></p>
+<p align="center">&nbsp; 
+<input type="submit" value="   Change    " name="B1" style="color: #FFFFFF; font-family: Traditional Arabic; font-size: 14pt; font-weight: bold; border: 1px outset #003366; background-color: #5A74A0"></p>
 
  <?php
 }
